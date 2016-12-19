@@ -1,1 +1,0 @@
-# knetikcloud-android-client
