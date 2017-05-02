@@ -60,7 +60,7 @@ public class Video {
   @SerializedName("priority")
   private Integer priority = null;
   public enum PrivacyEnum {
-     private,  friends,  public, 
+     PRIVATE,  FRIENDS,  PUBLIC, 
   };
   @SerializedName("privacy")
   private PrivacyEnum privacy = null;
