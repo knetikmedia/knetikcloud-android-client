@@ -80,9 +80,9 @@ public class AmazonWebServicesS3Api {
     String[] contentTypes = {
       "application/json"
     };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String type = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
-    if (contentType.startsWith("multipart/form-data")) {
+    if (type.startsWith("multipart/form-data")) {
       // file uploading
       MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
       HttpEntity httpEntity = localVarBuilder.build();
@@ -94,7 +94,7 @@ public class AmazonWebServicesS3Api {
     String[] authNames = new String[] { "OAuth2" };
 
     try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, type, authNames);
       if (localVarResponse != null) {
          return (AmazonS3Activity) ApiInvoker.deserialize(localVarResponse, "", AmazonS3Activity.class);
       } else {
@@ -143,9 +143,9 @@ public class AmazonWebServicesS3Api {
     String[] contentTypes = {
       "application/json"
     };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    String type = contentTypes.length > 0 ? contentTypes[0] : "application/json";
 
-    if (contentType.startsWith("multipart/form-data")) {
+    if (type.startsWith("multipart/form-data")) {
       // file uploading
       MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
       
@@ -159,7 +159,7 @@ public class AmazonWebServicesS3Api {
     String[] authNames = new String[] { "OAuth2" };
 
     try {
-      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, type, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {

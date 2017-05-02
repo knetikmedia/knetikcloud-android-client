@@ -57,9 +57,6 @@ public class BundleItem extends StoreItem {
   private Boolean displayable = null;
   @SerializedName("geo_country_list")
   private List<String> geoCountryList = null;
-  public enum GeoPolicyTypeEnum {
-     whitelist,  blacklist, 
-  };
   @SerializedName("geo_policy_type")
   private GeoPolicyTypeEnum geoPolicyType = null;
   @SerializedName("shipping_tier")
