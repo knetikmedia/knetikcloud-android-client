@@ -340,6 +340,22 @@ public class ApiInvoker {
     }
     throw new RuntimeException("No API key authentication configured!");
   }
+  
+  
+  /**
+     * Helper method to set access token for the first OAuth2 authentication.
+     *
+     * @param accessToken Access token
+     */
+    public void setAccessToken(String accessToken) {
+        for (Authentication auth : authentications.values()) {
+            if (auth instanceof OAuth) {
+                ((OAuth) auth).setAccessToken(accessToken);
+                return;
+            }
+        }
+        throw new RuntimeException("No OAuth2 authentication configured!");
+    }
 
   public void setConnectionTimeout(int connectionTimeout){
     this.connectionTimeout = connectionTimeout;
