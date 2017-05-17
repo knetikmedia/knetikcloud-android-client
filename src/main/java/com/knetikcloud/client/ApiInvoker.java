@@ -49,6 +49,7 @@ import java.util.concurrent.TimeoutException;
 import com.knetikcloud.client.auth.Authentication;
 import com.knetikcloud.client.auth.ApiKeyAuth;
 import com.knetikcloud.client.auth.HttpBasicAuth;
+import com.knetikcloud.client.auth.OAuth;
 import com.knetikcloud.client.request.GetRequest;
 import com.knetikcloud.client.request.PostRequest;
 import com.knetikcloud.client.request.PutRequest;
@@ -204,7 +205,7 @@ public class ApiInvoker {
     // Setup authentications (key: authentication name, value: authentication).
     INSTANCE.authentications = new HashMap<String, Authentication>();
     // TODO: comment out below as OAuth does not exist
-    //INSTANCE.authentications.put("OAuth2", new OAuth());
+    INSTANCE.authentications.put("OAuth2", new OAuth());
     // Prevent the authentications from being modified.
     INSTANCE.authentications = Collections.unmodifiableMap(INSTANCE.authentications);
   }
@@ -341,6 +342,21 @@ public class ApiInvoker {
     }
     throw new RuntimeException("No API key authentication configured!");
   }
+  
+   /**
+     * Helper method to set access token for the first OAuth2 authentication.
+     *
+     * @param accessToken Access token
+     */
+    public void setAccessToken(String accessToken) {
+        for (Authentication auth : authentications.values()) {
+            if (auth instanceof OAuth) {
+                ((OAuth) auth).setAccessToken(accessToken);
+                return;
+            }
+        }
+        throw new RuntimeException("No OAuth2 authentication configured!");
+    }
 
   public void setConnectionTimeout(int connectionTimeout){
     this.connectionTimeout = connectionTimeout;
