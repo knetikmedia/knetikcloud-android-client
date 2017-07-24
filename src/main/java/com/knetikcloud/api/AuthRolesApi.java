@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -106,15 +106,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -126,7 +126,6 @@ public class AuthRolesApi {
   public void createRole (RoleResource roleResource, final Response.Listener<RoleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = roleResource;
 
-  
 
     // create path and map variables
     String path = "/auth/roles".replaceAll("\\{format\\}","json");
@@ -156,7 +155,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -232,15 +231,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -252,13 +251,11 @@ public class AuthRolesApi {
   public void deleteRole (String role, Boolean force, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'role' is set
     if (role == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'role' when calling deleteRole",
-         new ApiException(400, "Missing the required parameter 'role' when calling deleteRole"));
+      VolleyError error = new VolleyError("Missing the required parameter 'role' when calling deleteRole",
+        new ApiException(400, "Missing the required parameter 'role' when calling deleteRole"));
     }
-    
 
     // create path and map variables
     String path = "/auth/roles/{role}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "role" + "\\}", apiInvoker.escapeString(role.toString()));
@@ -289,7 +286,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -359,15 +356,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -379,13 +376,11 @@ public class AuthRolesApi {
   public void getClientRoles (String clientKey, final Response.Listener<List<RoleResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'clientKey' is set
     if (clientKey == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling getClientRoles",
-         new ApiException(400, "Missing the required parameter 'clientKey' when calling getClientRoles"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling getClientRoles",
+        new ApiException(400, "Missing the required parameter 'clientKey' when calling getClientRoles"));
     }
-    
 
     // create path and map variables
     String path = "/auth/clients/{client_key}/roles".replaceAll("\\{format\\}","json").replaceAll("\\{" + "client_key" + "\\}", apiInvoker.escapeString(clientKey.toString()));
@@ -415,7 +410,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -489,15 +484,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -509,13 +504,11 @@ public class AuthRolesApi {
   public void getRole (String role, final Response.Listener<RoleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'role' is set
     if (role == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'role' when calling getRole",
-         new ApiException(400, "Missing the required parameter 'role' when calling getRole"));
+      VolleyError error = new VolleyError("Missing the required parameter 'role' when calling getRole",
+        new ApiException(400, "Missing the required parameter 'role' when calling getRole"));
     }
-    
 
     // create path and map variables
     String path = "/auth/roles/{role}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "role" + "\\}", apiInvoker.escapeString(role.toString()));
@@ -545,7 +538,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -619,15 +612,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -639,7 +632,6 @@ public class AuthRolesApi {
   public void getRoles (Integer size, Integer page, String order, final Response.Listener<PageResourceRoleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/auth/roles".replaceAll("\\{format\\}","json");
@@ -672,7 +664,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -746,15 +738,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -766,13 +758,11 @@ public class AuthRolesApi {
   public void getUserRoles (Integer userId, final Response.Listener<List<RoleResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserRoles",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserRoles"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserRoles",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserRoles"));
     }
-    
 
     // create path and map variables
     String path = "/auth/users/{user_id}/roles".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -802,7 +792,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -877,15 +867,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -897,13 +887,11 @@ public class AuthRolesApi {
   public void setClientRoles (String clientKey, List<String> rolesList, final Response.Listener<ClientResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = rolesList;
 
-  
     // verify the required parameter 'clientKey' is set
     if (clientKey == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling setClientRoles",
-         new ApiException(400, "Missing the required parameter 'clientKey' when calling setClientRoles"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling setClientRoles",
+        new ApiException(400, "Missing the required parameter 'clientKey' when calling setClientRoles"));
     }
-    
 
     // create path and map variables
     String path = "/auth/clients/{client_key}/roles".replaceAll("\\{format\\}","json").replaceAll("\\{" + "client_key" + "\\}", apiInvoker.escapeString(clientKey.toString()));
@@ -933,7 +921,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1008,15 +996,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1028,13 +1016,11 @@ public class AuthRolesApi {
   public void setPermissionsForRole (String role, List<String> permissionsList, final Response.Listener<RoleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = permissionsList;
 
-  
     // verify the required parameter 'role' is set
     if (role == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'role' when calling setPermissionsForRole",
-         new ApiException(400, "Missing the required parameter 'role' when calling setPermissionsForRole"));
+      VolleyError error = new VolleyError("Missing the required parameter 'role' when calling setPermissionsForRole",
+        new ApiException(400, "Missing the required parameter 'role' when calling setPermissionsForRole"));
     }
-    
 
     // create path and map variables
     String path = "/auth/roles/{role}/permissions".replaceAll("\\{format\\}","json").replaceAll("\\{" + "role" + "\\}", apiInvoker.escapeString(role.toString()));
@@ -1064,7 +1050,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1139,15 +1125,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1159,13 +1145,11 @@ public class AuthRolesApi {
   public void setUserRoles (Integer userId, List<String> rolesList, final Response.Listener<UserResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = rolesList;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setUserRoles",
-         new ApiException(400, "Missing the required parameter 'userId' when calling setUserRoles"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setUserRoles",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setUserRoles"));
     }
-    
 
     // create path and map variables
     String path = "/auth/users/{user_id}/roles".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -1195,7 +1179,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1270,15 +1254,15 @@ public class AuthRolesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1290,13 +1274,11 @@ public class AuthRolesApi {
   public void updateRole (String role, RoleResource roleResource, final Response.Listener<RoleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = roleResource;
 
-  
     // verify the required parameter 'role' is set
     if (role == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'role' when calling updateRole",
-         new ApiException(400, "Missing the required parameter 'role' when calling updateRole"));
+      VolleyError error = new VolleyError("Missing the required parameter 'role' when calling updateRole",
+        new ApiException(400, "Missing the required parameter 'role' when calling updateRole"));
     }
-    
 
     // create path and map variables
     String path = "/auth/roles/{role}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "role" + "\\}", apiInvoker.escapeString(role.toString()));
@@ -1326,7 +1308,7 @@ public class AuthRolesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

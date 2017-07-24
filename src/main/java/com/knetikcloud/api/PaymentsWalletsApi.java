@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -118,15 +118,15 @@ public class PaymentsWalletsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -138,19 +138,16 @@ public class PaymentsWalletsApi {
   public void getUserWallet (Integer userId, String currencyCode, final Response.Listener<SimpleWallet> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserWallet",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserWallet"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserWallet",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserWallet"));
     }
-    
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getUserWallet",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getUserWallet"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getUserWallet",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getUserWallet"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/wallets/{currency_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -180,7 +177,7 @@ public class PaymentsWalletsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -274,15 +271,15 @@ public class PaymentsWalletsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -294,19 +291,16 @@ public class PaymentsWalletsApi {
   public void getUserWalletTransactions (Integer userId, String currencyCode, String filterType, Long filterMaxDate, Long filterMinDate, String filterSign, Integer size, Integer page, String order, final Response.Listener<PageResourceWalletTransactionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserWalletTransactions",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserWalletTransactions"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserWalletTransactions",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserWalletTransactions"));
     }
-    
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getUserWalletTransactions",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getUserWalletTransactions"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getUserWalletTransactions",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getUserWalletTransactions"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/wallets/{currency_code}/transactions".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -343,7 +337,7 @@ public class PaymentsWalletsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -417,15 +411,15 @@ public class PaymentsWalletsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -437,13 +431,11 @@ public class PaymentsWalletsApi {
   public void getUserWallets (Integer userId, final Response.Listener<List<SimpleWallet>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserWallets",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserWallets"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserWallets",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserWallets"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/wallets".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -473,7 +465,7 @@ public class PaymentsWalletsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -541,15 +533,15 @@ public class PaymentsWalletsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -561,7 +553,6 @@ public class PaymentsWalletsApi {
   public void getWalletBalances (final Response.Listener<PageResourceWalletTotalResponse> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/wallets/totals".replaceAll("\\{format\\}","json");
@@ -591,7 +582,7 @@ public class PaymentsWalletsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -681,15 +672,15 @@ public class PaymentsWalletsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -701,7 +692,6 @@ public class PaymentsWalletsApi {
   public void getWalletTransactions (Integer filterInvoice, String filterType, String filterDate, String filterSign, Integer filterUserId, String filterUsername, String filterDetails, String filterCurrencyCode, Integer size, Integer page, String order, final Response.Listener<PageResourceWalletTransactionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/wallets/transactions".replaceAll("\\{format\\}","json");
@@ -742,7 +732,7 @@ public class PaymentsWalletsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -816,15 +806,15 @@ public class PaymentsWalletsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -836,7 +826,6 @@ public class PaymentsWalletsApi {
   public void getWallets (Integer size, Integer page, String order, final Response.Listener<PageResourceSimpleWallet> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/wallets".replaceAll("\\{format\\}","json");
@@ -869,7 +858,7 @@ public class PaymentsWalletsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -950,15 +939,15 @@ public class PaymentsWalletsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -970,19 +959,16 @@ public class PaymentsWalletsApi {
   public void updateWalletBalance (Integer userId, String currencyCode, WalletAlterRequest request, final Response.Listener<WalletTransactionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateWalletBalance",
-         new ApiException(400, "Missing the required parameter 'userId' when calling updateWalletBalance"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateWalletBalance",
+        new ApiException(400, "Missing the required parameter 'userId' when calling updateWalletBalance"));
     }
-    
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling updateWalletBalance",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling updateWalletBalance"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling updateWalletBalance",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling updateWalletBalance"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/wallets/{currency_code}/balance".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -1012,7 +998,7 @@ public class PaymentsWalletsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.knetikcloud</groupId>
     <artifactId>knetikcloud-android-client</artifactId>
-    <version>3.0.6</version>
+    <version>3.0.7</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.knetikcloud:knetikcloud-android-client:3.0.6"
+compile "com.knetikcloud:knetikcloud-android-client:3.0.7"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/knetikcloud-android-client-3.0.6.jar
+* target/knetikcloud-android-client-3.0.7.jar
 * target/lib/*.jar
 
 ## Getting Started 
@@ -198,13 +198,13 @@ Class | Method | HTTP request | Description
 *CampaignsChallengesApi* | [**createChallengeActivityTemplate**](docs/CampaignsChallengesApi.md#createChallengeActivityTemplate) | **POST** /challenge-activities/templates | Create a challenge activity template
 *CampaignsChallengesApi* | [**createChallengeTemplate**](docs/CampaignsChallengesApi.md#createChallengeTemplate) | **POST** /challenges/templates | Create a challenge template
 *CampaignsChallengesApi* | [**deleteChallenge**](docs/CampaignsChallengesApi.md#deleteChallenge) | **DELETE** /challenges/{id} | Delete a challenge
-*CampaignsChallengesApi* | [**deleteChallengeActivity**](docs/CampaignsChallengesApi.md#deleteChallengeActivity) | **DELETE** /challenges/{challenge_id}/activities/{activity_id} | Delete a challenge activity
+*CampaignsChallengesApi* | [**deleteChallengeActivity**](docs/CampaignsChallengesApi.md#deleteChallengeActivity) | **DELETE** /challenges/{challenge_id}/activities/{id} | Delete a challenge activity
 *CampaignsChallengesApi* | [**deleteChallengeActivityTemplate**](docs/CampaignsChallengesApi.md#deleteChallengeActivityTemplate) | **DELETE** /challenge-activities/templates/{id} | Delete a challenge activity template
 *CampaignsChallengesApi* | [**deleteChallengeEvent**](docs/CampaignsChallengesApi.md#deleteChallengeEvent) | **DELETE** /challenges/events/{id} | Delete a challenge event
 *CampaignsChallengesApi* | [**deleteChallengeTemplate**](docs/CampaignsChallengesApi.md#deleteChallengeTemplate) | **DELETE** /challenges/templates/{id} | Delete a challenge template
 *CampaignsChallengesApi* | [**getChallenge**](docs/CampaignsChallengesApi.md#getChallenge) | **GET** /challenges/{id} | Retrieve a challenge
 *CampaignsChallengesApi* | [**getChallengeActivities**](docs/CampaignsChallengesApi.md#getChallengeActivities) | **GET** /challenges/{challenge_id}/activities | List and search challenge activities
-*CampaignsChallengesApi* | [**getChallengeActivity**](docs/CampaignsChallengesApi.md#getChallengeActivity) | **GET** /challenges/{challenge_id}/activities/{activity_id} | Get a single challenge activity
+*CampaignsChallengesApi* | [**getChallengeActivity**](docs/CampaignsChallengesApi.md#getChallengeActivity) | **GET** /challenges/{challenge_id}/activities/{id} | Get a single challenge activity
 *CampaignsChallengesApi* | [**getChallengeActivityTemplate**](docs/CampaignsChallengesApi.md#getChallengeActivityTemplate) | **GET** /challenge-activities/templates/{id} | Get a single challenge activity template
 *CampaignsChallengesApi* | [**getChallengeActivityTemplates**](docs/CampaignsChallengesApi.md#getChallengeActivityTemplates) | **GET** /challenge-activities/templates | List and search challenge activity templates
 *CampaignsChallengesApi* | [**getChallengeEvent**](docs/CampaignsChallengesApi.md#getChallengeEvent) | **GET** /challenges/events/{id} | Retrieve a single challenge event details
@@ -213,7 +213,7 @@ Class | Method | HTTP request | Description
 *CampaignsChallengesApi* | [**getChallengeTemplates**](docs/CampaignsChallengesApi.md#getChallengeTemplates) | **GET** /challenges/templates | List and search challenge templates
 *CampaignsChallengesApi* | [**getChallenges**](docs/CampaignsChallengesApi.md#getChallenges) | **GET** /challenges | Retrieve a list of challenges
 *CampaignsChallengesApi* | [**updateChallenge**](docs/CampaignsChallengesApi.md#updateChallenge) | **PUT** /challenges/{id} | Update a challenge
-*CampaignsChallengesApi* | [**updateChallengeActivity**](docs/CampaignsChallengesApi.md#updateChallengeActivity) | **PUT** /challenges/{challenge_id}/activities/{activity_id} | Update a challenge activity
+*CampaignsChallengesApi* | [**updateChallengeActivity**](docs/CampaignsChallengesApi.md#updateChallengeActivity) | **PUT** /challenges/{challenge_id}/activities/{id} | Update a challenge activity
 *CampaignsChallengesApi* | [**updateChallengeActivityTemplate**](docs/CampaignsChallengesApi.md#updateChallengeActivityTemplate) | **PUT** /challenge-activities/templates/{id} | Update an challenge activity template
 *CampaignsChallengesApi* | [**updateChallengeTemplate**](docs/CampaignsChallengesApi.md#updateChallengeTemplate) | **PUT** /challenges/templates/{id} | Update a challenge template
 *CampaignsRewardsApi* | [**createRewardSet**](docs/CampaignsRewardsApi.md#createRewardSet) | **POST** /rewards | Create a reward set
@@ -357,6 +357,7 @@ Class | Method | HTTP request | Description
 *InvoicesApi* | [**getInvoices**](docs/InvoicesApi.md#getInvoices) | **GET** /invoices | Retrieve invoices
 *InvoicesApi* | [**getPaymentStatuses**](docs/InvoicesApi.md#getPaymentStatuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
 *InvoicesApi* | [**payInvoice**](docs/InvoicesApi.md#payInvoice) | **POST** /invoices/{id}/payments | Trigger payment of an invoice
+*InvoicesApi* | [**setBundledInvoiceItemFulfillmentStatus**](docs/InvoicesApi.md#setBundledInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
 *InvoicesApi* | [**setExternalRef**](docs/InvoicesApi.md#setExternalRef) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
 *InvoicesApi* | [**setInvoiceItemFulfillmentStatus**](docs/InvoicesApi.md#setInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
 *InvoicesApi* | [**setOrderNotes**](docs/InvoicesApi.md#setOrderNotes) | **PUT** /invoices/{id}/order-notes | Set the order notes of an invoice
@@ -464,7 +465,7 @@ Class | Method | HTTP request | Description
 *SearchApi* | [**deleteSearchIndexes**](docs/SearchApi.md#deleteSearchIndexes) | **DELETE** /search/index/{type} | Delete all objects in an index
 *SearchApi* | [**searchIndex**](docs/SearchApi.md#searchIndex) | **POST** /search/index/{type} | Search an index
 *SocialFacebookApi* | [**linkAccounts**](docs/SocialFacebookApi.md#linkAccounts) | **POST** /social/facebook/users | Link facebook account
-*SocialGoogleApi* | [**linkAccounts1**](docs/SocialGoogleApi.md#linkAccounts1) | **POST** /social/google/users | Link facebook account
+*SocialGoogleApi* | [**linkAccounts1**](docs/SocialGoogleApi.md#linkAccounts1) | **POST** /social/google/users | Link google account
 *StoreApi* | [**createItemTemplate**](docs/StoreApi.md#createItemTemplate) | **POST** /store/items/templates | Create an item template
 *StoreApi* | [**createStoreItem**](docs/StoreApi.md#createStoreItem) | **POST** /store/items | Create a store item
 *StoreApi* | [**deleteItemTemplate**](docs/StoreApi.md#deleteItemTemplate) | **DELETE** /store/items/templates/{id} | Delete an item template
@@ -633,6 +634,7 @@ Class | Method | HTTP request | Description
 *UsersSubscriptionsApi* | [**setSubscriptionPaymentMethod**](docs/UsersSubscriptionsApi.md#setSubscriptionPaymentMethod) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/payment-method | Set the payment method to use for a subscription
 *UsersSubscriptionsApi* | [**setSubscriptionStatus**](docs/UsersSubscriptionsApi.md#setSubscriptionStatus) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/status | Set the status of a subscription
 *UsersSubscriptionsApi* | [**setUserSubscriptionPlan**](docs/UsersSubscriptionsApi.md#setUserSubscriptionPlan) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/plan | Set a new subscription plan for a user
+*UsersSubscriptionsApi* | [**setUserSubscriptionPrice**](docs/UsersSubscriptionsApi.md#setUserSubscriptionPrice) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/price-override | Set a new subscription price for a user
 *UtilBatchApi* | [**getBatch**](docs/UtilBatchApi.md#getBatch) | **GET** /batch/{token} | Get batch result with token
 *UtilBatchApi* | [**sendBatch**](docs/UtilBatchApi.md#sendBatch) | **POST** /batch | Request to run API call given the method, content type, path url, and body of request
 *UtilHealthApi* | [**getHealth**](docs/UtilHealthApi.md#getHealth) | **GET** /health | Get health info
@@ -647,15 +649,16 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings](docs/AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.md)
- - [ARequestToResetAUsersPasswordByUsingAKnownUserProperty](docs/ARequestToResetAUsersPasswordByUsingAKnownUserProperty.md)
  - [AchievementDefinitionResource](docs/AchievementDefinitionResource.md)
  - [ActionResource](docs/ActionResource.md)
  - [ActionVariableResource](docs/ActionVariableResource.md)
  - [ActivityEntitlementResource](docs/ActivityEntitlementResource.md)
  - [ActivityOccurrenceCreationFailure](docs/ActivityOccurrenceCreationFailure.md)
  - [ActivityOccurrenceJoinResult](docs/ActivityOccurrenceJoinResult.md)
+ - [ActivityOccurrenceResource](docs/ActivityOccurrenceResource.md)
  - [ActivityOccurrenceResults](docs/ActivityOccurrenceResults.md)
+ - [ActivityOccurrenceResultsResource](docs/ActivityOccurrenceResultsResource.md)
+ - [ActivityResource](docs/ActivityResource.md)
  - [ActivityUserResource](docs/ActivityUserResource.md)
  - [AddressResource](docs/AddressResource.md)
  - [AggregateCountResource](docs/AggregateCountResource.md)
@@ -665,10 +668,7 @@ Class | Method | HTTP request | Description
  - [ApplyPaymentRequest](docs/ApplyPaymentRequest.md)
  - [ArticleResource](docs/ArticleResource.md)
  - [ArtistResource](docs/ArtistResource.md)
- - [AudioGroupProperty](docs/AudioGroupProperty.md)
- - [AudioGroupPropertyDefinitionResource](docs/AudioGroupPropertyDefinitionResource.md)
- - [AudioProperty](docs/AudioProperty.md)
- - [AudioPropertyDefinitionResource](docs/AudioPropertyDefinitionResource.md)
+ - [AvailableSettingResource](docs/AvailableSettingResource.md)
  - [BareActivityResource](docs/BareActivityResource.md)
  - [BareChallengeActivityResource](docs/BareChallengeActivityResource.md)
  - [Batch](docs/Batch.md)
@@ -678,8 +678,6 @@ Class | Method | HTTP request | Description
  - [Behavior](docs/Behavior.md)
  - [BehaviorDefinitionResource](docs/BehaviorDefinitionResource.md)
  - [BillingReport](docs/BillingReport.md)
- - [BooleanProperty](docs/BooleanProperty.md)
- - [BooleanPropertyDefinitionResource](docs/BooleanPropertyDefinitionResource.md)
  - [BooleanResource](docs/BooleanResource.md)
  - [BreCategoryResource](docs/BreCategoryResource.md)
  - [BreEvent](docs/BreEvent.md)
@@ -691,9 +689,7 @@ Class | Method | HTTP request | Description
  - [BreTriggerParameterDefinition](docs/BreTriggerParameterDefinition.md)
  - [BreTriggerResource](docs/BreTriggerResource.md)
  - [BroadcastableEvent](docs/BroadcastableEvent.md)
- - [BundleItem](docs/BundleItem.md)
  - [BundledSku](docs/BundledSku.md)
- - [CacheClearEvent](docs/CacheClearEvent.md)
  - [CampaignResource](docs/CampaignResource.md)
  - [Cart](docs/Cart.md)
  - [CartItemRequest](docs/CartItemRequest.md)
@@ -716,49 +712,34 @@ Class | Method | HTTP request | Description
  - [Config](docs/Config.md)
  - [ConfigLookupResource](docs/ConfigLookupResource.md)
  - [ConstantResource](docs/ConstantResource.md)
- - [Consumable](docs/Consumable.md)
  - [ContributionResource](docs/ContributionResource.md)
  - [Country](docs/Country.md)
  - [CountryResource](docs/CountryResource.md)
  - [CountryTaxResource](docs/CountryTaxResource.md)
  - [CouponDefinition](docs/CouponDefinition.md)
- - [CouponItem](docs/CouponItem.md)
  - [CreateBillingAgreementRequest](docs/CreateBillingAgreementRequest.md)
  - [CreatePayPalPaymentRequest](docs/CreatePayPalPaymentRequest.md)
  - [CurrencyResource](docs/CurrencyResource.md)
  - [CustomerConfig](docs/CustomerConfig.md)
  - [DatabaseConfig](docs/DatabaseConfig.md)
  - [DateOperationResource](docs/DateOperationResource.md)
- - [DateProperty](docs/DateProperty.md)
- - [DatePropertyDefinitionResource](docs/DatePropertyDefinitionResource.md)
  - [DeltaResource](docs/DeltaResource.md)
  - [DeviceResource](docs/DeviceResource.md)
  - [Discount](docs/Discount.md)
  - [DispositionCount](docs/DispositionCount.md)
  - [DispositionResource](docs/DispositionResource.md)
  - [DoubleOperationResource](docs/DoubleOperationResource.md)
- - [DoubleProperty](docs/DoubleProperty.md)
- - [DoublePropertyDefinitionResource](docs/DoublePropertyDefinitionResource.md)
  - [EntitlementGrantRequest](docs/EntitlementGrantRequest.md)
- - [EntitlementItem](docs/EntitlementItem.md)
  - [ErrorResource](docs/ErrorResource.md)
  - [EventContextResource](docs/EventContextResource.md)
- - [Expirable](docs/Expirable.md)
  - [ExpressionResource](docs/ExpressionResource.md)
  - [Expressionobject](docs/Expressionobject.md)
  - [FacebookToken](docs/FacebookToken.md)
- - [FileGroupProperty](docs/FileGroupProperty.md)
- - [FileGroupPropertyDefinitionResource](docs/FileGroupPropertyDefinitionResource.md)
- - [FileProperty](docs/FileProperty.md)
- - [FilePropertyDefinitionResource](docs/FilePropertyDefinitionResource.md)
  - [FinalizeBillingAgreementRequest](docs/FinalizeBillingAgreementRequest.md)
  - [FinalizePayPalPaymentRequest](docs/FinalizePayPalPaymentRequest.md)
  - [FlagReportResource](docs/FlagReportResource.md)
  - [FlagResource](docs/FlagResource.md)
- - [FormattedTextProperty](docs/FormattedTextProperty.md)
- - [FormattedTextPropertyDefinitionResource](docs/FormattedTextPropertyDefinitionResource.md)
  - [ForwardLog](docs/ForwardLog.md)
- - [Fulfillable](docs/Fulfillable.md)
  - [FulfillmentType](docs/FulfillmentType.md)
  - [GlobalCheckAndIncrementResource](docs/GlobalCheckAndIncrementResource.md)
  - [GlobalResource](docs/GlobalResource.md)
@@ -767,16 +748,10 @@ Class | Method | HTTP request | Description
  - [GrantTypeResource](docs/GrantTypeResource.md)
  - [GroupMemberResource](docs/GroupMemberResource.md)
  - [GroupResource](docs/GroupResource.md)
- - [GuestPlayable](docs/GuestPlayable.md)
- - [ImageGroupProperty](docs/ImageGroupProperty.md)
- - [ImageGroupPropertyDefinitionResource](docs/ImageGroupPropertyDefinitionResource.md)
- - [ImageProperty](docs/ImageProperty.md)
- - [ImagePropertyDefinitionResource](docs/ImagePropertyDefinitionResource.md)
+ - [IOConfig](docs/IOConfig.md)
  - [ImportJobOutputResource](docs/ImportJobOutputResource.md)
  - [ImportJobResource](docs/ImportJobResource.md)
  - [IntegerOperationResource](docs/IntegerOperationResource.md)
- - [IntegerProperty](docs/IntegerProperty.md)
- - [IntegerPropertyDefinitionResource](docs/IntegerPropertyDefinitionResource.md)
  - [InventorySubscriptionResource](docs/InventorySubscriptionResource.md)
  - [InvoiceCreateRequest](docs/InvoiceCreateRequest.md)
  - [InvoiceItemResource](docs/InvoiceItemResource.md)
@@ -790,12 +765,9 @@ Class | Method | HTTP request | Description
  - [LeaderboardEntryResource](docs/LeaderboardEntryResource.md)
  - [LeaderboardResource](docs/LeaderboardResource.md)
  - [LevelingResource](docs/LevelingResource.md)
- - [LimitedGettable](docs/LimitedGettable.md)
  - [LimitedGettableGroup](docs/LimitedGettableGroup.md)
  - [Localizer](docs/Localizer.md)
  - [LocationLogResource](docs/LocationLogResource.md)
- - [LongProperty](docs/LongProperty.md)
- - [LongPropertyDefinitionResource](docs/LongPropertyDefinitionResource.md)
  - [LookupResource](docs/LookupResource.md)
  - [LookupTypeResource](docs/LookupTypeResource.md)
  - [Maintenance](docs/Maintenance.md)
@@ -804,7 +776,6 @@ Class | Method | HTTP request | Description
  - [MetricResource](docs/MetricResource.md)
  - [MongoDatabaseConfig](docs/MongoDatabaseConfig.md)
  - [NestedCategory](docs/NestedCategory.md)
- - [NewCustomerEvent](docs/NewCustomerEvent.md)
  - [NewPasswordRequest](docs/NewPasswordRequest.md)
  - [OAuth2Resource](docs/OAuth2Resource.md)
  - [OauthAccessTokenResource](docs/OauthAccessTokenResource.md)
@@ -886,6 +857,7 @@ Class | Method | HTTP request | Description
  - [PageResourceWalletTransactionResource](docs/PageResourceWalletTransactionResource.md)
  - [PageResourcestring](docs/PageResourcestring.md)
  - [ParameterResource](docs/ParameterResource.md)
+ - [PasswordResetRequest](docs/PasswordResetRequest.md)
  - [PayBySavedMethodRequest](docs/PayBySavedMethodRequest.md)
  - [PaymentAuthorizationResource](docs/PaymentAuthorizationResource.md)
  - [PaymentMethodResource](docs/PaymentMethodResource.md)
@@ -894,10 +866,8 @@ Class | Method | HTTP request | Description
  - [PollAnswerResource](docs/PollAnswerResource.md)
  - [PollResource](docs/PollResource.md)
  - [PollResponseResource](docs/PollResponseResource.md)
- - [PreReqEntitlement](docs/PreReqEntitlement.md)
  - [PredicateOperation](docs/PredicateOperation.md)
  - [PredicateResource](docs/PredicateResource.md)
- - [PriceOverridable](docs/PriceOverridable.md)
  - [Property](docs/Property.md)
  - [PropertyDefinitionResource](docs/PropertyDefinitionResource.md)
  - [PropertyFieldListResource](docs/PropertyFieldListResource.md)
@@ -909,7 +879,6 @@ Class | Method | HTTP request | Description
  - [ReactivateSubscriptionRequest](docs/ReactivateSubscriptionRequest.md)
  - [RefundRequest](docs/RefundRequest.md)
  - [RefundResource](docs/RefundResource.md)
- - [RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc](docs/RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
  - [Result](docs/Result.md)
  - [RevenueCountryReportResource](docs/RevenueCountryReportResource.md)
  - [RevenueProductReportResource](docs/RevenueProductReportResource.md)
@@ -925,7 +894,6 @@ Class | Method | HTTP request | Description
  - [SearchReferenceMapping](docs/SearchReferenceMapping.md)
  - [SelectedSettingResource](docs/SelectedSettingResource.md)
  - [SettingOption](docs/SettingOption.md)
- - [ShippingItem](docs/ShippingItem.md)
  - [SimpleReferenceResourceint](docs/SimpleReferenceResourceint.md)
  - [SimpleReferenceResourcelong](docs/SimpleReferenceResourcelong.md)
  - [SimpleReferenceResourceobject](docs/SimpleReferenceResourceobject.md)
@@ -934,30 +902,23 @@ Class | Method | HTTP request | Description
  - [SimpleWallet](docs/SimpleWallet.md)
  - [Sku](docs/Sku.md)
  - [SkuRequest](docs/SkuRequest.md)
- - [Spendable](docs/Spendable.md)
  - [SqlDatabaseConfig](docs/SqlDatabaseConfig.md)
  - [StateResource](docs/StateResource.md)
  - [StateTaxResource](docs/StateTaxResource.md)
- - [StoreItem](docs/StoreItem.md)
  - [StoreItemTemplateResource](docs/StoreItemTemplateResource.md)
  - [StringOperationResource](docs/StringOperationResource.md)
  - [StripeCreatePaymentMethod](docs/StripeCreatePaymentMethod.md)
  - [StripePaymentRequest](docs/StripePaymentRequest.md)
- - [Subscription](docs/Subscription.md)
  - [SubscriptionCreditResource](docs/SubscriptionCreditResource.md)
  - [SubscriptionPlan](docs/SubscriptionPlan.md)
  - [SubscriptionPlanResource](docs/SubscriptionPlanResource.md)
+ - [SubscriptionPriceOverrideRequest](docs/SubscriptionPriceOverrideRequest.md)
  - [SubscriptionResource](docs/SubscriptionResource.md)
  - [SubscriptionTemplateResource](docs/SubscriptionTemplateResource.md)
  - [TemplateEmailResource](docs/TemplateEmailResource.md)
  - [TemplateResource](docs/TemplateResource.md)
  - [TemplateSMSResource](docs/TemplateSMSResource.md)
- - [TextProperty](docs/TextProperty.md)
- - [TextPropertyDefinitionResource](docs/TextPropertyDefinitionResource.md)
- - [TheDefinitionOfAnActivityParametersExDifficultyLevel](docs/TheDefinitionOfAnActivityParametersExDifficultyLevel.md)
  - [TierResource](docs/TierResource.md)
- - [TimePeriodGettable](docs/TimePeriodGettable.md)
- - [TimePeriodUsable](docs/TimePeriodUsable.md)
  - [TokenDetailsResource](docs/TokenDetailsResource.md)
  - [TransactionResource](docs/TransactionResource.md)
  - [TypeHintLookupResource](docs/TypeHintLookupResource.md)
@@ -965,6 +926,7 @@ Class | Method | HTTP request | Description
  - [UserAchievementGroupResource](docs/UserAchievementGroupResource.md)
  - [UserAchievementResource](docs/UserAchievementResource.md)
  - [UserActionLog](docs/UserActionLog.md)
+ - [UserActivityResults](docs/UserActivityResults.md)
  - [UserActivityResultsResource](docs/UserActivityResultsResource.md)
  - [UserBaseResource](docs/UserBaseResource.md)
  - [UserInventoryAddRequest](docs/UserInventoryAddRequest.md)
@@ -979,16 +941,61 @@ Class | Method | HTTP request | Description
  - [VendorEmailLookupResource](docs/VendorEmailLookupResource.md)
  - [VendorResource](docs/VendorResource.md)
  - [Version](docs/Version.md)
- - [VideoGroupProperty](docs/VideoGroupProperty.md)
- - [VideoGroupPropertyDefinitionResource](docs/VideoGroupPropertyDefinitionResource.md)
- - [VideoProperty](docs/VideoProperty.md)
- - [VideoPropertyDefinitionResource](docs/VideoPropertyDefinitionResource.md)
  - [VideoRelationshipResource](docs/VideoRelationshipResource.md)
  - [VideoResource](docs/VideoResource.md)
  - [WalletAlterRequest](docs/WalletAlterRequest.md)
  - [WalletTotalResponse](docs/WalletTotalResponse.md)
  - [WalletTransactionResource](docs/WalletTransactionResource.md)
  - [XsollaPaymentRequest](docs/XsollaPaymentRequest.md)
+ - [AudioPropertyDefinitionResource](docs/AudioPropertyDefinitionResource.md)
+ - [BooleanProperty](docs/BooleanProperty.md)
+ - [BooleanPropertyDefinitionResource](docs/BooleanPropertyDefinitionResource.md)
+ - [CacheClearEvent](docs/CacheClearEvent.md)
+ - [Consumable](docs/Consumable.md)
+ - [DateProperty](docs/DateProperty.md)
+ - [DatePropertyDefinitionResource](docs/DatePropertyDefinitionResource.md)
+ - [DoubleProperty](docs/DoubleProperty.md)
+ - [DoublePropertyDefinitionResource](docs/DoublePropertyDefinitionResource.md)
+ - [EntitlementItem](docs/EntitlementItem.md)
+ - [Expirable](docs/Expirable.md)
+ - [FileGroupProperty](docs/FileGroupProperty.md)
+ - [FileGroupPropertyDefinitionResource](docs/FileGroupPropertyDefinitionResource.md)
+ - [FileProperty](docs/FileProperty.md)
+ - [FilePropertyDefinitionResource](docs/FilePropertyDefinitionResource.md)
+ - [FormattedTextProperty](docs/FormattedTextProperty.md)
+ - [FormattedTextPropertyDefinitionResource](docs/FormattedTextPropertyDefinitionResource.md)
+ - [Fulfillable](docs/Fulfillable.md)
+ - [GuestPlayable](docs/GuestPlayable.md)
+ - [ImagePropertyDefinitionResource](docs/ImagePropertyDefinitionResource.md)
+ - [IntegerProperty](docs/IntegerProperty.md)
+ - [IntegerPropertyDefinitionResource](docs/IntegerPropertyDefinitionResource.md)
+ - [LimitedGettable](docs/LimitedGettable.md)
+ - [LongProperty](docs/LongProperty.md)
+ - [LongPropertyDefinitionResource](docs/LongPropertyDefinitionResource.md)
+ - [NewCustomerEvent](docs/NewCustomerEvent.md)
+ - [PreReqEntitlement](docs/PreReqEntitlement.md)
+ - [PriceOverridable](docs/PriceOverridable.md)
+ - [RemoveCustomerEvent](docs/RemoveCustomerEvent.md)
+ - [Spendable](docs/Spendable.md)
+ - [StoreItem](docs/StoreItem.md)
+ - [TextProperty](docs/TextProperty.md)
+ - [TextPropertyDefinitionResource](docs/TextPropertyDefinitionResource.md)
+ - [TimePeriodGettable](docs/TimePeriodGettable.md)
+ - [TimePeriodUsable](docs/TimePeriodUsable.md)
+ - [VideoPropertyDefinitionResource](docs/VideoPropertyDefinitionResource.md)
+ - [AudioGroupProperty](docs/AudioGroupProperty.md)
+ - [AudioGroupPropertyDefinitionResource](docs/AudioGroupPropertyDefinitionResource.md)
+ - [AudioProperty](docs/AudioProperty.md)
+ - [BundleItem](docs/BundleItem.md)
+ - [CouponItem](docs/CouponItem.md)
+ - [ImageGroupProperty](docs/ImageGroupProperty.md)
+ - [ImageGroupPropertyDefinitionResource](docs/ImageGroupPropertyDefinitionResource.md)
+ - [ImageProperty](docs/ImageProperty.md)
+ - [ShippingItem](docs/ShippingItem.md)
+ - [Subscription](docs/Subscription.md)
+ - [VideoGroupProperty](docs/VideoGroupProperty.md)
+ - [VideoGroupPropertyDefinitionResource](docs/VideoGroupPropertyDefinitionResource.md)
+ - [VideoProperty](docs/VideoProperty.md)
 
 
 ## Documentation for Authorization

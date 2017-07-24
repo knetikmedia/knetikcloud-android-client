@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -56,6 +56,8 @@ public class UserResource {
   private Integer id = null;
   @SerializedName("language_code")
   private String languageCode = null;
+  @SerializedName("last_activity")
+  private Long lastActivity = null;
   @SerializedName("last_name")
   private String lastName = null;
   @SerializedName("last_updated")
@@ -269,6 +271,17 @@ public class UserResource {
   }
 
   /**
+   * The date the user last interacted with the API (private)
+   **/
+  @ApiModelProperty(value = "The date the user last interacted with the API (private)")
+  public Long getLastActivity() {
+    return lastActivity;
+  }
+  public void setLastActivity(Long lastActivity) {
+    this.lastActivity = lastActivity;
+  }
+
+  /**
    * The user's last name (private)
    **/
   @ApiModelProperty(value = "The user's last name (private)")
@@ -427,6 +440,7 @@ public class UserResource {
         (this.gender == null ? userResource.gender == null : this.gender.equals(userResource.gender)) &&
         (this.id == null ? userResource.id == null : this.id.equals(userResource.id)) &&
         (this.languageCode == null ? userResource.languageCode == null : this.languageCode.equals(userResource.languageCode)) &&
+        (this.lastActivity == null ? userResource.lastActivity == null : this.lastActivity.equals(userResource.lastActivity)) &&
         (this.lastName == null ? userResource.lastName == null : this.lastName.equals(userResource.lastName)) &&
         (this.lastUpdated == null ? userResource.lastUpdated == null : this.lastUpdated.equals(userResource.lastUpdated)) &&
         (this.memberSince == null ? userResource.memberSince == null : this.memberSince.equals(userResource.memberSince)) &&
@@ -461,6 +475,7 @@ public class UserResource {
     result = 31 * result + (this.gender == null ? 0: this.gender.hashCode());
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
     result = 31 * result + (this.languageCode == null ? 0: this.languageCode.hashCode());
+    result = 31 * result + (this.lastActivity == null ? 0: this.lastActivity.hashCode());
     result = 31 * result + (this.lastName == null ? 0: this.lastName.hashCode());
     result = 31 * result + (this.lastUpdated == null ? 0: this.lastUpdated.hashCode());
     result = 31 * result + (this.memberSince == null ? 0: this.memberSince.hashCode());
@@ -498,6 +513,7 @@ public class UserResource {
     sb.append("  gender: ").append(gender).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  languageCode: ").append(languageCode).append("\n");
+    sb.append("  lastActivity: ").append(lastActivity).append("\n");
     sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  lastUpdated: ").append(lastUpdated).append("\n");
     sb.append("  memberSince: ").append(memberSince).append("\n");

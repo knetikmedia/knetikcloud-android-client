@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -23,6 +23,8 @@ public class LeaderboardEntryResource {
   private Long rank = null;
   @SerializedName("score")
   private Long score = null;
+  @SerializedName("updated_date")
+  private Long updatedDate = null;
   @SerializedName("user")
   private SimpleUserResource user = null;
 
@@ -49,6 +51,17 @@ public class LeaderboardEntryResource {
   }
 
   /**
+   * The date this score was recorded or updated. Unix timestamp in seconds
+   **/
+  @ApiModelProperty(value = "The date this score was recorded or updated. Unix timestamp in seconds")
+  public Long getUpdatedDate() {
+    return updatedDate;
+  }
+  public void setUpdatedDate(Long updatedDate) {
+    this.updatedDate = updatedDate;
+  }
+
+  /**
    * The player for this entry
    **/
   @ApiModelProperty(required = true, value = "The player for this entry")
@@ -71,6 +84,7 @@ public class LeaderboardEntryResource {
     LeaderboardEntryResource leaderboardEntryResource = (LeaderboardEntryResource) o;
     return (this.rank == null ? leaderboardEntryResource.rank == null : this.rank.equals(leaderboardEntryResource.rank)) &&
         (this.score == null ? leaderboardEntryResource.score == null : this.score.equals(leaderboardEntryResource.score)) &&
+        (this.updatedDate == null ? leaderboardEntryResource.updatedDate == null : this.updatedDate.equals(leaderboardEntryResource.updatedDate)) &&
         (this.user == null ? leaderboardEntryResource.user == null : this.user.equals(leaderboardEntryResource.user));
   }
 
@@ -79,6 +93,7 @@ public class LeaderboardEntryResource {
     int result = 17;
     result = 31 * result + (this.rank == null ? 0: this.rank.hashCode());
     result = 31 * result + (this.score == null ? 0: this.score.hashCode());
+    result = 31 * result + (this.updatedDate == null ? 0: this.updatedDate.hashCode());
     result = 31 * result + (this.user == null ? 0: this.user.hashCode());
     return result;
   }
@@ -90,6 +105,7 @@ public class LeaderboardEntryResource {
     
     sb.append("  rank: ").append(rank).append("\n");
     sb.append("  score: ").append(score).append("\n");
+    sb.append("  updatedDate: ").append(updatedDate).append("\n");
     sb.append("  user: ").append(user).append("\n");
     sb.append("}\n");
     return sb.toString();

@@ -769,12 +769,12 @@ Search videos using the documented filters
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Boolean excludeFlagged = true; // Boolean | Skip videos that have been flagged by the current user
-ModelObject filterVideosByUploader = new ModelObject(); // ModelObject | Filter for videos by uploader id
+Integer filterVideosByUploader = 56; // Integer | Filter for videos by uploader id
 String filterCategory = "filterCategory_example"; // String | Filter for videos from a specific category by id
 String filterTagset = "filterTagset_example"; // String | Filter for videos with specified tags (separated by comma)
 String filterVideosByName = "filterVideosByName_example"; // String | Filter for videos which name *STARTS* with the given string
-ModelObject filterVideosByContributor = new ModelObject(); // ModelObject | Filter for videos with contribution from the artist specified by ID
-ModelObject filterVideosByAuthor = new ModelObject(); // ModelObject | Filter for videos with an artist as author specified by ID
+Integer filterVideosByContributor = 56; // Integer | Filter for videos with contribution from the artist specified by ID
+Integer filterVideosByAuthor = 56; // Integer | Filter for videos with an artist as author specified by ID
 Boolean filterHasAuthor = true; // Boolean | Filter for videos that have an author set if true, or that have no author if false
 Boolean filterHasUploader = true; // Boolean | Filter for videos that have an uploader set if true, or that have no uploader if false
 String filterRelatedTo = "filterRelatedTo_example"; // String | Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well
@@ -797,12 +797,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **excludeFlagged** | **Boolean**| Skip videos that have been flagged by the current user | [optional] [default to true]
- **filterVideosByUploader** | [**ModelObject**](.md)| Filter for videos by uploader id | [optional]
+ **filterVideosByUploader** | **Integer**| Filter for videos by uploader id | [optional]
  **filterCategory** | **String**| Filter for videos from a specific category by id | [optional]
  **filterTagset** | **String**| Filter for videos with specified tags (separated by comma) | [optional]
  **filterVideosByName** | **String**| Filter for videos which name *STARTS* with the given string | [optional]
- **filterVideosByContributor** | [**ModelObject**](.md)| Filter for videos with contribution from the artist specified by ID | [optional]
- **filterVideosByAuthor** | [**ModelObject**](.md)| Filter for videos with an artist as author specified by ID | [optional]
+ **filterVideosByContributor** | **Integer**| Filter for videos with contribution from the artist specified by ID | [optional]
+ **filterVideosByAuthor** | **Integer**| Filter for videos with an artist as author specified by ID | [optional]
  **filterHasAuthor** | **Boolean**| Filter for videos that have an author set if true, or that have no author if false | [optional]
  **filterHasUploader** | **Boolean**| Filter for videos that have an uploader set if true, or that have no uploader if false | [optional]
  **filterRelatedTo** | **String**| Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well | [optional]

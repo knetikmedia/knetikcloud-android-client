@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -104,15 +104,15 @@ public class PaymentsStripeApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -124,7 +124,6 @@ public class PaymentsStripeApi {
   public void createStripePaymentMethod (StripeCreatePaymentMethod request, final Response.Listener<PaymentMethodResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
 
     // create path and map variables
     String path = "/payment/provider/stripe/payment-methods".replaceAll("\\{format\\}","json");
@@ -154,7 +153,7 @@ public class PaymentsStripeApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -223,15 +222,15 @@ public class PaymentsStripeApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -243,7 +242,6 @@ public class PaymentsStripeApi {
   public void payStripeInvoice (StripePaymentRequest request, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
 
     // create path and map variables
     String path = "/payment/provider/stripe/payments".replaceAll("\\{format\\}","json");
@@ -273,7 +271,7 @@ public class PaymentsStripeApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,

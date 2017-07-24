@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -105,15 +105,15 @@ public class BRERuleEngineRulesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -125,7 +125,6 @@ public class BRERuleEngineRulesApi {
   public void createBRERule (BreRule breRule, final Response.Listener<BreRule> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = breRule;
 
-  
 
     // create path and map variables
     String path = "/bre/rules".replaceAll("\\{format\\}","json");
@@ -155,7 +154,7 @@ public class BRERuleEngineRulesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -229,15 +228,15 @@ public class BRERuleEngineRulesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -249,13 +248,11 @@ public class BRERuleEngineRulesApi {
   public void deleteBRERule (String id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteBRERule",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteBRERule"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteBRERule",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteBRERule"));
     }
-    
 
     // create path and map variables
     String path = "/bre/rules/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -285,7 +282,7 @@ public class BRERuleEngineRulesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -350,15 +347,15 @@ public class BRERuleEngineRulesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -370,7 +367,6 @@ public class BRERuleEngineRulesApi {
   public void getBREExpressionAsString (Expressionobject expression, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = expression;
 
-  
 
     // create path and map variables
     String path = "/bre/rules/expression-as-string".replaceAll("\\{format\\}","json");
@@ -400,7 +396,7 @@ public class BRERuleEngineRulesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -474,15 +470,15 @@ public class BRERuleEngineRulesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -494,13 +490,11 @@ public class BRERuleEngineRulesApi {
   public void getBRERule (String id, final Response.Listener<BreRule> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getBRERule",
-         new ApiException(400, "Missing the required parameter 'id' when calling getBRERule"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getBRERule",
+        new ApiException(400, "Missing the required parameter 'id' when calling getBRERule"));
     }
-    
 
     // create path and map variables
     String path = "/bre/rules/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -530,7 +524,7 @@ public class BRERuleEngineRulesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -614,15 +608,15 @@ public class BRERuleEngineRulesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -634,7 +628,6 @@ public class BRERuleEngineRulesApi {
   public void getBRERules (String filterName, Boolean filterEnabled, Boolean filterSystem, String filterTrigger, String filterAction, String filterCondition, Integer size, Integer page, final Response.Listener<PageResourceBreRule> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/bre/rules".replaceAll("\\{format\\}","json");
@@ -672,7 +665,7 @@ public class BRERuleEngineRulesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -747,15 +740,15 @@ public class BRERuleEngineRulesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -767,13 +760,11 @@ public class BRERuleEngineRulesApi {
   public void setBRERule (String id, BooleanResource enabled, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = enabled;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setBRERule",
-         new ApiException(400, "Missing the required parameter 'id' when calling setBRERule"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setBRERule",
+        new ApiException(400, "Missing the required parameter 'id' when calling setBRERule"));
     }
-    
 
     // create path and map variables
     String path = "/bre/rules/{id}/enabled".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -803,7 +794,7 @@ public class BRERuleEngineRulesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -874,15 +865,15 @@ public class BRERuleEngineRulesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -894,13 +885,11 @@ public class BRERuleEngineRulesApi {
   public void updateBRERule (String id, BreRule breRule, final Response.Listener<BreRule> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = breRule;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBRERule",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateBRERule"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBRERule",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateBRERule"));
     }
-    
 
     // create path and map variables
     String path = "/bre/rules/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -930,7 +919,7 @@ public class BRERuleEngineRulesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -113,15 +113,15 @@ public class ReportingRevenueApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -133,13 +133,11 @@ public class ReportingRevenueApi {
   public void getItemRevenue (String currencyCode, Long startDate, Long endDate, final Response.Listener<RevenueReportResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getItemRevenue",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getItemRevenue"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getItemRevenue",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getItemRevenue"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/revenue/item-sales/{currency_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -171,7 +169,7 @@ public class ReportingRevenueApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -249,15 +247,15 @@ public class ReportingRevenueApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -269,13 +267,11 @@ public class ReportingRevenueApi {
   public void getRefundRevenue (String currencyCode, Long startDate, Long endDate, final Response.Listener<RevenueReportResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getRefundRevenue",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getRefundRevenue"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getRefundRevenue",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getRefundRevenue"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/revenue/refunds/{currency_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -307,7 +303,7 @@ public class ReportingRevenueApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -389,15 +385,15 @@ public class ReportingRevenueApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -409,13 +405,11 @@ public class ReportingRevenueApi {
   public void getRevenueByCountry (String currencyCode, Long startDate, Long endDate, Integer size, Integer page, final Response.Listener<PageResourceRevenueCountryReportResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getRevenueByCountry",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getRevenueByCountry"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getRevenueByCountry",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getRevenueByCountry"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/revenue/countries/{currency_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -449,7 +443,7 @@ public class ReportingRevenueApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -531,15 +525,15 @@ public class ReportingRevenueApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -551,13 +545,11 @@ public class ReportingRevenueApi {
   public void getRevenueByItem (String currencyCode, Long startDate, Long endDate, Integer size, Integer page, final Response.Listener<PageResourceRevenueProductReportResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getRevenueByItem",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getRevenueByItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getRevenueByItem",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getRevenueByItem"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/revenue/products/{currency_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -591,7 +583,7 @@ public class ReportingRevenueApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -669,15 +661,15 @@ public class ReportingRevenueApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -689,13 +681,11 @@ public class ReportingRevenueApi {
   public void getSubscriptionRevenue (String currencyCode, Long startDate, Long endDate, final Response.Listener<RevenueReportResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getSubscriptionRevenue",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getSubscriptionRevenue"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getSubscriptionRevenue",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getSubscriptionRevenue"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/revenue/subscription-sales/{currency_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -727,7 +717,7 @@ public class ReportingRevenueApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,

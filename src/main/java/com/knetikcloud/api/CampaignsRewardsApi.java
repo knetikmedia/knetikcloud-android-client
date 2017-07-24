@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -103,15 +103,15 @@ public class CampaignsRewardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -123,7 +123,6 @@ public class CampaignsRewardsApi {
   public void createRewardSet (RewardSetResource rewardSetResource, final Response.Listener<RewardSetResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = rewardSetResource;
 
-  
 
     // create path and map variables
     String path = "/rewards".replaceAll("\\{format\\}","json");
@@ -153,7 +152,7 @@ public class CampaignsRewardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -227,15 +226,15 @@ public class CampaignsRewardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -247,13 +246,11 @@ public class CampaignsRewardsApi {
   public void deleteRewardSet (Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteRewardSet",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteRewardSet"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteRewardSet",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteRewardSet"));
     }
-    
 
     // create path and map variables
     String path = "/rewards/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -283,7 +280,7 @@ public class CampaignsRewardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -353,15 +350,15 @@ public class CampaignsRewardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -373,13 +370,11 @@ public class CampaignsRewardsApi {
   public void getRewardSet (Integer id, final Response.Listener<RewardSetResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getRewardSet",
-         new ApiException(400, "Missing the required parameter 'id' when calling getRewardSet"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getRewardSet",
+        new ApiException(400, "Missing the required parameter 'id' when calling getRewardSet"));
     }
-    
 
     // create path and map variables
     String path = "/rewards/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -409,7 +404,7 @@ public class CampaignsRewardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -483,15 +478,15 @@ public class CampaignsRewardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -503,7 +498,6 @@ public class CampaignsRewardsApi {
   public void getRewardSets (Integer size, Integer page, String order, final Response.Listener<PageResourceRewardSetResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/rewards".replaceAll("\\{format\\}","json");
@@ -536,7 +530,7 @@ public class CampaignsRewardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -611,15 +605,15 @@ public class CampaignsRewardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -631,13 +625,11 @@ public class CampaignsRewardsApi {
   public void updateRewardSet (Integer id, RewardSetResource rewardSetResource, final Response.Listener<RewardSetResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = rewardSetResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateRewardSet",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateRewardSet"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateRewardSet",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateRewardSet"));
     }
-    
 
     // create path and map variables
     String path = "/rewards/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -667,7 +659,7 @@ public class CampaignsRewardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

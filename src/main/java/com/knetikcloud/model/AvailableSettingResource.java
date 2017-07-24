@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -17,8 +17,11 @@ import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
-public class TheDefinitionOfAnActivityParametersExDifficultyLevel {
+/**
+ * The definition of an activity parameters: ex: difficulty level
+ **/
+@ApiModel(description = "The definition of an activity parameters: ex: difficulty level")
+public class AvailableSettingResource {
   
   @SerializedName("advanced_option")
   private Boolean advancedOption = null;
@@ -108,13 +111,13 @@ public class TheDefinitionOfAnActivityParametersExDifficultyLevel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TheDefinitionOfAnActivityParametersExDifficultyLevel theDefinitionOfAnActivityParametersExDifficultyLevel = (TheDefinitionOfAnActivityParametersExDifficultyLevel) o;
-    return (this.advancedOption == null ? theDefinitionOfAnActivityParametersExDifficultyLevel.advancedOption == null : this.advancedOption.equals(theDefinitionOfAnActivityParametersExDifficultyLevel.advancedOption)) &&
-        (this.defaultValue == null ? theDefinitionOfAnActivityParametersExDifficultyLevel.defaultValue == null : this.defaultValue.equals(theDefinitionOfAnActivityParametersExDifficultyLevel.defaultValue)) &&
-        (this.description == null ? theDefinitionOfAnActivityParametersExDifficultyLevel.description == null : this.description.equals(theDefinitionOfAnActivityParametersExDifficultyLevel.description)) &&
-        (this.key == null ? theDefinitionOfAnActivityParametersExDifficultyLevel.key == null : this.key.equals(theDefinitionOfAnActivityParametersExDifficultyLevel.key)) &&
-        (this.name == null ? theDefinitionOfAnActivityParametersExDifficultyLevel.name == null : this.name.equals(theDefinitionOfAnActivityParametersExDifficultyLevel.name)) &&
-        (this.options == null ? theDefinitionOfAnActivityParametersExDifficultyLevel.options == null : this.options.equals(theDefinitionOfAnActivityParametersExDifficultyLevel.options));
+    AvailableSettingResource availableSettingResource = (AvailableSettingResource) o;
+    return (this.advancedOption == null ? availableSettingResource.advancedOption == null : this.advancedOption.equals(availableSettingResource.advancedOption)) &&
+        (this.defaultValue == null ? availableSettingResource.defaultValue == null : this.defaultValue.equals(availableSettingResource.defaultValue)) &&
+        (this.description == null ? availableSettingResource.description == null : this.description.equals(availableSettingResource.description)) &&
+        (this.key == null ? availableSettingResource.key == null : this.key.equals(availableSettingResource.key)) &&
+        (this.name == null ? availableSettingResource.name == null : this.name.equals(availableSettingResource.name)) &&
+        (this.options == null ? availableSettingResource.options == null : this.options.equals(availableSettingResource.options));
   }
 
   @Override
@@ -132,7 +135,7 @@ public class TheDefinitionOfAnActivityParametersExDifficultyLevel {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TheDefinitionOfAnActivityParametersExDifficultyLevel {\n");
+    sb.append("class AvailableSettingResource {\n");
     
     sb.append("  advancedOption: ").append(advancedOption).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -117,15 +117,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -137,13 +137,11 @@ public class UsersInventoryApi {
   public void addItemToUserInventory (Integer id, UserInventoryAddRequest userInventoryAddRequest, final Response.Listener<InvoiceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = userInventoryAddRequest;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addItemToUserInventory",
-         new ApiException(400, "Missing the required parameter 'id' when calling addItemToUserInventory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addItemToUserInventory",
+        new ApiException(400, "Missing the required parameter 'id' when calling addItemToUserInventory"));
     }
-    
 
     // create path and map variables
     String path = "/users/{id}/inventory".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -173,7 +171,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -255,15 +253,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -275,19 +273,16 @@ public class UsersInventoryApi {
   public void checkUserEntitlementItem (String userId, Integer itemId, String sku, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling checkUserEntitlementItem",
-         new ApiException(400, "Missing the required parameter 'userId' when calling checkUserEntitlementItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling checkUserEntitlementItem",
+        new ApiException(400, "Missing the required parameter 'userId' when calling checkUserEntitlementItem"));
     }
-    
     // verify the required parameter 'itemId' is set
     if (itemId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'itemId' when calling checkUserEntitlementItem",
-         new ApiException(400, "Missing the required parameter 'itemId' when calling checkUserEntitlementItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'itemId' when calling checkUserEntitlementItem",
+        new ApiException(400, "Missing the required parameter 'itemId' when calling checkUserEntitlementItem"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/entitlements/{item_id}/check".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "item_id" + "\\}", apiInvoker.escapeString(itemId.toString()));
@@ -318,7 +313,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -385,15 +380,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -405,7 +400,6 @@ public class UsersInventoryApi {
   public void createEntitlementItem (Boolean cascade, EntitlementItem entitlementItem, final Response.Listener<EntitlementItem> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = entitlementItem;
 
-  
 
     // create path and map variables
     String path = "/entitlements".replaceAll("\\{format\\}","json");
@@ -436,7 +430,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -505,15 +499,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -525,7 +519,6 @@ public class UsersInventoryApi {
   public void createEntitlementTemplate (ItemTemplateResource template, final Response.Listener<ItemTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = template;
 
-  
 
     // create path and map variables
     String path = "/entitlements/templates".replaceAll("\\{format\\}","json");
@@ -555,7 +548,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -629,15 +622,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -649,13 +642,11 @@ public class UsersInventoryApi {
   public void deleteEntitlementItem (Integer entitlementId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'entitlementId' is set
     if (entitlementId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'entitlementId' when calling deleteEntitlementItem",
-         new ApiException(400, "Missing the required parameter 'entitlementId' when calling deleteEntitlementItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'entitlementId' when calling deleteEntitlementItem",
+        new ApiException(400, "Missing the required parameter 'entitlementId' when calling deleteEntitlementItem"));
     }
-    
 
     // create path and map variables
     String path = "/entitlements/{entitlement_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "entitlement_id" + "\\}", apiInvoker.escapeString(entitlementId.toString()));
@@ -685,7 +676,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -757,15 +748,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -777,13 +768,11 @@ public class UsersInventoryApi {
   public void deleteEntitlementTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteEntitlementTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteEntitlementTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteEntitlementTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteEntitlementTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/entitlements/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -814,7 +803,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -884,15 +873,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -904,13 +893,11 @@ public class UsersInventoryApi {
   public void getEntitlementItem (Integer entitlementId, final Response.Listener<EntitlementItem> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'entitlementId' is set
     if (entitlementId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'entitlementId' when calling getEntitlementItem",
-         new ApiException(400, "Missing the required parameter 'entitlementId' when calling getEntitlementItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'entitlementId' when calling getEntitlementItem",
+        new ApiException(400, "Missing the required parameter 'entitlementId' when calling getEntitlementItem"));
     }
-    
 
     // create path and map variables
     String path = "/entitlements/{entitlement_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "entitlement_id" + "\\}", apiInvoker.escapeString(entitlementId.toString()));
@@ -940,7 +927,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1014,15 +1001,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1034,7 +1021,6 @@ public class UsersInventoryApi {
   public void getEntitlementItems (Integer size, Integer page, String order, final Response.Listener<PageResourceEntitlementItem> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/entitlements".replaceAll("\\{format\\}","json");
@@ -1067,7 +1053,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1141,15 +1127,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1161,13 +1147,11 @@ public class UsersInventoryApi {
   public void getEntitlementTemplate (String id, final Response.Listener<ItemTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getEntitlementTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getEntitlementTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getEntitlementTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getEntitlementTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/entitlements/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1197,7 +1181,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1271,15 +1255,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1291,7 +1275,6 @@ public class UsersInventoryApi {
   public void getEntitlementTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceItemTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/entitlements/templates".replaceAll("\\{format\\}","json");
@@ -1324,7 +1307,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1414,15 +1397,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1434,13 +1417,11 @@ public class UsersInventoryApi {
   public void getUserInventories (Integer id, Boolean inactive, Integer size, Integer page, String filterItemName, Integer filterItemId, String filterUsername, String filterGroup, String filterDate, final Response.Listener<PageResourceUserInventoryResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getUserInventories",
-         new ApiException(400, "Missing the required parameter 'id' when calling getUserInventories"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getUserInventories",
+        new ApiException(400, "Missing the required parameter 'id' when calling getUserInventories"));
     }
-    
 
     // create path and map variables
     String path = "/users/{id}/inventory".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1478,7 +1459,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1558,15 +1539,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1578,19 +1559,16 @@ public class UsersInventoryApi {
   public void getUserInventory (Integer userId, Integer id, final Response.Listener<UserInventoryResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserInventory",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserInventory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserInventory",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserInventory"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getUserInventory",
-         new ApiException(400, "Missing the required parameter 'id' when calling getUserInventory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getUserInventory",
+        new ApiException(400, "Missing the required parameter 'id' when calling getUserInventory"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/inventory/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1620,7 +1598,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1704,15 +1682,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1724,19 +1702,16 @@ public class UsersInventoryApi {
   public void getUserInventoryLog (String userId, Integer id, Integer size, Integer page, final Response.Listener<PageResourceUserItemLogResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserInventoryLog",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserInventoryLog"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserInventoryLog",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserInventoryLog"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getUserInventoryLog",
-         new ApiException(400, "Missing the required parameter 'id' when calling getUserInventoryLog"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getUserInventoryLog",
+        new ApiException(400, "Missing the required parameter 'id' when calling getUserInventoryLog"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/inventory/{id}/log".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1768,7 +1743,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1852,15 +1827,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1872,7 +1847,6 @@ public class UsersInventoryApi {
   public void getUsersInventory (Boolean inactive, Integer size, Integer page, String filterItemName, Integer filterItemId, String filterUsername, String filterGroup, String filterDate, final Response.Listener<PageResourceUserInventoryResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/inventories".replaceAll("\\{format\\}","json");
@@ -1910,7 +1884,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1990,15 +1964,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2010,19 +1984,16 @@ public class UsersInventoryApi {
   public void grantUserEntitlement (Integer userId, EntitlementGrantRequest grantRequest, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = grantRequest;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling grantUserEntitlement",
-         new ApiException(400, "Missing the required parameter 'userId' when calling grantUserEntitlement"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling grantUserEntitlement",
+        new ApiException(400, "Missing the required parameter 'userId' when calling grantUserEntitlement"));
     }
-    
     // verify the required parameter 'grantRequest' is set
     if (grantRequest == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'grantRequest' when calling grantUserEntitlement",
-         new ApiException(400, "Missing the required parameter 'grantRequest' when calling grantUserEntitlement"));
+      VolleyError error = new VolleyError("Missing the required parameter 'grantRequest' when calling grantUserEntitlement",
+        new ApiException(400, "Missing the required parameter 'grantRequest' when calling grantUserEntitlement"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/entitlements".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -2052,7 +2023,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2125,15 +2096,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2145,13 +2116,11 @@ public class UsersInventoryApi {
   public void updateEntitlementItem (Integer entitlementId, Boolean cascade, EntitlementItem entitlementItem, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = entitlementItem;
 
-  
     // verify the required parameter 'entitlementId' is set
     if (entitlementId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'entitlementId' when calling updateEntitlementItem",
-         new ApiException(400, "Missing the required parameter 'entitlementId' when calling updateEntitlementItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'entitlementId' when calling updateEntitlementItem",
+        new ApiException(400, "Missing the required parameter 'entitlementId' when calling updateEntitlementItem"));
     }
-    
 
     // create path and map variables
     String path = "/entitlements/{entitlement_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "entitlement_id" + "\\}", apiInvoker.escapeString(entitlementId.toString()));
@@ -2182,7 +2151,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2253,15 +2222,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2273,13 +2242,11 @@ public class UsersInventoryApi {
   public void updateEntitlementTemplate (String id, ItemTemplateResource template, final Response.Listener<ItemTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = template;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateEntitlementTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateEntitlementTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateEntitlementTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateEntitlementTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/entitlements/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2309,7 +2276,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2390,15 +2357,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2410,19 +2377,16 @@ public class UsersInventoryApi {
   public void updateUserInventoryBehaviorData (Integer userId, Integer id, Object data, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = data;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateUserInventoryBehaviorData",
-         new ApiException(400, "Missing the required parameter 'userId' when calling updateUserInventoryBehaviorData"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateUserInventoryBehaviorData",
+        new ApiException(400, "Missing the required parameter 'userId' when calling updateUserInventoryBehaviorData"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateUserInventoryBehaviorData",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateUserInventoryBehaviorData"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateUserInventoryBehaviorData",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateUserInventoryBehaviorData"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/inventory/{id}/behavior-data".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2452,7 +2416,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2529,15 +2493,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2549,19 +2513,16 @@ public class UsersInventoryApi {
   public void updateUserInventoryExpires (Integer userId, Integer id, Long timestamp, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = timestamp;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateUserInventoryExpires",
-         new ApiException(400, "Missing the required parameter 'userId' when calling updateUserInventoryExpires"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateUserInventoryExpires",
+        new ApiException(400, "Missing the required parameter 'userId' when calling updateUserInventoryExpires"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateUserInventoryExpires",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateUserInventoryExpires"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateUserInventoryExpires",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateUserInventoryExpires"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/inventory/{id}/expires".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2591,7 +2552,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2668,15 +2629,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2688,19 +2649,16 @@ public class UsersInventoryApi {
   public void updateUserInventoryStatus (Integer userId, Integer id, String inventoryStatus, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = inventoryStatus;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateUserInventoryStatus",
-         new ApiException(400, "Missing the required parameter 'userId' when calling updateUserInventoryStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateUserInventoryStatus",
+        new ApiException(400, "Missing the required parameter 'userId' when calling updateUserInventoryStatus"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateUserInventoryStatus",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateUserInventoryStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateUserInventoryStatus",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateUserInventoryStatus"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/inventory/{id}/status".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2730,7 +2688,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2810,15 +2768,15 @@ public class UsersInventoryApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2830,19 +2788,16 @@ public class UsersInventoryApi {
   public void useUserEntitlementItem (String userId, Integer itemId, String sku, String info, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling useUserEntitlementItem",
-         new ApiException(400, "Missing the required parameter 'userId' when calling useUserEntitlementItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling useUserEntitlementItem",
+        new ApiException(400, "Missing the required parameter 'userId' when calling useUserEntitlementItem"));
     }
-    
     // verify the required parameter 'itemId' is set
     if (itemId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'itemId' when calling useUserEntitlementItem",
-         new ApiException(400, "Missing the required parameter 'itemId' when calling useUserEntitlementItem"));
+      VolleyError error = new VolleyError("Missing the required parameter 'itemId' when calling useUserEntitlementItem",
+        new ApiException(400, "Missing the required parameter 'itemId' when calling useUserEntitlementItem"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/entitlements/{item_id}/use".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "item_id" + "\\}", apiInvoker.escapeString(itemId.toString()));
@@ -2874,7 +2829,7 @@ public class UsersInventoryApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,

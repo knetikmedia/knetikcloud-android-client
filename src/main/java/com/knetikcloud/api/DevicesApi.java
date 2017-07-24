@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -116,15 +116,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -136,19 +136,16 @@ public class DevicesApi {
   public void addDeviceUsers (List<SimpleUserResource> userResources, Integer id, final Response.Listener<DeviceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = userResources;
 
-  
     // verify the required parameter 'userResources' is set
     if (userResources == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userResources' when calling addDeviceUsers",
-         new ApiException(400, "Missing the required parameter 'userResources' when calling addDeviceUsers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userResources' when calling addDeviceUsers",
+        new ApiException(400, "Missing the required parameter 'userResources' when calling addDeviceUsers"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addDeviceUsers",
-         new ApiException(400, "Missing the required parameter 'id' when calling addDeviceUsers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addDeviceUsers",
+        new ApiException(400, "Missing the required parameter 'id' when calling addDeviceUsers"));
     }
-    
 
     // create path and map variables
     String path = "/devices/{id}/users".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -178,7 +175,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -252,15 +249,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -272,13 +269,11 @@ public class DevicesApi {
   public void createDevice (DeviceResource device, final Response.Listener<DeviceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = device;
 
-  
     // verify the required parameter 'device' is set
     if (device == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'device' when calling createDevice",
-         new ApiException(400, "Missing the required parameter 'device' when calling createDevice"));
+      VolleyError error = new VolleyError("Missing the required parameter 'device' when calling createDevice",
+        new ApiException(400, "Missing the required parameter 'device' when calling createDevice"));
     }
-    
 
     // create path and map variables
     String path = "/devices".replaceAll("\\{format\\}","json");
@@ -308,7 +303,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -382,15 +377,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -402,13 +397,11 @@ public class DevicesApi {
   public void deleteDevice (Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteDevice",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteDevice"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteDevice",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteDevice"));
     }
-    
 
     // create path and map variables
     String path = "/devices/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -438,7 +431,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -514,15 +507,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -534,19 +527,16 @@ public class DevicesApi {
   public void deleteDeviceUser (Integer id, Integer userId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteDeviceUser",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteDeviceUser"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteDeviceUser",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteDeviceUser"));
     }
-    
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling deleteDeviceUser",
-         new ApiException(400, "Missing the required parameter 'userId' when calling deleteDeviceUser"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling deleteDeviceUser",
+        new ApiException(400, "Missing the required parameter 'userId' when calling deleteDeviceUser"));
     }
-    
 
     // create path and map variables
     String path = "/devices/{id}/users/{user_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -576,7 +566,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -648,15 +638,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -668,13 +658,11 @@ public class DevicesApi {
   public void deleteDeviceUsers (Integer id, String filterId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteDeviceUsers",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteDeviceUsers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteDeviceUsers",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteDeviceUsers"));
     }
-    
 
     // create path and map variables
     String path = "/devices/{id}/users".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -705,7 +693,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -775,15 +763,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -795,13 +783,11 @@ public class DevicesApi {
   public void getDevice (Integer id, final Response.Listener<DeviceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getDevice",
-         new ApiException(400, "Missing the required parameter 'id' when calling getDevice"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getDevice",
+        new ApiException(400, "Missing the required parameter 'id' when calling getDevice"));
     }
-    
 
     // create path and map variables
     String path = "/devices/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -831,7 +817,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -909,15 +895,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -929,7 +915,6 @@ public class DevicesApi {
   public void getDevices (String filterMake, String filterModel, Integer size, Integer page, String order, final Response.Listener<PageResourceDeviceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/devices".replaceAll("\\{format\\}","json");
@@ -964,7 +949,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1044,15 +1029,15 @@ public class DevicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1064,19 +1049,16 @@ public class DevicesApi {
   public void updateDevice (DeviceResource device, Integer id, final Response.Listener<DeviceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = device;
 
-  
     // verify the required parameter 'device' is set
     if (device == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'device' when calling updateDevice",
-         new ApiException(400, "Missing the required parameter 'device' when calling updateDevice"));
+      VolleyError error = new VolleyError("Missing the required parameter 'device' when calling updateDevice",
+        new ApiException(400, "Missing the required parameter 'device' when calling updateDevice"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateDevice",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateDevice"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateDevice",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateDevice"));
     }
-    
 
     // create path and map variables
     String path = "/devices/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1106,7 +1088,7 @@ public class DevicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

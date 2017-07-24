@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -27,7 +27,6 @@ import com.knetikcloud.model.AddressResource;
 import com.knetikcloud.model.InvoiceCreateRequest;
 import com.knetikcloud.model.InvoicePaymentStatusRequest;
 import com.knetikcloud.model.InvoiceResource;
-import com.knetikcloud.model.ModelObject;
 import com.knetikcloud.model.PageResourceInvoiceLogEntry;
 import com.knetikcloud.model.PageResourceInvoiceResource;
 import com.knetikcloud.model.PayBySavedMethodRequest;
@@ -109,15 +108,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -129,7 +128,6 @@ public class InvoicesApi {
   public void createInvoice (InvoiceCreateRequest req, final Response.Listener<List<InvoiceResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = req;
 
-  
 
     // create path and map variables
     String path = "/invoices".replaceAll("\\{format\\}","json");
@@ -159,7 +157,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -227,15 +225,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -247,7 +245,6 @@ public class InvoicesApi {
   public void getFulFillmentStatuses (final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/invoices/fulfillment-statuses".replaceAll("\\{format\\}","json");
@@ -277,7 +274,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -351,15 +348,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -371,13 +368,11 @@ public class InvoicesApi {
   public void getInvoice (Integer id, final Response.Listener<InvoiceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getInvoice",
-         new ApiException(400, "Missing the required parameter 'id' when calling getInvoice"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getInvoice",
+        new ApiException(400, "Missing the required parameter 'id' when calling getInvoice"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -407,7 +402,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -485,15 +480,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -505,13 +500,11 @@ public class InvoicesApi {
   public void getInvoiceLogs (Integer id, Integer size, Integer page, final Response.Listener<PageResourceInvoiceLogEntry> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getInvoiceLogs",
-         new ApiException(400, "Missing the required parameter 'id' when calling getInvoiceLogs"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getInvoiceLogs",
+        new ApiException(400, "Missing the required parameter 'id' when calling getInvoiceLogs"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}/logs".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -543,7 +536,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -588,7 +581,7 @@ public class InvoicesApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
    * @return PageResourceInvoiceResource
   */
-  public PageResourceInvoiceResource getInvoices (Integer filterUser, String filterEmail, String filterFulfillmentStatus, String filterPaymentStatus, String filterItemName, String filterExternalRef, String filterCreatedDate, ModelObject filterVendorIds, String filterCurrency, String filterShippingStateName, String filterShippingCountryName, String filterShipping, String filterVendorName, String filterSku, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PageResourceInvoiceResource getInvoices (Integer filterUser, String filterEmail, String filterFulfillmentStatus, String filterPaymentStatus, String filterItemName, String filterExternalRef, String filterCreatedDate, String filterVendorIds, String filterCurrency, String filterShippingStateName, String filterShippingCountryName, String filterShipping, String filterVendorName, String filterSku, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -645,15 +638,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -662,10 +655,9 @@ public class InvoicesApi {
    * Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
    * @param filterUser The id of a user to get invoices for. Automtically added if not being called with admin permissions.   * @param filterEmail Filters invoices by customer&#39;s email. Admins only.   * @param filterFulfillmentStatus Filters invoices by fulfillment status type. Can be a comma separated list of statuses   * @param filterPaymentStatus Filters invoices by payment status type. Can be a comma separated list of statuses   * @param filterItemName Filters invoices by item name containing the given string   * @param filterExternalRef Filters invoices by external reference.   * @param filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874   * @param filterVendorIds Filters invoices for ones from one of the vendors whose id is in the given comma separated list   * @param filterCurrency Filters invoices by currency. ISO3 currency code   * @param filterShippingStateName Filters invoices by shipping address: Exact match state name   * @param filterShippingCountryName Filters invoices by shipping address: Exact match country name   * @param filterShipping Filters invoices by shipping price. Multiple values possible for range search. Format: filter_shipping&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_shipping&#x3D;GT,14.58,LT,15.54   * @param filterVendorName Filters invoices by vendor name starting with given string   * @param filterSku Filters invoices by item sku   * @param size The number of objects returned per page   * @param page The number of the page returned, starting with 1   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   */
-  public void getInvoices (Integer filterUser, String filterEmail, String filterFulfillmentStatus, String filterPaymentStatus, String filterItemName, String filterExternalRef, String filterCreatedDate, ModelObject filterVendorIds, String filterCurrency, String filterShippingStateName, String filterShippingCountryName, String filterShipping, String filterVendorName, String filterSku, Integer size, Integer page, String order, final Response.Listener<PageResourceInvoiceResource> responseListener, final Response.ErrorListener errorListener) {
+  public void getInvoices (Integer filterUser, String filterEmail, String filterFulfillmentStatus, String filterPaymentStatus, String filterItemName, String filterExternalRef, String filterCreatedDate, String filterVendorIds, String filterCurrency, String filterShippingStateName, String filterShippingCountryName, String filterShipping, String filterVendorName, String filterSku, Integer size, Integer page, String order, final Response.Listener<PageResourceInvoiceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/invoices".replaceAll("\\{format\\}","json");
@@ -712,7 +704,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -780,15 +772,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -800,7 +792,6 @@ public class InvoicesApi {
   public void getPaymentStatuses (final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/invoices/payment-statuses".replaceAll("\\{format\\}","json");
@@ -830,7 +821,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -905,15 +896,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -925,13 +916,11 @@ public class InvoicesApi {
   public void payInvoice (Integer id, PayBySavedMethodRequest request, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling payInvoice",
-         new ApiException(400, "Missing the required parameter 'id' when calling payInvoice"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling payInvoice",
+        new ApiException(400, "Missing the required parameter 'id' when calling payInvoice"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}/payments".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -961,10 +950,167 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+              responseListener.onResponse(localVarResponse);
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Set the fulfillment status of a bundled invoice item
+  * This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+   * @param id The id of the invoice
+   * @param bundleSku The sku of the bundle in the invoice that contains the given target
+   * @param sku The sku of an item in the bundle in the invoice
+   * @param status The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;
+   * @return void
+  */
+  public void setBundledInvoiceItemFulfillmentStatus (Integer id, String bundleSku, String sku, String status) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = status;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'id' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+    // verify the required parameter 'bundleSku' is set
+    if (bundleSku == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bundleSku' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'bundleSku' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+    // verify the required parameter 'sku' is set
+    if (sku == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'sku' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'sku' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+    // verify the required parameter 'status' is set
+    if (status == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'status' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'status' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+
+    // create path and map variables
+    String path = "/invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status".replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "bundleSku" + "\\}", apiInvoker.escapeString(bundleSku.toString())).replaceAll("\\{" + "sku" + "\\}", apiInvoker.escapeString(sku.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] { "OAuth2" };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return ;
+      } else {
+         return ;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Set the fulfillment status of a bundled invoice item
+   * This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+   * @param id The id of the invoice   * @param bundleSku The sku of the bundle in the invoice that contains the given target   * @param sku The sku of an item in the bundle in the invoice   * @param status The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  &#39;unfulfilled&#39;, &#39;fulfilled&#39;, &#39;not fulfillable&#39;, &#39;failed&#39;, &#39;processing&#39;, &#39;failed_permanent&#39;, &#39;delayed&#39;
+  */
+  public void setBundledInvoiceItemFulfillmentStatus (Integer id, String bundleSku, String sku, String status, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = status;
+
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'id' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+    // verify the required parameter 'bundleSku' is set
+    if (bundleSku == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'bundleSku' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'bundleSku' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+    // verify the required parameter 'sku' is set
+    if (sku == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'sku' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'sku' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+    // verify the required parameter 'status' is set
+    if (status == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'status' when calling setBundledInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'status' when calling setBundledInvoiceItemFulfillmentStatus"));
+    }
+
+    // create path and map variables
+    String path = "/invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "bundleSku" + "\\}", apiInvoker.escapeString(bundleSku.toString())).replaceAll("\\{" + "sku" + "\\}", apiInvoker.escapeString(sku.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] { "OAuth2" };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
@@ -1032,15 +1178,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1052,13 +1198,11 @@ public class InvoicesApi {
   public void setExternalRef (Integer id, String externalRef, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = externalRef;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setExternalRef",
-         new ApiException(400, "Missing the required parameter 'id' when calling setExternalRef"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setExternalRef",
+        new ApiException(400, "Missing the required parameter 'id' when calling setExternalRef"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}/external-ref".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1088,7 +1232,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1170,15 +1314,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1190,25 +1334,21 @@ public class InvoicesApi {
   public void setInvoiceItemFulfillmentStatus (Integer id, String sku, String status, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = status;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setInvoiceItemFulfillmentStatus",
-         new ApiException(400, "Missing the required parameter 'id' when calling setInvoiceItemFulfillmentStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'id' when calling setInvoiceItemFulfillmentStatus"));
     }
-    
     // verify the required parameter 'sku' is set
     if (sku == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'sku' when calling setInvoiceItemFulfillmentStatus",
-         new ApiException(400, "Missing the required parameter 'sku' when calling setInvoiceItemFulfillmentStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'sku' when calling setInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'sku' when calling setInvoiceItemFulfillmentStatus"));
     }
-    
     // verify the required parameter 'status' is set
     if (status == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'status' when calling setInvoiceItemFulfillmentStatus",
-         new ApiException(400, "Missing the required parameter 'status' when calling setInvoiceItemFulfillmentStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'status' when calling setInvoiceItemFulfillmentStatus",
+        new ApiException(400, "Missing the required parameter 'status' when calling setInvoiceItemFulfillmentStatus"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}/items/{sku}/fulfillment-status".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "sku" + "\\}", apiInvoker.escapeString(sku.toString()));
@@ -1238,7 +1378,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1309,15 +1449,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1329,13 +1469,11 @@ public class InvoicesApi {
   public void setOrderNotes (Integer id, String orderNotes, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = orderNotes;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setOrderNotes",
-         new ApiException(400, "Missing the required parameter 'id' when calling setOrderNotes"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setOrderNotes",
+        new ApiException(400, "Missing the required parameter 'id' when calling setOrderNotes"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}/order-notes".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1365,7 +1503,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1436,15 +1574,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1456,13 +1594,11 @@ public class InvoicesApi {
   public void setPaymentStatus (Integer id, InvoicePaymentStatusRequest request, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setPaymentStatus",
-         new ApiException(400, "Missing the required parameter 'id' when calling setPaymentStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setPaymentStatus",
+        new ApiException(400, "Missing the required parameter 'id' when calling setPaymentStatus"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}/payment-status".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1492,7 +1628,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1563,15 +1699,15 @@ public class InvoicesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1583,13 +1719,11 @@ public class InvoicesApi {
   public void updateBillingInfo (Integer id, AddressResource billingInfoRequest, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = billingInfoRequest;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBillingInfo",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateBillingInfo"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBillingInfo",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateBillingInfo"));
     }
-    
 
     // create path and map variables
     String path = "/invoices/{id}/billing-address".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1619,7 +1753,7 @@ public class InvoicesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

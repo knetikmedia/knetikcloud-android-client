@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -12,7 +12,7 @@
 
 package com.knetikcloud.model;
 
-import com.knetikcloud.model.UserActivityResultsResource;
+import com.knetikcloud.model.UserActivityResults;
 import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -21,16 +21,16 @@ import com.google.gson.annotations.SerializedName;
 public class ActivityOccurrenceResults {
   
   @SerializedName("users")
-  private List<UserActivityResultsResource> users = null;
+  private List<UserActivityResults> users = null;
 
   /**
    * The game results for each user. Include all users that played (paid to get in) even if they were eliminated without a result. A null metric is allowed
    **/
   @ApiModelProperty(required = true, value = "The game results for each user. Include all users that played (paid to get in) even if they were eliminated without a result. A null metric is allowed")
-  public List<UserActivityResultsResource> getUsers() {
+  public List<UserActivityResults> getUsers() {
     return users;
   }
-  public void setUsers(List<UserActivityResultsResource> users) {
+  public void setUsers(List<UserActivityResults> users) {
     this.users = users;
   }
 

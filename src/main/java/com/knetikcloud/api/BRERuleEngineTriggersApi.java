@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -103,15 +103,15 @@ public class BRERuleEngineTriggersApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -123,7 +123,6 @@ public class BRERuleEngineTriggersApi {
   public void createBRETrigger (BreTriggerResource breTriggerResource, final Response.Listener<BreTriggerResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = breTriggerResource;
 
-  
 
     // create path and map variables
     String path = "/bre/triggers".replaceAll("\\{format\\}","json");
@@ -153,7 +152,7 @@ public class BRERuleEngineTriggersApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -227,15 +226,15 @@ public class BRERuleEngineTriggersApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -247,13 +246,11 @@ public class BRERuleEngineTriggersApi {
   public void deleteBRETrigger (String eventName, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'eventName' is set
     if (eventName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'eventName' when calling deleteBRETrigger",
-         new ApiException(400, "Missing the required parameter 'eventName' when calling deleteBRETrigger"));
+      VolleyError error = new VolleyError("Missing the required parameter 'eventName' when calling deleteBRETrigger",
+        new ApiException(400, "Missing the required parameter 'eventName' when calling deleteBRETrigger"));
     }
-    
 
     // create path and map variables
     String path = "/bre/triggers/{event_name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "event_name" + "\\}", apiInvoker.escapeString(eventName.toString()));
@@ -283,7 +280,7 @@ public class BRERuleEngineTriggersApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -353,15 +350,15 @@ public class BRERuleEngineTriggersApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -373,13 +370,11 @@ public class BRERuleEngineTriggersApi {
   public void getBRETrigger (String eventName, final Response.Listener<BreTriggerResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'eventName' is set
     if (eventName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'eventName' when calling getBRETrigger",
-         new ApiException(400, "Missing the required parameter 'eventName' when calling getBRETrigger"));
+      VolleyError error = new VolleyError("Missing the required parameter 'eventName' when calling getBRETrigger",
+        new ApiException(400, "Missing the required parameter 'eventName' when calling getBRETrigger"));
     }
-    
 
     // create path and map variables
     String path = "/bre/triggers/{event_name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "event_name" + "\\}", apiInvoker.escapeString(eventName.toString()));
@@ -409,7 +404,7 @@ public class BRERuleEngineTriggersApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -491,15 +486,15 @@ public class BRERuleEngineTriggersApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -511,7 +506,6 @@ public class BRERuleEngineTriggersApi {
   public void getBRETriggers (Boolean filterSystem, String filterCategory, String filterTags, String filterName, String filterSearch, Integer size, Integer page, final Response.Listener<PageResourceBreTriggerResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/bre/triggers".replaceAll("\\{format\\}","json");
@@ -548,7 +542,7 @@ public class BRERuleEngineTriggersApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -623,15 +617,15 @@ public class BRERuleEngineTriggersApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -643,13 +637,11 @@ public class BRERuleEngineTriggersApi {
   public void updateBRETrigger (String eventName, BreTriggerResource breTriggerResource, final Response.Listener<BreTriggerResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = breTriggerResource;
 
-  
     // verify the required parameter 'eventName' is set
     if (eventName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'eventName' when calling updateBRETrigger",
-         new ApiException(400, "Missing the required parameter 'eventName' when calling updateBRETrigger"));
+      VolleyError error = new VolleyError("Missing the required parameter 'eventName' when calling updateBRETrigger",
+        new ApiException(400, "Missing the required parameter 'eventName' when calling updateBRETrigger"));
     }
-    
 
     // create path and map variables
     String path = "/bre/triggers/{event_name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "event_name" + "\\}", apiInvoker.escapeString(eventName.toString()));
@@ -679,7 +671,7 @@ public class BRERuleEngineTriggersApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

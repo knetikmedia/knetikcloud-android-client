@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -27,6 +27,7 @@ import com.knetikcloud.model.InventorySubscriptionResource;
 import com.knetikcloud.model.InvoiceResource;
 import com.knetikcloud.model.ReactivateSubscriptionRequest;
 import com.knetikcloud.model.Result;
+import com.knetikcloud.model.SubscriptionPriceOverrideRequest;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -115,15 +116,15 @@ public class UsersSubscriptionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -135,19 +136,16 @@ public class UsersSubscriptionsApi {
   public void getUserSubscriptionDetails (Integer userId, Integer inventoryId, final Response.Listener<InventorySubscriptionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserSubscriptionDetails",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserSubscriptionDetails"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserSubscriptionDetails",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserSubscriptionDetails"));
     }
-    
     // verify the required parameter 'inventoryId' is set
     if (inventoryId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling getUserSubscriptionDetails",
-         new ApiException(400, "Missing the required parameter 'inventoryId' when calling getUserSubscriptionDetails"));
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling getUserSubscriptionDetails",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling getUserSubscriptionDetails"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/subscriptions/{inventory_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
@@ -177,7 +175,7 @@ public class UsersSubscriptionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -251,15 +249,15 @@ public class UsersSubscriptionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -271,13 +269,11 @@ public class UsersSubscriptionsApi {
   public void getUsersSubscriptionDetails (Integer userId, final Response.Listener<List<InventorySubscriptionResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUsersSubscriptionDetails",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUsersSubscriptionDetails"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUsersSubscriptionDetails",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUsersSubscriptionDetails"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/subscriptions".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -307,7 +303,7 @@ public class UsersSubscriptionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -388,15 +384,15 @@ public class UsersSubscriptionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -408,19 +404,16 @@ public class UsersSubscriptionsApi {
   public void reactivateUserSubscription (Integer userId, Integer inventoryId, ReactivateSubscriptionRequest reactivateSubscriptionRequest, final Response.Listener<InvoiceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = reactivateSubscriptionRequest;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling reactivateUserSubscription",
-         new ApiException(400, "Missing the required parameter 'userId' when calling reactivateUserSubscription"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling reactivateUserSubscription",
+        new ApiException(400, "Missing the required parameter 'userId' when calling reactivateUserSubscription"));
     }
-    
     // verify the required parameter 'inventoryId' is set
     if (inventoryId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling reactivateUserSubscription",
-         new ApiException(400, "Missing the required parameter 'inventoryId' when calling reactivateUserSubscription"));
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling reactivateUserSubscription",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling reactivateUserSubscription"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/subscriptions/{inventory_id}/reactivate".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
@@ -450,7 +443,7 @@ public class UsersSubscriptionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -536,15 +529,15 @@ public class UsersSubscriptionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -556,25 +549,21 @@ public class UsersSubscriptionsApi {
   public void setSubscriptionBillDate (Integer userId, Integer inventoryId, Long billDate, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = billDate;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setSubscriptionBillDate",
-         new ApiException(400, "Missing the required parameter 'userId' when calling setSubscriptionBillDate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setSubscriptionBillDate",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setSubscriptionBillDate"));
     }
-    
     // verify the required parameter 'inventoryId' is set
     if (inventoryId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setSubscriptionBillDate",
-         new ApiException(400, "Missing the required parameter 'inventoryId' when calling setSubscriptionBillDate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setSubscriptionBillDate",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling setSubscriptionBillDate"));
     }
-    
     // verify the required parameter 'billDate' is set
     if (billDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'billDate' when calling setSubscriptionBillDate",
-         new ApiException(400, "Missing the required parameter 'billDate' when calling setSubscriptionBillDate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'billDate' when calling setSubscriptionBillDate",
+        new ApiException(400, "Missing the required parameter 'billDate' when calling setSubscriptionBillDate"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/subscriptions/{inventory_id}/bill-date".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
@@ -604,7 +593,7 @@ public class UsersSubscriptionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -681,15 +670,15 @@ public class UsersSubscriptionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -701,19 +690,16 @@ public class UsersSubscriptionsApi {
   public void setSubscriptionPaymentMethod (Integer userId, Integer inventoryId, Integer paymentMethodId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = paymentMethodId;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setSubscriptionPaymentMethod",
-         new ApiException(400, "Missing the required parameter 'userId' when calling setSubscriptionPaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setSubscriptionPaymentMethod",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setSubscriptionPaymentMethod"));
     }
-    
     // verify the required parameter 'inventoryId' is set
     if (inventoryId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setSubscriptionPaymentMethod",
-         new ApiException(400, "Missing the required parameter 'inventoryId' when calling setSubscriptionPaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setSubscriptionPaymentMethod",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling setSubscriptionPaymentMethod"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/subscriptions/{inventory_id}/payment-method".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
@@ -743,7 +729,7 @@ public class UsersSubscriptionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -825,15 +811,15 @@ public class UsersSubscriptionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -845,25 +831,21 @@ public class UsersSubscriptionsApi {
   public void setSubscriptionStatus (Integer userId, Integer inventoryId, String status, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = status;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setSubscriptionStatus",
-         new ApiException(400, "Missing the required parameter 'userId' when calling setSubscriptionStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setSubscriptionStatus",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setSubscriptionStatus"));
     }
-    
     // verify the required parameter 'inventoryId' is set
     if (inventoryId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setSubscriptionStatus",
-         new ApiException(400, "Missing the required parameter 'inventoryId' when calling setSubscriptionStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setSubscriptionStatus",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling setSubscriptionStatus"));
     }
-    
     // verify the required parameter 'status' is set
     if (status == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'status' when calling setSubscriptionStatus",
-         new ApiException(400, "Missing the required parameter 'status' when calling setSubscriptionStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'status' when calling setSubscriptionStatus",
+        new ApiException(400, "Missing the required parameter 'status' when calling setSubscriptionStatus"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/subscriptions/{inventory_id}/status".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
@@ -893,7 +875,7 @@ public class UsersSubscriptionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -970,15 +952,15 @@ public class UsersSubscriptionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -990,19 +972,16 @@ public class UsersSubscriptionsApi {
   public void setUserSubscriptionPlan (Integer userId, Integer inventoryId, String planId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = planId;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setUserSubscriptionPlan",
-         new ApiException(400, "Missing the required parameter 'userId' when calling setUserSubscriptionPlan"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setUserSubscriptionPlan",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setUserSubscriptionPlan"));
     }
-    
     // verify the required parameter 'inventoryId' is set
     if (inventoryId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setUserSubscriptionPlan",
-         new ApiException(400, "Missing the required parameter 'inventoryId' when calling setUserSubscriptionPlan"));
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setUserSubscriptionPlan",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling setUserSubscriptionPlan"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/subscriptions/{inventory_id}/plan".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
@@ -1032,7 +1011,143 @@ public class UsersSubscriptionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+              responseListener.onResponse(localVarResponse);
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Set a new subscription price for a user
+  * This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+   * @param userId The id of the user
+   * @param inventoryId The id of the user&#39;s inventory
+   * @param theOverrideDetails override
+   * @return void
+  */
+  public void setUserSubscriptionPrice (Integer userId, Integer inventoryId, SubscriptionPriceOverrideRequest theOverrideDetails) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = theOverrideDetails;
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setUserSubscriptionPrice",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setUserSubscriptionPrice"));
+    }
+    // verify the required parameter 'inventoryId' is set
+    if (inventoryId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setUserSubscriptionPrice",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling setUserSubscriptionPrice"));
+    }
+
+    // create path and map variables
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/price-override".replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] { "OAuth2" };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return ;
+      } else {
+         return ;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Set a new subscription price for a user
+   * This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+   * @param userId The id of the user   * @param inventoryId The id of the user&#39;s inventory   * @param theOverrideDetails override
+  */
+  public void setUserSubscriptionPrice (Integer userId, Integer inventoryId, SubscriptionPriceOverrideRequest theOverrideDetails, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = theOverrideDetails;
+
+    // verify the required parameter 'userId' is set
+    if (userId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setUserSubscriptionPrice",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setUserSubscriptionPrice"));
+    }
+    // verify the required parameter 'inventoryId' is set
+    if (inventoryId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'inventoryId' when calling setUserSubscriptionPrice",
+        new ApiException(400, "Missing the required parameter 'inventoryId' when calling setUserSubscriptionPrice"));
+    }
+
+    // create path and map variables
+    String path = "/users/{user_id}/subscriptions/{inventory_id}/price-override".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "inventory_id" + "\\}", apiInvoker.escapeString(inventoryId.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      "application/json"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -13,16 +13,19 @@
 package com.knetikcloud.model;
 
 import com.knetikcloud.model.ActivityEntitlementResource;
+import com.knetikcloud.model.AvailableSettingResource;
 import com.knetikcloud.model.Property;
 import com.knetikcloud.model.RewardSetResource;
-import com.knetikcloud.model.TheDefinitionOfAnActivityParametersExDifficultyLevel;
 import java.util.*;
 import java.util.Map;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
-public class RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc {
+/**
+ * Represents an activity that can be parameterized and tracked through metrics (scores, etc)
+ **/
+@ApiModel(description = "Represents an activity that can be parameterized and tracked through metrics (scores, etc)")
+public class ActivityResource {
   
   @SerializedName("additional_properties")
   private Map<String, Property> additionalProperties = null;
@@ -41,7 +44,7 @@ public class RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsS
   @SerializedName("reward_set")
   private RewardSetResource rewardSet = null;
   @SerializedName("settings")
-  private List<TheDefinitionOfAnActivityParametersExDifficultyLevel> settings = null;
+  private List<AvailableSettingResource> settings = null;
   @SerializedName("short_description")
   private String shortDescription = null;
   @SerializedName("template")
@@ -147,10 +150,10 @@ public class RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsS
    * Define what parameters are required/available to start and run an activity. For example: Difficulty, Number of Questions, Character name, Avatar, Duration, etc. Not populated when getting listing
    **/
   @ApiModelProperty(value = "Define what parameters are required/available to start and run an activity. For example: Difficulty, Number of Questions, Character name, Avatar, Duration, etc. Not populated when getting listing")
-  public List<TheDefinitionOfAnActivityParametersExDifficultyLevel> getSettings() {
+  public List<AvailableSettingResource> getSettings() {
     return settings;
   }
-  public void setSettings(List<TheDefinitionOfAnActivityParametersExDifficultyLevel> settings) {
+  public void setSettings(List<AvailableSettingResource> settings) {
     this.settings = settings;
   }
 
@@ -229,22 +232,22 @@ public class RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsS
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc = (RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) o;
-    return (this.additionalProperties == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.additionalProperties == null : this.additionalProperties.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.additionalProperties)) &&
-        (this.createdDate == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.createdDate == null : this.createdDate.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.createdDate)) &&
-        (this.entitlements == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.entitlements == null : this.entitlements.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.entitlements)) &&
-        (this.id == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.id == null : this.id.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.id)) &&
-        (this.launch == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.launch == null : this.launch.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.launch)) &&
-        (this.longDescription == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.longDescription == null : this.longDescription.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.longDescription)) &&
-        (this.name == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.name == null : this.name.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.name)) &&
-        (this.rewardSet == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.rewardSet == null : this.rewardSet.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.rewardSet)) &&
-        (this.settings == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.settings == null : this.settings.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.settings)) &&
-        (this.shortDescription == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.shortDescription == null : this.shortDescription.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.shortDescription)) &&
-        (this.template == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.template == null : this.template.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.template)) &&
-        (this.templateId == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.templateId == null : this.templateId.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.templateId)) &&
-        (this.type == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.type == null : this.type.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.type)) &&
-        (this.uniqueKey == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.uniqueKey == null : this.uniqueKey.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.uniqueKey)) &&
-        (this.updatedDate == null ? representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.updatedDate == null : this.updatedDate.equals(representsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.updatedDate));
+    ActivityResource activityResource = (ActivityResource) o;
+    return (this.additionalProperties == null ? activityResource.additionalProperties == null : this.additionalProperties.equals(activityResource.additionalProperties)) &&
+        (this.createdDate == null ? activityResource.createdDate == null : this.createdDate.equals(activityResource.createdDate)) &&
+        (this.entitlements == null ? activityResource.entitlements == null : this.entitlements.equals(activityResource.entitlements)) &&
+        (this.id == null ? activityResource.id == null : this.id.equals(activityResource.id)) &&
+        (this.launch == null ? activityResource.launch == null : this.launch.equals(activityResource.launch)) &&
+        (this.longDescription == null ? activityResource.longDescription == null : this.longDescription.equals(activityResource.longDescription)) &&
+        (this.name == null ? activityResource.name == null : this.name.equals(activityResource.name)) &&
+        (this.rewardSet == null ? activityResource.rewardSet == null : this.rewardSet.equals(activityResource.rewardSet)) &&
+        (this.settings == null ? activityResource.settings == null : this.settings.equals(activityResource.settings)) &&
+        (this.shortDescription == null ? activityResource.shortDescription == null : this.shortDescription.equals(activityResource.shortDescription)) &&
+        (this.template == null ? activityResource.template == null : this.template.equals(activityResource.template)) &&
+        (this.templateId == null ? activityResource.templateId == null : this.templateId.equals(activityResource.templateId)) &&
+        (this.type == null ? activityResource.type == null : this.type.equals(activityResource.type)) &&
+        (this.uniqueKey == null ? activityResource.uniqueKey == null : this.uniqueKey.equals(activityResource.uniqueKey)) &&
+        (this.updatedDate == null ? activityResource.updatedDate == null : this.updatedDate.equals(activityResource.updatedDate));
   }
 
   @Override
@@ -271,7 +274,7 @@ public class RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsS
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc {\n");
+    sb.append("class ActivityResource {\n");
     
     sb.append("  additionalProperties: ").append(additionalProperties).append("\n");
     sb.append("  createdDate: ").append(createdDate).append("\n");

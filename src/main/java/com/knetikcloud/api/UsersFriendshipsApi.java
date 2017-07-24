@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -113,15 +113,15 @@ public class UsersFriendshipsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -133,19 +133,16 @@ public class UsersFriendshipsApi {
   public void addFriend (String userId, Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling addFriend",
-         new ApiException(400, "Missing the required parameter 'userId' when calling addFriend"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling addFriend",
+        new ApiException(400, "Missing the required parameter 'userId' when calling addFriend"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addFriend",
-         new ApiException(400, "Missing the required parameter 'id' when calling addFriend"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addFriend",
+        new ApiException(400, "Missing the required parameter 'id' when calling addFriend"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/friends/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -175,7 +172,7 @@ public class UsersFriendshipsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -249,15 +246,15 @@ public class UsersFriendshipsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -269,13 +266,11 @@ public class UsersFriendshipsApi {
   public void getFriends (String userId, Integer size, Integer page, final Response.Listener<PageResourceSimpleUserResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getFriends",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getFriends"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getFriends",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getFriends"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/friends".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -307,7 +302,7 @@ public class UsersFriendshipsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -381,15 +376,15 @@ public class UsersFriendshipsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -401,13 +396,11 @@ public class UsersFriendshipsApi {
   public void getInviteToken (String userId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getInviteToken",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getInviteToken"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getInviteToken",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getInviteToken"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/invite-token".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -437,7 +430,7 @@ public class UsersFriendshipsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -515,15 +508,15 @@ public class UsersFriendshipsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -535,13 +528,11 @@ public class UsersFriendshipsApi {
   public void getInvites (String userId, Integer size, Integer page, final Response.Listener<PageResourceSimpleUserResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getInvites",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getInvites"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getInvites",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getInvites"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/invites".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -573,7 +564,7 @@ public class UsersFriendshipsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -648,15 +639,15 @@ public class UsersFriendshipsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -668,13 +659,11 @@ public class UsersFriendshipsApi {
   public void redeemFriendshipToken (String userId, String token, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = token;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling redeemFriendshipToken",
-         new ApiException(400, "Missing the required parameter 'userId' when calling redeemFriendshipToken"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling redeemFriendshipToken",
+        new ApiException(400, "Missing the required parameter 'userId' when calling redeemFriendshipToken"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/friends/tokens".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -704,7 +693,7 @@ public class UsersFriendshipsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -780,15 +769,15 @@ public class UsersFriendshipsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -800,19 +789,16 @@ public class UsersFriendshipsApi {
   public void removeOrDeclineFriend (String userId, Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling removeOrDeclineFriend",
-         new ApiException(400, "Missing the required parameter 'userId' when calling removeOrDeclineFriend"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling removeOrDeclineFriend",
+        new ApiException(400, "Missing the required parameter 'userId' when calling removeOrDeclineFriend"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeOrDeclineFriend",
-         new ApiException(400, "Missing the required parameter 'id' when calling removeOrDeclineFriend"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeOrDeclineFriend",
+        new ApiException(400, "Missing the required parameter 'id' when calling removeOrDeclineFriend"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/friends/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -842,7 +828,7 @@ public class UsersFriendshipsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -116,15 +116,15 @@ public class SearchApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -136,19 +136,16 @@ public class SearchApi {
   public void addSearchIndex (String type, String id, Object _object, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = _object;
 
-  
     // verify the required parameter 'type' is set
     if (type == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'type' when calling addSearchIndex",
-         new ApiException(400, "Missing the required parameter 'type' when calling addSearchIndex"));
+      VolleyError error = new VolleyError("Missing the required parameter 'type' when calling addSearchIndex",
+        new ApiException(400, "Missing the required parameter 'type' when calling addSearchIndex"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addSearchIndex",
-         new ApiException(400, "Missing the required parameter 'id' when calling addSearchIndex"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addSearchIndex",
+        new ApiException(400, "Missing the required parameter 'id' when calling addSearchIndex"));
     }
-    
 
     // create path and map variables
     String path = "/search/index/{type}/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "type" + "\\}", apiInvoker.escapeString(type.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -178,7 +175,7 @@ public class SearchApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -243,15 +240,15 @@ public class SearchApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -263,7 +260,6 @@ public class SearchApi {
   public void addSearchMappings (List<SearchReferenceMapping> mappings, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = mappings;
 
-  
 
     // create path and map variables
     String path = "/search/mappings".replaceAll("\\{format\\}","json");
@@ -293,7 +289,7 @@ public class SearchApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -369,15 +365,15 @@ public class SearchApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -389,19 +385,16 @@ public class SearchApi {
   public void deleteSearchIndex (String type, String id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'type' is set
     if (type == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'type' when calling deleteSearchIndex",
-         new ApiException(400, "Missing the required parameter 'type' when calling deleteSearchIndex"));
+      VolleyError error = new VolleyError("Missing the required parameter 'type' when calling deleteSearchIndex",
+        new ApiException(400, "Missing the required parameter 'type' when calling deleteSearchIndex"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteSearchIndex",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteSearchIndex"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteSearchIndex",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteSearchIndex"));
     }
-    
 
     // create path and map variables
     String path = "/search/index/{type}/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "type" + "\\}", apiInvoker.escapeString(type.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -431,7 +424,7 @@ public class SearchApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -501,15 +494,15 @@ public class SearchApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -521,13 +514,11 @@ public class SearchApi {
   public void deleteSearchIndexes (String type, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'type' is set
     if (type == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'type' when calling deleteSearchIndexes",
-         new ApiException(400, "Missing the required parameter 'type' when calling deleteSearchIndexes"));
+      VolleyError error = new VolleyError("Missing the required parameter 'type' when calling deleteSearchIndexes",
+        new ApiException(400, "Missing the required parameter 'type' when calling deleteSearchIndexes"));
     }
-    
 
     // create path and map variables
     String path = "/search/index/{type}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "type" + "\\}", apiInvoker.escapeString(type.toString()));
@@ -557,7 +548,7 @@ public class SearchApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -632,15 +623,15 @@ public class SearchApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -652,13 +643,11 @@ public class SearchApi {
   public void searchIndex (String type, Object query, Integer size, Integer page, final Response.Listener<PageResourceMapstringobject> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = query;
 
-  
     // verify the required parameter 'type' is set
     if (type == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'type' when calling searchIndex",
-         new ApiException(400, "Missing the required parameter 'type' when calling searchIndex"));
+      VolleyError error = new VolleyError("Missing the required parameter 'type' when calling searchIndex",
+        new ApiException(400, "Missing the required parameter 'type' when calling searchIndex"));
     }
-    
 
     // create path and map variables
     String path = "/search/index/{type}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "type" + "\\}", apiInvoker.escapeString(type.toString()));
@@ -690,7 +679,7 @@ public class SearchApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,

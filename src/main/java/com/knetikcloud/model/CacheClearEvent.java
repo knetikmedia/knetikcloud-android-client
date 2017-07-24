@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -37,6 +37,10 @@ public class CacheClearEvent extends BroadcastableEvent {
   private Long timestamp = null;
   @SerializedName("type")
   private String type = null;
+  @SerializedName("customer_setup")
+  private Boolean customerSetup = null;
+  @SerializedName("customer_teardown")
+  private Boolean customerTeardown = null;
 
   /**
    **/
@@ -129,6 +133,26 @@ public class CacheClearEvent extends BroadcastableEvent {
     this.type = type;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Boolean getCustomerSetup() {
+    return customerSetup;
+  }
+  public void setCustomerSetup(Boolean customerSetup) {
+    this.customerSetup = customerSetup;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public Boolean getCustomerTeardown() {
+    return customerTeardown;
+  }
+  public void setCustomerTeardown(Boolean customerTeardown) {
+    this.customerTeardown = customerTeardown;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -147,7 +171,9 @@ public class CacheClearEvent extends BroadcastableEvent {
         (this.specifics == null ? cacheClearEvent.specifics == null : this.specifics.equals(cacheClearEvent.specifics)) &&
         (this.synchronous == null ? cacheClearEvent.synchronous == null : this.synchronous.equals(cacheClearEvent.synchronous)) &&
         (this.timestamp == null ? cacheClearEvent.timestamp == null : this.timestamp.equals(cacheClearEvent.timestamp)) &&
-        (this.type == null ? cacheClearEvent.type == null : this.type.equals(cacheClearEvent.type));
+        (this.type == null ? cacheClearEvent.type == null : this.type.equals(cacheClearEvent.type)) &&
+        (this.customerSetup == null ? cacheClearEvent.customerSetup == null : this.customerSetup.equals(cacheClearEvent.customerSetup)) &&
+        (this.customerTeardown == null ? cacheClearEvent.customerTeardown == null : this.customerTeardown.equals(cacheClearEvent.customerTeardown));
   }
 
   @Override
@@ -162,6 +188,8 @@ public class CacheClearEvent extends BroadcastableEvent {
     result = 31 * result + (this.synchronous == null ? 0: this.synchronous.hashCode());
     result = 31 * result + (this.timestamp == null ? 0: this.timestamp.hashCode());
     result = 31 * result + (this.type == null ? 0: this.type.hashCode());
+    result = 31 * result + (this.customerSetup == null ? 0: this.customerSetup.hashCode());
+    result = 31 * result + (this.customerTeardown == null ? 0: this.customerTeardown.hashCode());
     return result;
   }
 
@@ -179,6 +207,8 @@ public class CacheClearEvent extends BroadcastableEvent {
     sb.append("  synchronous: ").append(synchronous).append("\n");
     sb.append("  timestamp: ").append(timestamp).append("\n");
     sb.append("  type: ").append(type).append("\n");
+    sb.append("  customerSetup: ").append(customerSetup).append("\n");
+    sb.append("  customerTeardown: ").append(customerTeardown).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentMethods"></a>
 # **getPaymentMethods**
-> List&lt;PaymentMethodResource&gt; getPaymentMethods(userId, size, page, order)
+> List&lt;PaymentMethodResource&gt; getPaymentMethods(userId, filterName, filterPaymentType, filterPaymentMethodTypeId, filterPaymentMethodTypeName, size, page, order)
 
 Get all payment methods for a user
 
@@ -154,11 +154,15 @@ Get all payment methods for a user
 
 PaymentsApi apiInstance = new PaymentsApi();
 Integer userId = 56; // Integer | ID of the user for whom the payment methods are being retrieved
+String filterName = "filterName_example"; // String | Filter for payment methods whose name starts with a given string
+String filterPaymentType = "filterPaymentType_example"; // String | Filter for payment methods with a specific payment type
+Integer filterPaymentMethodTypeId = 56; // Integer | Filter for payment methods with a specific payment method type by id
+String filterPaymentMethodTypeName = "filterPaymentMethodTypeName_example"; // String | Filter for payment methods whose payment method type name starts with a given string
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned, starting with 1
 String order = "id:ASC"; // String | a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 try {
-    List<PaymentMethodResource> result = apiInstance.getPaymentMethods(userId, size, page, order);
+    List<PaymentMethodResource> result = apiInstance.getPaymentMethods(userId, filterName, filterPaymentType, filterPaymentMethodTypeId, filterPaymentMethodTypeName, size, page, order);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsApi#getPaymentMethods");
@@ -171,6 +175,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Integer**| ID of the user for whom the payment methods are being retrieved |
+ **filterName** | **String**| Filter for payment methods whose name starts with a given string | [optional]
+ **filterPaymentType** | **String**| Filter for payment methods with a specific payment type | [optional] [enum: card, bank_account]
+ **filterPaymentMethodTypeId** | **Integer**| Filter for payment methods with a specific payment method type by id | [optional]
+ **filterPaymentMethodTypeName** | **String**| Filter for payment methods whose payment method type name starts with a given string | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]

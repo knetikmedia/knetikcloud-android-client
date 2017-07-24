@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -105,15 +105,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -125,7 +125,6 @@ public class BRERuleEngineCategoriesApi {
   public void createBRECategoryTemplate (TemplateResource template, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = template;
 
-  
 
     // create path and map variables
     String path = "/bre/categories/templates".replaceAll("\\{format\\}","json");
@@ -155,7 +154,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -231,15 +230,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -251,13 +250,11 @@ public class BRERuleEngineCategoriesApi {
   public void deleteBRECategoryTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteBRECategoryTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteBRECategoryTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteBRECategoryTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteBRECategoryTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/bre/categories/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -288,7 +285,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -356,15 +353,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -376,7 +373,6 @@ public class BRERuleEngineCategoriesApi {
   public void getBRECategories (Integer size, Integer page, final Response.Listener<PageResourceBreCategoryResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/bre/categories".replaceAll("\\{format\\}","json");
@@ -408,7 +404,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -482,15 +478,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -502,13 +498,11 @@ public class BRERuleEngineCategoriesApi {
   public void getBRECategory (String name, final Response.Listener<BreCategoryResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling getBRECategory",
-         new ApiException(400, "Missing the required parameter 'name' when calling getBRECategory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling getBRECategory",
+        new ApiException(400, "Missing the required parameter 'name' when calling getBRECategory"));
     }
-    
 
     // create path and map variables
     String path = "/bre/categories/{name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -538,7 +532,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -612,15 +606,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -632,13 +626,11 @@ public class BRERuleEngineCategoriesApi {
   public void getBRECategoryTemplate (String id, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getBRECategoryTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getBRECategoryTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getBRECategoryTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getBRECategoryTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/bre/categories/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -668,7 +660,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -742,15 +734,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -762,7 +754,6 @@ public class BRERuleEngineCategoriesApi {
   public void getBRECategoryTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/bre/categories/templates".replaceAll("\\{format\\}","json");
@@ -795,7 +786,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -870,15 +861,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -890,13 +881,11 @@ public class BRERuleEngineCategoriesApi {
   public void updateBRECategory (String name, BreCategoryResource category, final Response.Listener<BreCategoryResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = category;
 
-  
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling updateBRECategory",
-         new ApiException(400, "Missing the required parameter 'name' when calling updateBRECategory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling updateBRECategory",
+        new ApiException(400, "Missing the required parameter 'name' when calling updateBRECategory"));
     }
-    
 
     // create path and map variables
     String path = "/bre/categories/{name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -926,7 +915,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1001,15 +990,15 @@ public class BRERuleEngineCategoriesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1021,13 +1010,11 @@ public class BRERuleEngineCategoriesApi {
   public void updateBRECategoryTemplate (String id, TemplateResource template, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = template;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBRECategoryTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateBRECategoryTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateBRECategoryTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateBRECategoryTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/bre/categories/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1057,7 +1044,7 @@ public class BRERuleEngineCategoriesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

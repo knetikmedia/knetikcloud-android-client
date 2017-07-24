@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -120,15 +120,15 @@ public class GamificationLeaderboardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -140,19 +140,16 @@ public class GamificationLeaderboardsApi {
   public void getLeaderboard (String contextType, String contextId, Integer size, Integer page, String order, final Response.Listener<LeaderboardResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'contextType' is set
     if (contextType == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'contextType' when calling getLeaderboard",
-         new ApiException(400, "Missing the required parameter 'contextType' when calling getLeaderboard"));
+      VolleyError error = new VolleyError("Missing the required parameter 'contextType' when calling getLeaderboard",
+        new ApiException(400, "Missing the required parameter 'contextType' when calling getLeaderboard"));
     }
-    
     // verify the required parameter 'contextId' is set
     if (contextId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'contextId' when calling getLeaderboard",
-         new ApiException(400, "Missing the required parameter 'contextId' when calling getLeaderboard"));
+      VolleyError error = new VolleyError("Missing the required parameter 'contextId' when calling getLeaderboard",
+        new ApiException(400, "Missing the required parameter 'contextId' when calling getLeaderboard"));
     }
-    
 
     // create path and map variables
     String path = "/leaderboards/{context_type}/{context_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "context_type" + "\\}", apiInvoker.escapeString(contextType.toString())).replaceAll("\\{" + "context_id" + "\\}", apiInvoker.escapeString(contextId.toString()));
@@ -185,7 +182,7 @@ public class GamificationLeaderboardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -271,15 +268,15 @@ public class GamificationLeaderboardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -291,25 +288,21 @@ public class GamificationLeaderboardsApi {
   public void getLeaderboardRank (String contextType, String contextId, String id, final Response.Listener<LeaderboardEntryResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'contextType' is set
     if (contextType == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'contextType' when calling getLeaderboardRank",
-         new ApiException(400, "Missing the required parameter 'contextType' when calling getLeaderboardRank"));
+      VolleyError error = new VolleyError("Missing the required parameter 'contextType' when calling getLeaderboardRank",
+        new ApiException(400, "Missing the required parameter 'contextType' when calling getLeaderboardRank"));
     }
-    
     // verify the required parameter 'contextId' is set
     if (contextId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'contextId' when calling getLeaderboardRank",
-         new ApiException(400, "Missing the required parameter 'contextId' when calling getLeaderboardRank"));
+      VolleyError error = new VolleyError("Missing the required parameter 'contextId' when calling getLeaderboardRank",
+        new ApiException(400, "Missing the required parameter 'contextId' when calling getLeaderboardRank"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getLeaderboardRank",
-         new ApiException(400, "Missing the required parameter 'id' when calling getLeaderboardRank"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getLeaderboardRank",
+        new ApiException(400, "Missing the required parameter 'id' when calling getLeaderboardRank"));
     }
-    
 
     // create path and map variables
     String path = "/leaderboards/{context_type}/{context_id}/users/{id}/rank".replaceAll("\\{format\\}","json").replaceAll("\\{" + "context_type" + "\\}", apiInvoker.escapeString(contextType.toString())).replaceAll("\\{" + "context_id" + "\\}", apiInvoker.escapeString(contextId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -339,7 +332,7 @@ public class GamificationLeaderboardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -407,15 +400,15 @@ public class GamificationLeaderboardsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -427,7 +420,6 @@ public class GamificationLeaderboardsApi {
   public void getLeaderboardStrategies (final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/leaderboards/strategies".replaceAll("\\{format\\}","json");
@@ -457,7 +449,7 @@ public class GamificationLeaderboardsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,

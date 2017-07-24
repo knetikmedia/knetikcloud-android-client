@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -28,6 +28,8 @@ public class UserBaseResource {
   private String fullname = null;
   @SerializedName("id")
   private Integer id = null;
+  @SerializedName("last_activity")
+  private Long lastActivity = null;
   @SerializedName("last_updated")
   private Long lastUpdated = null;
   @SerializedName("member_since")
@@ -91,6 +93,17 @@ public class UserBaseResource {
   }
 
   /**
+   * The date the user last interacted with the API (private)
+   **/
+  @ApiModelProperty(value = "The date the user last interacted with the API (private)")
+  public Long getLastActivity() {
+    return lastActivity;
+  }
+  public void setLastActivity(Long lastActivity) {
+    this.lastActivity = lastActivity;
+  }
+
+  /**
    * The date the user's info was last updated as a unix timestamp
    **/
   @ApiModelProperty(value = "The date the user's info was last updated as a unix timestamp")
@@ -138,6 +151,7 @@ public class UserBaseResource {
         (this.email == null ? userBaseResource.email == null : this.email.equals(userBaseResource.email)) &&
         (this.fullname == null ? userBaseResource.fullname == null : this.fullname.equals(userBaseResource.fullname)) &&
         (this.id == null ? userBaseResource.id == null : this.id.equals(userBaseResource.id)) &&
+        (this.lastActivity == null ? userBaseResource.lastActivity == null : this.lastActivity.equals(userBaseResource.lastActivity)) &&
         (this.lastUpdated == null ? userBaseResource.lastUpdated == null : this.lastUpdated.equals(userBaseResource.lastUpdated)) &&
         (this.memberSince == null ? userBaseResource.memberSince == null : this.memberSince.equals(userBaseResource.memberSince)) &&
         (this.username == null ? userBaseResource.username == null : this.username.equals(userBaseResource.username));
@@ -151,6 +165,7 @@ public class UserBaseResource {
     result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     result = 31 * result + (this.fullname == null ? 0: this.fullname.hashCode());
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
+    result = 31 * result + (this.lastActivity == null ? 0: this.lastActivity.hashCode());
     result = 31 * result + (this.lastUpdated == null ? 0: this.lastUpdated.hashCode());
     result = 31 * result + (this.memberSince == null ? 0: this.memberSince.hashCode());
     result = 31 * result + (this.username == null ? 0: this.username.hashCode());
@@ -167,6 +182,7 @@ public class UserBaseResource {
     sb.append("  email: ").append(email).append("\n");
     sb.append("  fullname: ").append(fullname).append("\n");
     sb.append("  id: ").append(id).append("\n");
+    sb.append("  lastActivity: ").append(lastActivity).append("\n");
     sb.append("  lastUpdated: ").append(lastUpdated).append("\n");
     sb.append("  memberSince: ").append(memberSince).append("\n");
     sb.append("  username: ").append(username).append("\n");

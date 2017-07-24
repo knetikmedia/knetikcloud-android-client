@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -125,15 +125,15 @@ public class ReportingUsageApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -145,19 +145,16 @@ public class ReportingUsageApi {
   public void getUsageByDay (Long startDate, Long endDate, Boolean combineEndpoints, String method, String url, Integer size, Integer page, final Response.Listener<PageResourceUsageInfo> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'startDate' is set
     if (startDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByDay",
-         new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByDay"));
+      VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByDay",
+        new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByDay"));
     }
-    
     // verify the required parameter 'endDate' is set
     if (endDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByDay",
-         new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByDay"));
+      VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByDay",
+        new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByDay"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/usage/day".replaceAll("\\{format\\}","json");
@@ -194,7 +191,7 @@ public class ReportingUsageApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -286,15 +283,15 @@ public class ReportingUsageApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -306,19 +303,16 @@ public class ReportingUsageApi {
   public void getUsageByHour (Long startDate, Long endDate, Boolean combineEndpoints, String method, String url, Integer size, Integer page, final Response.Listener<PageResourceUsageInfo> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'startDate' is set
     if (startDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByHour",
-         new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByHour"));
+      VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByHour",
+        new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByHour"));
     }
-    
     // verify the required parameter 'endDate' is set
     if (endDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByHour",
-         new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByHour"));
+      VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByHour",
+        new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByHour"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/usage/hour".replaceAll("\\{format\\}","json");
@@ -355,7 +349,7 @@ public class ReportingUsageApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -447,15 +441,15 @@ public class ReportingUsageApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -467,19 +461,16 @@ public class ReportingUsageApi {
   public void getUsageByMinute (Long startDate, Long endDate, Boolean combineEndpoints, String method, String url, Integer size, Integer page, final Response.Listener<PageResourceUsageInfo> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'startDate' is set
     if (startDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByMinute",
-         new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByMinute"));
+      VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByMinute",
+        new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByMinute"));
     }
-    
     // verify the required parameter 'endDate' is set
     if (endDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByMinute",
-         new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByMinute"));
+      VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByMinute",
+        new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByMinute"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/usage/minute".replaceAll("\\{format\\}","json");
@@ -516,7 +507,7 @@ public class ReportingUsageApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -608,15 +599,15 @@ public class ReportingUsageApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -628,19 +619,16 @@ public class ReportingUsageApi {
   public void getUsageByMonth (Long startDate, Long endDate, Boolean combineEndpoints, String method, String url, Integer size, Integer page, final Response.Listener<PageResourceUsageInfo> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'startDate' is set
     if (startDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByMonth",
-         new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByMonth"));
+      VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByMonth",
+        new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByMonth"));
     }
-    
     // verify the required parameter 'endDate' is set
     if (endDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByMonth",
-         new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByMonth"));
+      VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByMonth",
+        new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByMonth"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/usage/month".replaceAll("\\{format\\}","json");
@@ -677,7 +665,7 @@ public class ReportingUsageApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -769,15 +757,15 @@ public class ReportingUsageApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -789,19 +777,16 @@ public class ReportingUsageApi {
   public void getUsageByYear (Long startDate, Long endDate, Boolean combineEndpoints, String method, String url, Integer size, Integer page, final Response.Listener<PageResourceUsageInfo> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'startDate' is set
     if (startDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByYear",
-         new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByYear"));
+      VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageByYear",
+        new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageByYear"));
     }
-    
     // verify the required parameter 'endDate' is set
     if (endDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByYear",
-         new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByYear"));
+      VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageByYear",
+        new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageByYear"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/usage/year".replaceAll("\\{format\\}","json");
@@ -838,7 +823,7 @@ public class ReportingUsageApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -920,15 +905,15 @@ public class ReportingUsageApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -940,19 +925,16 @@ public class ReportingUsageApi {
   public void getUsageEndpoints (Long startDate, Long endDate, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'startDate' is set
     if (startDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageEndpoints",
-         new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageEndpoints"));
+      VolleyError error = new VolleyError("Missing the required parameter 'startDate' when calling getUsageEndpoints",
+        new ApiException(400, "Missing the required parameter 'startDate' when calling getUsageEndpoints"));
     }
-    
     // verify the required parameter 'endDate' is set
     if (endDate == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageEndpoints",
-         new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageEndpoints"));
+      VolleyError error = new VolleyError("Missing the required parameter 'endDate' when calling getUsageEndpoints",
+        new ApiException(400, "Missing the required parameter 'endDate' when calling getUsageEndpoints"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/usage/endpoints".replaceAll("\\{format\\}","json");
@@ -984,7 +966,7 @@ public class ReportingUsageApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,

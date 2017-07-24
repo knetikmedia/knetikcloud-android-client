@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -23,13 +23,13 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import com.knetikcloud.model.AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings;
 import com.knetikcloud.model.ActivityOccurrenceCreationFailure;
+import com.knetikcloud.model.ActivityOccurrenceResource;
 import com.knetikcloud.model.ActivityOccurrenceResults;
-import com.knetikcloud.model.ModelObject;
+import com.knetikcloud.model.ActivityOccurrenceResultsResource;
+import com.knetikcloud.model.ActivityResource;
 import com.knetikcloud.model.PageResourceBareActivityResource;
 import com.knetikcloud.model.PageResourceTemplateResource;
-import com.knetikcloud.model.RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc;
 import com.knetikcloud.model.Result;
 import com.knetikcloud.model.TemplateResource;
 
@@ -67,9 +67,9 @@ public class ActivitiesApi {
   * Create an activity
   * 
    * @param activityResource The activity resource object
-   * @return RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc
+   * @return ActivityResource
   */
-  public RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc createActivity (RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ActivityResource createActivity (ActivityResource activityResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = activityResource;
 
     // create path and map variables
@@ -100,7 +100,7 @@ public class ActivitiesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiInvoker.deserialize(localVarResponse, "", RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.class);
+         return (ActivityResource) ApiInvoker.deserialize(localVarResponse, "", ActivityResource.class);
       } else {
          return null;
       }
@@ -109,15 +109,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -126,10 +126,9 @@ public class ActivitiesApi {
    * 
    * @param activityResource The activity resource object
   */
-  public void createActivity (RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource, final Response.Listener<RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc> responseListener, final Response.ErrorListener errorListener) {
+  public void createActivity (ActivityResource activityResource, final Response.Listener<ActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = activityResource;
 
-  
 
     // create path and map variables
     String path = "/activities".replaceAll("\\{format\\}","json");
@@ -159,7 +158,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -167,7 +166,7 @@ public class ActivitiesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiInvoker.deserialize(localVarResponse,  "", RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.class));
+              responseListener.onResponse((ActivityResource) ApiInvoker.deserialize(localVarResponse,  "", ActivityResource.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -187,9 +186,9 @@ public class ActivitiesApi {
   * Has to enforce extra rules if not used as an admin
    * @param test if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
    * @param activityOccurrenceResource The activity occurrence object
-   * @return AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings
+   * @return ActivityOccurrenceResource
   */
-  public AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings createActivityOccurrence (Boolean test, AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings activityOccurrenceResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ActivityOccurrenceResource createActivityOccurrence (Boolean test, ActivityOccurrenceResource activityOccurrenceResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = activityOccurrenceResource;
 
     // create path and map variables
@@ -221,7 +220,7 @@ public class ActivitiesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings) ApiInvoker.deserialize(localVarResponse, "", AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.class);
+         return (ActivityOccurrenceResource) ApiInvoker.deserialize(localVarResponse, "", ActivityOccurrenceResource.class);
       } else {
          return null;
       }
@@ -230,15 +229,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -247,10 +246,9 @@ public class ActivitiesApi {
    * Has to enforce extra rules if not used as an admin
    * @param test if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings   * @param activityOccurrenceResource The activity occurrence object
   */
-  public void createActivityOccurrence (Boolean test, AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings activityOccurrenceResource, final Response.Listener<AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings> responseListener, final Response.ErrorListener errorListener) {
+  public void createActivityOccurrence (Boolean test, ActivityOccurrenceResource activityOccurrenceResource, final Response.Listener<ActivityOccurrenceResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = activityOccurrenceResource;
 
-  
 
     // create path and map variables
     String path = "/activity-occurrences".replaceAll("\\{format\\}","json");
@@ -281,7 +279,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -289,7 +287,7 @@ public class ActivitiesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings) ApiInvoker.deserialize(localVarResponse,  "", AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.class));
+              responseListener.onResponse((ActivityOccurrenceResource) ApiInvoker.deserialize(localVarResponse,  "", ActivityOccurrenceResource.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -350,15 +348,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -370,7 +368,6 @@ public class ActivitiesApi {
   public void createActivityTemplate (TemplateResource activityTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = activityTemplateResource;
 
-  
 
     // create path and map variables
     String path = "/activities/templates".replaceAll("\\{format\\}","json");
@@ -400,7 +397,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -474,15 +471,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -494,13 +491,11 @@ public class ActivitiesApi {
   public void deleteActivity (Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteActivity",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteActivity"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteActivity"));
     }
-    
 
     // create path and map variables
     String path = "/activities/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -530,7 +525,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -602,15 +597,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -622,13 +617,11 @@ public class ActivitiesApi {
   public void deleteActivityTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteActivityTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteActivityTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteActivityTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteActivityTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/activities/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -659,7 +652,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -689,7 +682,7 @@ public class ActivitiesApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
    * @return PageResourceBareActivityResource
   */
-  public PageResourceBareActivityResource getActivities (Boolean filterTemplate, String filterName, ModelObject filterId, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PageResourceBareActivityResource getActivities (Boolean filterTemplate, String filterName, String filterId, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -735,15 +728,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -752,10 +745,9 @@ public class ActivitiesApi {
    * 
    * @param filterTemplate Filter for activities that are templates, or specifically not if false   * @param filterName Filter for activities that have a name starting with specified string   * @param filterId Filter for activities with an id in the given comma separated list of ids   * @param size The number of objects returned per page   * @param page The number of the page returned, starting with 1   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   */
-  public void getActivities (Boolean filterTemplate, String filterName, ModelObject filterId, Integer size, Integer page, String order, final Response.Listener<PageResourceBareActivityResource> responseListener, final Response.ErrorListener errorListener) {
+  public void getActivities (Boolean filterTemplate, String filterName, String filterId, Integer size, Integer page, String order, final Response.Listener<PageResourceBareActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/activities".replaceAll("\\{format\\}","json");
@@ -791,7 +783,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -818,9 +810,9 @@ public class ActivitiesApi {
   * Get a single activity
   * 
    * @param id The id of the activity
-   * @return RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc
+   * @return ActivityResource
   */
-  public RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc getActivity (Long id) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ActivityResource getActivity (Long id) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'id' is set
     if (id == null) {
@@ -856,7 +848,7 @@ public class ActivitiesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiInvoker.deserialize(localVarResponse, "", RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.class);
+         return (ActivityResource) ApiInvoker.deserialize(localVarResponse, "", ActivityResource.class);
       } else {
          return null;
       }
@@ -865,15 +857,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -882,16 +874,14 @@ public class ActivitiesApi {
    * 
    * @param id The id of the activity
   */
-  public void getActivity (Long id, final Response.Listener<RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc> responseListener, final Response.ErrorListener errorListener) {
+  public void getActivity (Long id, final Response.Listener<ActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getActivity",
-         new ApiException(400, "Missing the required parameter 'id' when calling getActivity"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling getActivity"));
     }
-    
 
     // create path and map variables
     String path = "/activities/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -921,7 +911,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -929,7 +919,7 @@ public class ActivitiesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiInvoker.deserialize(localVarResponse,  "", RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.class));
+              responseListener.onResponse((ActivityResource) ApiInvoker.deserialize(localVarResponse,  "", ActivityResource.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -995,15 +985,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1015,13 +1005,11 @@ public class ActivitiesApi {
   public void getActivityTemplate (String id, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getActivityTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getActivityTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getActivityTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getActivityTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/activities/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1051,7 +1039,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1125,15 +1113,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1145,7 +1133,6 @@ public class ActivitiesApi {
   public void getActivityTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/activities/templates".replaceAll("\\{format\\}","json");
@@ -1178,7 +1165,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1208,7 +1195,7 @@ public class ActivitiesApi {
    * @param activityOccurrenceResults The activity occurrence object
    * @return ActivityOccurrenceResults
   */
-  public ActivityOccurrenceResults setActivityOccurrenceResults (Long activityOccurrenceId, ActivityOccurrenceResults activityOccurrenceResults) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ActivityOccurrenceResults setActivityOccurrenceResults (Long activityOccurrenceId, ActivityOccurrenceResultsResource activityOccurrenceResults) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = activityOccurrenceResults;
     // verify the required parameter 'activityOccurrenceId' is set
     if (activityOccurrenceId == null) {
@@ -1253,15 +1240,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1270,16 +1257,14 @@ public class ActivitiesApi {
    * 
    * @param activityOccurrenceId The id of the activity occurrence   * @param activityOccurrenceResults The activity occurrence object
   */
-  public void setActivityOccurrenceResults (Long activityOccurrenceId, ActivityOccurrenceResults activityOccurrenceResults, final Response.Listener<ActivityOccurrenceResults> responseListener, final Response.ErrorListener errorListener) {
+  public void setActivityOccurrenceResults (Long activityOccurrenceId, ActivityOccurrenceResultsResource activityOccurrenceResults, final Response.Listener<ActivityOccurrenceResults> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = activityOccurrenceResults;
 
-  
     // verify the required parameter 'activityOccurrenceId' is set
     if (activityOccurrenceId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'activityOccurrenceId' when calling setActivityOccurrenceResults",
-         new ApiException(400, "Missing the required parameter 'activityOccurrenceId' when calling setActivityOccurrenceResults"));
+      VolleyError error = new VolleyError("Missing the required parameter 'activityOccurrenceId' when calling setActivityOccurrenceResults",
+        new ApiException(400, "Missing the required parameter 'activityOccurrenceId' when calling setActivityOccurrenceResults"));
     }
-    
 
     // create path and map variables
     String path = "/activity-occurrences/{activity_occurrence_id}/results".replaceAll("\\{format\\}","json").replaceAll("\\{" + "activity_occurrence_id" + "\\}", apiInvoker.escapeString(activityOccurrenceId.toString()));
@@ -1309,7 +1294,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1337,9 +1322,9 @@ public class ActivitiesApi {
   * 
    * @param id The id of the activity
    * @param activityResource The activity resource object
-   * @return RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc
+   * @return ActivityResource
   */
-  public RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc updateActivity (Long id, RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ActivityResource updateActivity (Long id, ActivityResource activityResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = activityResource;
     // verify the required parameter 'id' is set
     if (id == null) {
@@ -1375,7 +1360,7 @@ public class ActivitiesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiInvoker.deserialize(localVarResponse, "", RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.class);
+         return (ActivityResource) ApiInvoker.deserialize(localVarResponse, "", ActivityResource.class);
       } else {
          return null;
       }
@@ -1384,15 +1369,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1401,16 +1386,14 @@ public class ActivitiesApi {
    * 
    * @param id The id of the activity   * @param activityResource The activity resource object
   */
-  public void updateActivity (Long id, RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource, final Response.Listener<RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc> responseListener, final Response.ErrorListener errorListener) {
+  public void updateActivity (Long id, ActivityResource activityResource, final Response.Listener<ActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = activityResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateActivity",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateActivity"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateActivity"));
     }
-    
 
     // create path and map variables
     String path = "/activities/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1440,7 +1423,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1448,7 +1431,7 @@ public class ActivitiesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc) ApiInvoker.deserialize(localVarResponse,  "", RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.class));
+              responseListener.onResponse((ActivityResource) ApiInvoker.deserialize(localVarResponse,  "", ActivityResource.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1515,15 +1498,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1535,13 +1518,11 @@ public class ActivitiesApi {
   public void updateActivityOccurrence (Long activityOccurrenceId, String activityCccurrenceStatus, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = activityCccurrenceStatus;
 
-  
     // verify the required parameter 'activityOccurrenceId' is set
     if (activityOccurrenceId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'activityOccurrenceId' when calling updateActivityOccurrence",
-         new ApiException(400, "Missing the required parameter 'activityOccurrenceId' when calling updateActivityOccurrence"));
+      VolleyError error = new VolleyError("Missing the required parameter 'activityOccurrenceId' when calling updateActivityOccurrence",
+        new ApiException(400, "Missing the required parameter 'activityOccurrenceId' when calling updateActivityOccurrence"));
     }
-    
 
     // create path and map variables
     String path = "/activity-occurrences/{activity_occurrence_id}/status".replaceAll("\\{format\\}","json").replaceAll("\\{" + "activity_occurrence_id" + "\\}", apiInvoker.escapeString(activityOccurrenceId.toString()));
@@ -1571,7 +1552,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1642,15 +1623,15 @@ public class ActivitiesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1662,13 +1643,11 @@ public class ActivitiesApi {
   public void updateActivityTemplate (String id, TemplateResource activityTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = activityTemplateResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateActivityTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateActivityTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateActivityTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateActivityTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/activities/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1698,7 +1677,7 @@ public class ActivitiesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

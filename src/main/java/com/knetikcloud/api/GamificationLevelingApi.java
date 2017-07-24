@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -106,15 +106,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -126,7 +126,6 @@ public class GamificationLevelingApi {
   public void createLevel (LevelingResource level, final Response.Listener<LevelingResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = level;
 
-  
 
     // create path and map variables
     String path = "/leveling".replaceAll("\\{format\\}","json");
@@ -156,7 +155,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -230,15 +229,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -250,13 +249,11 @@ public class GamificationLevelingApi {
   public void deleteLevel (String name, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling deleteLevel",
-         new ApiException(400, "Missing the required parameter 'name' when calling deleteLevel"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling deleteLevel",
+        new ApiException(400, "Missing the required parameter 'name' when calling deleteLevel"));
     }
-    
 
     // create path and map variables
     String path = "/leveling/{name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -286,7 +283,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -356,15 +353,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -376,13 +373,11 @@ public class GamificationLevelingApi {
   public void getLevel (String name, final Response.Listener<LevelingResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling getLevel",
-         new ApiException(400, "Missing the required parameter 'name' when calling getLevel"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling getLevel",
+        new ApiException(400, "Missing the required parameter 'name' when calling getLevel"));
     }
-    
 
     // create path and map variables
     String path = "/leveling/{name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -412,7 +407,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -480,15 +475,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -500,7 +495,6 @@ public class GamificationLevelingApi {
   public void getLevelTriggers (final Response.Listener<List<BreTriggerResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/leveling/triggers".replaceAll("\\{format\\}","json");
@@ -530,7 +524,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -606,15 +600,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -626,7 +620,6 @@ public class GamificationLevelingApi {
   public void getLevels (String filterName, Integer size, Integer page, String order, final Response.Listener<PageResourceLevelingResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/leveling".replaceAll("\\{format\\}","json");
@@ -660,7 +653,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -740,15 +733,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -760,19 +753,16 @@ public class GamificationLevelingApi {
   public void getUserLevel (Integer userId, String name, final Response.Listener<UserLevelingResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserLevel",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserLevel"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserLevel",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserLevel"));
     }
-    
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling getUserLevel",
-         new ApiException(400, "Missing the required parameter 'name' when calling getUserLevel"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling getUserLevel",
+        new ApiException(400, "Missing the required parameter 'name' when calling getUserLevel"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/leveling/{name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -802,7 +792,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -884,15 +874,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -904,13 +894,11 @@ public class GamificationLevelingApi {
   public void getUserLevels (Integer userId, String filterName, Integer size, Integer page, String order, final Response.Listener<PageResourceUserLevelingResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserLevels",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserLevels"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserLevels",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserLevels"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/leveling".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -944,7 +932,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1025,15 +1013,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1045,19 +1033,16 @@ public class GamificationLevelingApi {
   public void incrementProgress (Integer userId, String name, Integer progress, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = progress;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling incrementProgress",
-         new ApiException(400, "Missing the required parameter 'userId' when calling incrementProgress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling incrementProgress",
+        new ApiException(400, "Missing the required parameter 'userId' when calling incrementProgress"));
     }
-    
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling incrementProgress",
-         new ApiException(400, "Missing the required parameter 'name' when calling incrementProgress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling incrementProgress",
+        new ApiException(400, "Missing the required parameter 'name' when calling incrementProgress"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/leveling/{name}/progress".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -1087,7 +1072,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1164,15 +1149,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1184,19 +1169,16 @@ public class GamificationLevelingApi {
   public void setProgress (Integer userId, String name, Integer progress, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = progress;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setProgress",
-         new ApiException(400, "Missing the required parameter 'userId' when calling setProgress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling setProgress",
+        new ApiException(400, "Missing the required parameter 'userId' when calling setProgress"));
     }
-    
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling setProgress",
-         new ApiException(400, "Missing the required parameter 'name' when calling setProgress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling setProgress",
+        new ApiException(400, "Missing the required parameter 'name' when calling setProgress"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/leveling/{name}/progress".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -1226,7 +1208,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1297,15 +1279,15 @@ public class GamificationLevelingApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1317,13 +1299,11 @@ public class GamificationLevelingApi {
   public void updateLevel (String name, LevelingResource newLevel, final Response.Listener<LevelingResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = newLevel;
 
-  
     // verify the required parameter 'name' is set
     if (name == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'name' when calling updateLevel",
-         new ApiException(400, "Missing the required parameter 'name' when calling updateLevel"));
+      VolleyError error = new VolleyError("Missing the required parameter 'name' when calling updateLevel",
+        new ApiException(400, "Missing the required parameter 'name' when calling updateLevel"));
     }
-    
 
     // create path and map variables
     String path = "/leveling/{name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "name" + "\\}", apiInvoker.escapeString(name.toString()));
@@ -1353,7 +1333,7 @@ public class GamificationLevelingApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -115,15 +115,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -135,13 +135,11 @@ public class StoreShoppingCartsApi {
   public void addCustomDiscount (String id, CouponDefinition customDiscount, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = customDiscount;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addCustomDiscount",
-         new ApiException(400, "Missing the required parameter 'id' when calling addCustomDiscount"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addCustomDiscount",
+        new ApiException(400, "Missing the required parameter 'id' when calling addCustomDiscount"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/custom-discounts".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -171,7 +169,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -242,15 +240,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -262,13 +260,11 @@ public class StoreShoppingCartsApi {
   public void addDiscountToCart (String id, SkuRequest skuRequest, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = skuRequest;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addDiscountToCart",
-         new ApiException(400, "Missing the required parameter 'id' when calling addDiscountToCart"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addDiscountToCart",
+        new ApiException(400, "Missing the required parameter 'id' when calling addDiscountToCart"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/discounts".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -298,7 +294,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -369,15 +365,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -389,13 +385,11 @@ public class StoreShoppingCartsApi {
   public void addItemToCart (String id, CartItemRequest cartItemRequest, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = cartItemRequest;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addItemToCart",
-         new ApiException(400, "Missing the required parameter 'id' when calling addItemToCart"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addItemToCart",
+        new ApiException(400, "Missing the required parameter 'id' when calling addItemToCart"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/items".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -425,7 +419,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -493,15 +487,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -513,7 +507,6 @@ public class StoreShoppingCartsApi {
   public void createCart (Integer owner, String currencyCode, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/carts".replaceAll("\\{format\\}","json");
@@ -545,7 +538,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -619,15 +612,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -639,13 +632,11 @@ public class StoreShoppingCartsApi {
   public void getCart (String id, final Response.Listener<Cart> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getCart",
-         new ApiException(400, "Missing the required parameter 'id' when calling getCart"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getCart",
+        new ApiException(400, "Missing the required parameter 'id' when calling getCart"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -675,7 +666,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -751,15 +742,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -771,7 +762,6 @@ public class StoreShoppingCartsApi {
   public void getCarts (Integer filterOwnerId, Integer size, Integer page, String order, final Response.Listener<PageResourceCartSummary> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/carts".replaceAll("\\{format\\}","json");
@@ -805,7 +795,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -879,15 +869,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -899,13 +889,11 @@ public class StoreShoppingCartsApi {
   public void getShippable (String id, final Response.Listener<CartShippableResponse> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getShippable",
-         new ApiException(400, "Missing the required parameter 'id' when calling getShippable"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getShippable",
+        new ApiException(400, "Missing the required parameter 'id' when calling getShippable"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/shippable".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -935,7 +923,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1009,15 +997,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1029,13 +1017,11 @@ public class StoreShoppingCartsApi {
   public void getShippingCountries (String id, final Response.Listener<SampleCountriesResponse> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getShippingCountries",
-         new ApiException(400, "Missing the required parameter 'id' when calling getShippingCountries"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getShippingCountries",
+        new ApiException(400, "Missing the required parameter 'id' when calling getShippingCountries"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/countries".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1065,7 +1051,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1145,15 +1131,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1165,19 +1151,16 @@ public class StoreShoppingCartsApi {
   public void removeDiscountFromCart (String id, String code, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeDiscountFromCart",
-         new ApiException(400, "Missing the required parameter 'id' when calling removeDiscountFromCart"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeDiscountFromCart",
+        new ApiException(400, "Missing the required parameter 'id' when calling removeDiscountFromCart"));
     }
-    
     // verify the required parameter 'code' is set
     if (code == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'code' when calling removeDiscountFromCart",
-         new ApiException(400, "Missing the required parameter 'code' when calling removeDiscountFromCart"));
+      VolleyError error = new VolleyError("Missing the required parameter 'code' when calling removeDiscountFromCart",
+        new ApiException(400, "Missing the required parameter 'code' when calling removeDiscountFromCart"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/discounts/{code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "code" + "\\}", apiInvoker.escapeString(code.toString()));
@@ -1207,7 +1190,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1278,15 +1261,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1298,13 +1281,11 @@ public class StoreShoppingCartsApi {
   public void setCartCurrency (String id, String currencyCode, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = currencyCode;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setCartCurrency",
-         new ApiException(400, "Missing the required parameter 'id' when calling setCartCurrency"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setCartCurrency",
+        new ApiException(400, "Missing the required parameter 'id' when calling setCartCurrency"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/currency".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1334,7 +1315,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1405,15 +1386,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1425,13 +1406,11 @@ public class StoreShoppingCartsApi {
   public void setCartOwner (String id, Integer userId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = userId;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setCartOwner",
-         new ApiException(400, "Missing the required parameter 'id' when calling setCartOwner"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling setCartOwner",
+        new ApiException(400, "Missing the required parameter 'id' when calling setCartOwner"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/owner".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1461,7 +1440,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1532,15 +1511,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1552,13 +1531,11 @@ public class StoreShoppingCartsApi {
   public void updateItemInCart (String id, CartItemRequest cartItemRequest, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = cartItemRequest;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateItemInCart",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateItemInCart"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateItemInCart",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateItemInCart"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/items".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1588,7 +1565,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1659,15 +1636,15 @@ public class StoreShoppingCartsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1679,13 +1656,11 @@ public class StoreShoppingCartsApi {
   public void updateShippingAddress (String id, CartShippingAddressRequest cartShippingAddressRequest, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = cartShippingAddressRequest;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateShippingAddress",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateShippingAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateShippingAddress",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateShippingAddress"));
     }
-    
 
     // create path and map variables
     String path = "/carts/{id}/shipping-address".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1715,7 +1690,7 @@ public class StoreShoppingCartsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

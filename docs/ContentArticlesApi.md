@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 <a name="getArticles"></a>
 # **getArticles**
-> PageResourceArticleResource getArticles(filterCategory, filterTagset, filterTitle, size, page, order)
+> PageResourceArticleResource getArticles(filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order)
 
 List and search articles
 
@@ -328,13 +328,15 @@ Get a list of articles with optional filtering. Assets will not be filled in on 
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 String filterCategory = "filterCategory_example"; // String | Filter for articles from a specific category by id
-String filterTagset = "filterTagset_example"; // String | Filter for articles with specified tags (separated by comma)
+String filterTagset = "filterTagset_example"; // String | Filter for articles with at least one of a specified set of tags (separated by comma)
+String filterTagIntersection = "filterTagIntersection_example"; // String | Filter for articles with all of a specified set of tags (separated by comma)
+String filterTagExclusion = "filterTagExclusion_example"; // String | Filter for articles with none of a specified set of tags (separated by comma)
 String filterTitle = "filterTitle_example"; // String | Filter for articles whose title contains a string
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned, starting with 1
 String order = "id:ASC"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 try {
-    PageResourceArticleResource result = apiInstance.getArticles(filterCategory, filterTagset, filterTitle, size, page, order);
+    PageResourceArticleResource result = apiInstance.getArticles(filterCategory, filterTagset, filterTagIntersection, filterTagExclusion, filterTitle, size, page, order);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ContentArticlesApi#getArticles");
@@ -347,7 +349,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterCategory** | **String**| Filter for articles from a specific category by id | [optional]
- **filterTagset** | **String**| Filter for articles with specified tags (separated by comma) | [optional]
+ **filterTagset** | **String**| Filter for articles with at least one of a specified set of tags (separated by comma) | [optional]
+ **filterTagIntersection** | **String**| Filter for articles with all of a specified set of tags (separated by comma) | [optional]
+ **filterTagExclusion** | **String**| Filter for articles with none of a specified set of tags (separated by comma) | [optional]
  **filterTitle** | **String**| Filter for articles whose title contains a string | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]

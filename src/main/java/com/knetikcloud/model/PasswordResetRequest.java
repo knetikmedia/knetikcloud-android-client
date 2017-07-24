@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -15,8 +15,11 @@ package com.knetikcloud.model;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
-public class ARequestToResetAUsersPasswordByUsingAKnownUserProperty {
+/**
+ * A request to reset a user&#39;s password by using a known user property
+ **/
+@ApiModel(description = "A request to reset a user's password by using a known user property")
+public class PasswordResetRequest {
   
   @SerializedName("email")
   private String email = null;
@@ -67,10 +70,10 @@ public class ARequestToResetAUsersPasswordByUsingAKnownUserProperty {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ARequestToResetAUsersPasswordByUsingAKnownUserProperty aRequestToResetAUsersPasswordByUsingAKnownUserProperty = (ARequestToResetAUsersPasswordByUsingAKnownUserProperty) o;
-    return (this.email == null ? aRequestToResetAUsersPasswordByUsingAKnownUserProperty.email == null : this.email.equals(aRequestToResetAUsersPasswordByUsingAKnownUserProperty.email)) &&
-        (this.mobileNumber == null ? aRequestToResetAUsersPasswordByUsingAKnownUserProperty.mobileNumber == null : this.mobileNumber.equals(aRequestToResetAUsersPasswordByUsingAKnownUserProperty.mobileNumber)) &&
-        (this.username == null ? aRequestToResetAUsersPasswordByUsingAKnownUserProperty.username == null : this.username.equals(aRequestToResetAUsersPasswordByUsingAKnownUserProperty.username));
+    PasswordResetRequest passwordResetRequest = (PasswordResetRequest) o;
+    return (this.email == null ? passwordResetRequest.email == null : this.email.equals(passwordResetRequest.email)) &&
+        (this.mobileNumber == null ? passwordResetRequest.mobileNumber == null : this.mobileNumber.equals(passwordResetRequest.mobileNumber)) &&
+        (this.username == null ? passwordResetRequest.username == null : this.username.equals(passwordResetRequest.username));
   }
 
   @Override
@@ -85,7 +88,7 @@ public class ARequestToResetAUsersPasswordByUsingAKnownUserProperty {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ARequestToResetAUsersPasswordByUsingAKnownUserProperty {\n");
+    sb.append("class PasswordResetRequest {\n");
     
     sb.append("  email: ").append(email).append("\n");
     sb.append("  mobileNumber: ").append(mobileNumber).append("\n");

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -19,10 +19,22 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class TokenDetailsResource {
   
+  @SerializedName("client_id")
+  private String clientId = null;
   @SerializedName("roles")
   private List<String> roles = null;
   @SerializedName("user_id")
   private Integer userId = null;
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getClientId() {
+    return clientId;
+  }
+  public void setClientId(String clientId) {
+    this.clientId = clientId;
+  }
 
   /**
    **/
@@ -54,13 +66,15 @@ public class TokenDetailsResource {
       return false;
     }
     TokenDetailsResource tokenDetailsResource = (TokenDetailsResource) o;
-    return (this.roles == null ? tokenDetailsResource.roles == null : this.roles.equals(tokenDetailsResource.roles)) &&
+    return (this.clientId == null ? tokenDetailsResource.clientId == null : this.clientId.equals(tokenDetailsResource.clientId)) &&
+        (this.roles == null ? tokenDetailsResource.roles == null : this.roles.equals(tokenDetailsResource.roles)) &&
         (this.userId == null ? tokenDetailsResource.userId == null : this.userId.equals(tokenDetailsResource.userId));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
+    result = 31 * result + (this.clientId == null ? 0: this.clientId.hashCode());
     result = 31 * result + (this.roles == null ? 0: this.roles.hashCode());
     result = 31 * result + (this.userId == null ? 0: this.userId.hashCode());
     return result;
@@ -71,6 +85,7 @@ public class TokenDetailsResource {
     StringBuilder sb = new StringBuilder();
     sb.append("class TokenDetailsResource {\n");
     
+    sb.append("  clientId: ").append(clientId).append("\n");
     sb.append("  roles: ").append(roles).append("\n");
     sb.append("  userId: ").append(userId).append("\n");
     sb.append("}\n");

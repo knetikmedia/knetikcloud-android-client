@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -20,6 +20,8 @@ public class RefundRequest {
   
   @SerializedName("amount")
   private Double amount = null;
+  @SerializedName("bundle_sku")
+  private String bundleSku = null;
   @SerializedName("notes")
   private String notes = null;
   @SerializedName("sku")
@@ -34,6 +36,17 @@ public class RefundRequest {
   }
   public void setAmount(Double amount) {
     this.amount = amount;
+  }
+
+  /**
+   * The SKU of a bundle item from the invoice that the target item is within.
+   **/
+  @ApiModelProperty(value = "The SKU of a bundle item from the invoice that the target item is within.")
+  public String getBundleSku() {
+    return bundleSku;
+  }
+  public void setBundleSku(String bundleSku) {
+    this.bundleSku = bundleSku;
   }
 
   /**
@@ -69,6 +82,7 @@ public class RefundRequest {
     }
     RefundRequest refundRequest = (RefundRequest) o;
     return (this.amount == null ? refundRequest.amount == null : this.amount.equals(refundRequest.amount)) &&
+        (this.bundleSku == null ? refundRequest.bundleSku == null : this.bundleSku.equals(refundRequest.bundleSku)) &&
         (this.notes == null ? refundRequest.notes == null : this.notes.equals(refundRequest.notes)) &&
         (this.sku == null ? refundRequest.sku == null : this.sku.equals(refundRequest.sku));
   }
@@ -77,6 +91,7 @@ public class RefundRequest {
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.amount == null ? 0: this.amount.hashCode());
+    result = 31 * result + (this.bundleSku == null ? 0: this.bundleSku.hashCode());
     result = 31 * result + (this.notes == null ? 0: this.notes.hashCode());
     result = 31 * result + (this.sku == null ? 0: this.sku.hashCode());
     return result;
@@ -88,6 +103,7 @@ public class RefundRequest {
     sb.append("class RefundRequest {\n");
     
     sb.append("  amount: ").append(amount).append("\n");
+    sb.append("  bundleSku: ").append(bundleSku).append("\n");
     sb.append("  notes: ").append(notes).append("\n");
     sb.append("  sku: ").append(sku).append("\n");
     sb.append("}\n");

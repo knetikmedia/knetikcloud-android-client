@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -105,15 +105,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -125,7 +125,6 @@ public class TaxesApi {
   public void createCountryTax (CountryTaxResource taxResource, final Response.Listener<CountryTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = taxResource;
 
-  
 
     // create path and map variables
     String path = "/tax/countries".replaceAll("\\{format\\}","json");
@@ -155,7 +154,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -230,15 +229,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -250,13 +249,11 @@ public class TaxesApi {
   public void createStateTax (String countryCodeIso3, StateTaxResource taxResource, final Response.Listener<StateTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = taxResource;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling createStateTax",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling createStateTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling createStateTax",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling createStateTax"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}/states".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString()));
@@ -286,7 +283,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -360,15 +357,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -380,13 +377,11 @@ public class TaxesApi {
   public void deleteCountryTax (String countryCodeIso3, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling deleteCountryTax",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling deleteCountryTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling deleteCountryTax",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling deleteCountryTax"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString()));
@@ -416,7 +411,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -492,15 +487,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -512,19 +507,16 @@ public class TaxesApi {
   public void deleteStateTax (String countryCodeIso3, String stateCode, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling deleteStateTax",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling deleteStateTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling deleteStateTax",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling deleteStateTax"));
     }
-    
     // verify the required parameter 'stateCode' is set
     if (stateCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'stateCode' when calling deleteStateTax",
-         new ApiException(400, "Missing the required parameter 'stateCode' when calling deleteStateTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'stateCode' when calling deleteStateTax",
+        new ApiException(400, "Missing the required parameter 'stateCode' when calling deleteStateTax"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString())).replaceAll("\\{" + "state_code" + "\\}", apiInvoker.escapeString(stateCode.toString()));
@@ -554,7 +546,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -624,15 +616,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -644,13 +636,11 @@ public class TaxesApi {
   public void getCountryTax (String countryCodeIso3, final Response.Listener<CountryTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling getCountryTax",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling getCountryTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling getCountryTax",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling getCountryTax"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString()));
@@ -680,7 +670,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -754,15 +744,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -774,7 +764,6 @@ public class TaxesApi {
   public void getCountryTaxes (Integer size, Integer page, String order, final Response.Listener<PageResourceCountryTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/tax/countries".replaceAll("\\{format\\}","json");
@@ -807,7 +796,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -887,15 +876,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -907,19 +896,16 @@ public class TaxesApi {
   public void getStateTax (String countryCodeIso3, String stateCode, final Response.Listener<StateTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling getStateTax",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling getStateTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling getStateTax",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling getStateTax"));
     }
-    
     // verify the required parameter 'stateCode' is set
     if (stateCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'stateCode' when calling getStateTax",
-         new ApiException(400, "Missing the required parameter 'stateCode' when calling getStateTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'stateCode' when calling getStateTax",
+        new ApiException(400, "Missing the required parameter 'stateCode' when calling getStateTax"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString())).replaceAll("\\{" + "state_code" + "\\}", apiInvoker.escapeString(stateCode.toString()));
@@ -949,7 +935,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1023,15 +1009,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1043,7 +1029,6 @@ public class TaxesApi {
   public void getStateTaxesForCountries (Integer size, Integer page, String order, final Response.Listener<PageResourceStateTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/tax/states".replaceAll("\\{format\\}","json");
@@ -1076,7 +1061,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1156,15 +1141,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1176,13 +1161,11 @@ public class TaxesApi {
   public void getStateTaxesForCountry (String countryCodeIso3, Integer size, Integer page, String order, final Response.Listener<PageResourceStateTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling getStateTaxesForCountry",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling getStateTaxesForCountry"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling getStateTaxesForCountry",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling getStateTaxesForCountry"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}/states".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString()));
@@ -1215,7 +1198,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1290,15 +1273,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1310,13 +1293,11 @@ public class TaxesApi {
   public void updateCountryTax (String countryCodeIso3, CountryTaxResource taxResource, final Response.Listener<CountryTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = taxResource;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling updateCountryTax",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling updateCountryTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling updateCountryTax",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling updateCountryTax"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString()));
@@ -1346,7 +1327,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1427,15 +1408,15 @@ public class TaxesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1447,19 +1428,16 @@ public class TaxesApi {
   public void updateStateTax (String countryCodeIso3, String stateCode, StateTaxResource taxResource, final Response.Listener<StateTaxResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = taxResource;
 
-  
     // verify the required parameter 'countryCodeIso3' is set
     if (countryCodeIso3 == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling updateStateTax",
-         new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling updateStateTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'countryCodeIso3' when calling updateStateTax",
+        new ApiException(400, "Missing the required parameter 'countryCodeIso3' when calling updateStateTax"));
     }
-    
     // verify the required parameter 'stateCode' is set
     if (stateCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'stateCode' when calling updateStateTax",
-         new ApiException(400, "Missing the required parameter 'stateCode' when calling updateStateTax"));
+      VolleyError error = new VolleyError("Missing the required parameter 'stateCode' when calling updateStateTax",
+        new ApiException(400, "Missing the required parameter 'stateCode' when calling updateStateTax"));
     }
-    
 
     // create path and map variables
     String path = "/tax/countries/{country_code_iso3}/states/{state_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "country_code_iso3" + "\\}", apiInvoker.escapeString(countryCodeIso3.toString())).replaceAll("\\{" + "state_code" + "\\}", apiInvoker.escapeString(stateCode.toString()));
@@ -1489,7 +1467,7 @@ public class TaxesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

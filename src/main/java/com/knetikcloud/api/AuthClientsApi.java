@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -105,15 +105,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -125,7 +125,6 @@ public class AuthClientsApi {
   public void createClient (ClientResource clientResource, final Response.Listener<ClientResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = clientResource;
 
-  
 
     // create path and map variables
     String path = "/auth/clients".replaceAll("\\{format\\}","json");
@@ -155,7 +154,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -229,15 +228,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -249,13 +248,11 @@ public class AuthClientsApi {
   public void deleteClient (String clientKey, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'clientKey' is set
     if (clientKey == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling deleteClient",
-         new ApiException(400, "Missing the required parameter 'clientKey' when calling deleteClient"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling deleteClient",
+        new ApiException(400, "Missing the required parameter 'clientKey' when calling deleteClient"));
     }
-    
 
     // create path and map variables
     String path = "/auth/clients/{client_key}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "client_key" + "\\}", apiInvoker.escapeString(clientKey.toString()));
@@ -285,7 +282,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -355,15 +352,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -375,13 +372,11 @@ public class AuthClientsApi {
   public void getClient (String clientKey, final Response.Listener<ClientResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'clientKey' is set
     if (clientKey == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling getClient",
-         new ApiException(400, "Missing the required parameter 'clientKey' when calling getClient"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling getClient",
+        new ApiException(400, "Missing the required parameter 'clientKey' when calling getClient"));
     }
-    
 
     // create path and map variables
     String path = "/auth/clients/{client_key}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "client_key" + "\\}", apiInvoker.escapeString(clientKey.toString()));
@@ -411,7 +406,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -479,15 +474,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -499,7 +494,6 @@ public class AuthClientsApi {
   public void getClientGrantTypes (final Response.Listener<List<GrantTypeResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/auth/clients/grant-types".replaceAll("\\{format\\}","json");
@@ -529,7 +523,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -603,15 +597,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -623,7 +617,6 @@ public class AuthClientsApi {
   public void getClients (Integer size, Integer page, String order, final Response.Listener<PageResourceClientResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/auth/clients".replaceAll("\\{format\\}","json");
@@ -656,7 +649,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -731,15 +724,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -751,13 +744,11 @@ public class AuthClientsApi {
   public void setClientGrantTypes (String clientKey, List<String> grantList, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = grantList;
 
-  
     // verify the required parameter 'clientKey' is set
     if (clientKey == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling setClientGrantTypes",
-         new ApiException(400, "Missing the required parameter 'clientKey' when calling setClientGrantTypes"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling setClientGrantTypes",
+        new ApiException(400, "Missing the required parameter 'clientKey' when calling setClientGrantTypes"));
     }
-    
 
     // create path and map variables
     String path = "/auth/clients/{client_key}/grant-types".replaceAll("\\{format\\}","json").replaceAll("\\{" + "client_key" + "\\}", apiInvoker.escapeString(clientKey.toString()));
@@ -787,7 +778,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -858,15 +849,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -878,13 +869,11 @@ public class AuthClientsApi {
   public void setClientRedirectUris (String clientKey, List<String> redirectList, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = redirectList;
 
-  
     // verify the required parameter 'clientKey' is set
     if (clientKey == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling setClientRedirectUris",
-         new ApiException(400, "Missing the required parameter 'clientKey' when calling setClientRedirectUris"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling setClientRedirectUris",
+        new ApiException(400, "Missing the required parameter 'clientKey' when calling setClientRedirectUris"));
     }
-    
 
     // create path and map variables
     String path = "/auth/clients/{client_key}/redirect-uris".replaceAll("\\{format\\}","json").replaceAll("\\{" + "client_key" + "\\}", apiInvoker.escapeString(clientKey.toString()));
@@ -914,7 +903,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -985,15 +974,15 @@ public class AuthClientsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1005,13 +994,11 @@ public class AuthClientsApi {
   public void updateClient (String clientKey, ClientResource clientResource, final Response.Listener<ClientResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = clientResource;
 
-  
     // verify the required parameter 'clientKey' is set
     if (clientKey == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling updateClient",
-         new ApiException(400, "Missing the required parameter 'clientKey' when calling updateClient"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientKey' when calling updateClient",
+        new ApiException(400, "Missing the required parameter 'clientKey' when calling updateClient"));
     }
-    
 
     // create path and map variables
     String path = "/auth/clients/{client_key}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "client_key" + "\\}", apiInvoker.escapeString(clientKey.toString()));
@@ -1041,7 +1028,7 @@ public class AuthClientsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

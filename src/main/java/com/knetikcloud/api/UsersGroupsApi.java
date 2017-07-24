@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -119,15 +119,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -139,19 +139,16 @@ public class UsersGroupsApi {
   public void addMemberToGroup (String uniqueName, GroupMemberResource user, final Response.Listener<GroupMemberResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = user;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling addMemberToGroup",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling addMemberToGroup"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling addMemberToGroup",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling addMemberToGroup"));
     }
-    
     // verify the required parameter 'user' is set
     if (user == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'user' when calling addMemberToGroup",
-         new ApiException(400, "Missing the required parameter 'user' when calling addMemberToGroup"));
+      VolleyError error = new VolleyError("Missing the required parameter 'user' when calling addMemberToGroup",
+        new ApiException(400, "Missing the required parameter 'user' when calling addMemberToGroup"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}/members".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString()));
@@ -181,7 +178,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -261,15 +258,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -281,19 +278,16 @@ public class UsersGroupsApi {
   public void addMembersToGroup (String uniqueName, List<GroupMemberResource> users, final Response.Listener<List<GroupMemberResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = users;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling addMembersToGroup",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling addMembersToGroup"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling addMembersToGroup",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling addMembersToGroup"));
     }
-    
     // verify the required parameter 'users' is set
     if (users == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'users' when calling addMembersToGroup",
-         new ApiException(400, "Missing the required parameter 'users' when calling addMembersToGroup"));
+      VolleyError error = new VolleyError("Missing the required parameter 'users' when calling addMembersToGroup",
+        new ApiException(400, "Missing the required parameter 'users' when calling addMembersToGroup"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}/members/batch-add".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString()));
@@ -323,7 +317,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -392,15 +386,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -412,7 +406,6 @@ public class UsersGroupsApi {
   public void createGroup (GroupResource groupResource, final Response.Listener<GroupResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = groupResource;
 
-  
 
     // create path and map variables
     String path = "/users/groups".replaceAll("\\{format\\}","json");
@@ -442,7 +435,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -511,15 +504,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -531,7 +524,6 @@ public class UsersGroupsApi {
   public void createGroupTemplate (TemplateResource groupTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = groupTemplateResource;
 
-  
 
     // create path and map variables
     String path = "/users/groups/templates".replaceAll("\\{format\\}","json");
@@ -561,7 +553,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -635,15 +627,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -655,13 +647,11 @@ public class UsersGroupsApi {
   public void deleteGroup (String uniqueName, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling deleteGroup",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling deleteGroup"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling deleteGroup",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling deleteGroup"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString()));
@@ -691,7 +681,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -763,15 +753,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -783,13 +773,11 @@ public class UsersGroupsApi {
   public void deleteGroupTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteGroupTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteGroupTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteGroupTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteGroupTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -820,7 +808,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -890,15 +878,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -910,13 +898,11 @@ public class UsersGroupsApi {
   public void getGroup (String uniqueName, final Response.Listener<GroupResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling getGroup",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling getGroup"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling getGroup",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling getGroup"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString()));
@@ -946,7 +932,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1026,15 +1012,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1046,19 +1032,16 @@ public class UsersGroupsApi {
   public void getGroupMember (String uniqueName, Integer userId, final Response.Listener<GroupMemberResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling getGroupMember",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling getGroupMember"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling getGroupMember",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling getGroupMember"));
     }
-    
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getGroupMember",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getGroupMember"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getGroupMember",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getGroupMember"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}/members/{user_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString())).replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -1088,7 +1071,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1168,15 +1151,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1188,13 +1171,11 @@ public class UsersGroupsApi {
   public void getGroupMembers (String uniqueName, Integer size, Integer page, String order, final Response.Listener<PageResourceGroupMemberResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling getGroupMembers",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling getGroupMembers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling getGroupMembers",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling getGroupMembers"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}/members".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString()));
@@ -1227,7 +1208,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1301,15 +1282,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1321,13 +1302,11 @@ public class UsersGroupsApi {
   public void getGroupTemplate (String id, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getGroupTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getGroupTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getGroupTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getGroupTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1357,7 +1336,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1431,15 +1410,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1451,7 +1430,6 @@ public class UsersGroupsApi {
   public void getGroupTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/users/groups/templates".replaceAll("\\{format\\}","json");
@@ -1484,7 +1462,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1558,15 +1536,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1578,13 +1556,11 @@ public class UsersGroupsApi {
   public void getGroupsForUser (Integer userId, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getGroupsForUser",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getGroupsForUser"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getGroupsForUser",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getGroupsForUser"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/groups".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -1614,7 +1590,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1694,15 +1670,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1714,19 +1690,16 @@ public class UsersGroupsApi {
   public void removeGroupMember (String uniqueName, Integer userId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling removeGroupMember",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling removeGroupMember"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling removeGroupMember",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling removeGroupMember"));
     }
-    
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling removeGroupMember",
-         new ApiException(400, "Missing the required parameter 'userId' when calling removeGroupMember"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling removeGroupMember",
+        new ApiException(400, "Missing the required parameter 'userId' when calling removeGroupMember"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}/members/{user_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString())).replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -1756,7 +1729,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1827,15 +1800,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1847,13 +1820,11 @@ public class UsersGroupsApi {
   public void updateGroup (String uniqueName, GroupResource groupResource, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = groupResource;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling updateGroup",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling updateGroup"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling updateGroup",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling updateGroup"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString()));
@@ -1883,7 +1854,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1965,15 +1936,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1985,25 +1956,21 @@ public class UsersGroupsApi {
   public void updateGroupMemberStatus (String uniqueName, Integer userId, String status, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = status;
 
-  
     // verify the required parameter 'uniqueName' is set
     if (uniqueName == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling updateGroupMemberStatus",
-         new ApiException(400, "Missing the required parameter 'uniqueName' when calling updateGroupMemberStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'uniqueName' when calling updateGroupMemberStatus",
+        new ApiException(400, "Missing the required parameter 'uniqueName' when calling updateGroupMemberStatus"));
     }
-    
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateGroupMemberStatus",
-         new ApiException(400, "Missing the required parameter 'userId' when calling updateGroupMemberStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateGroupMemberStatus",
+        new ApiException(400, "Missing the required parameter 'userId' when calling updateGroupMemberStatus"));
     }
-    
     // verify the required parameter 'status' is set
     if (status == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'status' when calling updateGroupMemberStatus",
-         new ApiException(400, "Missing the required parameter 'status' when calling updateGroupMemberStatus"));
+      VolleyError error = new VolleyError("Missing the required parameter 'status' when calling updateGroupMemberStatus",
+        new ApiException(400, "Missing the required parameter 'status' when calling updateGroupMemberStatus"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/{unique_name}/members/{user_id}/status".replaceAll("\\{format\\}","json").replaceAll("\\{" + "unique_name" + "\\}", apiInvoker.escapeString(uniqueName.toString())).replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -2033,7 +2000,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2104,15 +2071,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2124,13 +2091,11 @@ public class UsersGroupsApi {
   public void updateGroupTemplate (String id, TemplateResource groupTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = groupTemplateResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateGroupTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateGroupTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateGroupTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateGroupTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/users/groups/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2160,7 +2125,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2246,15 +2211,15 @@ public class UsersGroupsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2266,7 +2231,6 @@ public class UsersGroupsApi {
   public void updateGroups (String filterTemplate, String filterMemberCount, String filterName, String filterUniqueName, String filterParent, String filterStatus, Integer size, Integer page, String order, final Response.Listener<PageResourceGroupResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/users/groups".replaceAll("\\{format\\}","json");
@@ -2305,7 +2269,7 @@ public class UsersGroupsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,

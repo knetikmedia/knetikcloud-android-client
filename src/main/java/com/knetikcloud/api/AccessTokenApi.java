@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -135,15 +135,15 @@ public class AccessTokenApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -155,19 +155,16 @@ public class AccessTokenApi {
   public void getOAuthToken (String grantType, String clientId, String clientSecret, String username, String password, final Response.Listener<OAuth2Resource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'grantType' is set
     if (grantType == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'grantType' when calling getOAuthToken",
-         new ApiException(400, "Missing the required parameter 'grantType' when calling getOAuthToken"));
+      VolleyError error = new VolleyError("Missing the required parameter 'grantType' when calling getOAuthToken",
+        new ApiException(400, "Missing the required parameter 'grantType' when calling getOAuthToken"));
     }
-    
     // verify the required parameter 'clientId' is set
     if (clientId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'clientId' when calling getOAuthToken",
-         new ApiException(400, "Missing the required parameter 'clientId' when calling getOAuthToken"));
+      VolleyError error = new VolleyError("Missing the required parameter 'clientId' when calling getOAuthToken",
+        new ApiException(400, "Missing the required parameter 'clientId' when calling getOAuthToken"));
     }
-    
 
     // create path and map variables
     String path = "/oauth/token".replaceAll("\\{format\\}","json");
@@ -222,7 +219,7 @@ formParams.put("username", ApiInvoker.parameterToString(username));
 formParams.put("password", ApiInvoker.parameterToString(password));
     }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,

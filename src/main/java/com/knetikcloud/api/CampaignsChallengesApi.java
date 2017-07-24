@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -109,15 +109,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -129,7 +129,6 @@ public class CampaignsChallengesApi {
   public void createChallenge (ChallengeResource challengeResource, final Response.Listener<ChallengeResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeResource;
 
-  
 
     // create path and map variables
     String path = "/challenges".replaceAll("\\{format\\}","json");
@@ -159,7 +158,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -236,15 +235,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -256,13 +255,11 @@ public class CampaignsChallengesApi {
   public void createChallengeActivity (Long challengeId, ChallengeActivityResource challengeActivityResource, Boolean validateSettings, final Response.Listener<ChallengeActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeActivityResource;
 
-  
     // verify the required parameter 'challengeId' is set
     if (challengeId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling createChallengeActivity",
-         new ApiException(400, "Missing the required parameter 'challengeId' when calling createChallengeActivity"));
+      VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling createChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'challengeId' when calling createChallengeActivity"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/{challenge_id}/activities".replaceAll("\\{format\\}","json").replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
@@ -293,7 +290,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -362,15 +359,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -382,7 +379,6 @@ public class CampaignsChallengesApi {
   public void createChallengeActivityTemplate (TemplateResource challengeActivityTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeActivityTemplateResource;
 
-  
 
     // create path and map variables
     String path = "/challenge-activities/templates".replaceAll("\\{format\\}","json");
@@ -412,7 +408,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -481,15 +477,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -501,7 +497,6 @@ public class CampaignsChallengesApi {
   public void createChallengeTemplate (TemplateResource challengeTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeTemplateResource;
 
-  
 
     // create path and map variables
     String path = "/challenges/templates".replaceAll("\\{format\\}","json");
@@ -531,7 +526,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -605,15 +600,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -625,13 +620,11 @@ public class CampaignsChallengesApi {
   public void deleteChallenge (Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallenge",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteChallenge"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallenge",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteChallenge"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -661,7 +654,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -682,17 +675,17 @@ public class CampaignsChallengesApi {
   }
   /**
   * Delete a challenge activity
-  * 
-   * @param activityId The activity id
+  * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * @param id The challenge_activity id
    * @param challengeId The challenge id
    * @return void
   */
-  public void deleteChallengeActivity (Long activityId, Long challengeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public void deleteChallengeActivity (Long id, Long challengeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
-    // verify the required parameter 'activityId' is set
-    if (activityId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'activityId' when calling deleteChallengeActivity",
-        new ApiException(400, "Missing the required parameter 'activityId' when calling deleteChallengeActivity"));
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeActivity"));
     }
     // verify the required parameter 'challengeId' is set
     if (challengeId == null) {
@@ -701,7 +694,7 @@ public class CampaignsChallengesApi {
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("\\{" + "activity_id" + "\\}", apiInvoker.escapeString(activityId.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -737,42 +730,39 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
       /**
    * Delete a challenge activity
-   * 
-   * @param activityId The activity id   * @param challengeId The challenge id
+   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * @param id The challenge_activity id   * @param challengeId The challenge id
   */
-  public void deleteChallengeActivity (Long activityId, Long challengeId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void deleteChallengeActivity (Long id, Long challengeId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
-    // verify the required parameter 'activityId' is set
-    if (activityId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'activityId' when calling deleteChallengeActivity",
-         new ApiException(400, "Missing the required parameter 'activityId' when calling deleteChallengeActivity"));
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeActivity"));
     }
-    
     // verify the required parameter 'challengeId' is set
     if (challengeId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling deleteChallengeActivity",
-         new ApiException(400, "Missing the required parameter 'challengeId' when calling deleteChallengeActivity"));
+      VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling deleteChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'challengeId' when calling deleteChallengeActivity"));
     }
-    
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "activity_id" + "\\}", apiInvoker.escapeString(activityId.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -799,7 +789,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -871,15 +861,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -891,13 +881,11 @@ public class CampaignsChallengesApi {
   public void deleteChallengeActivityTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeActivityTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeActivityTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeActivityTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeActivityTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/challenge-activities/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -928,7 +916,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -998,15 +986,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1018,13 +1006,11 @@ public class CampaignsChallengesApi {
   public void deleteChallengeEvent (Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeEvent",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeEvent"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeEvent",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeEvent"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/events/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1054,7 +1040,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1126,15 +1112,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1146,13 +1132,11 @@ public class CampaignsChallengesApi {
   public void deleteChallengeTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteChallengeTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteChallengeTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1183,7 +1167,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1253,15 +1237,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1273,13 +1257,11 @@ public class CampaignsChallengesApi {
   public void getChallenge (Long id, final Response.Listener<ChallengeResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallenge",
-         new ApiException(400, "Missing the required parameter 'id' when calling getChallenge"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallenge",
+        new ApiException(400, "Missing the required parameter 'id' when calling getChallenge"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1309,7 +1291,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1389,15 +1371,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1409,13 +1391,11 @@ public class CampaignsChallengesApi {
   public void getChallengeActivities (Long challengeId, Integer size, Integer page, String order, final Response.Listener<PageResourceBareChallengeActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'challengeId' is set
     if (challengeId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling getChallengeActivities",
-         new ApiException(400, "Missing the required parameter 'challengeId' when calling getChallengeActivities"));
+      VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling getChallengeActivities",
+        new ApiException(400, "Missing the required parameter 'challengeId' when calling getChallengeActivities"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/{challenge_id}/activities".replaceAll("\\{format\\}","json").replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
@@ -1448,7 +1428,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1473,20 +1453,26 @@ public class CampaignsChallengesApi {
   }
   /**
   * Get a single challenge activity
-  * 
-   * @param activityId The activity id
+  * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * @param id The challenge_activity id
+   * @param challengeId The challenge id
    * @return ChallengeActivityResource
   */
-  public ChallengeActivityResource getChallengeActivity (Long activityId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ChallengeActivityResource getChallengeActivity (Long id, Long challengeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
-    // verify the required parameter 'activityId' is set
-    if (activityId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'activityId' when calling getChallengeActivity",
-        new ApiException(400, "Missing the required parameter 'activityId' when calling getChallengeActivity"));
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling getChallengeActivity"));
+    }
+    // verify the required parameter 'challengeId' is set
+    if (challengeId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling getChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'challengeId' when calling getChallengeActivity"));
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("\\{" + "activity_id" + "\\}", apiInvoker.escapeString(activityId.toString()));
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -1522,36 +1508,39 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
       /**
    * Get a single challenge activity
-   * 
-   * @param activityId The activity id
+   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * @param id The challenge_activity id   * @param challengeId The challenge id
   */
-  public void getChallengeActivity (Long activityId, final Response.Listener<ChallengeActivityResource> responseListener, final Response.ErrorListener errorListener) {
+  public void getChallengeActivity (Long id, Long challengeId, final Response.Listener<ChallengeActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
-    // verify the required parameter 'activityId' is set
-    if (activityId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'activityId' when calling getChallengeActivity",
-         new ApiException(400, "Missing the required parameter 'activityId' when calling getChallengeActivity"));
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling getChallengeActivity"));
     }
-    
+    // verify the required parameter 'challengeId' is set
+    if (challengeId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling getChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'challengeId' when calling getChallengeActivity"));
+    }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "activity_id" + "\\}", apiInvoker.escapeString(activityId.toString()));
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -1578,7 +1567,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1652,15 +1641,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1672,13 +1661,11 @@ public class CampaignsChallengesApi {
   public void getChallengeActivityTemplate (String id, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeActivityTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getChallengeActivityTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeActivityTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getChallengeActivityTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/challenge-activities/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1708,7 +1695,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1782,15 +1769,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1802,7 +1789,6 @@ public class CampaignsChallengesApi {
   public void getChallengeActivityTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/challenge-activities/templates".replaceAll("\\{format\\}","json");
@@ -1835,7 +1821,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1909,15 +1895,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1929,13 +1915,11 @@ public class CampaignsChallengesApi {
   public void getChallengeEvent (Long id, final Response.Listener<ChallengeEventResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeEvent",
-         new ApiException(400, "Missing the required parameter 'id' when calling getChallengeEvent"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeEvent",
+        new ApiException(400, "Missing the required parameter 'id' when calling getChallengeEvent"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/events/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1965,7 +1949,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2047,15 +2031,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2067,7 +2051,6 @@ public class CampaignsChallengesApi {
   public void getChallengeEvents (String filterStartDate, String filterEndDate, Boolean filterCampaigns, Long filterChallenge, Integer size, Integer page, String order, final Response.Listener<PageResourceChallengeEventResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/challenges/events".replaceAll("\\{format\\}","json");
@@ -2104,7 +2087,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2178,15 +2161,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2198,13 +2181,11 @@ public class CampaignsChallengesApi {
   public void getChallengeTemplate (String id, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getChallengeTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getChallengeTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getChallengeTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2234,7 +2215,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2308,15 +2289,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2328,7 +2309,6 @@ public class CampaignsChallengesApi {
   public void getChallengeTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/challenges/templates".replaceAll("\\{format\\}","json");
@@ -2361,7 +2341,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2443,15 +2423,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2463,7 +2443,6 @@ public class CampaignsChallengesApi {
   public void getChallenges (Boolean filterTemplate, Boolean filterActiveCampaign, String filterStartDate, String filterEndDate, Integer size, Integer page, String order, final Response.Listener<PageResourceChallengeResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/challenges".replaceAll("\\{format\\}","json");
@@ -2500,7 +2479,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2575,15 +2554,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2595,13 +2574,11 @@ public class CampaignsChallengesApi {
   public void updateChallenge (Long id, ChallengeResource challengeResource, final Response.Listener<ChallengeResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallenge",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateChallenge"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallenge",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateChallenge"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2631,7 +2608,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2656,18 +2633,18 @@ public class CampaignsChallengesApi {
   }
   /**
   * Update a challenge activity
-  * 
-   * @param activityId The activity id
+  * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * @param id The challenge_activity id
    * @param challengeId The challenge id
    * @param challengeActivityResource The challenge activity resource object
    * @return ChallengeActivityResource
   */
-  public ChallengeActivityResource updateChallengeActivity (Long activityId, Long challengeId, ChallengeActivityResource challengeActivityResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ChallengeActivityResource updateChallengeActivity (Long id, Long challengeId, ChallengeActivityResource challengeActivityResource) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = challengeActivityResource;
-    // verify the required parameter 'activityId' is set
-    if (activityId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'activityId' when calling updateChallengeActivity",
-        new ApiException(400, "Missing the required parameter 'activityId' when calling updateChallengeActivity"));
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateChallengeActivity"));
     }
     // verify the required parameter 'challengeId' is set
     if (challengeId == null) {
@@ -2676,7 +2653,7 @@ public class CampaignsChallengesApi {
     }
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("\\{" + "activity_id" + "\\}", apiInvoker.escapeString(activityId.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -2712,42 +2689,39 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
       /**
    * Update a challenge activity
-   * 
-   * @param activityId The activity id   * @param challengeId The challenge id   * @param challengeActivityResource The challenge activity resource object
+   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * @param id The challenge_activity id   * @param challengeId The challenge id   * @param challengeActivityResource The challenge activity resource object
   */
-  public void updateChallengeActivity (Long activityId, Long challengeId, ChallengeActivityResource challengeActivityResource, final Response.Listener<ChallengeActivityResource> responseListener, final Response.ErrorListener errorListener) {
+  public void updateChallengeActivity (Long id, Long challengeId, ChallengeActivityResource challengeActivityResource, final Response.Listener<ChallengeActivityResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeActivityResource;
 
-  
-    // verify the required parameter 'activityId' is set
-    if (activityId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'activityId' when calling updateChallengeActivity",
-         new ApiException(400, "Missing the required parameter 'activityId' when calling updateChallengeActivity"));
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateChallengeActivity"));
     }
-    
     // verify the required parameter 'challengeId' is set
     if (challengeId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling updateChallengeActivity",
-         new ApiException(400, "Missing the required parameter 'challengeId' when calling updateChallengeActivity"));
+      VolleyError error = new VolleyError("Missing the required parameter 'challengeId' when calling updateChallengeActivity",
+        new ApiException(400, "Missing the required parameter 'challengeId' when calling updateChallengeActivity"));
     }
-    
 
     // create path and map variables
-    String path = "/challenges/{challenge_id}/activities/{activity_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "activity_id" + "\\}", apiInvoker.escapeString(activityId.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
+    String path = "/challenges/{challenge_id}/activities/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "challenge_id" + "\\}", apiInvoker.escapeString(challengeId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -2774,7 +2748,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2849,15 +2823,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2869,13 +2843,11 @@ public class CampaignsChallengesApi {
   public void updateChallengeActivityTemplate (String id, TemplateResource challengeActivityTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeActivityTemplateResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallengeActivityTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateChallengeActivityTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallengeActivityTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateChallengeActivityTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/challenge-activities/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2905,7 +2877,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2980,15 +2952,15 @@ public class CampaignsChallengesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3000,13 +2972,11 @@ public class CampaignsChallengesApi {
   public void updateChallengeTemplate (String id, TemplateResource challengeTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = challengeTemplateResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallengeTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateChallengeTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateChallengeTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateChallengeTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/challenges/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -3036,7 +3006,7 @@ public class CampaignsChallengesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

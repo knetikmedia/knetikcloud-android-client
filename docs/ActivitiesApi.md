@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="createActivity"></a>
 # **createActivity**
-> RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc createActivity(activityResource)
+> ActivityResource createActivity(activityResource)
 
 Create an activity
 
@@ -31,9 +31,9 @@ Create an activity
 //import com.knetikcloud.api.ActivitiesApi;
 
 ActivitiesApi apiInstance = new ActivitiesApi();
-RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource = new RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc(); // RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc | The activity resource object
+ActivityResource activityResource = new ActivityResource(); // ActivityResource | The activity resource object
 try {
-    RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc result = apiInstance.createActivity(activityResource);
+    ActivityResource result = apiInstance.createActivity(activityResource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActivitiesApi#createActivity");
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activityResource** | [**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)| The activity resource object | [optional]
+ **activityResource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional]
 
 ### Return type
 
-[**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 <a name="createActivityOccurrence"></a>
 # **createActivityOccurrence**
-> AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings createActivityOccurrence(test, activityOccurrenceResource)
+> ActivityOccurrenceResource createActivityOccurrence(test, activityOccurrenceResource)
 
 Create a new activity occurrence. Ex: start a game
 
@@ -75,9 +75,9 @@ Has to enforce extra rules if not used as an admin
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Boolean test = false; // Boolean | if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
-AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings activityOccurrenceResource = new AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings(); // AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings | The activity occurrence object
+ActivityOccurrenceResource activityOccurrenceResource = new ActivityOccurrenceResource(); // ActivityOccurrenceResource | The activity occurrence object
 try {
-    AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings result = apiInstance.createActivityOccurrence(test, activityOccurrenceResource);
+    ActivityOccurrenceResource result = apiInstance.createActivityOccurrence(test, activityOccurrenceResource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActivitiesApi#createActivityOccurrence");
@@ -90,11 +90,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **test** | **Boolean**| if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings | [optional] [default to false]
- **activityOccurrenceResource** | [**AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings**](AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.md)| The activity occurrence object | [optional]
+ **activityOccurrenceResource** | [**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)| The activity occurrence object | [optional]
 
 ### Return type
 
-[**AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings**](AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.md)
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
 
 ### Authorization
 
@@ -246,7 +246,7 @@ List activity definitions
 ActivitiesApi apiInstance = new ActivitiesApi();
 Boolean filterTemplate = true; // Boolean | Filter for activities that are templates, or specifically not if false
 String filterName = "filterName_example"; // String | Filter for activities that have a name starting with specified string
-ModelObject filterId = new ModelObject(); // ModelObject | Filter for activities with an id in the given comma separated list of ids
+String filterId = "filterId_example"; // String | Filter for activities with an id in the given comma separated list of ids
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned, starting with 1
 String order = "id:ASC"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterTemplate** | **Boolean**| Filter for activities that are templates, or specifically not if false | [optional]
  **filterName** | **String**| Filter for activities that have a name starting with specified string | [optional]
- **filterId** | [**ModelObject**](.md)| Filter for activities with an id in the given comma separated list of ids | [optional]
+ **filterId** | **String**| Filter for activities with an id in the given comma separated list of ids | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
@@ -285,7 +285,7 @@ No authorization required
 
 <a name="getActivity"></a>
 # **getActivity**
-> RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc getActivity(id)
+> ActivityResource getActivity(id)
 
 Get a single activity
 
@@ -297,7 +297,7 @@ Get a single activity
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long id = 789L; // Long | The id of the activity
 try {
-    RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc result = apiInstance.getActivity(id);
+    ActivityResource result = apiInstance.getActivity(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActivitiesApi#getActivity");
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Sets the status of an activity occurrence to FINISHED and logs metrics
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
-ActivityOccurrenceResults activityOccurrenceResults = new ActivityOccurrenceResults(); // ActivityOccurrenceResults | The activity occurrence object
+ActivityOccurrenceResultsResource activityOccurrenceResults = new ActivityOccurrenceResultsResource(); // ActivityOccurrenceResultsResource | The activity occurrence object
 try {
     ActivityOccurrenceResults result = apiInstance.setActivityOccurrenceResults(activityOccurrenceId, activityOccurrenceResults);
     System.out.println(result);
@@ -438,7 +438,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **Long**| The id of the activity occurrence |
- **activityOccurrenceResults** | [**ActivityOccurrenceResults**](ActivityOccurrenceResults.md)| The activity occurrence object | [optional]
+ **activityOccurrenceResults** | [**ActivityOccurrenceResultsResource**](ActivityOccurrenceResultsResource.md)| The activity occurrence object | [optional]
 
 ### Return type
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 <a name="updateActivity"></a>
 # **updateActivity**
-> RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc updateActivity(id, activityResource)
+> ActivityResource updateActivity(id, activityResource)
 
 Update an activity
 
@@ -466,9 +466,9 @@ Update an activity
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long id = 789L; // Long | The id of the activity
-RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc activityResource = new RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc(); // RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc | The activity resource object
+ActivityResource activityResource = new ActivityResource(); // ActivityResource | The activity resource object
 try {
-    RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc result = apiInstance.updateActivity(id, activityResource);
+    ActivityResource result = apiInstance.updateActivity(id, activityResource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActivitiesApi#updateActivity");
@@ -481,11 +481,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Long**| The id of the activity |
- **activityResource** | [**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)| The activity resource object | [optional]
+ **activityResource** | [**ActivityResource**](ActivityResource.md)| The activity resource object | [optional]
 
 ### Return type
 
-[**RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc**](RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc.md)
+[**ActivityResource**](ActivityResource.md)
 
 ### Authorization
 

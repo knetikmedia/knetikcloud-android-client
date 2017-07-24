@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **synchronous** | **Boolean** |  |  [optional]
 **timestamp** | **Long** |  |  [optional]
 **type** | **String** | The type of the event. Used for polymorphic type recognition and thus must match an expected type | 
+**customerSetup** | **Boolean** |  |  [optional]
+**customerTeardown** | **Boolean** |  |  [optional]
 
 
 

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -68,7 +68,7 @@ public class GroupMemberResource {
   /**
    * The member's access level. Default: member
    **/
-  @ApiModelProperty(required = true, value = "The member's access level. Default: member")
+  @ApiModelProperty(value = "The member's access level. Default: member")
   public StatusEnum getStatus() {
     return status;
   }

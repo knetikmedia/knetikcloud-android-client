@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -35,8 +35,6 @@ public class PaymentMethodResource {
   private Long id = null;
   @SerializedName("last4")
   private String last4 = null;
-  @SerializedName("long_description")
-  private String longDescription = null;
   @SerializedName("name")
   private String name = null;
   @SerializedName("payment_method_type")
@@ -46,8 +44,6 @@ public class PaymentMethodResource {
   };
   @SerializedName("payment_type")
   private PaymentTypeEnum paymentType = null;
-  @SerializedName("short_description")
-  private String shortDescription = null;
   @SerializedName("sort")
   private Integer sort = null;
   @SerializedName("token")
@@ -127,9 +123,9 @@ public class PaymentMethodResource {
   }
 
   /**
-   * The unique ID for that resource
+   * The unique ID of the resource
    **/
-  @ApiModelProperty(value = "The unique ID for that resource")
+  @ApiModelProperty(value = "The unique ID of the resource")
   public Long getId() {
     return id;
   }
@@ -149,20 +145,9 @@ public class PaymentMethodResource {
   }
 
   /**
-   * The user friendly name of that resource. Defaults to blank string
+   * The user friendly name of the resource
    **/
-  @ApiModelProperty(value = "The user friendly name of that resource. Defaults to blank string")
-  public String getLongDescription() {
-    return longDescription;
-  }
-  public void setLongDescription(String longDescription) {
-    this.longDescription = longDescription;
-  }
-
-  /**
-   * The user friendly name of that resource
-   **/
-  @ApiModelProperty(required = true, value = "The user friendly name of that resource")
+  @ApiModelProperty(required = true, value = "The user friendly name of the resource")
   public String getName() {
     return name;
   }
@@ -190,17 +175,6 @@ public class PaymentMethodResource {
   }
   public void setPaymentType(PaymentTypeEnum paymentType) {
     this.paymentType = paymentType;
-  }
-
-  /**
-   * The user friendly name of that resource. Defaults to blank string
-   **/
-  @ApiModelProperty(value = "The user friendly name of that resource. Defaults to blank string")
-  public String getShortDescription() {
-    return shortDescription;
-  }
-  public void setShortDescription(String shortDescription) {
-    this.shortDescription = shortDescription;
   }
 
   /**
@@ -286,11 +260,9 @@ public class PaymentMethodResource {
         (this.expirationYear == null ? paymentMethodResource.expirationYear == null : this.expirationYear.equals(paymentMethodResource.expirationYear)) &&
         (this.id == null ? paymentMethodResource.id == null : this.id.equals(paymentMethodResource.id)) &&
         (this.last4 == null ? paymentMethodResource.last4 == null : this.last4.equals(paymentMethodResource.last4)) &&
-        (this.longDescription == null ? paymentMethodResource.longDescription == null : this.longDescription.equals(paymentMethodResource.longDescription)) &&
         (this.name == null ? paymentMethodResource.name == null : this.name.equals(paymentMethodResource.name)) &&
         (this.paymentMethodType == null ? paymentMethodResource.paymentMethodType == null : this.paymentMethodType.equals(paymentMethodResource.paymentMethodType)) &&
         (this.paymentType == null ? paymentMethodResource.paymentType == null : this.paymentType.equals(paymentMethodResource.paymentType)) &&
-        (this.shortDescription == null ? paymentMethodResource.shortDescription == null : this.shortDescription.equals(paymentMethodResource.shortDescription)) &&
         (this.sort == null ? paymentMethodResource.sort == null : this.sort.equals(paymentMethodResource.sort)) &&
         (this.token == null ? paymentMethodResource.token == null : this.token.equals(paymentMethodResource.token)) &&
         (this.uniqueKey == null ? paymentMethodResource.uniqueKey == null : this.uniqueKey.equals(paymentMethodResource.uniqueKey)) &&
@@ -310,11 +282,9 @@ public class PaymentMethodResource {
     result = 31 * result + (this.expirationYear == null ? 0: this.expirationYear.hashCode());
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
     result = 31 * result + (this.last4 == null ? 0: this.last4.hashCode());
-    result = 31 * result + (this.longDescription == null ? 0: this.longDescription.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.paymentMethodType == null ? 0: this.paymentMethodType.hashCode());
     result = 31 * result + (this.paymentType == null ? 0: this.paymentType.hashCode());
-    result = 31 * result + (this.shortDescription == null ? 0: this.shortDescription.hashCode());
     result = 31 * result + (this.sort == null ? 0: this.sort.hashCode());
     result = 31 * result + (this.token == null ? 0: this.token.hashCode());
     result = 31 * result + (this.uniqueKey == null ? 0: this.uniqueKey.hashCode());
@@ -337,11 +307,9 @@ public class PaymentMethodResource {
     sb.append("  expirationYear: ").append(expirationYear).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  last4: ").append(last4).append("\n");
-    sb.append("  longDescription: ").append(longDescription).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  paymentMethodType: ").append(paymentMethodType).append("\n");
     sb.append("  paymentType: ").append(paymentType).append("\n");
-    sb.append("  shortDescription: ").append(shortDescription).append("\n");
     sb.append("  sort: ").append(sort).append("\n");
     sb.append("  token: ").append(token).append("\n");
     sb.append("  uniqueKey: ").append(uniqueKey).append("\n");

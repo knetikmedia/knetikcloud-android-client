@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -13,6 +13,7 @@
 package com.knetikcloud.model;
 
 import com.knetikcloud.model.DatabaseConfig;
+import com.knetikcloud.model.IOConfig;
 import com.knetikcloud.model.S3Config;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -24,6 +25,8 @@ public class CustomerConfig {
   private String aliases = null;
   @SerializedName("database")
   private DatabaseConfig database = null;
+  @SerializedName("io")
+  private IOConfig io = null;
   @SerializedName("name")
   private String name = null;
   @SerializedName("s3_config")
@@ -47,6 +50,16 @@ public class CustomerConfig {
   }
   public void setDatabase(DatabaseConfig database) {
     this.database = database;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public IOConfig getIo() {
+    return io;
+  }
+  public void setIo(IOConfig io) {
+    this.io = io;
   }
 
   /**
@@ -81,6 +94,7 @@ public class CustomerConfig {
     CustomerConfig customerConfig = (CustomerConfig) o;
     return (this.aliases == null ? customerConfig.aliases == null : this.aliases.equals(customerConfig.aliases)) &&
         (this.database == null ? customerConfig.database == null : this.database.equals(customerConfig.database)) &&
+        (this.io == null ? customerConfig.io == null : this.io.equals(customerConfig.io)) &&
         (this.name == null ? customerConfig.name == null : this.name.equals(customerConfig.name)) &&
         (this.s3Config == null ? customerConfig.s3Config == null : this.s3Config.equals(customerConfig.s3Config));
   }
@@ -90,6 +104,7 @@ public class CustomerConfig {
     int result = 17;
     result = 31 * result + (this.aliases == null ? 0: this.aliases.hashCode());
     result = 31 * result + (this.database == null ? 0: this.database.hashCode());
+    result = 31 * result + (this.io == null ? 0: this.io.hashCode());
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
     result = 31 * result + (this.s3Config == null ? 0: this.s3Config.hashCode());
     return result;
@@ -102,6 +117,7 @@ public class CustomerConfig {
     
     sb.append("  aliases: ").append(aliases).append("\n");
     sb.append("  database: ").append(database).append("\n");
+    sb.append("  io: ").append(io).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  s3Config: ").append(s3Config).append("\n");
     sb.append("}\n");

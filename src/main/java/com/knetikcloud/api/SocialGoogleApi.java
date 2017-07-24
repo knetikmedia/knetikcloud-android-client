@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -57,13 +57,13 @@ public class SocialGoogleApi {
   }
 
   /**
-  * Link facebook account
-  * Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
-   * @param facebookToken The token from facebook
+  * Link google account
+  * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+   * @param googleToken The token from google
    * @return void
   */
-  public void linkAccounts1 (GoogleToken facebookToken) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = facebookToken;
+  public void linkAccounts1 (GoogleToken googleToken) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = googleToken;
 
     // create path and map variables
     String path = "/social/google/users";
@@ -102,27 +102,26 @@ public class SocialGoogleApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
       /**
-   * Link facebook account
-   * Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
-   * @param facebookToken The token from facebook
+   * Link google account
+   * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+   * @param googleToken The token from google
   */
-  public void linkAccounts1 (GoogleToken facebookToken, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = facebookToken;
+  public void linkAccounts1 (GoogleToken googleToken, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = googleToken;
 
-  
 
     // create path and map variables
     String path = "/social/google/users".replaceAll("\\{format\\}","json");
@@ -152,7 +151,7 @@ public class SocialGoogleApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,

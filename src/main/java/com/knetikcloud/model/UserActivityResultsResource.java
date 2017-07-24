@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -12,9 +12,6 @@
 
 package com.knetikcloud.model;
 
-import com.knetikcloud.model.RewardCurrencyResource;
-import com.knetikcloud.model.RewardItemResource;
-import com.knetikcloud.model.SimpleUserResource;
 import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -22,58 +19,17 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class UserActivityResultsResource {
   
-  @SerializedName("currency_rewards")
-  private List<RewardCurrencyResource> currencyRewards = null;
-  @SerializedName("item_rewards")
-  private List<RewardItemResource> itemRewards = null;
-  @SerializedName("rank")
-  private Long rank = null;
   @SerializedName("score")
   private Long score = null;
   @SerializedName("tags")
   private List<String> tags = null;
-  @SerializedName("ties")
-  private Integer ties = null;
-  @SerializedName("user")
-  private SimpleUserResource user = null;
+  @SerializedName("user_id")
+  private Integer userId = null;
 
   /**
-   * Any currency rewarded to this user
+   * The raw score. Null means non-compete or disqualification
    **/
-  @ApiModelProperty(value = "Any currency rewarded to this user")
-  public List<RewardCurrencyResource> getCurrencyRewards() {
-    return currencyRewards;
-  }
-  public void setCurrencyRewards(List<RewardCurrencyResource> currencyRewards) {
-    this.currencyRewards = currencyRewards;
-  }
-
-  /**
-   * Any items rewarded to this user
-   **/
-  @ApiModelProperty(value = "Any items rewarded to this user")
-  public List<RewardItemResource> getItemRewards() {
-    return itemRewards;
-  }
-  public void setItemRewards(List<RewardItemResource> itemRewards) {
-    this.itemRewards = itemRewards;
-  }
-
-  /**
-   * The position of the user in the leaderboard. Null means non-compete or disqualification
-   **/
-  @ApiModelProperty(value = "The position of the user in the leaderboard. Null means non-compete or disqualification")
-  public Long getRank() {
-    return rank;
-  }
-  public void setRank(Long rank) {
-    this.rank = rank;
-  }
-
-  /**
-   * The raw score in this leaderboard. Null means non-compete or disqualification
-   **/
-  @ApiModelProperty(value = "The raw score in this leaderboard. Null means non-compete or disqualification")
+  @ApiModelProperty(value = "The raw score. Null means non-compete or disqualification")
   public Long getScore() {
     return score;
   }
@@ -93,25 +49,14 @@ public class UserActivityResultsResource {
   }
 
   /**
-   * The number of users tied at this rank, including this user. 1 means no tie
+   * The id of the player
    **/
-  @ApiModelProperty(value = "The number of users tied at this rank, including this user. 1 means no tie")
-  public Integer getTies() {
-    return ties;
+  @ApiModelProperty(required = true, value = "The id of the player")
+  public Integer getUserId() {
+    return userId;
   }
-  public void setTies(Integer ties) {
-    this.ties = ties;
-  }
-
-  /**
-   * The player for this entry
-   **/
-  @ApiModelProperty(required = true, value = "The player for this entry")
-  public SimpleUserResource getUser() {
-    return user;
-  }
-  public void setUser(SimpleUserResource user) {
-    this.user = user;
+  public void setUserId(Integer userId) {
+    this.userId = userId;
   }
 
 
@@ -124,25 +69,17 @@ public class UserActivityResultsResource {
       return false;
     }
     UserActivityResultsResource userActivityResultsResource = (UserActivityResultsResource) o;
-    return (this.currencyRewards == null ? userActivityResultsResource.currencyRewards == null : this.currencyRewards.equals(userActivityResultsResource.currencyRewards)) &&
-        (this.itemRewards == null ? userActivityResultsResource.itemRewards == null : this.itemRewards.equals(userActivityResultsResource.itemRewards)) &&
-        (this.rank == null ? userActivityResultsResource.rank == null : this.rank.equals(userActivityResultsResource.rank)) &&
-        (this.score == null ? userActivityResultsResource.score == null : this.score.equals(userActivityResultsResource.score)) &&
+    return (this.score == null ? userActivityResultsResource.score == null : this.score.equals(userActivityResultsResource.score)) &&
         (this.tags == null ? userActivityResultsResource.tags == null : this.tags.equals(userActivityResultsResource.tags)) &&
-        (this.ties == null ? userActivityResultsResource.ties == null : this.ties.equals(userActivityResultsResource.ties)) &&
-        (this.user == null ? userActivityResultsResource.user == null : this.user.equals(userActivityResultsResource.user));
+        (this.userId == null ? userActivityResultsResource.userId == null : this.userId.equals(userActivityResultsResource.userId));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.currencyRewards == null ? 0: this.currencyRewards.hashCode());
-    result = 31 * result + (this.itemRewards == null ? 0: this.itemRewards.hashCode());
-    result = 31 * result + (this.rank == null ? 0: this.rank.hashCode());
     result = 31 * result + (this.score == null ? 0: this.score.hashCode());
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
-    result = 31 * result + (this.ties == null ? 0: this.ties.hashCode());
-    result = 31 * result + (this.user == null ? 0: this.user.hashCode());
+    result = 31 * result + (this.userId == null ? 0: this.userId.hashCode());
     return result;
   }
 
@@ -151,13 +88,9 @@ public class UserActivityResultsResource {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserActivityResultsResource {\n");
     
-    sb.append("  currencyRewards: ").append(currencyRewards).append("\n");
-    sb.append("  itemRewards: ").append(itemRewards).append("\n");
-    sb.append("  rank: ").append(rank).append("\n");
     sb.append("  score: ").append(score).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
-    sb.append("  ties: ").append(ties).append("\n");
-    sb.append("  user: ").append(user).append("\n");
+    sb.append("  userId: ").append(userId).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

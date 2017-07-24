@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -104,15 +104,15 @@ public class ContentCommentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -124,7 +124,6 @@ public class ContentCommentsApi {
   public void addComment (CommentResource commentResource, final Response.Listener<CommentResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = commentResource;
 
-  
 
     // create path and map variables
     String path = "/comments".replaceAll("\\{format\\}","json");
@@ -154,7 +153,7 @@ public class ContentCommentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -228,15 +227,15 @@ public class ContentCommentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -248,13 +247,11 @@ public class ContentCommentsApi {
   public void deleteComment (Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteComment",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteComment",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteComment"));
     }
-    
 
     // create path and map variables
     String path = "/comments/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -284,7 +281,7 @@ public class ContentCommentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -354,15 +351,15 @@ public class ContentCommentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -374,13 +371,11 @@ public class ContentCommentsApi {
   public void getComment (Long id, final Response.Listener<CommentResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getComment",
-         new ApiException(400, "Missing the required parameter 'id' when calling getComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getComment",
+        new ApiException(400, "Missing the required parameter 'id' when calling getComment"));
     }
-    
 
     // create path and map variables
     String path = "/comments/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -410,7 +405,7 @@ public class ContentCommentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -496,15 +491,15 @@ public class ContentCommentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -516,19 +511,16 @@ public class ContentCommentsApi {
   public void getComments (String context, Integer contextId, Integer size, Integer page, final Response.Listener<PageResourceCommentResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'context' is set
     if (context == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'context' when calling getComments",
-         new ApiException(400, "Missing the required parameter 'context' when calling getComments"));
+      VolleyError error = new VolleyError("Missing the required parameter 'context' when calling getComments",
+        new ApiException(400, "Missing the required parameter 'context' when calling getComments"));
     }
-    
     // verify the required parameter 'contextId' is set
     if (contextId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'contextId' when calling getComments",
-         new ApiException(400, "Missing the required parameter 'contextId' when calling getComments"));
+      VolleyError error = new VolleyError("Missing the required parameter 'contextId' when calling getComments",
+        new ApiException(400, "Missing the required parameter 'contextId' when calling getComments"));
     }
-    
 
     // create path and map variables
     String path = "/comments".replaceAll("\\{format\\}","json");
@@ -562,7 +554,7 @@ public class ContentCommentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -635,15 +627,15 @@ public class ContentCommentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -655,7 +647,6 @@ public class ContentCommentsApi {
   public void searchComments (Object query, Integer size, Integer page, final Response.Listener<CommentSearch> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = query;
 
-  
 
     // create path and map variables
     String path = "/comments/search".replaceAll("\\{format\\}","json");
@@ -687,7 +678,7 @@ public class ContentCommentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -762,15 +753,15 @@ public class ContentCommentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -782,13 +773,11 @@ public class ContentCommentsApi {
   public void updateComment (Long id, String content, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = content;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateComment",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateComment",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateComment"));
     }
-    
 
     // create path and map variables
     String path = "/comments/{id}/content".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -818,7 +807,7 @@ public class ContentCommentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

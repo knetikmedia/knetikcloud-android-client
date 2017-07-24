@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -116,15 +116,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -136,13 +136,11 @@ public class GamificationTriviaApi {
   public void addQuestionAnswers (String questionId, AnswerResource answer, final Response.Listener<AnswerResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = answer;
 
-  
     // verify the required parameter 'questionId' is set
     if (questionId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling addQuestionAnswers",
-         new ApiException(400, "Missing the required parameter 'questionId' when calling addQuestionAnswers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling addQuestionAnswers",
+        new ApiException(400, "Missing the required parameter 'questionId' when calling addQuestionAnswers"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{question_id}/answers".replaceAll("\\{format\\}","json").replaceAll("\\{" + "question_id" + "\\}", apiInvoker.escapeString(questionId.toString()));
@@ -172,7 +170,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -247,15 +245,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -267,13 +265,11 @@ public class GamificationTriviaApi {
   public void addQuestionTag (String id, String tag, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = tag;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addQuestionTag",
-         new ApiException(400, "Missing the required parameter 'id' when calling addQuestionTag"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addQuestionTag",
+        new ApiException(400, "Missing the required parameter 'id' when calling addQuestionTag"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{id}/tags".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -303,7 +299,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -384,15 +380,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -404,7 +400,6 @@ public class GamificationTriviaApi {
   public void addTagToQuestionsBatch (String tag, String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, Boolean filterPublished, Long filterImportId, final Response.Listener<Integer> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = tag;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions/tags".replaceAll("\\{format\\}","json");
@@ -442,7 +437,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -511,15 +506,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -531,7 +526,6 @@ public class GamificationTriviaApi {
   public void createImportJob (ImportJobResource request, final Response.Listener<ImportJobResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
 
     // create path and map variables
     String path = "/trivia/import".replaceAll("\\{format\\}","json");
@@ -561,7 +555,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -630,15 +624,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -650,7 +644,6 @@ public class GamificationTriviaApi {
   public void createQuestion (QuestionResource question, final Response.Listener<QuestionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = question;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions".replaceAll("\\{format\\}","json");
@@ -680,7 +673,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -749,15 +742,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -769,7 +762,6 @@ public class GamificationTriviaApi {
   public void createQuestionTemplate (QuestionTemplateResource questionTemplateResource, final Response.Listener<QuestionTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = questionTemplateResource;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions/templates".replaceAll("\\{format\\}","json");
@@ -799,7 +791,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -873,15 +865,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -893,13 +885,11 @@ public class GamificationTriviaApi {
   public void deleteImportJob (Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteImportJob",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteImportJob"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteImportJob",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteImportJob"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/import/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -929,7 +919,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -999,15 +989,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1019,13 +1009,11 @@ public class GamificationTriviaApi {
   public void deleteQuestion (String id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteQuestion",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteQuestion"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteQuestion",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteQuestion"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1055,7 +1043,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1131,15 +1119,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1151,19 +1139,16 @@ public class GamificationTriviaApi {
   public void deleteQuestionAnswers (String questionId, String id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'questionId' is set
     if (questionId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling deleteQuestionAnswers",
-         new ApiException(400, "Missing the required parameter 'questionId' when calling deleteQuestionAnswers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling deleteQuestionAnswers",
+        new ApiException(400, "Missing the required parameter 'questionId' when calling deleteQuestionAnswers"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteQuestionAnswers",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteQuestionAnswers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteQuestionAnswers",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteQuestionAnswers"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "question_id" + "\\}", apiInvoker.escapeString(questionId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1193,7 +1178,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1265,15 +1250,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1285,13 +1270,11 @@ public class GamificationTriviaApi {
   public void deleteQuestionTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteQuestionTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteQuestionTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteQuestionTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteQuestionTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1322,7 +1305,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1392,15 +1375,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1412,13 +1395,11 @@ public class GamificationTriviaApi {
   public void getImportJob (Long id, final Response.Listener<ImportJobResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getImportJob",
-         new ApiException(400, "Missing the required parameter 'id' when calling getImportJob"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getImportJob",
+        new ApiException(400, "Missing the required parameter 'id' when calling getImportJob"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/import/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1448,7 +1429,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1530,15 +1511,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1550,7 +1531,6 @@ public class GamificationTriviaApi {
   public void getImportJobs (String filterVendor, String filterCategory, String filterName, String filterStatus, Integer size, Integer page, String order, final Response.Listener<PageResourceImportJobResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/trivia/import".replaceAll("\\{format\\}","json");
@@ -1587,7 +1567,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1661,15 +1641,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1681,13 +1661,11 @@ public class GamificationTriviaApi {
   public void getQuestion (String id, final Response.Listener<QuestionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestion",
-         new ApiException(400, "Missing the required parameter 'id' when calling getQuestion"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestion",
+        new ApiException(400, "Missing the required parameter 'id' when calling getQuestion"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1717,7 +1695,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1797,15 +1775,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1817,19 +1795,16 @@ public class GamificationTriviaApi {
   public void getQuestionAnswer (String questionId, String id, final Response.Listener<AnswerResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'questionId' is set
     if (questionId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling getQuestionAnswer",
-         new ApiException(400, "Missing the required parameter 'questionId' when calling getQuestionAnswer"));
+      VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling getQuestionAnswer",
+        new ApiException(400, "Missing the required parameter 'questionId' when calling getQuestionAnswer"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestionAnswer",
-         new ApiException(400, "Missing the required parameter 'id' when calling getQuestionAnswer"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestionAnswer",
+        new ApiException(400, "Missing the required parameter 'id' when calling getQuestionAnswer"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "question_id" + "\\}", apiInvoker.escapeString(questionId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1859,7 +1834,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1933,15 +1908,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1953,13 +1928,11 @@ public class GamificationTriviaApi {
   public void getQuestionAnswers (String questionId, final Response.Listener<List<AnswerResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'questionId' is set
     if (questionId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling getQuestionAnswers",
-         new ApiException(400, "Missing the required parameter 'questionId' when calling getQuestionAnswers"));
+      VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling getQuestionAnswers",
+        new ApiException(400, "Missing the required parameter 'questionId' when calling getQuestionAnswers"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{question_id}/answers".replaceAll("\\{format\\}","json").replaceAll("\\{" + "question_id" + "\\}", apiInvoker.escapeString(questionId.toString()));
@@ -1989,7 +1962,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2059,15 +2032,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2079,7 +2052,6 @@ public class GamificationTriviaApi {
   public void getQuestionDeltas (Long since, final Response.Listener<List<DeltaResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions/delta".replaceAll("\\{format\\}","json");
@@ -2110,7 +2082,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2184,15 +2156,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2204,13 +2176,11 @@ public class GamificationTriviaApi {
   public void getQuestionTags (String id, final Response.Listener<List<String>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestionTags",
-         new ApiException(400, "Missing the required parameter 'id' when calling getQuestionTags"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestionTags",
+        new ApiException(400, "Missing the required parameter 'id' when calling getQuestionTags"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{id}/tags".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2240,7 +2210,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2314,15 +2284,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2334,13 +2304,11 @@ public class GamificationTriviaApi {
   public void getQuestionTemplate (String id, final Response.Listener<QuestionTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestionTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getQuestionTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getQuestionTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getQuestionTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2370,7 +2338,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2444,15 +2412,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2464,7 +2432,6 @@ public class GamificationTriviaApi {
   public void getQuestionTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceQuestionTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions/templates".replaceAll("\\{format\\}","json");
@@ -2497,7 +2464,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2587,15 +2554,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2607,7 +2574,6 @@ public class GamificationTriviaApi {
   public void getQuestions (Integer size, Integer page, String order, String filterSearch, String filterIdset, String filterCategory, String filterTagset, String filterTag, String filterType, Boolean filterPublished, Long filterImportId, final Response.Listener<PageResourceQuestionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions".replaceAll("\\{format\\}","json");
@@ -2648,7 +2614,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2730,15 +2696,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2750,7 +2716,6 @@ public class GamificationTriviaApi {
   public void getQuestionsCount (String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, Boolean filterPublished, final Response.Listener<Long> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions/count".replaceAll("\\{format\\}","json");
@@ -2787,7 +2752,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2868,15 +2833,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2888,19 +2853,16 @@ public class GamificationTriviaApi {
   public void processImportJob (Long id, Boolean publishNow, final Response.Listener<ImportJobResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling processImportJob",
-         new ApiException(400, "Missing the required parameter 'id' when calling processImportJob"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling processImportJob",
+        new ApiException(400, "Missing the required parameter 'id' when calling processImportJob"));
     }
-    
     // verify the required parameter 'publishNow' is set
     if (publishNow == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'publishNow' when calling processImportJob",
-         new ApiException(400, "Missing the required parameter 'publishNow' when calling processImportJob"));
+      VolleyError error = new VolleyError("Missing the required parameter 'publishNow' when calling processImportJob",
+        new ApiException(400, "Missing the required parameter 'publishNow' when calling processImportJob"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/import/{id}/process".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2931,7 +2893,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3011,15 +2973,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3031,19 +2993,16 @@ public class GamificationTriviaApi {
   public void removeQuestionTag (String id, String tag, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeQuestionTag",
-         new ApiException(400, "Missing the required parameter 'id' when calling removeQuestionTag"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeQuestionTag",
+        new ApiException(400, "Missing the required parameter 'id' when calling removeQuestionTag"));
     }
-    
     // verify the required parameter 'tag' is set
     if (tag == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'tag' when calling removeQuestionTag",
-         new ApiException(400, "Missing the required parameter 'tag' when calling removeQuestionTag"));
+      VolleyError error = new VolleyError("Missing the required parameter 'tag' when calling removeQuestionTag",
+        new ApiException(400, "Missing the required parameter 'tag' when calling removeQuestionTag"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{id}/tags/{tag}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString())).replaceAll("\\{" + "tag" + "\\}", apiInvoker.escapeString(tag.toString()));
@@ -3073,7 +3032,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3159,15 +3118,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3179,13 +3138,11 @@ public class GamificationTriviaApi {
   public void removeTagToQuestionsBatch (String tag, String filterSearch, String filterIdset, String filterCategory, String filterTag, String filterTagset, String filterType, Boolean filterPublished, Long filterImportId, final Response.Listener<Integer> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'tag' is set
     if (tag == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'tag' when calling removeTagToQuestionsBatch",
-         new ApiException(400, "Missing the required parameter 'tag' when calling removeTagToQuestionsBatch"));
+      VolleyError error = new VolleyError("Missing the required parameter 'tag' when calling removeTagToQuestionsBatch",
+        new ApiException(400, "Missing the required parameter 'tag' when calling removeTagToQuestionsBatch"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/tags/{tag}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "tag" + "\\}", apiInvoker.escapeString(tag.toString()));
@@ -3223,7 +3180,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3297,15 +3254,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3317,7 +3274,6 @@ public class GamificationTriviaApi {
   public void searchQuestionTags (String filterSearch, String filterCategory, Long filterImportId, final Response.Listener<Collectionstring> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/trivia/tags".replaceAll("\\{format\\}","json");
@@ -3350,7 +3306,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3425,15 +3381,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3445,13 +3401,11 @@ public class GamificationTriviaApi {
   public void updateImportJob (Long id, ImportJobResource request, final Response.Listener<ImportJobResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateImportJob",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateImportJob"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateImportJob",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateImportJob"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/import/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -3481,7 +3435,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3556,15 +3510,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3576,13 +3530,11 @@ public class GamificationTriviaApi {
   public void updateQuestion (String id, QuestionResource question, final Response.Listener<QuestionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = question;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateQuestion",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateQuestion"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateQuestion",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateQuestion"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -3612,7 +3564,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3693,15 +3645,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3713,19 +3665,16 @@ public class GamificationTriviaApi {
   public void updateQuestionAnswer (String questionId, String id, AnswerResource answer, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = answer;
 
-  
     // verify the required parameter 'questionId' is set
     if (questionId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling updateQuestionAnswer",
-         new ApiException(400, "Missing the required parameter 'questionId' when calling updateQuestionAnswer"));
+      VolleyError error = new VolleyError("Missing the required parameter 'questionId' when calling updateQuestionAnswer",
+        new ApiException(400, "Missing the required parameter 'questionId' when calling updateQuestionAnswer"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateQuestionAnswer",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateQuestionAnswer"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateQuestionAnswer",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateQuestionAnswer"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/{question_id}/answers/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "question_id" + "\\}", apiInvoker.escapeString(questionId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -3755,7 +3704,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3826,15 +3775,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3846,13 +3795,11 @@ public class GamificationTriviaApi {
   public void updateQuestionTemplate (String id, QuestionTemplateResource questionTemplateResource, final Response.Listener<QuestionTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = questionTemplateResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateQuestionTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateQuestionTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateQuestionTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateQuestionTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/trivia/questions/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -3882,7 +3829,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3965,15 +3912,15 @@ public class GamificationTriviaApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3985,7 +3932,6 @@ public class GamificationTriviaApi {
   public void updateQuestionsInBulk (QuestionResource question, String filterSearch, String filterIdset, String filterCategory, String filterTagset, String filterType, Boolean filterPublished, Long filterImportId, final Response.Listener<Integer> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = question;
 
-  
 
     // create path and map variables
     String path = "/trivia/questions".replaceAll("\\{format\\}","json");
@@ -4022,7 +3968,7 @@ public class GamificationTriviaApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -109,15 +109,15 @@ public class UsersAddressesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -129,13 +129,11 @@ public class UsersAddressesApi {
   public void createAddress (String userId, SavedAddressResource savedAddressResource, final Response.Listener<SavedAddressResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = savedAddressResource;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling createAddress",
-         new ApiException(400, "Missing the required parameter 'userId' when calling createAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling createAddress",
+        new ApiException(400, "Missing the required parameter 'userId' when calling createAddress"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/addresses".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -165,7 +163,7 @@ public class UsersAddressesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -245,15 +243,15 @@ public class UsersAddressesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -265,19 +263,16 @@ public class UsersAddressesApi {
   public void deleteAddress (String userId, Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling deleteAddress",
-         new ApiException(400, "Missing the required parameter 'userId' when calling deleteAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling deleteAddress",
+        new ApiException(400, "Missing the required parameter 'userId' when calling deleteAddress"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteAddress",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteAddress",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteAddress"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/addresses/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -307,7 +302,7 @@ public class UsersAddressesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -383,15 +378,15 @@ public class UsersAddressesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -403,19 +398,16 @@ public class UsersAddressesApi {
   public void getAddress (String userId, Integer id, final Response.Listener<SavedAddressResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getAddress",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getAddress",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getAddress"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getAddress",
-         new ApiException(400, "Missing the required parameter 'id' when calling getAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getAddress",
+        new ApiException(400, "Missing the required parameter 'id' when calling getAddress"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/addresses/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -445,7 +437,7 @@ public class UsersAddressesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -525,15 +517,15 @@ public class UsersAddressesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -545,13 +537,11 @@ public class UsersAddressesApi {
   public void getAddresses (String userId, Integer size, Integer page, String order, final Response.Listener<PageResourceSavedAddressResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getAddresses",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getAddresses"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getAddresses",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getAddresses"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/addresses".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -584,7 +574,7 @@ public class UsersAddressesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -665,15 +655,15 @@ public class UsersAddressesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -685,19 +675,16 @@ public class UsersAddressesApi {
   public void updateAddress (String userId, Integer id, SavedAddressResource savedAddressResource, final Response.Listener<SavedAddressResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = savedAddressResource;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateAddress",
-         new ApiException(400, "Missing the required parameter 'userId' when calling updateAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updateAddress",
+        new ApiException(400, "Missing the required parameter 'userId' when calling updateAddress"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateAddress",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateAddress"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateAddress",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateAddress"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/addresses/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -727,7 +714,7 @@ public class UsersAddressesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

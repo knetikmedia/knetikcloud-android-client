@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -105,15 +105,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -125,7 +125,6 @@ public class ContentArticlesApi {
   public void createArticle (ArticleResource articleResource, final Response.Listener<ArticleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = articleResource;
 
-  
 
     // create path and map variables
     String path = "/content/articles".replaceAll("\\{format\\}","json");
@@ -155,7 +154,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -224,15 +223,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -244,7 +243,6 @@ public class ContentArticlesApi {
   public void createArticleTemplate (TemplateResource articleTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = articleTemplateResource;
 
-  
 
     // create path and map variables
     String path = "/content/articles/templates".replaceAll("\\{format\\}","json");
@@ -274,7 +272,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -348,15 +346,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -368,13 +366,11 @@ public class ContentArticlesApi {
   public void deleteArticle (String id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteArticle",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteArticle"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteArticle",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteArticle"));
     }
-    
 
     // create path and map variables
     String path = "/content/articles/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -404,7 +400,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -476,15 +472,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -496,13 +492,11 @@ public class ContentArticlesApi {
   public void deleteArticleTemplate (String id, String cascade, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteArticleTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteArticleTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteArticleTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteArticleTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/content/articles/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -533,7 +527,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -603,15 +597,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -623,13 +617,11 @@ public class ContentArticlesApi {
   public void getArticle (String id, final Response.Listener<ArticleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getArticle",
-         new ApiException(400, "Missing the required parameter 'id' when calling getArticle"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getArticle",
+        new ApiException(400, "Missing the required parameter 'id' when calling getArticle"));
     }
-    
 
     // create path and map variables
     String path = "/content/articles/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -659,7 +651,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -733,15 +725,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -753,13 +745,11 @@ public class ContentArticlesApi {
   public void getArticleTemplate (String id, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getArticleTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling getArticleTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getArticleTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling getArticleTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/content/articles/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -789,7 +779,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -863,15 +853,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -883,7 +873,6 @@ public class ContentArticlesApi {
   public void getArticleTemplates (Integer size, Integer page, String order, final Response.Listener<PageResourceTemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/content/articles/templates".replaceAll("\\{format\\}","json");
@@ -916,7 +905,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -943,14 +932,16 @@ public class ContentArticlesApi {
   * List and search articles
   * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
    * @param filterCategory Filter for articles from a specific category by id
-   * @param filterTagset Filter for articles with specified tags (separated by comma)
+   * @param filterTagset Filter for articles with at least one of a specified set of tags (separated by comma)
+   * @param filterTagIntersection Filter for articles with all of a specified set of tags (separated by comma)
+   * @param filterTagExclusion Filter for articles with none of a specified set of tags (separated by comma)
    * @param filterTitle Filter for articles whose title contains a string
    * @param size The number of objects returned per page
    * @param page The number of the page returned, starting with 1
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
    * @return PageResourceArticleResource
   */
-  public PageResourceArticleResource getArticles (String filterCategory, String filterTagset, String filterTitle, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PageResourceArticleResource getArticles (String filterCategory, String filterTagset, String filterTagIntersection, String filterTagExclusion, String filterTitle, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -964,6 +955,8 @@ public class ContentArticlesApi {
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_category", filterCategory));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_tagset", filterTagset));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_tag_intersection", filterTagIntersection));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_tag_exclusion", filterTagExclusion));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_title", filterTitle));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "size", size));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "page", page));
@@ -996,27 +989,26 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
       /**
    * List and search articles
    * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
-   * @param filterCategory Filter for articles from a specific category by id   * @param filterTagset Filter for articles with specified tags (separated by comma)   * @param filterTitle Filter for articles whose title contains a string   * @param size The number of objects returned per page   * @param page The number of the page returned, starting with 1   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+   * @param filterCategory Filter for articles from a specific category by id   * @param filterTagset Filter for articles with at least one of a specified set of tags (separated by comma)   * @param filterTagIntersection Filter for articles with all of a specified set of tags (separated by comma)   * @param filterTagExclusion Filter for articles with none of a specified set of tags (separated by comma)   * @param filterTitle Filter for articles whose title contains a string   * @param size The number of objects returned per page   * @param page The number of the page returned, starting with 1   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   */
-  public void getArticles (String filterCategory, String filterTagset, String filterTitle, Integer size, Integer page, String order, final Response.Listener<PageResourceArticleResource> responseListener, final Response.ErrorListener errorListener) {
+  public void getArticles (String filterCategory, String filterTagset, String filterTagIntersection, String filterTagExclusion, String filterTitle, Integer size, Integer page, String order, final Response.Listener<PageResourceArticleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/content/articles".replaceAll("\\{format\\}","json");
@@ -1030,6 +1022,8 @@ public class ContentArticlesApi {
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_category", filterCategory));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_tagset", filterTagset));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_tag_intersection", filterTagIntersection));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_tag_exclusion", filterTagExclusion));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_title", filterTitle));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "size", size));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "page", page));
@@ -1052,7 +1046,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1127,15 +1121,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1147,13 +1141,11 @@ public class ContentArticlesApi {
   public void updateArticle (String id, ArticleResource articleResource, final Response.Listener<ArticleResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = articleResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateArticle",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateArticle"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateArticle",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateArticle"));
     }
-    
 
     // create path and map variables
     String path = "/content/articles/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1183,7 +1175,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1258,15 +1250,15 @@ public class ContentArticlesApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1278,13 +1270,11 @@ public class ContentArticlesApi {
   public void updateArticleTemplate (String id, TemplateResource articleTemplateResource, final Response.Listener<TemplateResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = articleTemplateResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateArticleTemplate",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateArticleTemplate"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateArticleTemplate",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateArticleTemplate"));
     }
-    
 
     // create path and map variables
     String path = "/content/articles/templates/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1314,7 +1304,7 @@ public class ContentArticlesApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

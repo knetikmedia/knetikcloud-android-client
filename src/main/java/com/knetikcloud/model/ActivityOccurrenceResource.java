@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -19,8 +19,11 @@ import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
-@ApiModel(description = "")
-public class AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings {
+/**
+ * A occurrence of an activity (the actual game for example). Used to track scores, participants, and provide settings
+ **/
+@ApiModel(description = "A occurrence of an activity (the actual game for example). Used to track scores, participants, and provide settings")
+public class ActivityOccurrenceResource {
   
   @SerializedName("activity_id")
   private Long activityId = null;
@@ -207,20 +210,20 @@ public class AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresPart
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings = (AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings) o;
-    return (this.activityId == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.activityId == null : this.activityId.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.activityId)) &&
-        (this.challengeActivityId == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.challengeActivityId == null : this.challengeActivityId.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.challengeActivityId)) &&
-        (this.createdDate == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.createdDate == null : this.createdDate.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.createdDate)) &&
-        (this.entitlement == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.entitlement == null : this.entitlement.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.entitlement)) &&
-        (this.eventId == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.eventId == null : this.eventId.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.eventId)) &&
-        (this.id == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.id == null : this.id.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.id)) &&
-        (this.rewardStatus == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.rewardStatus == null : this.rewardStatus.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.rewardStatus)) &&
-        (this.settings == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.settings == null : this.settings.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.settings)) &&
-        (this.simulated == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.simulated == null : this.simulated.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.simulated)) &&
-        (this.startDate == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.startDate == null : this.startDate.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.startDate)) &&
-        (this.status == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.status == null : this.status.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.status)) &&
-        (this.updatedDate == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.updatedDate == null : this.updatedDate.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.updatedDate)) &&
-        (this.users == null ? aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.users == null : this.users.equals(aOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings.users));
+    ActivityOccurrenceResource activityOccurrenceResource = (ActivityOccurrenceResource) o;
+    return (this.activityId == null ? activityOccurrenceResource.activityId == null : this.activityId.equals(activityOccurrenceResource.activityId)) &&
+        (this.challengeActivityId == null ? activityOccurrenceResource.challengeActivityId == null : this.challengeActivityId.equals(activityOccurrenceResource.challengeActivityId)) &&
+        (this.createdDate == null ? activityOccurrenceResource.createdDate == null : this.createdDate.equals(activityOccurrenceResource.createdDate)) &&
+        (this.entitlement == null ? activityOccurrenceResource.entitlement == null : this.entitlement.equals(activityOccurrenceResource.entitlement)) &&
+        (this.eventId == null ? activityOccurrenceResource.eventId == null : this.eventId.equals(activityOccurrenceResource.eventId)) &&
+        (this.id == null ? activityOccurrenceResource.id == null : this.id.equals(activityOccurrenceResource.id)) &&
+        (this.rewardStatus == null ? activityOccurrenceResource.rewardStatus == null : this.rewardStatus.equals(activityOccurrenceResource.rewardStatus)) &&
+        (this.settings == null ? activityOccurrenceResource.settings == null : this.settings.equals(activityOccurrenceResource.settings)) &&
+        (this.simulated == null ? activityOccurrenceResource.simulated == null : this.simulated.equals(activityOccurrenceResource.simulated)) &&
+        (this.startDate == null ? activityOccurrenceResource.startDate == null : this.startDate.equals(activityOccurrenceResource.startDate)) &&
+        (this.status == null ? activityOccurrenceResource.status == null : this.status.equals(activityOccurrenceResource.status)) &&
+        (this.updatedDate == null ? activityOccurrenceResource.updatedDate == null : this.updatedDate.equals(activityOccurrenceResource.updatedDate)) &&
+        (this.users == null ? activityOccurrenceResource.users == null : this.users.equals(activityOccurrenceResource.users));
   }
 
   @Override
@@ -245,7 +248,7 @@ public class AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresPart
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings {\n");
+    sb.append("class ActivityOccurrenceResource {\n");
     
     sb.append("  activityId: ").append(activityId).append("\n");
     sb.append("  challengeActivityId: ").append(challengeActivityId).append("\n");

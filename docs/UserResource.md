@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **gender** | **String** | The user&#39;s gender (private) |  [optional]
 **id** | **Integer** | The id of the user |  [optional]
 **languageCode** | **String** | The ISO3 code for the user&#39;s currency (private) |  [optional]
+**lastActivity** | **Long** | The date the user last interacted with the API (private) |  [optional]
 **lastName** | **String** | The user&#39;s last name (private) |  [optional]
 **lastUpdated** | **Long** | The date the user&#39;s info was last updated as a unix timestamp |  [optional]
 **memberSince** | **Long** | The user&#39;s date of registration as a unix timestamp |  [optional]

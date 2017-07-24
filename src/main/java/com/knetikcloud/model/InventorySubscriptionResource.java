@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -41,6 +41,10 @@ public class InventorySubscriptionResource {
   private Integer itemId = null;
   @SerializedName("payment_method")
   private PaymentMethodResource paymentMethod = null;
+  @SerializedName("price_override")
+  private Double priceOverride = null;
+  @SerializedName("price_override_reason")
+  private String priceOverrideReason = null;
   @SerializedName("recurring_price")
   private Double recurringPrice = null;
   @SerializedName("sku")
@@ -141,9 +145,31 @@ public class InventorySubscriptionResource {
   }
 
   /**
-   * The recurring price
+   * The recurring price that has been set to override the base price. Null if not overriding
    **/
-  @ApiModelProperty(value = "The recurring price")
+  @ApiModelProperty(value = "The recurring price that has been set to override the base price. Null if not overriding")
+  public Double getPriceOverride() {
+    return priceOverride;
+  }
+  public void setPriceOverride(Double priceOverride) {
+    this.priceOverride = priceOverride;
+  }
+
+  /**
+   * An explanation for the reason the price is being overridden
+   **/
+  @ApiModelProperty(value = "An explanation for the reason the price is being overridden")
+  public String getPriceOverrideReason() {
+    return priceOverrideReason;
+  }
+  public void setPriceOverrideReason(String priceOverrideReason) {
+    this.priceOverrideReason = priceOverrideReason;
+  }
+
+  /**
+   * The default recurring price
+   **/
+  @ApiModelProperty(value = "The default recurring price")
   public Double getRecurringPrice() {
     return recurringPrice;
   }
@@ -152,9 +178,9 @@ public class InventorySubscriptionResource {
   }
 
   /**
-   * The sku of the subscription
+   * The recurring sku of the subscription
    **/
-  @ApiModelProperty(value = "The sku of the subscription")
+  @ApiModelProperty(value = "The recurring sku of the subscription")
   public String getSku() {
     return sku;
   }
@@ -213,6 +239,8 @@ public class InventorySubscriptionResource {
         (this.inventoryStatus == null ? inventorySubscriptionResource.inventoryStatus == null : this.inventoryStatus.equals(inventorySubscriptionResource.inventoryStatus)) &&
         (this.itemId == null ? inventorySubscriptionResource.itemId == null : this.itemId.equals(inventorySubscriptionResource.itemId)) &&
         (this.paymentMethod == null ? inventorySubscriptionResource.paymentMethod == null : this.paymentMethod.equals(inventorySubscriptionResource.paymentMethod)) &&
+        (this.priceOverride == null ? inventorySubscriptionResource.priceOverride == null : this.priceOverride.equals(inventorySubscriptionResource.priceOverride)) &&
+        (this.priceOverrideReason == null ? inventorySubscriptionResource.priceOverrideReason == null : this.priceOverrideReason.equals(inventorySubscriptionResource.priceOverrideReason)) &&
         (this.recurringPrice == null ? inventorySubscriptionResource.recurringPrice == null : this.recurringPrice.equals(inventorySubscriptionResource.recurringPrice)) &&
         (this.sku == null ? inventorySubscriptionResource.sku == null : this.sku.equals(inventorySubscriptionResource.sku)) &&
         (this.startDate == null ? inventorySubscriptionResource.startDate == null : this.startDate.equals(inventorySubscriptionResource.startDate)) &&
@@ -231,6 +259,8 @@ public class InventorySubscriptionResource {
     result = 31 * result + (this.inventoryStatus == null ? 0: this.inventoryStatus.hashCode());
     result = 31 * result + (this.itemId == null ? 0: this.itemId.hashCode());
     result = 31 * result + (this.paymentMethod == null ? 0: this.paymentMethod.hashCode());
+    result = 31 * result + (this.priceOverride == null ? 0: this.priceOverride.hashCode());
+    result = 31 * result + (this.priceOverrideReason == null ? 0: this.priceOverrideReason.hashCode());
     result = 31 * result + (this.recurringPrice == null ? 0: this.recurringPrice.hashCode());
     result = 31 * result + (this.sku == null ? 0: this.sku.hashCode());
     result = 31 * result + (this.startDate == null ? 0: this.startDate.hashCode());
@@ -252,6 +282,8 @@ public class InventorySubscriptionResource {
     sb.append("  inventoryStatus: ").append(inventoryStatus).append("\n");
     sb.append("  itemId: ").append(itemId).append("\n");
     sb.append("  paymentMethod: ").append(paymentMethod).append("\n");
+    sb.append("  priceOverride: ").append(priceOverride).append("\n");
+    sb.append("  priceOverrideReason: ").append(priceOverrideReason).append("\n");
     sb.append("  recurringPrice: ").append(recurringPrice).append("\n");
     sb.append("  sku: ").append(sku).append("\n");
     sb.append("  startDate: ").append(startDate).append("\n");

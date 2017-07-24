@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -103,15 +103,15 @@ public class AuthPermissionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -123,7 +123,6 @@ public class AuthPermissionsApi {
   public void createPermission (PermissionResource permissionResource, final Response.Listener<PermissionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = permissionResource;
 
-  
 
     // create path and map variables
     String path = "/auth/permissions".replaceAll("\\{format\\}","json");
@@ -153,7 +152,7 @@ public class AuthPermissionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -229,15 +228,15 @@ public class AuthPermissionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -249,13 +248,11 @@ public class AuthPermissionsApi {
   public void deletePermission (String permission, Boolean force, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'permission' is set
     if (permission == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'permission' when calling deletePermission",
-         new ApiException(400, "Missing the required parameter 'permission' when calling deletePermission"));
+      VolleyError error = new VolleyError("Missing the required parameter 'permission' when calling deletePermission",
+        new ApiException(400, "Missing the required parameter 'permission' when calling deletePermission"));
     }
-    
 
     // create path and map variables
     String path = "/auth/permissions/{permission}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "permission" + "\\}", apiInvoker.escapeString(permission.toString()));
@@ -286,7 +283,7 @@ public class AuthPermissionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -356,15 +353,15 @@ public class AuthPermissionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -376,13 +373,11 @@ public class AuthPermissionsApi {
   public void getPermission (String permission, final Response.Listener<PermissionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'permission' is set
     if (permission == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'permission' when calling getPermission",
-         new ApiException(400, "Missing the required parameter 'permission' when calling getPermission"));
+      VolleyError error = new VolleyError("Missing the required parameter 'permission' when calling getPermission",
+        new ApiException(400, "Missing the required parameter 'permission' when calling getPermission"));
     }
-    
 
     // create path and map variables
     String path = "/auth/permissions/{permission}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "permission" + "\\}", apiInvoker.escapeString(permission.toString()));
@@ -412,7 +407,7 @@ public class AuthPermissionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -486,15 +481,15 @@ public class AuthPermissionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -506,7 +501,6 @@ public class AuthPermissionsApi {
   public void getPermissions (Integer size, Integer page, String order, final Response.Listener<PageResourcePermissionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/auth/permissions".replaceAll("\\{format\\}","json");
@@ -539,7 +533,7 @@ public class AuthPermissionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -614,15 +608,15 @@ public class AuthPermissionsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -634,13 +628,11 @@ public class AuthPermissionsApi {
   public void updatePermission (String permission, PermissionResource permissionResource, final Response.Listener<PermissionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = permissionResource;
 
-  
     // verify the required parameter 'permission' is set
     if (permission == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'permission' when calling updatePermission",
-         new ApiException(400, "Missing the required parameter 'permission' when calling updatePermission"));
+      VolleyError error = new VolleyError("Missing the required parameter 'permission' when calling updatePermission",
+        new ApiException(400, "Missing the required parameter 'permission' when calling updatePermission"));
     }
-    
 
     // create path and map variables
     String path = "/auth/permissions/{permission}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "permission" + "\\}", apiInvoker.escapeString(permission.toString()));
@@ -670,7 +662,7 @@ public class AuthPermissionsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,

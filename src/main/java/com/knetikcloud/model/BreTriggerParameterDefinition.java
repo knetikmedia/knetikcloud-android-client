@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -20,6 +20,8 @@ public class BreTriggerParameterDefinition {
   
   @SerializedName("name")
   private String name = null;
+  @SerializedName("optional")
+  private Boolean optional = null;
   @SerializedName("type")
   private String type = null;
 
@@ -32,6 +34,17 @@ public class BreTriggerParameterDefinition {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  /**
+   * Whether this parameter can be left off when firing the event. Default false
+   **/
+  @ApiModelProperty(value = "Whether this parameter can be left off when firing the event. Default false")
+  public Boolean getOptional() {
+    return optional;
+  }
+  public void setOptional(Boolean optional) {
+    this.optional = optional;
   }
 
   /**
@@ -56,6 +69,7 @@ public class BreTriggerParameterDefinition {
     }
     BreTriggerParameterDefinition breTriggerParameterDefinition = (BreTriggerParameterDefinition) o;
     return (this.name == null ? breTriggerParameterDefinition.name == null : this.name.equals(breTriggerParameterDefinition.name)) &&
+        (this.optional == null ? breTriggerParameterDefinition.optional == null : this.optional.equals(breTriggerParameterDefinition.optional)) &&
         (this.type == null ? breTriggerParameterDefinition.type == null : this.type.equals(breTriggerParameterDefinition.type));
   }
 
@@ -63,6 +77,7 @@ public class BreTriggerParameterDefinition {
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.name == null ? 0: this.name.hashCode());
+    result = 31 * result + (this.optional == null ? 0: this.optional.hashCode());
     result = 31 * result + (this.type == null ? 0: this.type.hashCode());
     return result;
   }
@@ -73,6 +88,7 @@ public class BreTriggerParameterDefinition {
     sb.append("class BreTriggerParameterDefinition {\n");
     
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  optional: ").append(optional).append("\n");
     sb.append("  type: ").append(type).append("\n");
     sb.append("}\n");
     return sb.toString();

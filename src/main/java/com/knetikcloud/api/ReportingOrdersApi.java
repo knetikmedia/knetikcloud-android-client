@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -121,15 +121,15 @@ public class ReportingOrdersApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -141,13 +141,11 @@ public class ReportingOrdersApi {
   public void getInvoiceReports (String currencyCode, String granularity, String filterPaymentStatus, String filterFulfillmentStatus, Long startDate, Long endDate, Integer size, Integer page, final Response.Listener<PageResourceAggregateInvoiceReportResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'currencyCode' is set
     if (currencyCode == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getInvoiceReports",
-         new ApiException(400, "Missing the required parameter 'currencyCode' when calling getInvoiceReports"));
+      VolleyError error = new VolleyError("Missing the required parameter 'currencyCode' when calling getInvoiceReports",
+        new ApiException(400, "Missing the required parameter 'currencyCode' when calling getInvoiceReports"));
     }
-    
 
     // create path and map variables
     String path = "/reporting/orders/count/{currency_code}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "currency_code" + "\\}", apiInvoker.escapeString(currencyCode.toString()));
@@ -184,7 +182,7 @@ public class ReportingOrdersApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,

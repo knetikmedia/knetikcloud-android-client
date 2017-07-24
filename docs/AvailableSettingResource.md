@@ -1,5 +1,5 @@
 
-# TheDefinitionOfAnActivityParametersExDifficultyLevel
+# AvailableSettingResource
 
 ## Properties
 Name | Type | Description | Notes

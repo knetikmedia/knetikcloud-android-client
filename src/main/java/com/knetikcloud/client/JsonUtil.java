@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -57,14 +57,6 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings>>(){}.getType();
-    }
-    
-    if ("ARequestToResetAUsersPasswordByUsingAKnownUserProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ARequestToResetAUsersPasswordByUsingAKnownUserProperty>>(){}.getType();
-    }
-    
     if ("AchievementDefinitionResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<AchievementDefinitionResource>>(){}.getType();
     }
@@ -89,8 +81,20 @@ public class JsonUtil {
       return new TypeToken<List<ActivityOccurrenceJoinResult>>(){}.getType();
     }
     
+    if ("ActivityOccurrenceResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ActivityOccurrenceResource>>(){}.getType();
+    }
+    
     if ("ActivityOccurrenceResults".equalsIgnoreCase(className)) {
       return new TypeToken<List<ActivityOccurrenceResults>>(){}.getType();
+    }
+    
+    if ("ActivityOccurrenceResultsResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ActivityOccurrenceResultsResource>>(){}.getType();
+    }
+    
+    if ("ActivityResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ActivityResource>>(){}.getType();
     }
     
     if ("ActivityUserResource".equalsIgnoreCase(className)) {
@@ -129,20 +133,8 @@ public class JsonUtil {
       return new TypeToken<List<ArtistResource>>(){}.getType();
     }
     
-    if ("AudioGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AudioGroupProperty>>(){}.getType();
-    }
-    
-    if ("AudioGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AudioGroupPropertyDefinitionResource>>(){}.getType();
-    }
-    
-    if ("AudioProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AudioProperty>>(){}.getType();
-    }
-    
-    if ("AudioPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AudioPropertyDefinitionResource>>(){}.getType();
+    if ("AvailableSettingResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AvailableSettingResource>>(){}.getType();
     }
     
     if ("BareActivityResource".equalsIgnoreCase(className)) {
@@ -179,14 +171,6 @@ public class JsonUtil {
     
     if ("BillingReport".equalsIgnoreCase(className)) {
       return new TypeToken<List<BillingReport>>(){}.getType();
-    }
-    
-    if ("BooleanProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<BooleanProperty>>(){}.getType();
-    }
-    
-    if ("BooleanPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<BooleanPropertyDefinitionResource>>(){}.getType();
     }
     
     if ("BooleanResource".equalsIgnoreCase(className)) {
@@ -233,16 +217,8 @@ public class JsonUtil {
       return new TypeToken<List<BroadcastableEvent>>(){}.getType();
     }
     
-    if ("BundleItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<BundleItem>>(){}.getType();
-    }
-    
     if ("BundledSku".equalsIgnoreCase(className)) {
       return new TypeToken<List<BundledSku>>(){}.getType();
-    }
-    
-    if ("CacheClearEvent".equalsIgnoreCase(className)) {
-      return new TypeToken<List<CacheClearEvent>>(){}.getType();
     }
     
     if ("CampaignResource".equalsIgnoreCase(className)) {
@@ -333,10 +309,6 @@ public class JsonUtil {
       return new TypeToken<List<ConstantResource>>(){}.getType();
     }
     
-    if ("Consumable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Consumable>>(){}.getType();
-    }
-    
     if ("ContributionResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<ContributionResource>>(){}.getType();
     }
@@ -355,10 +327,6 @@ public class JsonUtil {
     
     if ("CouponDefinition".equalsIgnoreCase(className)) {
       return new TypeToken<List<CouponDefinition>>(){}.getType();
-    }
-    
-    if ("CouponItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<CouponItem>>(){}.getType();
     }
     
     if ("CreateBillingAgreementRequest".equalsIgnoreCase(className)) {
@@ -385,14 +353,6 @@ public class JsonUtil {
       return new TypeToken<List<DateOperationResource>>(){}.getType();
     }
     
-    if ("DateProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<DateProperty>>(){}.getType();
-    }
-    
-    if ("DatePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<DatePropertyDefinitionResource>>(){}.getType();
-    }
-    
     if ("DeltaResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<DeltaResource>>(){}.getType();
     }
@@ -417,20 +377,8 @@ public class JsonUtil {
       return new TypeToken<List<DoubleOperationResource>>(){}.getType();
     }
     
-    if ("DoubleProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<DoubleProperty>>(){}.getType();
-    }
-    
-    if ("DoublePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<DoublePropertyDefinitionResource>>(){}.getType();
-    }
-    
     if ("EntitlementGrantRequest".equalsIgnoreCase(className)) {
       return new TypeToken<List<EntitlementGrantRequest>>(){}.getType();
-    }
-    
-    if ("EntitlementItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<EntitlementItem>>(){}.getType();
     }
     
     if ("ErrorResource".equalsIgnoreCase(className)) {
@@ -439,10 +387,6 @@ public class JsonUtil {
     
     if ("EventContextResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<EventContextResource>>(){}.getType();
-    }
-    
-    if ("Expirable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Expirable>>(){}.getType();
     }
     
     if ("ExpressionResource".equalsIgnoreCase(className)) {
@@ -455,22 +399,6 @@ public class JsonUtil {
     
     if ("FacebookToken".equalsIgnoreCase(className)) {
       return new TypeToken<List<FacebookToken>>(){}.getType();
-    }
-    
-    if ("FileGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FileGroupProperty>>(){}.getType();
-    }
-    
-    if ("FileGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FileGroupPropertyDefinitionResource>>(){}.getType();
-    }
-    
-    if ("FileProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FileProperty>>(){}.getType();
-    }
-    
-    if ("FilePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FilePropertyDefinitionResource>>(){}.getType();
     }
     
     if ("FinalizeBillingAgreementRequest".equalsIgnoreCase(className)) {
@@ -489,20 +417,8 @@ public class JsonUtil {
       return new TypeToken<List<FlagResource>>(){}.getType();
     }
     
-    if ("FormattedTextProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FormattedTextProperty>>(){}.getType();
-    }
-    
-    if ("FormattedTextPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FormattedTextPropertyDefinitionResource>>(){}.getType();
-    }
-    
     if ("ForwardLog".equalsIgnoreCase(className)) {
       return new TypeToken<List<ForwardLog>>(){}.getType();
-    }
-    
-    if ("Fulfillable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Fulfillable>>(){}.getType();
     }
     
     if ("FulfillmentType".equalsIgnoreCase(className)) {
@@ -537,24 +453,8 @@ public class JsonUtil {
       return new TypeToken<List<GroupResource>>(){}.getType();
     }
     
-    if ("GuestPlayable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<GuestPlayable>>(){}.getType();
-    }
-    
-    if ("ImageGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ImageGroupProperty>>(){}.getType();
-    }
-    
-    if ("ImageGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ImageGroupPropertyDefinitionResource>>(){}.getType();
-    }
-    
-    if ("ImageProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ImageProperty>>(){}.getType();
-    }
-    
-    if ("ImagePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ImagePropertyDefinitionResource>>(){}.getType();
+    if ("IOConfig".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IOConfig>>(){}.getType();
     }
     
     if ("ImportJobOutputResource".equalsIgnoreCase(className)) {
@@ -567,14 +467,6 @@ public class JsonUtil {
     
     if ("IntegerOperationResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<IntegerOperationResource>>(){}.getType();
-    }
-    
-    if ("IntegerProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IntegerProperty>>(){}.getType();
-    }
-    
-    if ("IntegerPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IntegerPropertyDefinitionResource>>(){}.getType();
     }
     
     if ("InventorySubscriptionResource".equalsIgnoreCase(className)) {
@@ -629,10 +521,6 @@ public class JsonUtil {
       return new TypeToken<List<LevelingResource>>(){}.getType();
     }
     
-    if ("LimitedGettable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<LimitedGettable>>(){}.getType();
-    }
-    
     if ("LimitedGettableGroup".equalsIgnoreCase(className)) {
       return new TypeToken<List<LimitedGettableGroup>>(){}.getType();
     }
@@ -643,14 +531,6 @@ public class JsonUtil {
     
     if ("LocationLogResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<LocationLogResource>>(){}.getType();
-    }
-    
-    if ("LongProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<LongProperty>>(){}.getType();
-    }
-    
-    if ("LongPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<LongPropertyDefinitionResource>>(){}.getType();
     }
     
     if ("LookupResource".equalsIgnoreCase(className)) {
@@ -683,10 +563,6 @@ public class JsonUtil {
     
     if ("NestedCategory".equalsIgnoreCase(className)) {
       return new TypeToken<List<NestedCategory>>(){}.getType();
-    }
-    
-    if ("NewCustomerEvent".equalsIgnoreCase(className)) {
-      return new TypeToken<List<NewCustomerEvent>>(){}.getType();
     }
     
     if ("NewPasswordRequest".equalsIgnoreCase(className)) {
@@ -1013,6 +889,10 @@ public class JsonUtil {
       return new TypeToken<List<ParameterResource>>(){}.getType();
     }
     
+    if ("PasswordResetRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PasswordResetRequest>>(){}.getType();
+    }
+    
     if ("PayBySavedMethodRequest".equalsIgnoreCase(className)) {
       return new TypeToken<List<PayBySavedMethodRequest>>(){}.getType();
     }
@@ -1045,20 +925,12 @@ public class JsonUtil {
       return new TypeToken<List<PollResponseResource>>(){}.getType();
     }
     
-    if ("PreReqEntitlement".equalsIgnoreCase(className)) {
-      return new TypeToken<List<PreReqEntitlement>>(){}.getType();
-    }
-    
     if ("PredicateOperation".equalsIgnoreCase(className)) {
       return new TypeToken<List<PredicateOperation>>(){}.getType();
     }
     
     if ("PredicateResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<PredicateResource>>(){}.getType();
-    }
-    
-    if ("PriceOverridable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<PriceOverridable>>(){}.getType();
     }
     
     if ("Property".equalsIgnoreCase(className)) {
@@ -1103,10 +975,6 @@ public class JsonUtil {
     
     if ("RefundResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<RefundResource>>(){}.getType();
-    }
-    
-    if ("RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc".equalsIgnoreCase(className)) {
-      return new TypeToken<List<RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc>>(){}.getType();
     }
     
     if ("Result".equalsIgnoreCase(className)) {
@@ -1169,10 +1037,6 @@ public class JsonUtil {
       return new TypeToken<List<SettingOption>>(){}.getType();
     }
     
-    if ("ShippingItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ShippingItem>>(){}.getType();
-    }
-    
     if ("SimpleReferenceResourceint".equalsIgnoreCase(className)) {
       return new TypeToken<List<SimpleReferenceResourceint>>(){}.getType();
     }
@@ -1205,10 +1069,6 @@ public class JsonUtil {
       return new TypeToken<List<SkuRequest>>(){}.getType();
     }
     
-    if ("Spendable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Spendable>>(){}.getType();
-    }
-    
     if ("SqlDatabaseConfig".equalsIgnoreCase(className)) {
       return new TypeToken<List<SqlDatabaseConfig>>(){}.getType();
     }
@@ -1219,10 +1079,6 @@ public class JsonUtil {
     
     if ("StateTaxResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<StateTaxResource>>(){}.getType();
-    }
-    
-    if ("StoreItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<StoreItem>>(){}.getType();
     }
     
     if ("StoreItemTemplateResource".equalsIgnoreCase(className)) {
@@ -1241,10 +1097,6 @@ public class JsonUtil {
       return new TypeToken<List<StripePaymentRequest>>(){}.getType();
     }
     
-    if ("Subscription".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Subscription>>(){}.getType();
-    }
-    
     if ("SubscriptionCreditResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<SubscriptionCreditResource>>(){}.getType();
     }
@@ -1255,6 +1107,10 @@ public class JsonUtil {
     
     if ("SubscriptionPlanResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<SubscriptionPlanResource>>(){}.getType();
+    }
+    
+    if ("SubscriptionPriceOverrideRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<List<SubscriptionPriceOverrideRequest>>(){}.getType();
     }
     
     if ("SubscriptionResource".equalsIgnoreCase(className)) {
@@ -1277,28 +1133,8 @@ public class JsonUtil {
       return new TypeToken<List<TemplateSMSResource>>(){}.getType();
     }
     
-    if ("TextProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<TextProperty>>(){}.getType();
-    }
-    
-    if ("TextPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<TextPropertyDefinitionResource>>(){}.getType();
-    }
-    
-    if ("TheDefinitionOfAnActivityParametersExDifficultyLevel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<TheDefinitionOfAnActivityParametersExDifficultyLevel>>(){}.getType();
-    }
-    
     if ("TierResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<TierResource>>(){}.getType();
-    }
-    
-    if ("TimePeriodGettable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<TimePeriodGettable>>(){}.getType();
-    }
-    
-    if ("TimePeriodUsable".equalsIgnoreCase(className)) {
-      return new TypeToken<List<TimePeriodUsable>>(){}.getType();
     }
     
     if ("TokenDetailsResource".equalsIgnoreCase(className)) {
@@ -1327,6 +1163,10 @@ public class JsonUtil {
     
     if ("UserActionLog".equalsIgnoreCase(className)) {
       return new TypeToken<List<UserActionLog>>(){}.getType();
+    }
+    
+    if ("UserActivityResults".equalsIgnoreCase(className)) {
+      return new TypeToken<List<UserActivityResults>>(){}.getType();
     }
     
     if ("UserActivityResultsResource".equalsIgnoreCase(className)) {
@@ -1385,22 +1225,6 @@ public class JsonUtil {
       return new TypeToken<List<Version>>(){}.getType();
     }
     
-    if ("VideoGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<VideoGroupProperty>>(){}.getType();
-    }
-    
-    if ("VideoGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<VideoGroupPropertyDefinitionResource>>(){}.getType();
-    }
-    
-    if ("VideoProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<List<VideoProperty>>(){}.getType();
-    }
-    
-    if ("VideoPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<List<VideoPropertyDefinitionResource>>(){}.getType();
-    }
-    
     if ("VideoRelationshipResource".equalsIgnoreCase(className)) {
       return new TypeToken<List<VideoRelationshipResource>>(){}.getType();
     }
@@ -1425,19 +1249,207 @@ public class JsonUtil {
       return new TypeToken<List<XsollaPaymentRequest>>(){}.getType();
     }
     
+    if ("AudioPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AudioPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("BooleanProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<BooleanProperty>>(){}.getType();
+    }
+    
+    if ("BooleanPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<BooleanPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("CacheClearEvent".equalsIgnoreCase(className)) {
+      return new TypeToken<List<CacheClearEvent>>(){}.getType();
+    }
+    
+    if ("Consumable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Consumable>>(){}.getType();
+    }
+    
+    if ("DateProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DateProperty>>(){}.getType();
+    }
+    
+    if ("DatePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DatePropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("DoubleProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DoubleProperty>>(){}.getType();
+    }
+    
+    if ("DoublePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<DoublePropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("EntitlementItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<EntitlementItem>>(){}.getType();
+    }
+    
+    if ("Expirable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Expirable>>(){}.getType();
+    }
+    
+    if ("FileGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FileGroupProperty>>(){}.getType();
+    }
+    
+    if ("FileGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FileGroupPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("FileProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FileProperty>>(){}.getType();
+    }
+    
+    if ("FilePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FilePropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("FormattedTextProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FormattedTextProperty>>(){}.getType();
+    }
+    
+    if ("FormattedTextPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<FormattedTextPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("Fulfillable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Fulfillable>>(){}.getType();
+    }
+    
+    if ("GuestPlayable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<GuestPlayable>>(){}.getType();
+    }
+    
+    if ("ImagePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ImagePropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("IntegerProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IntegerProperty>>(){}.getType();
+    }
+    
+    if ("IntegerPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IntegerPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("LimitedGettable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<LimitedGettable>>(){}.getType();
+    }
+    
+    if ("LongProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<LongProperty>>(){}.getType();
+    }
+    
+    if ("LongPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<LongPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("NewCustomerEvent".equalsIgnoreCase(className)) {
+      return new TypeToken<List<NewCustomerEvent>>(){}.getType();
+    }
+    
+    if ("PreReqEntitlement".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PreReqEntitlement>>(){}.getType();
+    }
+    
+    if ("PriceOverridable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<PriceOverridable>>(){}.getType();
+    }
+    
+    if ("RemoveCustomerEvent".equalsIgnoreCase(className)) {
+      return new TypeToken<List<RemoveCustomerEvent>>(){}.getType();
+    }
+    
+    if ("Spendable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Spendable>>(){}.getType();
+    }
+    
+    if ("StoreItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<StoreItem>>(){}.getType();
+    }
+    
+    if ("TextProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TextProperty>>(){}.getType();
+    }
+    
+    if ("TextPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TextPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("TimePeriodGettable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TimePeriodGettable>>(){}.getType();
+    }
+    
+    if ("TimePeriodUsable".equalsIgnoreCase(className)) {
+      return new TypeToken<List<TimePeriodUsable>>(){}.getType();
+    }
+    
+    if ("VideoPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<VideoPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("AudioGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AudioGroupProperty>>(){}.getType();
+    }
+    
+    if ("AudioGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AudioGroupPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("AudioProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AudioProperty>>(){}.getType();
+    }
+    
+    if ("BundleItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<BundleItem>>(){}.getType();
+    }
+    
+    if ("CouponItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<CouponItem>>(){}.getType();
+    }
+    
+    if ("ImageGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ImageGroupProperty>>(){}.getType();
+    }
+    
+    if ("ImageGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ImageGroupPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("ImageProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ImageProperty>>(){}.getType();
+    }
+    
+    if ("ShippingItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ShippingItem>>(){}.getType();
+    }
+    
+    if ("Subscription".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Subscription>>(){}.getType();
+    }
+    
+    if ("VideoGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<VideoGroupProperty>>(){}.getType();
+    }
+    
+    if ("VideoGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<List<VideoGroupPropertyDefinitionResource>>(){}.getType();
+    }
+    
+    if ("VideoProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<List<VideoProperty>>(){}.getType();
+    }
+    
     return new TypeToken<List<Object>>(){}.getType();
   }
 
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
-    
-    if ("AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings".equalsIgnoreCase(className)) {
-      return new TypeToken<AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings>(){}.getType();
-    }
-    
-    if ("ARequestToResetAUsersPasswordByUsingAKnownUserProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<ARequestToResetAUsersPasswordByUsingAKnownUserProperty>(){}.getType();
-    }
     
     if ("AchievementDefinitionResource".equalsIgnoreCase(className)) {
       return new TypeToken<AchievementDefinitionResource>(){}.getType();
@@ -1463,8 +1475,20 @@ public class JsonUtil {
       return new TypeToken<ActivityOccurrenceJoinResult>(){}.getType();
     }
     
+    if ("ActivityOccurrenceResource".equalsIgnoreCase(className)) {
+      return new TypeToken<ActivityOccurrenceResource>(){}.getType();
+    }
+    
     if ("ActivityOccurrenceResults".equalsIgnoreCase(className)) {
       return new TypeToken<ActivityOccurrenceResults>(){}.getType();
+    }
+    
+    if ("ActivityOccurrenceResultsResource".equalsIgnoreCase(className)) {
+      return new TypeToken<ActivityOccurrenceResultsResource>(){}.getType();
+    }
+    
+    if ("ActivityResource".equalsIgnoreCase(className)) {
+      return new TypeToken<ActivityResource>(){}.getType();
     }
     
     if ("ActivityUserResource".equalsIgnoreCase(className)) {
@@ -1503,20 +1527,8 @@ public class JsonUtil {
       return new TypeToken<ArtistResource>(){}.getType();
     }
     
-    if ("AudioGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<AudioGroupProperty>(){}.getType();
-    }
-    
-    if ("AudioGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<AudioGroupPropertyDefinitionResource>(){}.getType();
-    }
-    
-    if ("AudioProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<AudioProperty>(){}.getType();
-    }
-    
-    if ("AudioPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<AudioPropertyDefinitionResource>(){}.getType();
+    if ("AvailableSettingResource".equalsIgnoreCase(className)) {
+      return new TypeToken<AvailableSettingResource>(){}.getType();
     }
     
     if ("BareActivityResource".equalsIgnoreCase(className)) {
@@ -1553,14 +1565,6 @@ public class JsonUtil {
     
     if ("BillingReport".equalsIgnoreCase(className)) {
       return new TypeToken<BillingReport>(){}.getType();
-    }
-    
-    if ("BooleanProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<BooleanProperty>(){}.getType();
-    }
-    
-    if ("BooleanPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<BooleanPropertyDefinitionResource>(){}.getType();
     }
     
     if ("BooleanResource".equalsIgnoreCase(className)) {
@@ -1607,16 +1611,8 @@ public class JsonUtil {
       return new TypeToken<BroadcastableEvent>(){}.getType();
     }
     
-    if ("BundleItem".equalsIgnoreCase(className)) {
-      return new TypeToken<BundleItem>(){}.getType();
-    }
-    
     if ("BundledSku".equalsIgnoreCase(className)) {
       return new TypeToken<BundledSku>(){}.getType();
-    }
-    
-    if ("CacheClearEvent".equalsIgnoreCase(className)) {
-      return new TypeToken<CacheClearEvent>(){}.getType();
     }
     
     if ("CampaignResource".equalsIgnoreCase(className)) {
@@ -1707,10 +1703,6 @@ public class JsonUtil {
       return new TypeToken<ConstantResource>(){}.getType();
     }
     
-    if ("Consumable".equalsIgnoreCase(className)) {
-      return new TypeToken<Consumable>(){}.getType();
-    }
-    
     if ("ContributionResource".equalsIgnoreCase(className)) {
       return new TypeToken<ContributionResource>(){}.getType();
     }
@@ -1729,10 +1721,6 @@ public class JsonUtil {
     
     if ("CouponDefinition".equalsIgnoreCase(className)) {
       return new TypeToken<CouponDefinition>(){}.getType();
-    }
-    
-    if ("CouponItem".equalsIgnoreCase(className)) {
-      return new TypeToken<CouponItem>(){}.getType();
     }
     
     if ("CreateBillingAgreementRequest".equalsIgnoreCase(className)) {
@@ -1759,14 +1747,6 @@ public class JsonUtil {
       return new TypeToken<DateOperationResource>(){}.getType();
     }
     
-    if ("DateProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<DateProperty>(){}.getType();
-    }
-    
-    if ("DatePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<DatePropertyDefinitionResource>(){}.getType();
-    }
-    
     if ("DeltaResource".equalsIgnoreCase(className)) {
       return new TypeToken<DeltaResource>(){}.getType();
     }
@@ -1791,20 +1771,8 @@ public class JsonUtil {
       return new TypeToken<DoubleOperationResource>(){}.getType();
     }
     
-    if ("DoubleProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<DoubleProperty>(){}.getType();
-    }
-    
-    if ("DoublePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<DoublePropertyDefinitionResource>(){}.getType();
-    }
-    
     if ("EntitlementGrantRequest".equalsIgnoreCase(className)) {
       return new TypeToken<EntitlementGrantRequest>(){}.getType();
-    }
-    
-    if ("EntitlementItem".equalsIgnoreCase(className)) {
-      return new TypeToken<EntitlementItem>(){}.getType();
     }
     
     if ("ErrorResource".equalsIgnoreCase(className)) {
@@ -1813,10 +1781,6 @@ public class JsonUtil {
     
     if ("EventContextResource".equalsIgnoreCase(className)) {
       return new TypeToken<EventContextResource>(){}.getType();
-    }
-    
-    if ("Expirable".equalsIgnoreCase(className)) {
-      return new TypeToken<Expirable>(){}.getType();
     }
     
     if ("ExpressionResource".equalsIgnoreCase(className)) {
@@ -1829,22 +1793,6 @@ public class JsonUtil {
     
     if ("FacebookToken".equalsIgnoreCase(className)) {
       return new TypeToken<FacebookToken>(){}.getType();
-    }
-    
-    if ("FileGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<FileGroupProperty>(){}.getType();
-    }
-    
-    if ("FileGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<FileGroupPropertyDefinitionResource>(){}.getType();
-    }
-    
-    if ("FileProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<FileProperty>(){}.getType();
-    }
-    
-    if ("FilePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<FilePropertyDefinitionResource>(){}.getType();
     }
     
     if ("FinalizeBillingAgreementRequest".equalsIgnoreCase(className)) {
@@ -1863,20 +1811,8 @@ public class JsonUtil {
       return new TypeToken<FlagResource>(){}.getType();
     }
     
-    if ("FormattedTextProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<FormattedTextProperty>(){}.getType();
-    }
-    
-    if ("FormattedTextPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<FormattedTextPropertyDefinitionResource>(){}.getType();
-    }
-    
     if ("ForwardLog".equalsIgnoreCase(className)) {
       return new TypeToken<ForwardLog>(){}.getType();
-    }
-    
-    if ("Fulfillable".equalsIgnoreCase(className)) {
-      return new TypeToken<Fulfillable>(){}.getType();
     }
     
     if ("FulfillmentType".equalsIgnoreCase(className)) {
@@ -1911,24 +1847,8 @@ public class JsonUtil {
       return new TypeToken<GroupResource>(){}.getType();
     }
     
-    if ("GuestPlayable".equalsIgnoreCase(className)) {
-      return new TypeToken<GuestPlayable>(){}.getType();
-    }
-    
-    if ("ImageGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<ImageGroupProperty>(){}.getType();
-    }
-    
-    if ("ImageGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<ImageGroupPropertyDefinitionResource>(){}.getType();
-    }
-    
-    if ("ImageProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<ImageProperty>(){}.getType();
-    }
-    
-    if ("ImagePropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<ImagePropertyDefinitionResource>(){}.getType();
+    if ("IOConfig".equalsIgnoreCase(className)) {
+      return new TypeToken<IOConfig>(){}.getType();
     }
     
     if ("ImportJobOutputResource".equalsIgnoreCase(className)) {
@@ -1941,14 +1861,6 @@ public class JsonUtil {
     
     if ("IntegerOperationResource".equalsIgnoreCase(className)) {
       return new TypeToken<IntegerOperationResource>(){}.getType();
-    }
-    
-    if ("IntegerProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<IntegerProperty>(){}.getType();
-    }
-    
-    if ("IntegerPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<IntegerPropertyDefinitionResource>(){}.getType();
     }
     
     if ("InventorySubscriptionResource".equalsIgnoreCase(className)) {
@@ -2003,10 +1915,6 @@ public class JsonUtil {
       return new TypeToken<LevelingResource>(){}.getType();
     }
     
-    if ("LimitedGettable".equalsIgnoreCase(className)) {
-      return new TypeToken<LimitedGettable>(){}.getType();
-    }
-    
     if ("LimitedGettableGroup".equalsIgnoreCase(className)) {
       return new TypeToken<LimitedGettableGroup>(){}.getType();
     }
@@ -2017,14 +1925,6 @@ public class JsonUtil {
     
     if ("LocationLogResource".equalsIgnoreCase(className)) {
       return new TypeToken<LocationLogResource>(){}.getType();
-    }
-    
-    if ("LongProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<LongProperty>(){}.getType();
-    }
-    
-    if ("LongPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<LongPropertyDefinitionResource>(){}.getType();
     }
     
     if ("LookupResource".equalsIgnoreCase(className)) {
@@ -2057,10 +1957,6 @@ public class JsonUtil {
     
     if ("NestedCategory".equalsIgnoreCase(className)) {
       return new TypeToken<NestedCategory>(){}.getType();
-    }
-    
-    if ("NewCustomerEvent".equalsIgnoreCase(className)) {
-      return new TypeToken<NewCustomerEvent>(){}.getType();
     }
     
     if ("NewPasswordRequest".equalsIgnoreCase(className)) {
@@ -2387,6 +2283,10 @@ public class JsonUtil {
       return new TypeToken<ParameterResource>(){}.getType();
     }
     
+    if ("PasswordResetRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<PasswordResetRequest>(){}.getType();
+    }
+    
     if ("PayBySavedMethodRequest".equalsIgnoreCase(className)) {
       return new TypeToken<PayBySavedMethodRequest>(){}.getType();
     }
@@ -2419,20 +2319,12 @@ public class JsonUtil {
       return new TypeToken<PollResponseResource>(){}.getType();
     }
     
-    if ("PreReqEntitlement".equalsIgnoreCase(className)) {
-      return new TypeToken<PreReqEntitlement>(){}.getType();
-    }
-    
     if ("PredicateOperation".equalsIgnoreCase(className)) {
       return new TypeToken<PredicateOperation>(){}.getType();
     }
     
     if ("PredicateResource".equalsIgnoreCase(className)) {
       return new TypeToken<PredicateResource>(){}.getType();
-    }
-    
-    if ("PriceOverridable".equalsIgnoreCase(className)) {
-      return new TypeToken<PriceOverridable>(){}.getType();
     }
     
     if ("Property".equalsIgnoreCase(className)) {
@@ -2477,10 +2369,6 @@ public class JsonUtil {
     
     if ("RefundResource".equalsIgnoreCase(className)) {
       return new TypeToken<RefundResource>(){}.getType();
-    }
-    
-    if ("RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc".equalsIgnoreCase(className)) {
-      return new TypeToken<RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc>(){}.getType();
     }
     
     if ("Result".equalsIgnoreCase(className)) {
@@ -2543,10 +2431,6 @@ public class JsonUtil {
       return new TypeToken<SettingOption>(){}.getType();
     }
     
-    if ("ShippingItem".equalsIgnoreCase(className)) {
-      return new TypeToken<ShippingItem>(){}.getType();
-    }
-    
     if ("SimpleReferenceResourceint".equalsIgnoreCase(className)) {
       return new TypeToken<SimpleReferenceResourceint>(){}.getType();
     }
@@ -2579,10 +2463,6 @@ public class JsonUtil {
       return new TypeToken<SkuRequest>(){}.getType();
     }
     
-    if ("Spendable".equalsIgnoreCase(className)) {
-      return new TypeToken<Spendable>(){}.getType();
-    }
-    
     if ("SqlDatabaseConfig".equalsIgnoreCase(className)) {
       return new TypeToken<SqlDatabaseConfig>(){}.getType();
     }
@@ -2593,10 +2473,6 @@ public class JsonUtil {
     
     if ("StateTaxResource".equalsIgnoreCase(className)) {
       return new TypeToken<StateTaxResource>(){}.getType();
-    }
-    
-    if ("StoreItem".equalsIgnoreCase(className)) {
-      return new TypeToken<StoreItem>(){}.getType();
     }
     
     if ("StoreItemTemplateResource".equalsIgnoreCase(className)) {
@@ -2615,10 +2491,6 @@ public class JsonUtil {
       return new TypeToken<StripePaymentRequest>(){}.getType();
     }
     
-    if ("Subscription".equalsIgnoreCase(className)) {
-      return new TypeToken<Subscription>(){}.getType();
-    }
-    
     if ("SubscriptionCreditResource".equalsIgnoreCase(className)) {
       return new TypeToken<SubscriptionCreditResource>(){}.getType();
     }
@@ -2629,6 +2501,10 @@ public class JsonUtil {
     
     if ("SubscriptionPlanResource".equalsIgnoreCase(className)) {
       return new TypeToken<SubscriptionPlanResource>(){}.getType();
+    }
+    
+    if ("SubscriptionPriceOverrideRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<SubscriptionPriceOverrideRequest>(){}.getType();
     }
     
     if ("SubscriptionResource".equalsIgnoreCase(className)) {
@@ -2651,28 +2527,8 @@ public class JsonUtil {
       return new TypeToken<TemplateSMSResource>(){}.getType();
     }
     
-    if ("TextProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<TextProperty>(){}.getType();
-    }
-    
-    if ("TextPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<TextPropertyDefinitionResource>(){}.getType();
-    }
-    
-    if ("TheDefinitionOfAnActivityParametersExDifficultyLevel".equalsIgnoreCase(className)) {
-      return new TypeToken<TheDefinitionOfAnActivityParametersExDifficultyLevel>(){}.getType();
-    }
-    
     if ("TierResource".equalsIgnoreCase(className)) {
       return new TypeToken<TierResource>(){}.getType();
-    }
-    
-    if ("TimePeriodGettable".equalsIgnoreCase(className)) {
-      return new TypeToken<TimePeriodGettable>(){}.getType();
-    }
-    
-    if ("TimePeriodUsable".equalsIgnoreCase(className)) {
-      return new TypeToken<TimePeriodUsable>(){}.getType();
     }
     
     if ("TokenDetailsResource".equalsIgnoreCase(className)) {
@@ -2701,6 +2557,10 @@ public class JsonUtil {
     
     if ("UserActionLog".equalsIgnoreCase(className)) {
       return new TypeToken<UserActionLog>(){}.getType();
+    }
+    
+    if ("UserActivityResults".equalsIgnoreCase(className)) {
+      return new TypeToken<UserActivityResults>(){}.getType();
     }
     
     if ("UserActivityResultsResource".equalsIgnoreCase(className)) {
@@ -2759,22 +2619,6 @@ public class JsonUtil {
       return new TypeToken<Version>(){}.getType();
     }
     
-    if ("VideoGroupProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<VideoGroupProperty>(){}.getType();
-    }
-    
-    if ("VideoGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<VideoGroupPropertyDefinitionResource>(){}.getType();
-    }
-    
-    if ("VideoProperty".equalsIgnoreCase(className)) {
-      return new TypeToken<VideoProperty>(){}.getType();
-    }
-    
-    if ("VideoPropertyDefinitionResource".equalsIgnoreCase(className)) {
-      return new TypeToken<VideoPropertyDefinitionResource>(){}.getType();
-    }
-    
     if ("VideoRelationshipResource".equalsIgnoreCase(className)) {
       return new TypeToken<VideoRelationshipResource>(){}.getType();
     }
@@ -2797,6 +2641,202 @@ public class JsonUtil {
     
     if ("XsollaPaymentRequest".equalsIgnoreCase(className)) {
       return new TypeToken<XsollaPaymentRequest>(){}.getType();
+    }
+    
+    if ("AudioPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<AudioPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("BooleanProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<BooleanProperty>(){}.getType();
+    }
+    
+    if ("BooleanPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<BooleanPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("CacheClearEvent".equalsIgnoreCase(className)) {
+      return new TypeToken<CacheClearEvent>(){}.getType();
+    }
+    
+    if ("Consumable".equalsIgnoreCase(className)) {
+      return new TypeToken<Consumable>(){}.getType();
+    }
+    
+    if ("DateProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<DateProperty>(){}.getType();
+    }
+    
+    if ("DatePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<DatePropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("DoubleProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<DoubleProperty>(){}.getType();
+    }
+    
+    if ("DoublePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<DoublePropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("EntitlementItem".equalsIgnoreCase(className)) {
+      return new TypeToken<EntitlementItem>(){}.getType();
+    }
+    
+    if ("Expirable".equalsIgnoreCase(className)) {
+      return new TypeToken<Expirable>(){}.getType();
+    }
+    
+    if ("FileGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<FileGroupProperty>(){}.getType();
+    }
+    
+    if ("FileGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<FileGroupPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("FileProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<FileProperty>(){}.getType();
+    }
+    
+    if ("FilePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<FilePropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("FormattedTextProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<FormattedTextProperty>(){}.getType();
+    }
+    
+    if ("FormattedTextPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<FormattedTextPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("Fulfillable".equalsIgnoreCase(className)) {
+      return new TypeToken<Fulfillable>(){}.getType();
+    }
+    
+    if ("GuestPlayable".equalsIgnoreCase(className)) {
+      return new TypeToken<GuestPlayable>(){}.getType();
+    }
+    
+    if ("ImagePropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<ImagePropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("IntegerProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<IntegerProperty>(){}.getType();
+    }
+    
+    if ("IntegerPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<IntegerPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("LimitedGettable".equalsIgnoreCase(className)) {
+      return new TypeToken<LimitedGettable>(){}.getType();
+    }
+    
+    if ("LongProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<LongProperty>(){}.getType();
+    }
+    
+    if ("LongPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<LongPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("NewCustomerEvent".equalsIgnoreCase(className)) {
+      return new TypeToken<NewCustomerEvent>(){}.getType();
+    }
+    
+    if ("PreReqEntitlement".equalsIgnoreCase(className)) {
+      return new TypeToken<PreReqEntitlement>(){}.getType();
+    }
+    
+    if ("PriceOverridable".equalsIgnoreCase(className)) {
+      return new TypeToken<PriceOverridable>(){}.getType();
+    }
+    
+    if ("RemoveCustomerEvent".equalsIgnoreCase(className)) {
+      return new TypeToken<RemoveCustomerEvent>(){}.getType();
+    }
+    
+    if ("Spendable".equalsIgnoreCase(className)) {
+      return new TypeToken<Spendable>(){}.getType();
+    }
+    
+    if ("StoreItem".equalsIgnoreCase(className)) {
+      return new TypeToken<StoreItem>(){}.getType();
+    }
+    
+    if ("TextProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<TextProperty>(){}.getType();
+    }
+    
+    if ("TextPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<TextPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("TimePeriodGettable".equalsIgnoreCase(className)) {
+      return new TypeToken<TimePeriodGettable>(){}.getType();
+    }
+    
+    if ("TimePeriodUsable".equalsIgnoreCase(className)) {
+      return new TypeToken<TimePeriodUsable>(){}.getType();
+    }
+    
+    if ("VideoPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<VideoPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("AudioGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<AudioGroupProperty>(){}.getType();
+    }
+    
+    if ("AudioGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<AudioGroupPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("AudioProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<AudioProperty>(){}.getType();
+    }
+    
+    if ("BundleItem".equalsIgnoreCase(className)) {
+      return new TypeToken<BundleItem>(){}.getType();
+    }
+    
+    if ("CouponItem".equalsIgnoreCase(className)) {
+      return new TypeToken<CouponItem>(){}.getType();
+    }
+    
+    if ("ImageGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<ImageGroupProperty>(){}.getType();
+    }
+    
+    if ("ImageGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<ImageGroupPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("ImageProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<ImageProperty>(){}.getType();
+    }
+    
+    if ("ShippingItem".equalsIgnoreCase(className)) {
+      return new TypeToken<ShippingItem>(){}.getType();
+    }
+    
+    if ("Subscription".equalsIgnoreCase(className)) {
+      return new TypeToken<Subscription>(){}.getType();
+    }
+    
+    if ("VideoGroupProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<VideoGroupProperty>(){}.getType();
+    }
+    
+    if ("VideoGroupPropertyDefinitionResource".equalsIgnoreCase(className)) {
+      return new TypeToken<VideoGroupPropertyDefinitionResource>(){}.getType();
+    }
+    
+    if ("VideoProperty".equalsIgnoreCase(className)) {
+      return new TypeToken<VideoProperty>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

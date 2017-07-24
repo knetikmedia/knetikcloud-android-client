@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -13,7 +13,7 @@
 package com.knetikcloud.model;
 
 import com.knetikcloud.model.Behavior;
-import com.knetikcloud.model.PropertyDefinitionResource;
+import com.knetikcloud.model.PropertyFieldResource;
 import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +26,7 @@ public class BehaviorDefinitionResource {
   @SerializedName("prerequisite_behaviors")
   private List<Behavior> prerequisiteBehaviors = null;
   @SerializedName("properties")
-  private List<PropertyDefinitionResource> properties = null;
+  private List<PropertyFieldResource> properties = null;
   @SerializedName("type_hint")
   private String typeHint = null;
 
@@ -56,10 +56,10 @@ public class BehaviorDefinitionResource {
    * Configurable properties of the behavior
    **/
   @ApiModelProperty(required = true, value = "Configurable properties of the behavior")
-  public List<PropertyDefinitionResource> getProperties() {
+  public List<PropertyFieldResource> getProperties() {
     return properties;
   }
-  public void setProperties(List<PropertyDefinitionResource> properties) {
+  public void setProperties(List<PropertyFieldResource> properties) {
     this.properties = properties;
   }
 

@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -27,7 +27,6 @@ import com.knetikcloud.model.CommentResource;
 import com.knetikcloud.model.ContributionResource;
 import com.knetikcloud.model.DispositionResource;
 import com.knetikcloud.model.FlagResource;
-import com.knetikcloud.model.ModelObject;
 import com.knetikcloud.model.PageResourceCommentResource;
 import com.knetikcloud.model.PageResourceDispositionResource;
 import com.knetikcloud.model.PageResourceVideoRelationshipResource;
@@ -118,15 +117,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -138,13 +137,11 @@ public class MediaVideosApi {
   public void addUserToVideoWhitelist (Long id, Integer userId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = userId;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addUserToVideoWhitelist",
-         new ApiException(400, "Missing the required parameter 'id' when calling addUserToVideoWhitelist"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling addUserToVideoWhitelist",
+        new ApiException(400, "Missing the required parameter 'id' when calling addUserToVideoWhitelist"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{id}/whitelist".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -174,7 +171,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -239,15 +236,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -259,7 +256,6 @@ public class MediaVideosApi {
   public void addVideo (VideoResource videoResource, final Response.Listener<VideoResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = videoResource;
 
-  
 
     // create path and map variables
     String path = "/media/videos".replaceAll("\\{format\\}","json");
@@ -289,7 +285,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -364,15 +360,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -384,13 +380,11 @@ public class MediaVideosApi {
   public void addVideoComment (Integer videoId, CommentResource commentResource, final Response.Listener<CommentResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = commentResource;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoComment",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoComment",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoComment"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/comments".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -420,7 +414,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -495,15 +489,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -515,13 +509,11 @@ public class MediaVideosApi {
   public void addVideoContributor (Long videoId, ContributionResource contributionResource, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = contributionResource;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoContributor",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoContributor"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoContributor",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoContributor"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/contributors".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -551,7 +543,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -622,15 +614,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -642,13 +634,11 @@ public class MediaVideosApi {
   public void addVideoFlag (Long videoId, String reason, final Response.Listener<FlagResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = reason;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoFlag",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoFlag"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoFlag",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoFlag"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/moderation".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -678,7 +668,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -753,15 +743,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -773,13 +763,11 @@ public class MediaVideosApi {
   public void addVideoRelationships (Long videoId, VideoRelationshipResource videoRelationshipResource, final Response.Listener<VideoRelationshipResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = videoRelationshipResource;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoRelationships",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoRelationships"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling addVideoRelationships",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling addVideoRelationships"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/related".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -809,7 +797,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -884,15 +872,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -904,13 +892,11 @@ public class MediaVideosApi {
   public void createVideoDisposition (Integer videoId, DispositionResource dispositionResource, final Response.Listener<DispositionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = dispositionResource;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling createVideoDisposition",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling createVideoDisposition"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling createVideoDisposition",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling createVideoDisposition"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/dispositions".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -940,7 +926,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1014,15 +1000,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1034,13 +1020,11 @@ public class MediaVideosApi {
   public void deleteVideo (Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteVideo",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteVideo"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteVideo",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteVideo"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1070,7 +1054,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1146,15 +1130,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1166,19 +1150,16 @@ public class MediaVideosApi {
   public void deleteVideoComment (Long videoId, Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling deleteVideoComment",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling deleteVideoComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling deleteVideoComment",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling deleteVideoComment"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteVideoComment",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteVideoComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteVideoComment",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteVideoComment"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/comments/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1208,7 +1189,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1278,15 +1259,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1298,13 +1279,11 @@ public class MediaVideosApi {
   public void deleteVideoDisposition (Long dispositionId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'dispositionId' is set
     if (dispositionId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'dispositionId' when calling deleteVideoDisposition",
-         new ApiException(400, "Missing the required parameter 'dispositionId' when calling deleteVideoDisposition"));
+      VolleyError error = new VolleyError("Missing the required parameter 'dispositionId' when calling deleteVideoDisposition",
+        new ApiException(400, "Missing the required parameter 'dispositionId' when calling deleteVideoDisposition"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/dispositions/{disposition_id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "disposition_id" + "\\}", apiInvoker.escapeString(dispositionId.toString()));
@@ -1334,7 +1313,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1404,15 +1383,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1424,13 +1403,11 @@ public class MediaVideosApi {
   public void deleteVideoFlag (Long videoId, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling deleteVideoFlag",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling deleteVideoFlag"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling deleteVideoFlag",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling deleteVideoFlag"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/moderation".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -1460,7 +1437,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1536,15 +1513,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1556,19 +1533,16 @@ public class MediaVideosApi {
   public void deleteVideoRelationship (Long videoId, Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling deleteVideoRelationship",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling deleteVideoRelationship"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling deleteVideoRelationship",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling deleteVideoRelationship"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteVideoRelationship",
-         new ApiException(400, "Missing the required parameter 'id' when calling deleteVideoRelationship"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deleteVideoRelationship",
+        new ApiException(400, "Missing the required parameter 'id' when calling deleteVideoRelationship"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/related/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1598,7 +1572,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1674,15 +1648,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1694,13 +1668,11 @@ public class MediaVideosApi {
   public void getUserVideos (Integer userId, Boolean excludeFlagged, Integer size, Integer page, final Response.Listener<PageResourceVideoResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserVideos",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getUserVideos"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getUserVideos",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getUserVideos"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/videos".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -1733,7 +1705,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1807,15 +1779,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1827,13 +1799,11 @@ public class MediaVideosApi {
   public void getVideo (Long id, final Response.Listener<VideoResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getVideo",
-         new ApiException(400, "Missing the required parameter 'id' when calling getVideo"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getVideo",
+        new ApiException(400, "Missing the required parameter 'id' when calling getVideo"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -1863,7 +1833,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -1941,15 +1911,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -1961,13 +1931,11 @@ public class MediaVideosApi {
   public void getVideoComments (Integer videoId, Integer size, Integer page, final Response.Listener<PageResourceCommentResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling getVideoComments",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling getVideoComments"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling getVideoComments",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling getVideoComments"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/comments".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -1999,7 +1967,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2077,15 +2045,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2097,13 +2065,11 @@ public class MediaVideosApi {
   public void getVideoDispositions (Integer videoId, Integer size, Integer page, final Response.Listener<PageResourceDispositionResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling getVideoDispositions",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling getVideoDispositions"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling getVideoDispositions",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling getVideoDispositions"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/dispositions".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -2135,7 +2101,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2213,15 +2179,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2233,13 +2199,11 @@ public class MediaVideosApi {
   public void getVideoRelationships (Long videoId, Integer size, Integer page, final Response.Listener<PageResourceVideoRelationshipResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling getVideoRelationships",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling getVideoRelationships"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling getVideoRelationships",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling getVideoRelationships"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/related".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString()));
@@ -2271,7 +2235,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2314,7 +2278,7 @@ public class MediaVideosApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
    * @return PageResourceVideoResource
   */
-  public PageResourceVideoResource getVideos (Boolean excludeFlagged, ModelObject filterVideosByUploader, String filterCategory, String filterTagset, String filterVideosByName, ModelObject filterVideosByContributor, ModelObject filterVideosByAuthor, Boolean filterHasAuthor, Boolean filterHasUploader, String filterRelatedTo, Boolean filterFriends, String filterDisposition, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public PageResourceVideoResource getVideos (Boolean excludeFlagged, Integer filterVideosByUploader, String filterCategory, String filterTagset, String filterVideosByName, Integer filterVideosByContributor, Integer filterVideosByAuthor, Boolean filterHasAuthor, Boolean filterHasUploader, String filterRelatedTo, Boolean filterFriends, String filterDisposition, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -2369,15 +2333,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2386,10 +2350,9 @@ public class MediaVideosApi {
    * 
    * @param excludeFlagged Skip videos that have been flagged by the current user   * @param filterVideosByUploader Filter for videos by uploader id   * @param filterCategory Filter for videos from a specific category by id   * @param filterTagset Filter for videos with specified tags (separated by comma)   * @param filterVideosByName Filter for videos which name *STARTS* with the given string   * @param filterVideosByContributor Filter for videos with contribution from the artist specified by ID   * @param filterVideosByAuthor Filter for videos with an artist as author specified by ID   * @param filterHasAuthor Filter for videos that have an author set if true, or that have no author if false   * @param filterHasUploader Filter for videos that have an uploader set if true, or that have no uploader if false   * @param filterRelatedTo Filter for videos that have designated a particular video as the TO of a relationship. Pattern should match VIDEO_ID or VIDEO_ID:DETAILS to match with a specific details string as well   * @param filterFriends Filter for videos uploaded by friends. &#39;true&#39; for friends of the caller (requires user token) or a user id for a specific user&#39;s friends (requires VIDEOS_ADMIN permission)   * @param filterDisposition Filter for videos a given user has a given disposition towards. USER_ID:DISPOSITION where USER_ID is the id of the user who has this disposition or &#39;me&#39; for the caller (requires user token for &#39;me&#39;) and DISPOSITION is the name of the disposition. E.G. filter_disposition&#x3D;123:like or filter_disposition&#x3D;me:favorite   * @param size The number of objects returned per page   * @param page The number of the page returned, starting with 1   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   */
-  public void getVideos (Boolean excludeFlagged, ModelObject filterVideosByUploader, String filterCategory, String filterTagset, String filterVideosByName, ModelObject filterVideosByContributor, ModelObject filterVideosByAuthor, Boolean filterHasAuthor, Boolean filterHasUploader, String filterRelatedTo, Boolean filterFriends, String filterDisposition, Integer size, Integer page, String order, final Response.Listener<PageResourceVideoResource> responseListener, final Response.ErrorListener errorListener) {
+  public void getVideos (Boolean excludeFlagged, Integer filterVideosByUploader, String filterCategory, String filterTagset, String filterVideosByName, Integer filterVideosByContributor, Integer filterVideosByAuthor, Boolean filterHasAuthor, Boolean filterHasUploader, String filterRelatedTo, Boolean filterFriends, String filterDisposition, Integer size, Integer page, String order, final Response.Listener<PageResourceVideoResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
 
     // create path and map variables
     String path = "/media/videos".replaceAll("\\{format\\}","json");
@@ -2434,7 +2397,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2514,15 +2477,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2534,19 +2497,16 @@ public class MediaVideosApi {
   public void removeUserFromVideoWhitelist (Long videoId, Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling removeUserFromVideoWhitelist",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling removeUserFromVideoWhitelist"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling removeUserFromVideoWhitelist",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling removeUserFromVideoWhitelist"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeUserFromVideoWhitelist",
-         new ApiException(400, "Missing the required parameter 'id' when calling removeUserFromVideoWhitelist"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeUserFromVideoWhitelist",
+        new ApiException(400, "Missing the required parameter 'id' when calling removeUserFromVideoWhitelist"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/whitelist/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2576,7 +2536,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2652,15 +2612,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2672,19 +2632,16 @@ public class MediaVideosApi {
   public void removeVideoContributor (Long videoId, Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling removeVideoContributor",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling removeVideoContributor"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling removeVideoContributor",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling removeVideoContributor"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeVideoContributor",
-         new ApiException(400, "Missing the required parameter 'id' when calling removeVideoContributor"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling removeVideoContributor",
+        new ApiException(400, "Missing the required parameter 'id' when calling removeVideoContributor"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/contributors/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2714,7 +2671,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2785,15 +2742,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2805,13 +2762,11 @@ public class MediaVideosApi {
   public void updateVideo (Long id, VideoResource videoResource, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = videoResource;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateVideo",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateVideo"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateVideo",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateVideo"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2841,7 +2796,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -2918,15 +2873,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -2938,19 +2893,16 @@ public class MediaVideosApi {
   public void updateVideoComment (Long videoId, Long id, String content, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = content;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling updateVideoComment",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling updateVideoComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling updateVideoComment",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling updateVideoComment"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateVideoComment",
-         new ApiException(400, "Missing the required parameter 'id' when calling updateVideoComment"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updateVideoComment",
+        new ApiException(400, "Missing the required parameter 'id' when calling updateVideoComment"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/comments/{id}/content".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -2980,7 +2932,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3057,15 +3009,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3077,19 +3029,16 @@ public class MediaVideosApi {
   public void updateVideoRelationship (Long videoId, Long relationshipId, String details, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = details;
 
-  
     // verify the required parameter 'videoId' is set
     if (videoId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling updateVideoRelationship",
-         new ApiException(400, "Missing the required parameter 'videoId' when calling updateVideoRelationship"));
+      VolleyError error = new VolleyError("Missing the required parameter 'videoId' when calling updateVideoRelationship",
+        new ApiException(400, "Missing the required parameter 'videoId' when calling updateVideoRelationship"));
     }
-    
     // verify the required parameter 'relationshipId' is set
     if (relationshipId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'relationshipId' when calling updateVideoRelationship",
-         new ApiException(400, "Missing the required parameter 'relationshipId' when calling updateVideoRelationship"));
+      VolleyError error = new VolleyError("Missing the required parameter 'relationshipId' when calling updateVideoRelationship",
+        new ApiException(400, "Missing the required parameter 'relationshipId' when calling updateVideoRelationship"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{video_id}/related/{id}/relationship_details".replaceAll("\\{format\\}","json").replaceAll("\\{" + "video_id" + "\\}", apiInvoker.escapeString(videoId.toString())).replaceAll("\\{" + "relationship_id" + "\\}", apiInvoker.escapeString(relationshipId.toString()));
@@ -3119,7 +3068,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -3189,15 +3138,15 @@ public class MediaVideosApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -3209,13 +3158,11 @@ public class MediaVideosApi {
   public void viewVideo (Long id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling viewVideo",
-         new ApiException(400, "Missing the required parameter 'id' when calling viewVideo"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling viewVideo",
+        new ApiException(400, "Missing the required parameter 'id' when calling viewVideo"));
     }
-    
 
     // create path and map variables
     String path = "/media/videos/{id}/views".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -3245,7 +3192,7 @@ public class MediaVideosApi {
       // normal form params
           }
 
-      String[] authNames = new String[] {  };
+    String[] authNames = new String[] {  };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,

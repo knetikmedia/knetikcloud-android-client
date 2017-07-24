@@ -4,7 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**affiliateId** | **Integer** |  |  [optional]
 **bundleSku** | **String** |  |  [optional]
 **currentFulfillmentStatus** | **String** |  |  [optional]
 **id** | **Integer** |  |  [optional]

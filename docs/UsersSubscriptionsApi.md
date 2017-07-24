@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**setSubscriptionPaymentMethod**](UsersSubscriptionsApi.md#setSubscriptionPaymentMethod) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/payment-method | Set the payment method to use for a subscription
 [**setSubscriptionStatus**](UsersSubscriptionsApi.md#setSubscriptionStatus) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/status | Set the status of a subscription
 [**setUserSubscriptionPlan**](UsersSubscriptionsApi.md#setUserSubscriptionPlan) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/plan | Set a new subscription plan for a user
+[**setUserSubscriptionPrice**](UsersSubscriptionsApi.md#setUserSubscriptionPrice) | **PUT** /users/{user_id}/subscriptions/{inventory_id}/price-override | Set a new subscription price for a user
 
 
 <a name="getUserSubscriptionDetails"></a>
@@ -308,6 +309,52 @@ Name | Type | Description  | Notes
  **userId** | **Integer**| The id of the user |
  **inventoryId** | **Integer**| The id of the user&#39;s inventory |
  **planId** | **String**| The id of the new plan. Must be from the same subscription | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setUserSubscriptionPrice"></a>
+# **setUserSubscriptionPrice**
+> setUserSubscriptionPrice(userId, inventoryId, theOverrideDetails)
+
+Set a new subscription price for a user
+
+This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.api.UsersSubscriptionsApi;
+
+UsersSubscriptionsApi apiInstance = new UsersSubscriptionsApi();
+Integer userId = 56; // Integer | The id of the user
+Integer inventoryId = 56; // Integer | The id of the user's inventory
+SubscriptionPriceOverrideRequest theOverrideDetails = new SubscriptionPriceOverrideRequest(); // SubscriptionPriceOverrideRequest | override
+try {
+    apiInstance.setUserSubscriptionPrice(userId, inventoryId, theOverrideDetails);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersSubscriptionsApi#setUserSubscriptionPrice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **Integer**| The id of the user |
+ **inventoryId** | **Integer**| The id of the user&#39;s inventory |
+ **theOverrideDetails** | [**SubscriptionPriceOverrideRequest**](SubscriptionPriceOverrideRequest.md)| override | [optional]
 
 ### Return type
 

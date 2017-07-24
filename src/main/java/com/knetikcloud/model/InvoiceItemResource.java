@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -18,8 +18,6 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class InvoiceItemResource {
   
-  @SerializedName("affiliate_id")
-  private Integer affiliateId = null;
   @SerializedName("bundle_sku")
   private String bundleSku = null;
   @SerializedName("current_fulfillment_status")
@@ -52,16 +50,6 @@ public class InvoiceItemResource {
   private String typeHint = null;
   @SerializedName("unit_price")
   private Double unitPrice = null;
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public Integer getAffiliateId() {
-    return affiliateId;
-  }
-  public void setAffiliateId(Integer affiliateId) {
-    this.affiliateId = affiliateId;
-  }
 
   /**
    **/
@@ -233,8 +221,7 @@ public class InvoiceItemResource {
       return false;
     }
     InvoiceItemResource invoiceItemResource = (InvoiceItemResource) o;
-    return (this.affiliateId == null ? invoiceItemResource.affiliateId == null : this.affiliateId.equals(invoiceItemResource.affiliateId)) &&
-        (this.bundleSku == null ? invoiceItemResource.bundleSku == null : this.bundleSku.equals(invoiceItemResource.bundleSku)) &&
+    return (this.bundleSku == null ? invoiceItemResource.bundleSku == null : this.bundleSku.equals(invoiceItemResource.bundleSku)) &&
         (this.currentFulfillmentStatus == null ? invoiceItemResource.currentFulfillmentStatus == null : this.currentFulfillmentStatus.equals(invoiceItemResource.currentFulfillmentStatus)) &&
         (this.id == null ? invoiceItemResource.id == null : this.id.equals(invoiceItemResource.id)) &&
         (this.invoiceId == null ? invoiceItemResource.invoiceId == null : this.invoiceId.equals(invoiceItemResource.invoiceId)) &&
@@ -255,7 +242,6 @@ public class InvoiceItemResource {
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.affiliateId == null ? 0: this.affiliateId.hashCode());
     result = 31 * result + (this.bundleSku == null ? 0: this.bundleSku.hashCode());
     result = 31 * result + (this.currentFulfillmentStatus == null ? 0: this.currentFulfillmentStatus.hashCode());
     result = 31 * result + (this.id == null ? 0: this.id.hashCode());
@@ -280,7 +266,6 @@ public class InvoiceItemResource {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoiceItemResource {\n");
     
-    sb.append("  affiliateId: ").append(affiliateId).append("\n");
     sb.append("  bundleSku: ").append(bundleSku).append("\n");
     sb.append("  currentFulfillmentStatus: ").append(currentFulfillmentStatus).append("\n");
     sb.append("  id: ").append(id).append("\n");

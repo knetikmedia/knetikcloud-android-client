@@ -1,6 +1,6 @@
 /**
  * Knetik Platform API Documentation latest 
- * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com
+ * This is the spec for the Knetik API.  Use this in conjunction with the documentation found at https://knetikcloud.com.
  *
  * OpenAPI spec version: latest 
  * Contact: support@knetik.com
@@ -109,15 +109,15 @@ public class PaymentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -129,13 +129,11 @@ public class PaymentsApi {
   public void createPaymentMethod (Integer userId, PaymentMethodResource paymentMethod, final Response.Listener<PaymentMethodResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = paymentMethod;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling createPaymentMethod",
-         new ApiException(400, "Missing the required parameter 'userId' when calling createPaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling createPaymentMethod",
+        new ApiException(400, "Missing the required parameter 'userId' when calling createPaymentMethod"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/payment-methods".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -165,7 +163,7 @@ public class PaymentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -245,15 +243,15 @@ public class PaymentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -265,19 +263,16 @@ public class PaymentsApi {
   public void deletePaymentMethod (Integer userId, Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling deletePaymentMethod",
-         new ApiException(400, "Missing the required parameter 'userId' when calling deletePaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling deletePaymentMethod",
+        new ApiException(400, "Missing the required parameter 'userId' when calling deletePaymentMethod"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deletePaymentMethod",
-         new ApiException(400, "Missing the required parameter 'id' when calling deletePaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling deletePaymentMethod",
+        new ApiException(400, "Missing the required parameter 'id' when calling deletePaymentMethod"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/payment-methods/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -307,7 +302,7 @@ public class PaymentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -383,15 +378,15 @@ public class PaymentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -403,19 +398,16 @@ public class PaymentsApi {
   public void getPaymentMethod (Integer userId, Integer id, final Response.Listener<PaymentMethodResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getPaymentMethod",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getPaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getPaymentMethod",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getPaymentMethod"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getPaymentMethod",
-         new ApiException(400, "Missing the required parameter 'id' when calling getPaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling getPaymentMethod",
+        new ApiException(400, "Missing the required parameter 'id' when calling getPaymentMethod"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/payment-methods/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -445,7 +437,7 @@ public class PaymentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -472,12 +464,16 @@ public class PaymentsApi {
   * Get all payment methods for a user
   * 
    * @param userId ID of the user for whom the payment methods are being retrieved
+   * @param filterName Filter for payment methods whose name starts with a given string
+   * @param filterPaymentType Filter for payment methods with a specific payment type
+   * @param filterPaymentMethodTypeId Filter for payment methods with a specific payment method type by id
+   * @param filterPaymentMethodTypeName Filter for payment methods whose payment method type name starts with a given string
    * @param size The number of objects returned per page
    * @param page The number of the page returned, starting with 1
    * @param order a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
    * @return List<PaymentMethodResource>
   */
-  public List<PaymentMethodResource> getPaymentMethods (Integer userId, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<PaymentMethodResource> getPaymentMethods (Integer userId, String filterName, String filterPaymentType, Integer filterPaymentMethodTypeId, String filterPaymentMethodTypeName, Integer size, Integer page, String order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'userId' is set
     if (userId == null) {
@@ -494,6 +490,10 @@ public class PaymentsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_name", filterName));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_payment_type", filterPaymentType));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_payment_method_type_id", filterPaymentMethodTypeId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_payment_method_type_name", filterPaymentMethodTypeName));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "size", size));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "page", page));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "order", order));
@@ -525,33 +525,31 @@ public class PaymentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
       /**
    * Get all payment methods for a user
    * 
-   * @param userId ID of the user for whom the payment methods are being retrieved   * @param size The number of objects returned per page   * @param page The number of the page returned, starting with 1   * @param order a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+   * @param userId ID of the user for whom the payment methods are being retrieved   * @param filterName Filter for payment methods whose name starts with a given string   * @param filterPaymentType Filter for payment methods with a specific payment type   * @param filterPaymentMethodTypeId Filter for payment methods with a specific payment method type by id   * @param filterPaymentMethodTypeName Filter for payment methods whose payment method type name starts with a given string   * @param size The number of objects returned per page   * @param page The number of the page returned, starting with 1   * @param order a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   */
-  public void getPaymentMethods (Integer userId, Integer size, Integer page, String order, final Response.Listener<List<PaymentMethodResource>> responseListener, final Response.ErrorListener errorListener) {
+  public void getPaymentMethods (Integer userId, String filterName, String filterPaymentType, Integer filterPaymentMethodTypeId, String filterPaymentMethodTypeName, Integer size, Integer page, String order, final Response.Listener<List<PaymentMethodResource>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getPaymentMethods",
-         new ApiException(400, "Missing the required parameter 'userId' when calling getPaymentMethods"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling getPaymentMethods",
+        new ApiException(400, "Missing the required parameter 'userId' when calling getPaymentMethods"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/payment-methods".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString()));
@@ -563,6 +561,10 @@ public class PaymentsApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_name", filterName));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_payment_type", filterPaymentType));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_payment_method_type_id", filterPaymentMethodTypeId));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_payment_method_type_name", filterPaymentMethodTypeName));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "size", size));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "page", page));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "order", order));
@@ -584,7 +586,7 @@ public class PaymentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -653,15 +655,15 @@ public class PaymentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -673,7 +675,6 @@ public class PaymentsApi {
   public void paymentAuthorization (PaymentAuthorizationResource request, final Response.Listener<PaymentAuthorizationResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = request;
 
-  
 
     // create path and map variables
     String path = "/payment/authorizations".replaceAll("\\{format\\}","json");
@@ -703,7 +704,7 @@ public class PaymentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -777,15 +778,15 @@ public class PaymentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -797,13 +798,11 @@ public class PaymentsApi {
   public void paymentCapture (Integer id, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
-  
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling paymentCapture",
-         new ApiException(400, "Missing the required parameter 'id' when calling paymentCapture"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling paymentCapture",
+        new ApiException(400, "Missing the required parameter 'id' when calling paymentCapture"));
     }
-    
 
     // create path and map variables
     String path = "/payment/authorizations/{id}/capture".replaceAll("\\{format\\}","json").replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -833,7 +832,7 @@ public class PaymentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
@@ -910,15 +909,15 @@ public class PaymentsApi {
     } catch (InterruptedException ex) {
        throw ex;
     } catch (ExecutionException ex) {
-       if (ex.getCause() instanceof VolleyError) {
-         VolleyError volleyError = (VolleyError)ex.getCause();
-         if (volleyError.networkResponse != null) {
-           throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-         }
-       }
-       throw ex;
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
     } catch (TimeoutException ex) {
-       throw ex;
+      throw ex;
     }
   }
 
@@ -930,19 +929,16 @@ public class PaymentsApi {
   public void updatePaymentMethod (Integer userId, Integer id, PaymentMethodResource paymentMethod, final Response.Listener<PaymentMethodResource> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = paymentMethod;
 
-  
     // verify the required parameter 'userId' is set
     if (userId == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updatePaymentMethod",
-         new ApiException(400, "Missing the required parameter 'userId' when calling updatePaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'userId' when calling updatePaymentMethod",
+        new ApiException(400, "Missing the required parameter 'userId' when calling updatePaymentMethod"));
     }
-    
     // verify the required parameter 'id' is set
     if (id == null) {
-       VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updatePaymentMethod",
-         new ApiException(400, "Missing the required parameter 'id' when calling updatePaymentMethod"));
+      VolleyError error = new VolleyError("Missing the required parameter 'id' when calling updatePaymentMethod",
+        new ApiException(400, "Missing the required parameter 'id' when calling updatePaymentMethod"));
     }
-    
 
     // create path and map variables
     String path = "/users/{user_id}/payment-methods/{id}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "user_id" + "\\}", apiInvoker.escapeString(userId.toString())).replaceAll("\\{" + "id" + "\\}", apiInvoker.escapeString(id.toString()));
@@ -972,7 +968,7 @@ public class PaymentsApi {
       // normal form params
           }
 
-      String[] authNames = new String[] { "OAuth2" };
+    String[] authNames = new String[] { "OAuth2" };
 
     try {
       apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType, authNames,
