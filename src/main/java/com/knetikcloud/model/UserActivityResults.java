@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * UserActivityResults
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-08T17:03:22.846-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-08T17:12:21.889-04:00")
 public class UserActivityResults {
   @SerializedName("currency_rewards")
   private List<RewardCurrencyResource> currencyRewards = null;

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PreReqEntitlement
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-08T17:03:22.846-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-08T17:12:21.889-04:00")
 public class PreReqEntitlement extends Behavior {
   @SerializedName("item_ids")
   private List<Integer> itemIds = new ArrayList<Integer>();
