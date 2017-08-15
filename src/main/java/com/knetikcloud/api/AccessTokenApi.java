@@ -59,14 +59,16 @@ public class AccessTokenApi {
      * @param grantType Grant type (required)
      * @param clientId The id of the client (required)
      * @param clientSecret The secret key of the client.  Used only with a grant_type of client_credentials (optional)
-     * @param username The username of the client.  Used only with a grant_type of password (optional)
-     * @param password The password of the client.  Used only with a grant_type of password (optional)
+     * @param username The username of the client. Used only with a grant_type of password (optional)
+     * @param password The password of the client. Used only with a grant_type of password (optional)
+     * @param token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins) (optional)
+     * @param refreshToken The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getOAuthTokenCall(String grantType, String clientId, String clientSecret, String username, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getOAuthTokenCall(String grantType, String clientId, String clientSecret, String username, String password, String token, String refreshToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -88,6 +90,10 @@ public class AccessTokenApi {
         localVarFormParams.put("username", username);
         if (password != null)
         localVarFormParams.put("password", password);
+        if (token != null)
+        localVarFormParams.put("token", token);
+        if (refreshToken != null)
+        localVarFormParams.put("refresh_token", refreshToken);
 
         final String[] localVarAccepts = {
             "application/json"
@@ -118,7 +124,7 @@ public class AccessTokenApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOAuthTokenValidateBeforeCall(String grantType, String clientId, String clientSecret, String username, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOAuthTokenValidateBeforeCall(String grantType, String clientId, String clientSecret, String username, String password, String token, String refreshToken, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'grantType' is set
         if (grantType == null) {
@@ -131,7 +137,7 @@ public class AccessTokenApi {
         }
         
         
-        com.squareup.okhttp.Call call = getOAuthTokenCall(grantType, clientId, clientSecret, username, password, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOAuthTokenCall(grantType, clientId, clientSecret, username, password, token, refreshToken, progressListener, progressRequestListener);
         return call;
 
         
@@ -146,13 +152,15 @@ public class AccessTokenApi {
      * @param grantType Grant type (required)
      * @param clientId The id of the client (required)
      * @param clientSecret The secret key of the client.  Used only with a grant_type of client_credentials (optional)
-     * @param username The username of the client.  Used only with a grant_type of password (optional)
-     * @param password The password of the client.  Used only with a grant_type of password (optional)
+     * @param username The username of the client. Used only with a grant_type of password (optional)
+     * @param password The password of the client. Used only with a grant_type of password (optional)
+     * @param token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins) (optional)
+     * @param refreshToken The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token (optional)
      * @return OAuth2Resource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OAuth2Resource getOAuthToken(String grantType, String clientId, String clientSecret, String username, String password) throws ApiException {
-        ApiResponse<OAuth2Resource> resp = getOAuthTokenWithHttpInfo(grantType, clientId, clientSecret, username, password);
+    public OAuth2Resource getOAuthToken(String grantType, String clientId, String clientSecret, String username, String password, String token, String refreshToken) throws ApiException {
+        ApiResponse<OAuth2Resource> resp = getOAuthTokenWithHttpInfo(grantType, clientId, clientSecret, username, password, token, refreshToken);
         return resp.getData();
     }
 
@@ -162,13 +170,15 @@ public class AccessTokenApi {
      * @param grantType Grant type (required)
      * @param clientId The id of the client (required)
      * @param clientSecret The secret key of the client.  Used only with a grant_type of client_credentials (optional)
-     * @param username The username of the client.  Used only with a grant_type of password (optional)
-     * @param password The password of the client.  Used only with a grant_type of password (optional)
+     * @param username The username of the client. Used only with a grant_type of password (optional)
+     * @param password The password of the client. Used only with a grant_type of password (optional)
+     * @param token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins) (optional)
+     * @param refreshToken The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token (optional)
      * @return ApiResponse&lt;OAuth2Resource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OAuth2Resource> getOAuthTokenWithHttpInfo(String grantType, String clientId, String clientSecret, String username, String password) throws ApiException {
-        com.squareup.okhttp.Call call = getOAuthTokenValidateBeforeCall(grantType, clientId, clientSecret, username, password, null, null);
+    public ApiResponse<OAuth2Resource> getOAuthTokenWithHttpInfo(String grantType, String clientId, String clientSecret, String username, String password, String token, String refreshToken) throws ApiException {
+        com.squareup.okhttp.Call call = getOAuthTokenValidateBeforeCall(grantType, clientId, clientSecret, username, password, token, refreshToken, null, null);
         Type localVarReturnType = new TypeToken<OAuth2Resource>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -179,13 +189,15 @@ public class AccessTokenApi {
      * @param grantType Grant type (required)
      * @param clientId The id of the client (required)
      * @param clientSecret The secret key of the client.  Used only with a grant_type of client_credentials (optional)
-     * @param username The username of the client.  Used only with a grant_type of password (optional)
-     * @param password The password of the client.  Used only with a grant_type of password (optional)
+     * @param username The username of the client. Used only with a grant_type of password (optional)
+     * @param password The password of the client. Used only with a grant_type of password (optional)
+     * @param token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins) (optional)
+     * @param refreshToken The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOAuthTokenAsync(String grantType, String clientId, String clientSecret, String username, String password, final ApiCallback<OAuth2Resource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOAuthTokenAsync(String grantType, String clientId, String clientSecret, String username, String password, String token, String refreshToken, final ApiCallback<OAuth2Resource> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -206,7 +218,7 @@ public class AccessTokenApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getOAuthTokenValidateBeforeCall(grantType, clientId, clientSecret, username, password, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOAuthTokenValidateBeforeCall(grantType, clientId, clientSecret, username, password, token, refreshToken, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OAuth2Resource>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

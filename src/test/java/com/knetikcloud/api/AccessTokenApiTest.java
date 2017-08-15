@@ -47,7 +47,9 @@ public class AccessTokenApiTest {
         String clientSecret = null;
         String username = null;
         String password = null;
-        OAuth2Resource response = api.getOAuthToken(grantType, clientId, clientSecret, username, password);
+        String token = null;
+        String refreshToken = null;
+        OAuth2Resource response = api.getOAuthToken(grantType, clientId, clientSecret, username, password, token, refreshToken);
 
         // TODO: test validations
     }

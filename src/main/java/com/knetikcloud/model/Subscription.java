@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * Subscription
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-15T13:12:56.036-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-15T13:50:30.225-04:00")
 public class Subscription extends StoreItem {
   /**
    * Gets or Sets availability

@@ -30,7 +30,7 @@ import java.util.List;
  * The definition of an activity parameters: ex: difficulty level
  */
 @ApiModel(description = "The definition of an activity parameters: ex: difficulty level")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-15T13:12:56.036-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-15T13:50:30.225-04:00")
 public class AvailableSettingResource {
   @SerializedName("advanced_option")
   private Boolean advancedOption = null;
