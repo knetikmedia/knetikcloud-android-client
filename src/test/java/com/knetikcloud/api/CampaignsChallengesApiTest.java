@@ -1,0 +1,339 @@
+package com.knetikcloud.api;
+
+import com.knetikcloud.client.ApiClient;
+import com.knetikcloud.model.ChallengeActivityResource;
+import com.knetikcloud.model.ChallengeEventResource;
+import com.knetikcloud.model.ChallengeResource;
+import com.knetikcloud.model.PageResourceBareChallengeActivityResource;
+import com.knetikcloud.model.PageResourceChallengeEventResource;
+import com.knetikcloud.model.PageResourceChallengeResource;
+import com.knetikcloud.model.PageResourceTemplateResource;
+import com.knetikcloud.model.Result;
+import com.knetikcloud.model.TemplateResource;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * API tests for CampaignsChallengesApi
+ */
+public class CampaignsChallengesApiTest {
+
+    private CampaignsChallengesApi api;
+
+    @Before
+    public void setup() {
+        api = new ApiClient().createService(CampaignsChallengesApi.class);
+    }
+
+    /**
+     * Create a challenge
+     *
+     * Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+     */
+    @Test
+    public void createChallengeTest() {
+        ChallengeResource challengeResource = null;
+        // ChallengeResource response = api.createChallenge(challengeResource);
+
+        // TODO: test validations
+    }
+    /**
+     * Create a challenge activity
+     *
+     * 
+     */
+    @Test
+    public void createChallengeActivityTest() {
+        Long challengeId = null;
+        ChallengeActivityResource challengeActivityResource = null;
+        Boolean validateSettings = null;
+        // ChallengeActivityResource response = api.createChallengeActivity(challengeId, challengeActivityResource, validateSettings);
+
+        // TODO: test validations
+    }
+    /**
+     * Create a challenge activity template
+     *
+     * Challenge Activity Templates define a type of challenge activity and the properties they have
+     */
+    @Test
+    public void createChallengeActivityTemplateTest() {
+        TemplateResource challengeActivityTemplateResource = null;
+        // TemplateResource response = api.createChallengeActivityTemplate(challengeActivityTemplateResource);
+
+        // TODO: test validations
+    }
+    /**
+     * Create a challenge template
+     *
+     * Challenge Templates define a type of challenge and the properties they have
+     */
+    @Test
+    public void createChallengeTemplateTest() {
+        TemplateResource challengeTemplateResource = null;
+        // TemplateResource response = api.createChallengeTemplate(challengeTemplateResource);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a challenge
+     *
+     * 
+     */
+    @Test
+    public void deleteChallengeTest() {
+        Long id = null;
+        // Void response = api.deleteChallenge(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a challenge activity
+     *
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     */
+    @Test
+    public void deleteChallengeActivityTest() {
+        Long id = null;
+        Long challengeId = null;
+        // Void response = api.deleteChallengeActivity(id, challengeId);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a challenge activity template
+     *
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     */
+    @Test
+    public void deleteChallengeActivityTemplateTest() {
+        String id = null;
+        String cascade = null;
+        // Void response = api.deleteChallengeActivityTemplate(id, cascade);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a challenge event
+     *
+     * 
+     */
+    @Test
+    public void deleteChallengeEventTest() {
+        Long id = null;
+        // Void response = api.deleteChallengeEvent(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a challenge template
+     *
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     */
+    @Test
+    public void deleteChallengeTemplateTest() {
+        String id = null;
+        String cascade = null;
+        // Void response = api.deleteChallengeTemplate(id, cascade);
+
+        // TODO: test validations
+    }
+    /**
+     * Retrieve a challenge
+     *
+     * 
+     */
+    @Test
+    public void getChallengeTest() {
+        Long id = null;
+        // ChallengeResource response = api.getChallenge(id);
+
+        // TODO: test validations
+    }
+    /**
+     * List and search challenge activities
+     *
+     * 
+     */
+    @Test
+    public void getChallengeActivitiesTest() {
+        Long challengeId = null;
+        Integer size = null;
+        Integer page = null;
+        String order = null;
+        // PageResourceBareChallengeActivityResource response = api.getChallengeActivities(challengeId, size, page, order);
+
+        // TODO: test validations
+    }
+    /**
+     * Get a single challenge activity
+     *
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     */
+    @Test
+    public void getChallengeActivityTest() {
+        Long id = null;
+        Long challengeId = null;
+        // ChallengeActivityResource response = api.getChallengeActivity(id, challengeId);
+
+        // TODO: test validations
+    }
+    /**
+     * Get a single challenge activity template
+     *
+     * 
+     */
+    @Test
+    public void getChallengeActivityTemplateTest() {
+        String id = null;
+        // TemplateResource response = api.getChallengeActivityTemplate(id);
+
+        // TODO: test validations
+    }
+    /**
+     * List and search challenge activity templates
+     *
+     * 
+     */
+    @Test
+    public void getChallengeActivityTemplatesTest() {
+        Integer size = null;
+        Integer page = null;
+        String order = null;
+        // PageResourceTemplateResource response = api.getChallengeActivityTemplates(size, page, order);
+
+        // TODO: test validations
+    }
+    /**
+     * Retrieve a single challenge event details
+     *
+     * 
+     */
+    @Test
+    public void getChallengeEventTest() {
+        Long id = null;
+        // ChallengeEventResource response = api.getChallengeEvent(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Retrieve a list of challenge events
+     *
+     * 
+     */
+    @Test
+    public void getChallengeEventsTest() {
+        String filterStartDate = null;
+        String filterEndDate = null;
+        Boolean filterCampaigns = null;
+        Long filterChallenge = null;
+        Integer size = null;
+        Integer page = null;
+        String order = null;
+        // PageResourceChallengeEventResource response = api.getChallengeEvents(filterStartDate, filterEndDate, filterCampaigns, filterChallenge, size, page, order);
+
+        // TODO: test validations
+    }
+    /**
+     * Get a single challenge template
+     *
+     * 
+     */
+    @Test
+    public void getChallengeTemplateTest() {
+        String id = null;
+        // TemplateResource response = api.getChallengeTemplate(id);
+
+        // TODO: test validations
+    }
+    /**
+     * List and search challenge templates
+     *
+     * 
+     */
+    @Test
+    public void getChallengeTemplatesTest() {
+        Integer size = null;
+        Integer page = null;
+        String order = null;
+        // PageResourceTemplateResource response = api.getChallengeTemplates(size, page, order);
+
+        // TODO: test validations
+    }
+    /**
+     * Retrieve a list of challenges
+     *
+     * 
+     */
+    @Test
+    public void getChallengesTest() {
+        Boolean filterTemplate = null;
+        Boolean filterActiveCampaign = null;
+        String filterStartDate = null;
+        String filterEndDate = null;
+        Integer size = null;
+        Integer page = null;
+        String order = null;
+        // PageResourceChallengeResource response = api.getChallenges(filterTemplate, filterActiveCampaign, filterStartDate, filterEndDate, size, page, order);
+
+        // TODO: test validations
+    }
+    /**
+     * Update a challenge
+     *
+     * If the challenge is a copy, changes will propagate to all the related challenges
+     */
+    @Test
+    public void updateChallengeTest() {
+        Long id = null;
+        ChallengeResource challengeResource = null;
+        // ChallengeResource response = api.updateChallenge(id, challengeResource);
+
+        // TODO: test validations
+    }
+    /**
+     * Update a challenge activity
+     *
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     */
+    @Test
+    public void updateChallengeActivityTest() {
+        Long id = null;
+        Long challengeId = null;
+        ChallengeActivityResource challengeActivityResource = null;
+        // ChallengeActivityResource response = api.updateChallengeActivity(id, challengeId, challengeActivityResource);
+
+        // TODO: test validations
+    }
+    /**
+     * Update an challenge activity template
+     *
+     * 
+     */
+    @Test
+    public void updateChallengeActivityTemplateTest() {
+        String id = null;
+        TemplateResource challengeActivityTemplateResource = null;
+        // TemplateResource response = api.updateChallengeActivityTemplate(id, challengeActivityTemplateResource);
+
+        // TODO: test validations
+    }
+    /**
+     * Update a challenge template
+     *
+     * 
+     */
+    @Test
+    public void updateChallengeTemplateTest() {
+        String id = null;
+        TemplateResource challengeTemplateResource = null;
+        // TemplateResource response = api.updateChallengeTemplate(id, challengeTemplateResource);
+
+        // TODO: test validations
+    }
+}
