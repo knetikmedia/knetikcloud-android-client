@@ -4,24 +4,24 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAchievement**](GamificationAchievementsApi.md#createAchievement) | **POST** achievements | Create a new achievement definition
-[**createAchievementTemplate**](GamificationAchievementsApi.md#createAchievementTemplate) | **POST** achievements/templates | Create an achievement template
-[**deleteAchievement**](GamificationAchievementsApi.md#deleteAchievement) | **DELETE** achievements/{name} | Delete an achievement definition
-[**deleteAchievementTemplate**](GamificationAchievementsApi.md#deleteAchievementTemplate) | **DELETE** achievements/templates/{id} | Delete an achievement template
-[**getAchievement**](GamificationAchievementsApi.md#getAchievement) | **GET** achievements/{name} | Get a single achievement definition
-[**getAchievementTemplate**](GamificationAchievementsApi.md#getAchievementTemplate) | **GET** achievements/templates/{id} | Get a single achievement template
-[**getAchievementTemplates**](GamificationAchievementsApi.md#getAchievementTemplates) | **GET** achievements/templates | List and search achievement templates
-[**getAchievementTriggers**](GamificationAchievementsApi.md#getAchievementTriggers) | **GET** achievements/triggers | Get the list of triggers that can be used to trigger an achievement progress update
-[**getAchievements**](GamificationAchievementsApi.md#getAchievements) | **GET** achievements | Get all achievement definitions in the system
-[**getDerivedAchievements**](GamificationAchievementsApi.md#getDerivedAchievements) | **GET** achievements/derived/{name} | Get a list of derived achievements
-[**getUserAchievementProgress**](GamificationAchievementsApi.md#getUserAchievementProgress) | **GET** users/{user_id}/achievements/{achievement_name} | Retrieve progress on a given achievement for a given user
-[**getUserAchievementsProgress**](GamificationAchievementsApi.md#getUserAchievementsProgress) | **GET** users/{user_id}/achievements | Retrieve progress on achievements for a given user
-[**getUsersAchievementProgress**](GamificationAchievementsApi.md#getUsersAchievementProgress) | **GET** users/achievements/{achievement_name} | Retrieve progress on a given achievement for all users
-[**getUsersAchievementsProgress**](GamificationAchievementsApi.md#getUsersAchievementsProgress) | **GET** users/achievements | Retrieve progress on achievements for all users
-[**incrementAchievementProgress**](GamificationAchievementsApi.md#incrementAchievementProgress) | **POST** users/{user_id}/achievements/{achievement_name}/progress | Increment an achievement progress record for a user
-[**setAchievementProgress**](GamificationAchievementsApi.md#setAchievementProgress) | **PUT** users/{user_id}/achievements/{achievement_name}/progress | Set an achievement progress record for a user
-[**updateAchievement**](GamificationAchievementsApi.md#updateAchievement) | **PUT** achievements/{name} | Update an achievement definition
-[**updateAchievementTemplate**](GamificationAchievementsApi.md#updateAchievementTemplate) | **PUT** achievements/templates/{id} | Update an achievement template
+[**createAchievement**](GamificationAchievementsApi.md#createAchievement) | **POST** /achievements | Create a new achievement definition
+[**createAchievementTemplate**](GamificationAchievementsApi.md#createAchievementTemplate) | **POST** /achievements/templates | Create an achievement template
+[**deleteAchievement**](GamificationAchievementsApi.md#deleteAchievement) | **DELETE** /achievements/{name} | Delete an achievement definition
+[**deleteAchievementTemplate**](GamificationAchievementsApi.md#deleteAchievementTemplate) | **DELETE** /achievements/templates/{id} | Delete an achievement template
+[**getAchievement**](GamificationAchievementsApi.md#getAchievement) | **GET** /achievements/{name} | Get a single achievement definition
+[**getAchievementTemplate**](GamificationAchievementsApi.md#getAchievementTemplate) | **GET** /achievements/templates/{id} | Get a single achievement template
+[**getAchievementTemplates**](GamificationAchievementsApi.md#getAchievementTemplates) | **GET** /achievements/templates | List and search achievement templates
+[**getAchievementTriggers**](GamificationAchievementsApi.md#getAchievementTriggers) | **GET** /achievements/triggers | Get the list of triggers that can be used to trigger an achievement progress update
+[**getAchievements**](GamificationAchievementsApi.md#getAchievements) | **GET** /achievements | Get all achievement definitions in the system
+[**getDerivedAchievements**](GamificationAchievementsApi.md#getDerivedAchievements) | **GET** /achievements/derived/{name} | Get a list of derived achievements
+[**getUserAchievementProgress**](GamificationAchievementsApi.md#getUserAchievementProgress) | **GET** /users/{user_id}/achievements/{achievement_name} | Retrieve progress on a given achievement for a given user
+[**getUserAchievementsProgress**](GamificationAchievementsApi.md#getUserAchievementsProgress) | **GET** /users/{user_id}/achievements | Retrieve progress on achievements for a given user
+[**getUsersAchievementProgress**](GamificationAchievementsApi.md#getUsersAchievementProgress) | **GET** /users/achievements/{achievement_name} | Retrieve progress on a given achievement for all users
+[**getUsersAchievementsProgress**](GamificationAchievementsApi.md#getUsersAchievementsProgress) | **GET** /users/achievements | Retrieve progress on achievements for all users
+[**incrementAchievementProgress**](GamificationAchievementsApi.md#incrementAchievementProgress) | **POST** /users/{user_id}/achievements/{achievement_name}/progress | Increment an achievement progress record for a user
+[**setAchievementProgress**](GamificationAchievementsApi.md#setAchievementProgress) | **PUT** /users/{user_id}/achievements/{achievement_name}/progress | Set an achievement progress record for a user
+[**updateAchievement**](GamificationAchievementsApi.md#updateAchievement) | **PUT** /achievements/{name} | Update an achievement definition
+[**updateAchievementTemplate**](GamificationAchievementsApi.md#updateAchievementTemplate) | **PUT** /achievements/templates/{id} | Update an achievement template
 
 
 <a name="createAchievement"></a>
@@ -35,17 +35,9 @@ If the definition contains a trigger event name, a BRE rule is created, so that 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 AchievementDefinitionResource achievement = new AchievementDefinitionResource(); // AchievementDefinitionResource | The achievement definition
@@ -70,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -88,17 +80,9 @@ Achievement templates define a type of achievement and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 TemplateResource template = new TemplateResource(); // TemplateResource | The achievement template to be created
@@ -123,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -132,7 +116,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteAchievement"></a>
 # **deleteAchievement**
-> Void deleteAchievement(name)
+> deleteAchievement(name)
 
 Delete an achievement definition
 
@@ -141,23 +125,14 @@ Will also disable the associated generated rule, if any.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String name = "name_example"; // String | The name of the achievement
 try {
-    Void result = apiInstance.deleteAchievement(name);
-    System.out.println(result);
+    apiInstance.deleteAchievement(name);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationAchievementsApi#deleteAchievement");
     e.printStackTrace();
@@ -172,11 +147,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -185,7 +160,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteAchievementTemplate"></a>
 # **deleteAchievementTemplate**
-> Void deleteAchievementTemplate(id, cascade)
+> deleteAchievementTemplate(id, cascade)
 
 Delete an achievement template
 
@@ -194,24 +169,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteAchievementTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteAchievementTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationAchievementsApi#deleteAchievementTemplate");
     e.printStackTrace();
@@ -227,11 +193,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -247,17 +213,9 @@ Get a single achievement definition
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String name = "name_example"; // String | The name of the achievement
@@ -282,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -298,17 +256,9 @@ Get a single achievement template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String id = "id_example"; // String | The id of the template
@@ -333,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -349,17 +299,9 @@ List and search achievement templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -388,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -404,17 +346,9 @@ Get the list of triggers that can be used to trigger an achievement progress upd
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 try {
@@ -435,7 +369,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -451,17 +385,9 @@ Get all achievement definitions in the system
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String filterTagset = "filterTagset_example"; // String | Filter for achievements with specified tags (separated by comma)
@@ -498,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -516,17 +442,9 @@ Used by other services that depend on achievements
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String name = "name_example"; // String | The name of the derived achievement
@@ -551,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -569,17 +487,9 @@ Assets will not be filled in on the resources returned. Use &#39;Get a single po
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 Integer userId = 56; // Integer | The user's id
@@ -606,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -624,17 +534,9 @@ Assets will not be filled in on the resources returned. Use &#39;Get a single po
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 Integer userId = 56; // Integer | The user's id
@@ -669,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -687,17 +589,9 @@ Assets will not be filled in on the resources returned. Use &#39;Get single achi
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String achievementName = "achievementName_example"; // String | The achievement's name
@@ -732,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -750,17 +644,9 @@ Assets will not be filled in on the resources returned. Use &#39;Get single achi
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 Boolean filterAchievementDerived = true; // Boolean | Filter for achievements that are derived from other services
@@ -793,7 +679,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -811,17 +697,9 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 Integer userId = 56; // Integer | The user's id
@@ -850,7 +728,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -868,17 +746,9 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 Integer userId = 56; // Integer | The user's id
@@ -907,7 +777,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -925,17 +795,9 @@ The existing generated rule, if any, will be deleted. A new rule will be created
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String name = "name_example"; // String | The name of the achievement
@@ -962,7 +824,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -978,17 +840,9 @@ Update an achievement template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationAchievementsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationAchievementsApi apiInstance = new GamificationAchievementsApi();
 String id = "id_example"; // String | The id of the template
@@ -1015,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

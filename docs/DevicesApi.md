@@ -4,14 +4,14 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addDeviceUsers**](DevicesApi.md#addDeviceUsers) | **POST** devices/{id}/users | Add device users
-[**createDevice**](DevicesApi.md#createDevice) | **POST** devices | Create a device
-[**deleteDevice**](DevicesApi.md#deleteDevice) | **DELETE** devices/{id} | Delete a device
-[**deleteDeviceUser**](DevicesApi.md#deleteDeviceUser) | **DELETE** devices/{id}/users/{user_id} | Delete a device user
-[**deleteDeviceUsers**](DevicesApi.md#deleteDeviceUsers) | **DELETE** devices/{id}/users | Delete all device users
-[**getDevice**](DevicesApi.md#getDevice) | **GET** devices/{id} | Get a single device
-[**getDevices**](DevicesApi.md#getDevices) | **GET** devices | List and search devices
-[**updateDevice**](DevicesApi.md#updateDevice) | **PUT** devices/{id} | Update a device
+[**addDeviceUsers**](DevicesApi.md#addDeviceUsers) | **POST** /devices/{id}/users | Add device users
+[**createDevice**](DevicesApi.md#createDevice) | **POST** /devices | Create a device
+[**deleteDevice**](DevicesApi.md#deleteDevice) | **DELETE** /devices/{id} | Delete a device
+[**deleteDeviceUser**](DevicesApi.md#deleteDeviceUser) | **DELETE** /devices/{id}/users/{user_id} | Delete a device user
+[**deleteDeviceUsers**](DevicesApi.md#deleteDeviceUsers) | **DELETE** /devices/{id}/users | Delete all device users
+[**getDevice**](DevicesApi.md#getDevice) | **GET** /devices/{id} | Get a single device
+[**getDevices**](DevicesApi.md#getDevices) | **GET** /devices | List and search devices
+[**updateDevice**](DevicesApi.md#updateDevice) | **PUT** /devices/{id} | Update a device
 
 
 <a name="addDeviceUsers"></a>
@@ -23,17 +23,9 @@ Add device users
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 List<SimpleUserResource> userResources = Arrays.asList(new SimpleUserResource()); // List<SimpleUserResource> | userResources
@@ -60,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -76,17 +68,9 @@ Create a device
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 DeviceResource device = new DeviceResource(); // DeviceResource | device
@@ -111,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -120,30 +104,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteDevice"></a>
 # **deleteDevice**
-> Void deleteDevice(id)
+> deleteDevice(id)
 
 Delete a device
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 Integer id = 56; // Integer | id
 try {
-    Void result = apiInstance.deleteDevice(id);
-    System.out.println(result);
+    apiInstance.deleteDevice(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling DevicesApi#deleteDevice");
     e.printStackTrace();
@@ -158,11 +133,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -171,31 +146,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteDeviceUser"></a>
 # **deleteDeviceUser**
-> Void deleteDeviceUser(id, userId)
+> deleteDeviceUser(id, userId)
 
 Delete a device user
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 Integer id = 56; // Integer | The id of the device
 Integer userId = 56; // Integer | The user id of the device user
 try {
-    Void result = apiInstance.deleteDeviceUser(id, userId);
-    System.out.println(result);
+    apiInstance.deleteDeviceUser(id, userId);
 } catch (ApiException e) {
     System.err.println("Exception when calling DevicesApi#deleteDeviceUser");
     e.printStackTrace();
@@ -211,11 +177,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -224,31 +190,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteDeviceUsers"></a>
 # **deleteDeviceUsers**
-> Void deleteDeviceUsers(id, filterId)
+> deleteDeviceUsers(id, filterId)
 
 Delete all device users
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 Integer id = 56; // Integer | The id of the device
 String filterId = "filterId_example"; // String | Filter for device users to delete with a user id in a given comma separated list of ids
 try {
-    Void result = apiInstance.deleteDeviceUsers(id, filterId);
-    System.out.println(result);
+    apiInstance.deleteDeviceUsers(id, filterId);
 } catch (ApiException e) {
     System.err.println("Exception when calling DevicesApi#deleteDeviceUsers");
     e.printStackTrace();
@@ -264,11 +221,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -284,17 +241,9 @@ Get a single device
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 Integer id = 56; // Integer | id
@@ -319,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -337,17 +286,9 @@ Get a list of devices with optional filtering
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 String filterMake = "filterMake_example"; // String | Filter for devices with specified make
@@ -380,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -396,17 +337,9 @@ Update a device
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DevicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DevicesApi apiInstance = new DevicesApi();
 DeviceResource device = new DeviceResource(); // DeviceResource | device
@@ -433,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

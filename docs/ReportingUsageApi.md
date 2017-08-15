@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUsageByDay**](ReportingUsageApi.md#getUsageByDay) | **GET** reporting/usage/day | Returns aggregated endpoint usage information by day
-[**getUsageByHour**](ReportingUsageApi.md#getUsageByHour) | **GET** reporting/usage/hour | Returns aggregated endpoint usage information by hour
-[**getUsageByMinute**](ReportingUsageApi.md#getUsageByMinute) | **GET** reporting/usage/minute | Returns aggregated endpoint usage information by minute
-[**getUsageByMonth**](ReportingUsageApi.md#getUsageByMonth) | **GET** reporting/usage/month | Returns aggregated endpoint usage information by month
-[**getUsageByYear**](ReportingUsageApi.md#getUsageByYear) | **GET** reporting/usage/year | Returns aggregated endpoint usage information by year
-[**getUsageEndpoints**](ReportingUsageApi.md#getUsageEndpoints) | **GET** reporting/usage/endpoints | Returns list of endpoints called (method and url)
+[**getUsageByDay**](ReportingUsageApi.md#getUsageByDay) | **GET** /reporting/usage/day | Returns aggregated endpoint usage information by day
+[**getUsageByHour**](ReportingUsageApi.md#getUsageByHour) | **GET** /reporting/usage/hour | Returns aggregated endpoint usage information by hour
+[**getUsageByMinute**](ReportingUsageApi.md#getUsageByMinute) | **GET** /reporting/usage/minute | Returns aggregated endpoint usage information by minute
+[**getUsageByMonth**](ReportingUsageApi.md#getUsageByMonth) | **GET** /reporting/usage/month | Returns aggregated endpoint usage information by month
+[**getUsageByYear**](ReportingUsageApi.md#getUsageByYear) | **GET** /reporting/usage/year | Returns aggregated endpoint usage information by year
+[**getUsageEndpoints**](ReportingUsageApi.md#getUsageEndpoints) | **GET** /reporting/usage/endpoints | Returns list of endpoints called (method and url)
 
 
 <a name="getUsageByDay"></a>
@@ -21,17 +21,9 @@ Returns aggregated endpoint usage information by day
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ReportingUsageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingUsageApi apiInstance = new ReportingUsageApi();
 Long startDate = 789L; // Long | The beginning of the range being requested, unix timestamp in seconds
@@ -68,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -84,17 +76,9 @@ Returns aggregated endpoint usage information by hour
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ReportingUsageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingUsageApi apiInstance = new ReportingUsageApi();
 Long startDate = 789L; // Long | The beginning of the range being requested, unix timestamp in seconds
@@ -131,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -147,17 +131,9 @@ Returns aggregated endpoint usage information by minute
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ReportingUsageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingUsageApi apiInstance = new ReportingUsageApi();
 Long startDate = 789L; // Long | The beginning of the range being requested, unix timestamp in seconds
@@ -194,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -210,17 +186,9 @@ Returns aggregated endpoint usage information by month
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ReportingUsageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingUsageApi apiInstance = new ReportingUsageApi();
 Long startDate = 789L; // Long | The beginning of the range being requested, unix timestamp in seconds
@@ -257,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -273,17 +241,9 @@ Returns aggregated endpoint usage information by year
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ReportingUsageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingUsageApi apiInstance = new ReportingUsageApi();
 Long startDate = 789L; // Long | The beginning of the range being requested, unix timestamp in seconds
@@ -320,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -336,17 +296,9 @@ Returns list of endpoints called (method and url)
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ReportingUsageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingUsageApi apiInstance = new ReportingUsageApi();
 Long startDate = 789L; // Long | The beginning of the range being requested, unix timestamp in seconds
@@ -373,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

@@ -4,16 +4,16 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createLevel**](GamificationLevelingApi.md#createLevel) | **POST** leveling | Create a level schema
-[**deleteLevel**](GamificationLevelingApi.md#deleteLevel) | **DELETE** leveling/{name} | Delete a level
-[**getLevel**](GamificationLevelingApi.md#getLevel) | **GET** leveling/{name} | Retrieve a level
-[**getLevelTriggers**](GamificationLevelingApi.md#getLevelTriggers) | **GET** leveling/triggers | Get the list of triggers that can be used to trigger a leveling progress update
-[**getLevels**](GamificationLevelingApi.md#getLevels) | **GET** leveling | List and search levels
-[**getUserLevel**](GamificationLevelingApi.md#getUserLevel) | **GET** users/{user_id}/leveling/{name} | Get a user&#39;s progress for a given level schema
-[**getUserLevels**](GamificationLevelingApi.md#getUserLevels) | **GET** users/{user_id}/leveling | Get a user&#39;s progress for all level schemas
-[**incrementProgress**](GamificationLevelingApi.md#incrementProgress) | **POST** users/{user_id}/leveling/{name}/progress | Update or create a leveling progress record for a user
-[**setProgress**](GamificationLevelingApi.md#setProgress) | **PUT** users/{user_id}/leveling/{name}/progress | Set leveling progress for a user
-[**updateLevel**](GamificationLevelingApi.md#updateLevel) | **PUT** leveling/{name} | Update a level
+[**createLevel**](GamificationLevelingApi.md#createLevel) | **POST** /leveling | Create a level schema
+[**deleteLevel**](GamificationLevelingApi.md#deleteLevel) | **DELETE** /leveling/{name} | Delete a level
+[**getLevel**](GamificationLevelingApi.md#getLevel) | **GET** /leveling/{name} | Retrieve a level
+[**getLevelTriggers**](GamificationLevelingApi.md#getLevelTriggers) | **GET** /leveling/triggers | Get the list of triggers that can be used to trigger a leveling progress update
+[**getLevels**](GamificationLevelingApi.md#getLevels) | **GET** /leveling | List and search levels
+[**getUserLevel**](GamificationLevelingApi.md#getUserLevel) | **GET** /users/{user_id}/leveling/{name} | Get a user&#39;s progress for a given level schema
+[**getUserLevels**](GamificationLevelingApi.md#getUserLevels) | **GET** /users/{user_id}/leveling | Get a user&#39;s progress for all level schemas
+[**incrementProgress**](GamificationLevelingApi.md#incrementProgress) | **POST** /users/{user_id}/leveling/{name}/progress | Update or create a leveling progress record for a user
+[**setProgress**](GamificationLevelingApi.md#setProgress) | **PUT** /users/{user_id}/leveling/{name}/progress | Set leveling progress for a user
+[**updateLevel**](GamificationLevelingApi.md#updateLevel) | **PUT** /leveling/{name} | Update a level
 
 
 <a name="createLevel"></a>
@@ -25,17 +25,9 @@ Create a level schema
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 LevelingResource level = new LevelingResource(); // LevelingResource | The level schema definition
@@ -60,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -69,30 +61,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteLevel"></a>
 # **deleteLevel**
-> Void deleteLevel(name)
+> deleteLevel(name)
 
 Delete a level
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 String name = "name_example"; // String | The level schema name
 try {
-    Void result = apiInstance.deleteLevel(name);
-    System.out.println(result);
+    apiInstance.deleteLevel(name);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationLevelingApi#deleteLevel");
     e.printStackTrace();
@@ -107,11 +90,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -127,17 +110,9 @@ Retrieve a level
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 String name = "name_example"; // String | The level schema name
@@ -162,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -178,17 +153,9 @@ Get the list of triggers that can be used to trigger a leveling progress update
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 try {
@@ -209,7 +176,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -227,17 +194,9 @@ Get a list of levels schemas with optional filtering
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 String filterName = "filterName_example"; // String | Filter for level schemas whose name contains a given string
@@ -268,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -284,17 +243,9 @@ Get a user&#39;s progress for a given level schema
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 Integer userId = 56; // Integer | The id of the user
@@ -321,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -339,17 +290,9 @@ Filtering and sorting is based on the LevelingResource object, not the UserLevel
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 Integer userId = 56; // Integer | The id of the user
@@ -382,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -391,7 +334,7 @@ Name | Type | Description  | Notes
 
 <a name="incrementProgress"></a>
 # **incrementProgress**
-> Void incrementProgress(userId, name, progress)
+> incrementProgress(userId, name, progress)
 
 Update or create a leveling progress record for a user
 
@@ -400,25 +343,16 @@ If no progress record yet exists for the user, it will be created. Otherwise the
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 Integer userId = 56; // Integer | The id of the user
 String name = "name_example"; // String | The level schema name
 IntWrapper progress = new IntWrapper(); // IntWrapper | The amount of progress to add
 try {
-    Void result = apiInstance.incrementProgress(userId, name, progress);
-    System.out.println(result);
+    apiInstance.incrementProgress(userId, name, progress);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationLevelingApi#incrementProgress");
     e.printStackTrace();
@@ -435,11 +369,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -448,7 +382,7 @@ Name | Type | Description  | Notes
 
 <a name="setProgress"></a>
 # **setProgress**
-> Void setProgress(userId, name, progress)
+> setProgress(userId, name, progress)
 
 Set leveling progress for a user
 
@@ -457,25 +391,16 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 Integer userId = 56; // Integer | The id of the user
 String name = "name_example"; // String | The level schema name
 IntWrapper progress = new IntWrapper(); // IntWrapper | The new progress amount
 try {
-    Void result = apiInstance.setProgress(userId, name, progress);
-    System.out.println(result);
+    apiInstance.setProgress(userId, name, progress);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationLevelingApi#setProgress");
     e.printStackTrace();
@@ -492,11 +417,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -512,17 +437,9 @@ Update a level
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLevelingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLevelingApi apiInstance = new GamificationLevelingApi();
 String name = "name_example"; // String | The level schema name
@@ -549,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

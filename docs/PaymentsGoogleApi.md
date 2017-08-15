@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**handleGooglePayment**](PaymentsGoogleApi.md#handleGooglePayment) | **POST** payment/provider/google/payments | Mark an invoice paid with Google
+[**handleGooglePayment**](PaymentsGoogleApi.md#handleGooglePayment) | **POST** /payment/provider/google/payments | Mark an invoice paid with Google
 
 
 <a name="handleGooglePayment"></a>

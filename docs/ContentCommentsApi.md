@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addComment**](ContentCommentsApi.md#addComment) | **POST** comments | Add a new comment
-[**deleteComment**](ContentCommentsApi.md#deleteComment) | **DELETE** comments/{id} | Delete a comment
-[**getComment**](ContentCommentsApi.md#getComment) | **GET** comments/{id} | Return a comment
-[**getComments**](ContentCommentsApi.md#getComments) | **GET** comments | Returns a page of comments
-[**searchComments**](ContentCommentsApi.md#searchComments) | **POST** comments/search | Search the comment index
-[**updateComment**](ContentCommentsApi.md#updateComment) | **PUT** comments/{id}/content | Update a comment
+[**addComment**](ContentCommentsApi.md#addComment) | **POST** /comments | Add a new comment
+[**deleteComment**](ContentCommentsApi.md#deleteComment) | **DELETE** /comments/{id} | Delete a comment
+[**getComment**](ContentCommentsApi.md#getComment) | **GET** /comments/{id} | Return a comment
+[**getComments**](ContentCommentsApi.md#getComments) | **GET** /comments | Returns a page of comments
+[**searchComments**](ContentCommentsApi.md#searchComments) | **POST** /comments/search | Search the comment index
+[**updateComment**](ContentCommentsApi.md#updateComment) | **PUT** /comments/{id}/content | Update a comment
 
 
 <a name="addComment"></a>
@@ -21,17 +21,9 @@ Add a new comment
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentCommentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentCommentsApi apiInstance = new ContentCommentsApi();
 CommentResource commentResource = new CommentResource(); // CommentResource | The comment to be added
@@ -56,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -65,30 +57,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteComment"></a>
 # **deleteComment**
-> Void deleteComment(id)
+> deleteComment(id)
 
 Delete a comment
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentCommentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentCommentsApi apiInstance = new ContentCommentsApi();
 Long id = 789L; // Long | The comment id
 try {
-    Void result = apiInstance.deleteComment(id);
-    System.out.println(result);
+    apiInstance.deleteComment(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling ContentCommentsApi#deleteComment");
     e.printStackTrace();
@@ -103,11 +86,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -257,31 +240,22 @@ No authorization required
 
 <a name="updateComment"></a>
 # **updateComment**
-> Void updateComment(id, content)
+> updateComment(id, content)
 
 Update a comment
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentCommentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentCommentsApi apiInstance = new ContentCommentsApi();
 Long id = 789L; // Long | The comment id
 StringWrapper content = new StringWrapper(); // StringWrapper | The comment content
 try {
-    Void result = apiInstance.updateComment(id, content);
-    System.out.println(result);
+    apiInstance.updateComment(id, content);
 } catch (ApiException e) {
     System.err.println("Exception when calling ContentCommentsApi#updateComment");
     e.printStackTrace();
@@ -297,11 +271,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

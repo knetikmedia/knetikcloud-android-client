@@ -4,11 +4,11 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createRewardSet**](CampaignsRewardsApi.md#createRewardSet) | **POST** rewards | Create a reward set
-[**deleteRewardSet**](CampaignsRewardsApi.md#deleteRewardSet) | **DELETE** rewards/{id} | Delete a reward set
-[**getRewardSet**](CampaignsRewardsApi.md#getRewardSet) | **GET** rewards/{id} | Get a single reward set
-[**getRewardSets**](CampaignsRewardsApi.md#getRewardSets) | **GET** rewards | List and search reward sets
-[**updateRewardSet**](CampaignsRewardsApi.md#updateRewardSet) | **PUT** rewards/{id} | Update a reward set
+[**createRewardSet**](CampaignsRewardsApi.md#createRewardSet) | **POST** /rewards | Create a reward set
+[**deleteRewardSet**](CampaignsRewardsApi.md#deleteRewardSet) | **DELETE** /rewards/{id} | Delete a reward set
+[**getRewardSet**](CampaignsRewardsApi.md#getRewardSet) | **GET** /rewards/{id} | Get a single reward set
+[**getRewardSets**](CampaignsRewardsApi.md#getRewardSets) | **GET** /rewards | List and search reward sets
+[**updateRewardSet**](CampaignsRewardsApi.md#updateRewardSet) | **PUT** /rewards/{id} | Update a reward set
 
 
 <a name="createRewardSet"></a>
@@ -20,17 +20,9 @@ Create a reward set
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsRewardsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsRewardsApi apiInstance = new CampaignsRewardsApi();
 RewardSetResource rewardSetResource = new RewardSetResource(); // RewardSetResource | The reward set resource object
@@ -55,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -64,30 +56,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteRewardSet"></a>
 # **deleteRewardSet**
-> Void deleteRewardSet(id)
+> deleteRewardSet(id)
 
 Delete a reward set
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsRewardsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsRewardsApi apiInstance = new CampaignsRewardsApi();
 Integer id = 56; // Integer | The reward id
 try {
-    Void result = apiInstance.deleteRewardSet(id);
-    System.out.println(result);
+    apiInstance.deleteRewardSet(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsRewardsApi#deleteRewardSet");
     e.printStackTrace();
@@ -102,11 +85,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -212,17 +195,9 @@ Update a reward set
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsRewardsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsRewardsApi apiInstance = new CampaignsRewardsApi();
 Integer id = 56; // Integer | The reward id
@@ -249,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

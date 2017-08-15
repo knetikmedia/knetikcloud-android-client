@@ -4,11 +4,11 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAddress**](UsersAddressesApi.md#createAddress) | **POST** users/{user_id}/addresses | Create a new address
-[**deleteAddress**](UsersAddressesApi.md#deleteAddress) | **DELETE** users/{user_id}/addresses/{id} | Delete an address
-[**getAddress**](UsersAddressesApi.md#getAddress) | **GET** users/{user_id}/addresses/{id} | Get a single address
-[**getAddresses**](UsersAddressesApi.md#getAddresses) | **GET** users/{user_id}/addresses | List and search addresses
-[**updateAddress**](UsersAddressesApi.md#updateAddress) | **PUT** users/{user_id}/addresses/{id} | Update an address
+[**createAddress**](UsersAddressesApi.md#createAddress) | **POST** /users/{user_id}/addresses | Create a new address
+[**deleteAddress**](UsersAddressesApi.md#deleteAddress) | **DELETE** /users/{user_id}/addresses/{id} | Delete an address
+[**getAddress**](UsersAddressesApi.md#getAddress) | **GET** /users/{user_id}/addresses/{id} | Get a single address
+[**getAddresses**](UsersAddressesApi.md#getAddresses) | **GET** /users/{user_id}/addresses | List and search addresses
+[**updateAddress**](UsersAddressesApi.md#updateAddress) | **PUT** /users/{user_id}/addresses/{id} | Update an address
 
 
 <a name="createAddress"></a>
@@ -20,17 +20,9 @@ Create a new address
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersAddressesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersAddressesApi apiInstance = new UsersAddressesApi();
 String userId = "userId_example"; // String | The id of the user
@@ -57,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -66,31 +58,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteAddress"></a>
 # **deleteAddress**
-> Void deleteAddress(userId, id)
+> deleteAddress(userId, id)
 
 Delete an address
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersAddressesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersAddressesApi apiInstance = new UsersAddressesApi();
 String userId = "userId_example"; // String | The id of the user
 Integer id = 56; // Integer | The id of the address
 try {
-    Void result = apiInstance.deleteAddress(userId, id);
-    System.out.println(result);
+    apiInstance.deleteAddress(userId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersAddressesApi#deleteAddress");
     e.printStackTrace();
@@ -106,11 +89,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -126,17 +109,9 @@ Get a single address
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersAddressesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersAddressesApi apiInstance = new UsersAddressesApi();
 String userId = "userId_example"; // String | The id of the user
@@ -163,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -179,17 +154,9 @@ List and search addresses
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersAddressesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersAddressesApi apiInstance = new UsersAddressesApi();
 String userId = "userId_example"; // String | The id of the user
@@ -220,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -236,17 +203,9 @@ Update an address
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersAddressesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersAddressesApi apiInstance = new UsersAddressesApi();
 String userId = "userId_example"; // String | The id of the user
@@ -275,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

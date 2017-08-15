@@ -4,38 +4,29 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteTokens**](AuthTokensApi.md#deleteTokens) | **DELETE** auth/tokens | Delete tokens by username, client id, or both
-[**getToken**](AuthTokensApi.md#getToken) | **GET** auth/tokens/{username}/{client_id} | Get a single token by username and client id
-[**getTokens**](AuthTokensApi.md#getTokens) | **GET** auth/tokens | List usernames and client ids
+[**deleteTokens**](AuthTokensApi.md#deleteTokens) | **DELETE** /auth/tokens | Delete tokens by username, client id, or both
+[**getToken**](AuthTokensApi.md#getToken) | **GET** /auth/tokens/{username}/{client_id} | Get a single token by username and client id
+[**getTokens**](AuthTokensApi.md#getTokens) | **GET** /auth/tokens | List usernames and client ids
 
 
 <a name="deleteTokens"></a>
 # **deleteTokens**
-> Void deleteTokens(username, clientId)
+> deleteTokens(username, clientId)
 
 Delete tokens by username, client id, or both
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthTokensApi apiInstance = new AuthTokensApi();
 String username = "username_example"; // String | The username of the user
 String clientId = "clientId_example"; // String | The id of the client
 try {
-    Void result = apiInstance.deleteTokens(username, clientId);
-    System.out.println(result);
+    apiInstance.deleteTokens(username, clientId);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthTokensApi#deleteTokens");
     e.printStackTrace();
@@ -51,11 +42,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -71,17 +62,9 @@ Get a single token by username and client id
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthTokensApi apiInstance = new AuthTokensApi();
 String username = "username_example"; // String | The username of the user
@@ -108,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -126,17 +109,9 @@ Token value not shown
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthTokensApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthTokensApi apiInstance = new AuthTokensApi();
 String filterClientId = "filterClientId_example"; // String | Filters for token whose client id matches provided string
@@ -169,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

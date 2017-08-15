@@ -4,14 +4,14 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createClient**](AuthClientsApi.md#createClient) | **POST** auth/clients | Create a new client
-[**deleteClient**](AuthClientsApi.md#deleteClient) | **DELETE** auth/clients/{client_key} | Delete a client
-[**getClient**](AuthClientsApi.md#getClient) | **GET** auth/clients/{client_key} | Get a single client
-[**getClientGrantTypes**](AuthClientsApi.md#getClientGrantTypes) | **GET** auth/clients/grant-types | List available client grant types
-[**getClients**](AuthClientsApi.md#getClients) | **GET** auth/clients | List and search clients
-[**setClientGrantTypes**](AuthClientsApi.md#setClientGrantTypes) | **PUT** auth/clients/{client_key}/grant-types | Set grant types for a client
-[**setClientRedirectUris**](AuthClientsApi.md#setClientRedirectUris) | **PUT** auth/clients/{client_key}/redirect-uris | Set redirect uris for a client
-[**updateClient**](AuthClientsApi.md#updateClient) | **PUT** auth/clients/{client_key} | Update a client
+[**createClient**](AuthClientsApi.md#createClient) | **POST** /auth/clients | Create a new client
+[**deleteClient**](AuthClientsApi.md#deleteClient) | **DELETE** /auth/clients/{client_key} | Delete a client
+[**getClient**](AuthClientsApi.md#getClient) | **GET** /auth/clients/{client_key} | Get a single client
+[**getClientGrantTypes**](AuthClientsApi.md#getClientGrantTypes) | **GET** /auth/clients/grant-types | List available client grant types
+[**getClients**](AuthClientsApi.md#getClients) | **GET** /auth/clients | List and search clients
+[**setClientGrantTypes**](AuthClientsApi.md#setClientGrantTypes) | **PUT** /auth/clients/{client_key}/grant-types | Set grant types for a client
+[**setClientRedirectUris**](AuthClientsApi.md#setClientRedirectUris) | **PUT** /auth/clients/{client_key}/redirect-uris | Set redirect uris for a client
+[**updateClient**](AuthClientsApi.md#updateClient) | **PUT** /auth/clients/{client_key} | Update a client
 
 
 <a name="createClient"></a>
@@ -23,17 +23,9 @@ Create a new client
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 ClientResource clientResource = new ClientResource(); // ClientResource | The client resource object
@@ -58,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -67,30 +59,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteClient"></a>
 # **deleteClient**
-> Void deleteClient(clientKey)
+> deleteClient(clientKey)
 
 Delete a client
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 String clientKey = "clientKey_example"; // String | The key of the client
 try {
-    Void result = apiInstance.deleteClient(clientKey);
-    System.out.println(result);
+    apiInstance.deleteClient(clientKey);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthClientsApi#deleteClient");
     e.printStackTrace();
@@ -105,11 +88,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -125,17 +108,9 @@ Get a single client
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 String clientKey = "clientKey_example"; // String | The key of the client
@@ -160,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -176,17 +151,9 @@ List available client grant types
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 try {
@@ -207,7 +174,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -223,17 +190,9 @@ List and search clients
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -262,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -271,31 +230,22 @@ Name | Type | Description  | Notes
 
 <a name="setClientGrantTypes"></a>
 # **setClientGrantTypes**
-> Void setClientGrantTypes(clientKey, grantList)
+> setClientGrantTypes(clientKey, grantList)
 
 Set grant types for a client
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 String clientKey = "clientKey_example"; // String | The key of the client
 List<String> grantList = Arrays.asList(new List<String>()); // List<String> | A list of unique grant types
 try {
-    Void result = apiInstance.setClientGrantTypes(clientKey, grantList);
-    System.out.println(result);
+    apiInstance.setClientGrantTypes(clientKey, grantList);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthClientsApi#setClientGrantTypes");
     e.printStackTrace();
@@ -311,11 +261,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -324,31 +274,22 @@ Name | Type | Description  | Notes
 
 <a name="setClientRedirectUris"></a>
 # **setClientRedirectUris**
-> Void setClientRedirectUris(clientKey, redirectList)
+> setClientRedirectUris(clientKey, redirectList)
 
 Set redirect uris for a client
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 String clientKey = "clientKey_example"; // String | The key of the client
 List<String> redirectList = Arrays.asList(new List<String>()); // List<String> | A list of unique redirect uris
 try {
-    Void result = apiInstance.setClientRedirectUris(clientKey, redirectList);
-    System.out.println(result);
+    apiInstance.setClientRedirectUris(clientKey, redirectList);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthClientsApi#setClientRedirectUris");
     e.printStackTrace();
@@ -364,11 +305,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -384,17 +325,9 @@ Update a client
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AuthClientsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AuthClientsApi apiInstance = new AuthClientsApi();
 String clientKey = "clientKey_example"; // String | The key of the client
@@ -421,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

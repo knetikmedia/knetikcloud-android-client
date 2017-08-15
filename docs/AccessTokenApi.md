@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getOAuthToken**](AccessTokenApi.md#getOAuthToken) | **POST** oauth/token | Get access token
+[**getOAuthToken**](AccessTokenApi.md#getOAuthToken) | **POST** /oauth/token | Get access token
 
 
 <a name="getOAuthToken"></a>

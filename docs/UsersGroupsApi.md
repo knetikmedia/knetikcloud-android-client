@@ -4,23 +4,23 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addMemberToGroup**](UsersGroupsApi.md#addMemberToGroup) | **POST** users/groups/{unique_name}/members | Adds a new member to the group
-[**addMembersToGroup**](UsersGroupsApi.md#addMembersToGroup) | **POST** users/groups/{unique_name}/members/batch-add | Adds multiple members to the group
-[**createGroup**](UsersGroupsApi.md#createGroup) | **POST** users/groups | Create a group
-[**createGroupTemplate**](UsersGroupsApi.md#createGroupTemplate) | **POST** users/groups/templates | Create a group template
-[**deleteGroup**](UsersGroupsApi.md#deleteGroup) | **DELETE** users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
-[**deleteGroupTemplate**](UsersGroupsApi.md#deleteGroupTemplate) | **DELETE** users/groups/templates/{id} | Delete a group template
-[**getGroup**](UsersGroupsApi.md#getGroup) | **GET** users/groups/{unique_name} | Loads a specific group&#39;s details
-[**getGroupMember**](UsersGroupsApi.md#getGroupMember) | **GET** users/groups/{unique_name}/members/{user_id} | Get a user from a group
-[**getGroupMembers**](UsersGroupsApi.md#getGroupMembers) | **GET** users/groups/{unique_name}/members | Lists members of the group
-[**getGroupTemplate**](UsersGroupsApi.md#getGroupTemplate) | **GET** users/groups/templates/{id} | Get a single group template
-[**getGroupTemplates**](UsersGroupsApi.md#getGroupTemplates) | **GET** users/groups/templates | List and search group templates
-[**getGroupsForUser**](UsersGroupsApi.md#getGroupsForUser) | **GET** users/{user_id}/groups | List groups a user is in
-[**removeGroupMember**](UsersGroupsApi.md#removeGroupMember) | **DELETE** users/groups/{unique_name}/members/{user_id} | Removes a user from a group
-[**updateGroup**](UsersGroupsApi.md#updateGroup) | **PUT** users/groups/{unique_name} | Update a group
-[**updateGroupMemberStatus**](UsersGroupsApi.md#updateGroupMemberStatus) | **PUT** users/groups/{unique_name}/members/{user_id}/status | Change a user&#39;s status
-[**updateGroupTemplate**](UsersGroupsApi.md#updateGroupTemplate) | **PUT** users/groups/templates/{id} | Update a group template
-[**updateGroups**](UsersGroupsApi.md#updateGroups) | **GET** users/groups | List and search groups
+[**addMemberToGroup**](UsersGroupsApi.md#addMemberToGroup) | **POST** /users/groups/{unique_name}/members | Adds a new member to the group
+[**addMembersToGroup**](UsersGroupsApi.md#addMembersToGroup) | **POST** /users/groups/{unique_name}/members/batch-add | Adds multiple members to the group
+[**createGroup**](UsersGroupsApi.md#createGroup) | **POST** /users/groups | Create a group
+[**createGroupTemplate**](UsersGroupsApi.md#createGroupTemplate) | **POST** /users/groups/templates | Create a group template
+[**deleteGroup**](UsersGroupsApi.md#deleteGroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
+[**deleteGroupTemplate**](UsersGroupsApi.md#deleteGroupTemplate) | **DELETE** /users/groups/templates/{id} | Delete a group template
+[**getGroup**](UsersGroupsApi.md#getGroup) | **GET** /users/groups/{unique_name} | Loads a specific group&#39;s details
+[**getGroupMember**](UsersGroupsApi.md#getGroupMember) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
+[**getGroupMembers**](UsersGroupsApi.md#getGroupMembers) | **GET** /users/groups/{unique_name}/members | Lists members of the group
+[**getGroupTemplate**](UsersGroupsApi.md#getGroupTemplate) | **GET** /users/groups/templates/{id} | Get a single group template
+[**getGroupTemplates**](UsersGroupsApi.md#getGroupTemplates) | **GET** /users/groups/templates | List and search group templates
+[**getGroupsForUser**](UsersGroupsApi.md#getGroupsForUser) | **GET** /users/{user_id}/groups | List groups a user is in
+[**removeGroupMember**](UsersGroupsApi.md#removeGroupMember) | **DELETE** /users/groups/{unique_name}/members/{user_id} | Removes a user from a group
+[**updateGroup**](UsersGroupsApi.md#updateGroup) | **PUT** /users/groups/{unique_name} | Update a group
+[**updateGroupMemberStatus**](UsersGroupsApi.md#updateGroupMemberStatus) | **PUT** /users/groups/{unique_name}/members/{user_id}/status | Change a user&#39;s status
+[**updateGroupTemplate**](UsersGroupsApi.md#updateGroupTemplate) | **PUT** /users/groups/templates/{id} | Update a group template
+[**updateGroups**](UsersGroupsApi.md#updateGroups) | **GET** /users/groups | List and search groups
 
 
 <a name="addMemberToGroup"></a>
@@ -32,17 +32,9 @@ Adds a new member to the group
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String uniqueName = "uniqueName_example"; // String | The group unique name
@@ -69,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -85,17 +77,9 @@ Adds multiple members to the group
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String uniqueName = "uniqueName_example"; // String | The group unique name
@@ -122,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -138,17 +122,9 @@ Create a group
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 GroupResource groupResource = new GroupResource(); // GroupResource | The new group
@@ -173,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -191,17 +167,9 @@ Group Templates define a type of group and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 TemplateResource groupTemplateResource = new TemplateResource(); // TemplateResource | The group template resource object
@@ -226,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -235,30 +203,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteGroup"></a>
 # **deleteGroup**
-> Void deleteGroup(uniqueName)
+> deleteGroup(uniqueName)
 
 Removes a group from the system IF no resources are attached to it
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String uniqueName = "uniqueName_example"; // String | The group unique name
 try {
-    Void result = apiInstance.deleteGroup(uniqueName);
-    System.out.println(result);
+    apiInstance.deleteGroup(uniqueName);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersGroupsApi#deleteGroup");
     e.printStackTrace();
@@ -273,11 +232,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -286,7 +245,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteGroupTemplate"></a>
 # **deleteGroupTemplate**
-> Void deleteGroupTemplate(id, cascade)
+> deleteGroupTemplate(id, cascade)
 
 Delete a group template
 
@@ -295,24 +254,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteGroupTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteGroupTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersGroupsApi#deleteGroupTemplate");
     e.printStackTrace();
@@ -328,11 +278,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -485,17 +435,9 @@ Get a single group template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String id = "id_example"; // String | The id of the template
@@ -520,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -536,17 +478,9 @@ List and search group templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -575,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -627,31 +561,22 @@ No authorization required
 
 <a name="removeGroupMember"></a>
 # **removeGroupMember**
-> Void removeGroupMember(uniqueName, userId)
+> removeGroupMember(uniqueName, userId)
 
 Removes a user from a group
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String uniqueName = "uniqueName_example"; // String | The group unique name
 Integer userId = 56; // Integer | The id of the user to remove
 try {
-    Void result = apiInstance.removeGroupMember(uniqueName, userId);
-    System.out.println(result);
+    apiInstance.removeGroupMember(uniqueName, userId);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersGroupsApi#removeGroupMember");
     e.printStackTrace();
@@ -667,11 +592,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -680,31 +605,22 @@ Name | Type | Description  | Notes
 
 <a name="updateGroup"></a>
 # **updateGroup**
-> Void updateGroup(uniqueName, groupResource)
+> updateGroup(uniqueName, groupResource)
 
 Update a group
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String uniqueName = "uniqueName_example"; // String | The group unique name
 GroupResource groupResource = new GroupResource(); // GroupResource | The updated group
 try {
-    Void result = apiInstance.updateGroup(uniqueName, groupResource);
-    System.out.println(result);
+    apiInstance.updateGroup(uniqueName, groupResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersGroupsApi#updateGroup");
     e.printStackTrace();
@@ -720,11 +636,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -733,32 +649,23 @@ Name | Type | Description  | Notes
 
 <a name="updateGroupMemberStatus"></a>
 # **updateGroupMemberStatus**
-> Void updateGroupMemberStatus(uniqueName, userId, status)
+> updateGroupMemberStatus(uniqueName, userId, status)
 
 Change a user&#39;s status
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String uniqueName = "uniqueName_example"; // String | The group unique name
 Integer userId = 56; // Integer | The user id of the member to modify
 String status = "status_example"; // String | The new status for the user
 try {
-    Void result = apiInstance.updateGroupMemberStatus(uniqueName, userId, status);
-    System.out.println(result);
+    apiInstance.updateGroupMemberStatus(uniqueName, userId, status);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersGroupsApi#updateGroupMemberStatus");
     e.printStackTrace();
@@ -775,11 +682,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -795,17 +702,9 @@ Update a group template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersGroupsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String id = "id_example"; // String | The id of the template
@@ -832,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

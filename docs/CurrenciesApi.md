@@ -4,11 +4,11 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCurrency**](CurrenciesApi.md#createCurrency) | **POST** currencies | Create a currency
-[**deleteCurrency**](CurrenciesApi.md#deleteCurrency) | **DELETE** currencies/{code} | Delete a currency
-[**getCurrencies**](CurrenciesApi.md#getCurrencies) | **GET** currencies | List and search currencies
-[**getCurrency**](CurrenciesApi.md#getCurrency) | **GET** currencies/{code} | Get a single currency
-[**updateCurrency**](CurrenciesApi.md#updateCurrency) | **PUT** currencies/{code} | Update a currency
+[**createCurrency**](CurrenciesApi.md#createCurrency) | **POST** /currencies | Create a currency
+[**deleteCurrency**](CurrenciesApi.md#deleteCurrency) | **DELETE** /currencies/{code} | Delete a currency
+[**getCurrencies**](CurrenciesApi.md#getCurrencies) | **GET** /currencies | List and search currencies
+[**getCurrency**](CurrenciesApi.md#getCurrency) | **GET** /currencies/{code} | Get a single currency
+[**updateCurrency**](CurrenciesApi.md#updateCurrency) | **PUT** /currencies/{code} | Update a currency
 
 
 <a name="createCurrency"></a>
@@ -20,17 +20,9 @@ Create a currency
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CurrenciesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CurrenciesApi apiInstance = new CurrenciesApi();
 CurrencyResource currency = new CurrencyResource(); // CurrencyResource | The currency object
@@ -55,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -64,30 +56,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteCurrency"></a>
 # **deleteCurrency**
-> Void deleteCurrency(code)
+> deleteCurrency(code)
 
 Delete a currency
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CurrenciesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CurrenciesApi apiInstance = new CurrenciesApi();
 String code = "code_example"; // String | The currency code
 try {
-    Void result = apiInstance.deleteCurrency(code);
-    System.out.println(result);
+    apiInstance.deleteCurrency(code);
 } catch (ApiException e) {
     System.err.println("Exception when calling CurrenciesApi#deleteCurrency");
     e.printStackTrace();
@@ -102,11 +85,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -209,31 +192,22 @@ No authorization required
 
 <a name="updateCurrency"></a>
 # **updateCurrency**
-> Void updateCurrency(code, currency)
+> updateCurrency(code, currency)
 
 Update a currency
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CurrenciesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CurrenciesApi apiInstance = new CurrenciesApi();
 String code = "code_example"; // String | The currency code
 CurrencyResource currency = new CurrencyResource(); // CurrencyResource | The currency object
 try {
-    Void result = apiInstance.updateCurrency(code, currency);
-    System.out.println(result);
+    apiInstance.updateCurrency(code, currency);
 } catch (ApiException e) {
     System.err.println("Exception when calling CurrenciesApi#updateCurrency");
     e.printStackTrace();
@@ -249,11 +223,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

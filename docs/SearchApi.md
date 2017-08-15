@@ -4,16 +4,16 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addSearchIndex**](SearchApi.md#addSearchIndex) | **POST** search/index/{type}/{id} | Add a new object to an index
-[**addSearchMappings**](SearchApi.md#addSearchMappings) | **POST** search/mappings | Register reference mappings
-[**deleteSearchIndex**](SearchApi.md#deleteSearchIndex) | **DELETE** search/index/{type}/{id} | Delete an object
-[**deleteSearchIndexes**](SearchApi.md#deleteSearchIndexes) | **DELETE** search/index/{type} | Delete all objects in an index
-[**searchIndex**](SearchApi.md#searchIndex) | **POST** search/index/{type} | Search an index
+[**addSearchIndex**](SearchApi.md#addSearchIndex) | **POST** /search/index/{type}/{id} | Add a new object to an index
+[**addSearchMappings**](SearchApi.md#addSearchMappings) | **POST** /search/mappings | Register reference mappings
+[**deleteSearchIndex**](SearchApi.md#deleteSearchIndex) | **DELETE** /search/index/{type}/{id} | Delete an object
+[**deleteSearchIndexes**](SearchApi.md#deleteSearchIndexes) | **DELETE** /search/index/{type} | Delete all objects in an index
+[**searchIndex**](SearchApi.md#searchIndex) | **POST** /search/index/{type} | Search an index
 
 
 <a name="addSearchIndex"></a>
 # **addSearchIndex**
-> Void addSearchIndex(type, id, object)
+> addSearchIndex(type, id, object)
 
 Add a new object to an index
 
@@ -22,25 +22,16 @@ Mainly intended for internal use.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.SearchApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 SearchApi apiInstance = new SearchApi();
 String type = "type_example"; // String | The index type
 String id = "id_example"; // String | The ID of the object
 Object object = null; // Object | The object to add
 try {
-    Void result = apiInstance.addSearchIndex(type, id, object);
-    System.out.println(result);
+    apiInstance.addSearchIndex(type, id, object);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchApi#addSearchIndex");
     e.printStackTrace();
@@ -57,11 +48,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -70,7 +61,7 @@ Name | Type | Description  | Notes
 
 <a name="addSearchMappings"></a>
 # **addSearchMappings**
-> Void addSearchMappings(mappings)
+> addSearchMappings(mappings)
 
 Register reference mappings
 
@@ -79,23 +70,14 @@ Add a new type mapping to connect data from one index to another, or discover an
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.SearchApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 SearchApi apiInstance = new SearchApi();
 List<SearchReferenceMapping> mappings = Arrays.asList(new SearchReferenceMapping()); // List<SearchReferenceMapping> | The mappings to add
 try {
-    Void result = apiInstance.addSearchMappings(mappings);
-    System.out.println(result);
+    apiInstance.addSearchMappings(mappings);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchApi#addSearchMappings");
     e.printStackTrace();
@@ -110,11 +92,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -123,7 +105,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteSearchIndex"></a>
 # **deleteSearchIndex**
-> Void deleteSearchIndex(type, id)
+> deleteSearchIndex(type, id)
 
 Delete an object
 
@@ -132,24 +114,15 @@ Mainly intended for internal use. Requires SEARCH_ADMIN.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.SearchApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 SearchApi apiInstance = new SearchApi();
 String type = "type_example"; // String | The index type
 String id = "id_example"; // String | The ID of the object to delete
 try {
-    Void result = apiInstance.deleteSearchIndex(type, id);
-    System.out.println(result);
+    apiInstance.deleteSearchIndex(type, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchApi#deleteSearchIndex");
     e.printStackTrace();
@@ -165,11 +138,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -178,7 +151,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteSearchIndexes"></a>
 # **deleteSearchIndexes**
-> Void deleteSearchIndexes(type)
+> deleteSearchIndexes(type)
 
 Delete all objects in an index
 
@@ -187,23 +160,14 @@ Mainly intended for internal use
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.SearchApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 SearchApi apiInstance = new SearchApi();
 String type = "type_example"; // String | The index type
 try {
-    Void result = apiInstance.deleteSearchIndexes(type);
-    System.out.println(result);
+    apiInstance.deleteSearchIndexes(type);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchApi#deleteSearchIndexes");
     e.printStackTrace();
@@ -218,11 +182,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

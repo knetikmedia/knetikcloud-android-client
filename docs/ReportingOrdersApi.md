@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getInvoiceReports**](ReportingOrdersApi.md#getInvoiceReports) | **GET** reporting/orders/count/{currency_code} | Retrieve invoice counts aggregated by time ranges
+[**getInvoiceReports**](ReportingOrdersApi.md#getInvoiceReports) | **GET** /reporting/orders/count/{currency_code} | Retrieve invoice counts aggregated by time ranges
 
 
 <a name="getInvoiceReports"></a>
@@ -16,17 +16,9 @@ Retrieve invoice counts aggregated by time ranges
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ReportingOrdersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ReportingOrdersApi apiInstance = new ReportingOrdersApi();
 String currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
@@ -65,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

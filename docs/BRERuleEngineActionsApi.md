@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getBREActions**](BRERuleEngineActionsApi.md#getBREActions) | **GET** bre/actions | Get a list of available actions
+[**getBREActions**](BRERuleEngineActionsApi.md#getBREActions) | **GET** /bre/actions | Get a list of available actions
 
 
 <a name="getBREActions"></a>
@@ -16,17 +16,9 @@ Get a list of available actions
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineActionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineActionsApi apiInstance = new BRERuleEngineActionsApi();
 String filterCategory = "filterCategory_example"; // String | Filter for actions that are within a specific category
@@ -57,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

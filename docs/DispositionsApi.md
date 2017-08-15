@@ -4,11 +4,11 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addDisposition**](DispositionsApi.md#addDisposition) | **POST** dispositions | Add a new disposition
-[**deleteDisposition**](DispositionsApi.md#deleteDisposition) | **DELETE** dispositions/{id} | Delete a disposition
-[**getDisposition**](DispositionsApi.md#getDisposition) | **GET** dispositions/{id} | Returns a disposition
-[**getDispositionCounts**](DispositionsApi.md#getDispositionCounts) | **GET** dispositions/count | Returns a list of disposition counts
-[**getDispositions**](DispositionsApi.md#getDispositions) | **GET** dispositions | Returns a page of dispositions
+[**addDisposition**](DispositionsApi.md#addDisposition) | **POST** /dispositions | Add a new disposition
+[**deleteDisposition**](DispositionsApi.md#deleteDisposition) | **DELETE** /dispositions/{id} | Delete a disposition
+[**getDisposition**](DispositionsApi.md#getDisposition) | **GET** /dispositions/{id} | Returns a disposition
+[**getDispositionCounts**](DispositionsApi.md#getDispositionCounts) | **GET** /dispositions/count | Returns a list of disposition counts
+[**getDispositions**](DispositionsApi.md#getDispositions) | **GET** /dispositions | Returns a page of dispositions
 
 
 <a name="addDisposition"></a>
@@ -20,17 +20,9 @@ Add a new disposition
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DispositionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DispositionsApi apiInstance = new DispositionsApi();
 DispositionResource disposition = new DispositionResource(); // DispositionResource | The new disposition record
@@ -55,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -64,30 +56,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteDisposition"></a>
 # **deleteDisposition**
-> Void deleteDisposition(id)
+> deleteDisposition(id)
 
 Delete a disposition
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.DispositionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 DispositionsApi apiInstance = new DispositionsApi();
 Long id = 789L; // Long | The id of the disposition record
 try {
-    Void result = apiInstance.deleteDisposition(id);
-    System.out.println(result);
+    apiInstance.deleteDisposition(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling DispositionsApi#deleteDisposition");
     e.printStackTrace();
@@ -102,11 +85,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

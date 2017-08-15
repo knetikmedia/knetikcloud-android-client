@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**verifyAppleReceipt**](PaymentsAppleApi.md#verifyAppleReceipt) | **POST** payment/provider/apple/receipt | Pay invoice with Apple receipt
+[**verifyAppleReceipt**](PaymentsAppleApi.md#verifyAppleReceipt) | **POST** /payment/provider/apple/receipt | Pay invoice with Apple receipt
 
 
 <a name="verifyAppleReceipt"></a>

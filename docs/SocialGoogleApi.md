@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**linkAccounts1**](SocialGoogleApi.md#linkAccounts1) | **POST** social/google/users | Link google account
+[**linkAccounts1**](SocialGoogleApi.md#linkAccounts1) | **POST** /social/google/users | Link google account
 
 
 <a name="linkAccounts1"></a>
 # **linkAccounts1**
-> Void linkAccounts1(googleToken)
+> linkAccounts1(googleToken)
 
 Link google account
 
@@ -18,23 +18,14 @@ Links the current user account to a google account, using the acccess token from
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.SocialGoogleApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 SocialGoogleApi apiInstance = new SocialGoogleApi();
 GoogleToken googleToken = new GoogleToken(); // GoogleToken | The token from google
 try {
-    Void result = apiInstance.linkAccounts1(googleToken);
-    System.out.println(result);
+    apiInstance.linkAccounts1(googleToken);
 } catch (ApiException e) {
     System.err.println("Exception when calling SocialGoogleApi#linkAccounts1");
     e.printStackTrace();
@@ -49,11 +40,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

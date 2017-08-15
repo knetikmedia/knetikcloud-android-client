@@ -4,9 +4,9 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTransaction**](PaymentsTransactionsApi.md#getTransaction) | **GET** transactions/{id} | Get the details for a single transaction
-[**getTransactions**](PaymentsTransactionsApi.md#getTransactions) | **GET** transactions | List and search transactions
-[**refundTransaction**](PaymentsTransactionsApi.md#refundTransaction) | **POST** transactions/{id}/refunds | Refund a payment transaction, in full or in part
+[**getTransaction**](PaymentsTransactionsApi.md#getTransaction) | **GET** /transactions/{id} | Get the details for a single transaction
+[**getTransactions**](PaymentsTransactionsApi.md#getTransactions) | **GET** /transactions | List and search transactions
+[**refundTransaction**](PaymentsTransactionsApi.md#refundTransaction) | **POST** /transactions/{id}/refunds | Refund a payment transaction, in full or in part
 
 
 <a name="getTransaction"></a>
@@ -18,17 +18,9 @@ Get the details for a single transaction
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsTransactionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsTransactionsApi apiInstance = new PaymentsTransactionsApi();
 Integer id = 56; // Integer | id
@@ -53,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -69,17 +61,9 @@ List and search transactions
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsTransactionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsTransactionsApi apiInstance = new PaymentsTransactionsApi();
 Integer filterInvoice = 56; // Integer | Filter for transactions from a specific invoice
@@ -110,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -128,17 +112,9 @@ Will not allow for refunding more than the full amount even with multiple partia
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsTransactionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsTransactionsApi apiInstance = new PaymentsTransactionsApi();
 Integer id = 56; // Integer | The id of the transaction to refund
@@ -165,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

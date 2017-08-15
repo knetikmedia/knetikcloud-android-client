@@ -4,11 +4,11 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createFulfillmentType**](FulfillmentApi.md#createFulfillmentType) | **POST** store/fulfillment/types | Create a fulfillment type
-[**deleteFulfillmentType**](FulfillmentApi.md#deleteFulfillmentType) | **DELETE** store/fulfillment/types/{id} | Delete a fulfillment type
-[**getFulfillmentType**](FulfillmentApi.md#getFulfillmentType) | **GET** store/fulfillment/types/{id} | Get a single fulfillment type
-[**getFulfillmentTypes**](FulfillmentApi.md#getFulfillmentTypes) | **GET** store/fulfillment/types | List and search fulfillment types
-[**updateFulfillmentType**](FulfillmentApi.md#updateFulfillmentType) | **PUT** store/fulfillment/types/{id} | Update a fulfillment type
+[**createFulfillmentType**](FulfillmentApi.md#createFulfillmentType) | **POST** /store/fulfillment/types | Create a fulfillment type
+[**deleteFulfillmentType**](FulfillmentApi.md#deleteFulfillmentType) | **DELETE** /store/fulfillment/types/{id} | Delete a fulfillment type
+[**getFulfillmentType**](FulfillmentApi.md#getFulfillmentType) | **GET** /store/fulfillment/types/{id} | Get a single fulfillment type
+[**getFulfillmentTypes**](FulfillmentApi.md#getFulfillmentTypes) | **GET** /store/fulfillment/types | List and search fulfillment types
+[**updateFulfillmentType**](FulfillmentApi.md#updateFulfillmentType) | **PUT** /store/fulfillment/types/{id} | Update a fulfillment type
 
 
 <a name="createFulfillmentType"></a>
@@ -20,17 +20,9 @@ Create a fulfillment type
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.FulfillmentApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FulfillmentApi apiInstance = new FulfillmentApi();
 FulfillmentType type = new FulfillmentType(); // FulfillmentType | The fulfillment type
@@ -55,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -64,30 +56,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteFulfillmentType"></a>
 # **deleteFulfillmentType**
-> Void deleteFulfillmentType(id)
+> deleteFulfillmentType(id)
 
 Delete a fulfillment type
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.FulfillmentApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FulfillmentApi apiInstance = new FulfillmentApi();
 Integer id = 56; // Integer | The id
 try {
-    Void result = apiInstance.deleteFulfillmentType(id);
-    System.out.println(result);
+    apiInstance.deleteFulfillmentType(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling FulfillmentApi#deleteFulfillmentType");
     e.printStackTrace();
@@ -102,11 +85,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -205,31 +188,22 @@ No authorization required
 
 <a name="updateFulfillmentType"></a>
 # **updateFulfillmentType**
-> Void updateFulfillmentType(id, fulfillmentType)
+> updateFulfillmentType(id, fulfillmentType)
 
 Update a fulfillment type
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.FulfillmentApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FulfillmentApi apiInstance = new FulfillmentApi();
 Integer id = 56; // Integer | The id
 FulfillmentType fulfillmentType = new FulfillmentType(); // FulfillmentType | The fulfillment type
 try {
-    Void result = apiInstance.updateFulfillmentType(id, fulfillmentType);
-    System.out.println(result);
+    apiInstance.updateFulfillmentType(id, fulfillmentType);
 } catch (ApiException e) {
     System.err.println("Exception when calling FulfillmentApi#updateFulfillmentType");
     e.printStackTrace();
@@ -245,11 +219,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

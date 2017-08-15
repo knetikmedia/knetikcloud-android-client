@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * PollResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-11T13:41:51.097-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-15T12:23:32.916-04:00")
 public class PollResource {
   @SerializedName("active")
   private Boolean active = null;

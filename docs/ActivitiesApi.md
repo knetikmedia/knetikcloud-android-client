@@ -4,19 +4,19 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createActivity**](ActivitiesApi.md#createActivity) | **POST** activities | Create an activity
-[**createActivityOccurrence**](ActivitiesApi.md#createActivityOccurrence) | **POST** activity-occurrences | Create a new activity occurrence. Ex: start a game
-[**createActivityTemplate**](ActivitiesApi.md#createActivityTemplate) | **POST** activities/templates | Create a activity template
-[**deleteActivity**](ActivitiesApi.md#deleteActivity) | **DELETE** activities/{id} | Delete an activity
-[**deleteActivityTemplate**](ActivitiesApi.md#deleteActivityTemplate) | **DELETE** activities/templates/{id} | Delete a activity template
-[**getActivities**](ActivitiesApi.md#getActivities) | **GET** activities | List activity definitions
-[**getActivity**](ActivitiesApi.md#getActivity) | **GET** activities/{id} | Get a single activity
-[**getActivityTemplate**](ActivitiesApi.md#getActivityTemplate) | **GET** activities/templates/{id} | Get a single activity template
-[**getActivityTemplates**](ActivitiesApi.md#getActivityTemplates) | **GET** activities/templates | List and search activity templates
-[**setActivityOccurrenceResults**](ActivitiesApi.md#setActivityOccurrenceResults) | **POST** activity-occurrences/{activity_occurrence_id}/results | Sets the status of an activity occurrence to FINISHED and logs metrics
-[**updateActivity**](ActivitiesApi.md#updateActivity) | **PUT** activities/{id} | Update an activity
-[**updateActivityOccurrence**](ActivitiesApi.md#updateActivityOccurrence) | **PUT** activity-occurrences/{activity_occurrence_id}/status | Updated the status of an activity occurrence
-[**updateActivityTemplate**](ActivitiesApi.md#updateActivityTemplate) | **PUT** activities/templates/{id} | Update an activity template
+[**createActivity**](ActivitiesApi.md#createActivity) | **POST** /activities | Create an activity
+[**createActivityOccurrence**](ActivitiesApi.md#createActivityOccurrence) | **POST** /activity-occurrences | Create a new activity occurrence. Ex: start a game
+[**createActivityTemplate**](ActivitiesApi.md#createActivityTemplate) | **POST** /activities/templates | Create a activity template
+[**deleteActivity**](ActivitiesApi.md#deleteActivity) | **DELETE** /activities/{id} | Delete an activity
+[**deleteActivityTemplate**](ActivitiesApi.md#deleteActivityTemplate) | **DELETE** /activities/templates/{id} | Delete a activity template
+[**getActivities**](ActivitiesApi.md#getActivities) | **GET** /activities | List activity definitions
+[**getActivity**](ActivitiesApi.md#getActivity) | **GET** /activities/{id} | Get a single activity
+[**getActivityTemplate**](ActivitiesApi.md#getActivityTemplate) | **GET** /activities/templates/{id} | Get a single activity template
+[**getActivityTemplates**](ActivitiesApi.md#getActivityTemplates) | **GET** /activities/templates | List and search activity templates
+[**setActivityOccurrenceResults**](ActivitiesApi.md#setActivityOccurrenceResults) | **POST** /activity-occurrences/{activity_occurrence_id}/results | Sets the status of an activity occurrence to FINISHED and logs metrics
+[**updateActivity**](ActivitiesApi.md#updateActivity) | **PUT** /activities/{id} | Update an activity
+[**updateActivityOccurrence**](ActivitiesApi.md#updateActivityOccurrence) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Updated the status of an activity occurrence
+[**updateActivityTemplate**](ActivitiesApi.md#updateActivityTemplate) | **PUT** /activities/templates/{id} | Update an activity template
 
 
 <a name="createActivity"></a>
@@ -28,17 +28,9 @@ Create an activity
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 ActivityResource activityResource = new ActivityResource(); // ActivityResource | The activity resource object
@@ -63,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -81,17 +73,9 @@ Has to enforce extra rules if not used as an admin
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Boolean test = false; // Boolean | if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
@@ -118,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -136,17 +120,9 @@ Activity Templates define a type of activity and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 TemplateResource activityTemplateResource = new TemplateResource(); // TemplateResource | The activity template resource object
@@ -171,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -180,30 +156,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteActivity"></a>
 # **deleteActivity**
-> Void deleteActivity(id)
+> deleteActivity(id)
 
 Delete an activity
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long id = 789L; // Long | The id of the activity
 try {
-    Void result = apiInstance.deleteActivity(id);
-    System.out.println(result);
+    apiInstance.deleteActivity(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActivitiesApi#deleteActivity");
     e.printStackTrace();
@@ -218,11 +185,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -231,7 +198,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteActivityTemplate"></a>
 # **deleteActivityTemplate**
-> Void deleteActivityTemplate(id, cascade)
+> deleteActivityTemplate(id, cascade)
 
 Delete a activity template
 
@@ -240,24 +207,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteActivityTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteActivityTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActivitiesApi#deleteActivityTemplate");
     e.printStackTrace();
@@ -273,11 +231,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -389,17 +347,9 @@ Get a single activity template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 String id = "id_example"; // String | The id of the template
@@ -424,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -440,17 +390,9 @@ List and search activity templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -479,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -495,17 +437,9 @@ Sets the status of an activity occurrence to FINISHED and logs metrics
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
@@ -532,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -548,17 +482,9 @@ Update an activity
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long id = 789L; // Long | The id of the activity
@@ -585,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -594,7 +520,7 @@ Name | Type | Description  | Notes
 
 <a name="updateActivityOccurrence"></a>
 # **updateActivityOccurrence**
-> Void updateActivityOccurrence(activityOccurrenceId, activityCccurrenceStatus)
+> updateActivityOccurrence(activityOccurrenceId, activityCccurrenceStatus)
 
 Updated the status of an activity occurrence
 
@@ -603,24 +529,15 @@ If setting to &#39;FINISHED&#39; you must POST to /results instead to record the
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
 String activityCccurrenceStatus = "activityCccurrenceStatus_example"; // String | The activity occurrence status object
 try {
-    Void result = apiInstance.updateActivityOccurrence(activityOccurrenceId, activityCccurrenceStatus);
-    System.out.println(result);
+    apiInstance.updateActivityOccurrence(activityOccurrenceId, activityCccurrenceStatus);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActivitiesApi#updateActivityOccurrence");
     e.printStackTrace();
@@ -636,11 +553,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -656,17 +573,9 @@ Update an activity template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ActivitiesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 String id = "id_example"; // String | The id of the template
@@ -693,7 +602,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

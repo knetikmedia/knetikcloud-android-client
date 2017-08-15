@@ -4,48 +4,39 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addCustomDiscount**](StoreShoppingCartsApi.md#addCustomDiscount) | **POST** carts/{id}/custom-discounts | Adds a custom discount to the cart
-[**addDiscountToCart**](StoreShoppingCartsApi.md#addDiscountToCart) | **POST** carts/{id}/discounts | Adds a discount coupon to the cart
-[**addItemToCart**](StoreShoppingCartsApi.md#addItemToCart) | **POST** carts/{id}/items | Add an item to the cart
-[**createCart**](StoreShoppingCartsApi.md#createCart) | **POST** carts | Create a cart
-[**getCart**](StoreShoppingCartsApi.md#getCart) | **GET** carts/{id} | Returns the cart with the given GUID
-[**getCarts**](StoreShoppingCartsApi.md#getCarts) | **GET** carts | Get a list of carts
-[**getShippable**](StoreShoppingCartsApi.md#getShippable) | **GET** carts/{id}/shippable | Returns whether a cart requires shipping
-[**getShippingCountries**](StoreShoppingCartsApi.md#getShippingCountries) | **GET** carts/{id}/countries | Get the list of available shipping countries per vendor
-[**removeDiscountFromCart**](StoreShoppingCartsApi.md#removeDiscountFromCart) | **DELETE** carts/{id}/discounts/{code} | Removes a discount coupon from the cart
-[**setCartCurrency**](StoreShoppingCartsApi.md#setCartCurrency) | **PUT** carts/{id}/currency | Sets the currency to use for the cart
-[**setCartOwner**](StoreShoppingCartsApi.md#setCartOwner) | **PUT** carts/{id}/owner | Sets the owner of a cart if none is set already
-[**updateItemInCart**](StoreShoppingCartsApi.md#updateItemInCart) | **PUT** carts/{id}/items | Changes the quantity of an item already in the cart
-[**updateShippingAddress**](StoreShoppingCartsApi.md#updateShippingAddress) | **PUT** carts/{id}/shipping-address | Modifies or sets the order shipping address
+[**addCustomDiscount**](StoreShoppingCartsApi.md#addCustomDiscount) | **POST** /carts/{id}/custom-discounts | Adds a custom discount to the cart
+[**addDiscountToCart**](StoreShoppingCartsApi.md#addDiscountToCart) | **POST** /carts/{id}/discounts | Adds a discount coupon to the cart
+[**addItemToCart**](StoreShoppingCartsApi.md#addItemToCart) | **POST** /carts/{id}/items | Add an item to the cart
+[**createCart**](StoreShoppingCartsApi.md#createCart) | **POST** /carts | Create a cart
+[**getCart**](StoreShoppingCartsApi.md#getCart) | **GET** /carts/{id} | Returns the cart with the given GUID
+[**getCarts**](StoreShoppingCartsApi.md#getCarts) | **GET** /carts | Get a list of carts
+[**getShippable**](StoreShoppingCartsApi.md#getShippable) | **GET** /carts/{id}/shippable | Returns whether a cart requires shipping
+[**getShippingCountries**](StoreShoppingCartsApi.md#getShippingCountries) | **GET** /carts/{id}/countries | Get the list of available shipping countries per vendor
+[**removeDiscountFromCart**](StoreShoppingCartsApi.md#removeDiscountFromCart) | **DELETE** /carts/{id}/discounts/{code} | Removes a discount coupon from the cart
+[**setCartCurrency**](StoreShoppingCartsApi.md#setCartCurrency) | **PUT** /carts/{id}/currency | Sets the currency to use for the cart
+[**setCartOwner**](StoreShoppingCartsApi.md#setCartOwner) | **PUT** /carts/{id}/owner | Sets the owner of a cart if none is set already
+[**updateItemInCart**](StoreShoppingCartsApi.md#updateItemInCart) | **PUT** /carts/{id}/items | Changes the quantity of an item already in the cart
+[**updateShippingAddress**](StoreShoppingCartsApi.md#updateShippingAddress) | **PUT** /carts/{id}/shipping-address | Modifies or sets the order shipping address
 
 
 <a name="addCustomDiscount"></a>
 # **addCustomDiscount**
-> Void addCustomDiscount(id, customDiscount)
+> addCustomDiscount(id, customDiscount)
 
 Adds a custom discount to the cart
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 CouponDefinition customDiscount = new CouponDefinition(); // CouponDefinition | The details of the discount to add
 try {
-    Void result = apiInstance.addCustomDiscount(id, customDiscount);
-    System.out.println(result);
+    apiInstance.addCustomDiscount(id, customDiscount);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#addCustomDiscount");
     e.printStackTrace();
@@ -61,11 +52,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -74,31 +65,22 @@ Name | Type | Description  | Notes
 
 <a name="addDiscountToCart"></a>
 # **addDiscountToCart**
-> Void addDiscountToCart(id, skuRequest)
+> addDiscountToCart(id, skuRequest)
 
 Adds a discount coupon to the cart
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 SkuRequest skuRequest = new SkuRequest(); // SkuRequest | The request of the sku
 try {
-    Void result = apiInstance.addDiscountToCart(id, skuRequest);
-    System.out.println(result);
+    apiInstance.addDiscountToCart(id, skuRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#addDiscountToCart");
     e.printStackTrace();
@@ -114,11 +96,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -127,7 +109,7 @@ Name | Type | Description  | Notes
 
 <a name="addItemToCart"></a>
 # **addItemToCart**
-> Void addItemToCart(id, cartItemRequest)
+> addItemToCart(id, cartItemRequest)
 
 Add an item to the cart
 
@@ -136,24 +118,15 @@ Currently, carts cannot contain virtual and real currency items at the same time
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 CartItemRequest cartItemRequest = new CartItemRequest(); // CartItemRequest | The cart item request object
 try {
-    Void result = apiInstance.addItemToCart(id, cartItemRequest);
-    System.out.println(result);
+    apiInstance.addItemToCart(id, cartItemRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#addItemToCart");
     e.printStackTrace();
@@ -169,11 +142,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -191,17 +164,9 @@ You don&#39;t have to have a user to create a cart but the API requires authenti
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 Integer owner = 56; // Integer | Set the owner of a cart. If not specified, defaults to the calling user's id. If specified and is not the calling user's id, SHOPPING_CARTS_ADMIN permission is required
@@ -228,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -244,17 +209,9 @@ Returns the cart with the given GUID
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
@@ -279,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -295,17 +252,9 @@ Get a list of carts
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 Integer filterOwnerId = 56; // Integer | Filter by the id of the owner
@@ -336,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -352,17 +301,9 @@ Returns whether a cart requires shipping
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
@@ -387,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -405,17 +346,9 @@ Since a cart can have multiple vendors with different shipping options, the coun
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
@@ -440,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -449,31 +382,22 @@ Name | Type | Description  | Notes
 
 <a name="removeDiscountFromCart"></a>
 # **removeDiscountFromCart**
-> Void removeDiscountFromCart(id, code)
+> removeDiscountFromCart(id, code)
 
 Removes a discount coupon from the cart
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 String code = "code_example"; // String | The SKU code of the coupon to remove
 try {
-    Void result = apiInstance.removeDiscountFromCart(id, code);
-    System.out.println(result);
+    apiInstance.removeDiscountFromCart(id, code);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#removeDiscountFromCart");
     e.printStackTrace();
@@ -489,11 +413,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -502,7 +426,7 @@ Name | Type | Description  | Notes
 
 <a name="setCartCurrency"></a>
 # **setCartCurrency**
-> Void setCartCurrency(id, currencyCode)
+> setCartCurrency(id, currencyCode)
 
 Sets the currency to use for the cart
 
@@ -511,24 +435,15 @@ May be disallowed by site settings.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 StringWrapper currencyCode = new StringWrapper(); // StringWrapper | The code of the currency
 try {
-    Void result = apiInstance.setCartCurrency(id, currencyCode);
-    System.out.println(result);
+    apiInstance.setCartCurrency(id, currencyCode);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#setCartCurrency");
     e.printStackTrace();
@@ -544,11 +459,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -557,31 +472,22 @@ Name | Type | Description  | Notes
 
 <a name="setCartOwner"></a>
 # **setCartOwner**
-> Void setCartOwner(id, userId)
+> setCartOwner(id, userId)
 
 Sets the owner of a cart if none is set already
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 IntWrapper userId = new IntWrapper(); // IntWrapper | The id of the user
 try {
-    Void result = apiInstance.setCartOwner(id, userId);
-    System.out.println(result);
+    apiInstance.setCartOwner(id, userId);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#setCartOwner");
     e.printStackTrace();
@@ -597,11 +503,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -610,7 +516,7 @@ Name | Type | Description  | Notes
 
 <a name="updateItemInCart"></a>
 # **updateItemInCart**
-> Void updateItemInCart(id, cartItemRequest)
+> updateItemInCart(id, cartItemRequest)
 
 Changes the quantity of an item already in the cart
 
@@ -619,24 +525,15 @@ A quantity of zero will remove the item from the cart altogether.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 CartItemRequest cartItemRequest = new CartItemRequest(); // CartItemRequest | The cart item request object
 try {
-    Void result = apiInstance.updateItemInCart(id, cartItemRequest);
-    System.out.println(result);
+    apiInstance.updateItemInCart(id, cartItemRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#updateItemInCart");
     e.printStackTrace();
@@ -652,11 +549,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -665,31 +562,22 @@ Name | Type | Description  | Notes
 
 <a name="updateShippingAddress"></a>
 # **updateShippingAddress**
-> Void updateShippingAddress(id, cartShippingAddressRequest)
+> updateShippingAddress(id, cartShippingAddressRequest)
 
 Modifies or sets the order shipping address
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShoppingCartsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShoppingCartsApi apiInstance = new StoreShoppingCartsApi();
 String id = "id_example"; // String | The id of the cart
 CartShippingAddressRequest cartShippingAddressRequest = new CartShippingAddressRequest(); // CartShippingAddressRequest | The cart shipping address request object
 try {
-    Void result = apiInstance.updateShippingAddress(id, cartShippingAddressRequest);
-    System.out.println(result);
+    apiInstance.updateShippingAddress(id, cartShippingAddressRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShoppingCartsApi#updateShippingAddress");
     e.printStackTrace();
@@ -705,11 +593,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

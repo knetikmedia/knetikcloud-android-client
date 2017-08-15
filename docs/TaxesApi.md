@@ -4,17 +4,17 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCountryTax**](TaxesApi.md#createCountryTax) | **POST** tax/countries | Create a country tax
-[**createStateTax**](TaxesApi.md#createStateTax) | **POST** tax/countries/{country_code_iso3}/states | Create a state tax
-[**deleteCountryTax**](TaxesApi.md#deleteCountryTax) | **DELETE** tax/countries/{country_code_iso3} | Delete an existing tax
-[**deleteStateTax**](TaxesApi.md#deleteStateTax) | **DELETE** tax/countries/{country_code_iso3}/states/{state_code} | Delete an existing state tax
-[**getCountryTax**](TaxesApi.md#getCountryTax) | **GET** tax/countries/{country_code_iso3} | Get a single tax
-[**getCountryTaxes**](TaxesApi.md#getCountryTaxes) | **GET** tax/countries | List and search taxes
-[**getStateTax**](TaxesApi.md#getStateTax) | **GET** tax/countries/{country_code_iso3}/states/{state_code} | Get a single state tax
-[**getStateTaxesForCountries**](TaxesApi.md#getStateTaxesForCountries) | **GET** tax/states | List and search taxes across all countries
-[**getStateTaxesForCountry**](TaxesApi.md#getStateTaxesForCountry) | **GET** tax/countries/{country_code_iso3}/states | List and search taxes within a country
-[**updateCountryTax**](TaxesApi.md#updateCountryTax) | **PUT** tax/countries/{country_code_iso3} | Create or update a tax
-[**updateStateTax**](TaxesApi.md#updateStateTax) | **PUT** tax/countries/{country_code_iso3}/states/{state_code} | Create or update a state tax
+[**createCountryTax**](TaxesApi.md#createCountryTax) | **POST** /tax/countries | Create a country tax
+[**createStateTax**](TaxesApi.md#createStateTax) | **POST** /tax/countries/{country_code_iso3}/states | Create a state tax
+[**deleteCountryTax**](TaxesApi.md#deleteCountryTax) | **DELETE** /tax/countries/{country_code_iso3} | Delete an existing tax
+[**deleteStateTax**](TaxesApi.md#deleteStateTax) | **DELETE** /tax/countries/{country_code_iso3}/states/{state_code} | Delete an existing state tax
+[**getCountryTax**](TaxesApi.md#getCountryTax) | **GET** /tax/countries/{country_code_iso3} | Get a single tax
+[**getCountryTaxes**](TaxesApi.md#getCountryTaxes) | **GET** /tax/countries | List and search taxes
+[**getStateTax**](TaxesApi.md#getStateTax) | **GET** /tax/countries/{country_code_iso3}/states/{state_code} | Get a single state tax
+[**getStateTaxesForCountries**](TaxesApi.md#getStateTaxesForCountries) | **GET** /tax/states | List and search taxes across all countries
+[**getStateTaxesForCountry**](TaxesApi.md#getStateTaxesForCountry) | **GET** /tax/countries/{country_code_iso3}/states | List and search taxes within a country
+[**updateCountryTax**](TaxesApi.md#updateCountryTax) | **PUT** /tax/countries/{country_code_iso3} | Create or update a tax
+[**updateStateTax**](TaxesApi.md#updateStateTax) | **PUT** /tax/countries/{country_code_iso3}/states/{state_code} | Create or update a state tax
 
 
 <a name="createCountryTax"></a>
@@ -26,17 +26,9 @@ Create a country tax
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.TaxesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 TaxesApi apiInstance = new TaxesApi();
 CountryTaxResource taxResource = new CountryTaxResource(); // CountryTaxResource | The tax object
@@ -61,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -77,17 +69,9 @@ Create a state tax
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.TaxesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 TaxesApi apiInstance = new TaxesApi();
 String countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
@@ -114,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -123,30 +107,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteCountryTax"></a>
 # **deleteCountryTax**
-> Void deleteCountryTax(countryCodeIso3)
+> deleteCountryTax(countryCodeIso3)
 
 Delete an existing tax
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.TaxesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 TaxesApi apiInstance = new TaxesApi();
 String countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 try {
-    Void result = apiInstance.deleteCountryTax(countryCodeIso3);
-    System.out.println(result);
+    apiInstance.deleteCountryTax(countryCodeIso3);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaxesApi#deleteCountryTax");
     e.printStackTrace();
@@ -161,11 +136,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -174,31 +149,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteStateTax"></a>
 # **deleteStateTax**
-> Void deleteStateTax(countryCodeIso3, stateCode)
+> deleteStateTax(countryCodeIso3, stateCode)
 
 Delete an existing state tax
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.TaxesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 TaxesApi apiInstance = new TaxesApi();
 String countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 String stateCode = "stateCode_example"; // String | The code of the state
 try {
-    Void result = apiInstance.deleteStateTax(countryCodeIso3, stateCode);
-    System.out.println(result);
+    apiInstance.deleteStateTax(countryCodeIso3, stateCode);
 } catch (ApiException e) {
     System.err.println("Exception when calling TaxesApi#deleteStateTax");
     e.printStackTrace();
@@ -214,11 +180,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -471,17 +437,9 @@ Create or update a tax
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.TaxesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 TaxesApi apiInstance = new TaxesApi();
 String countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
@@ -508,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -524,17 +482,9 @@ Create or update a state tax
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.TaxesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 TaxesApi apiInstance = new TaxesApi();
 String countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
@@ -563,7 +513,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

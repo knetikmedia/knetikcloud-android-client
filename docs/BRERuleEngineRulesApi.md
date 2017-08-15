@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBRERule**](BRERuleEngineRulesApi.md#createBRERule) | **POST** bre/rules | Create a rule
-[**deleteBRERule**](BRERuleEngineRulesApi.md#deleteBRERule) | **DELETE** bre/rules/{id} | Delete a rule
-[**getBREExpressionAsString**](BRERuleEngineRulesApi.md#getBREExpressionAsString) | **POST** bre/rules/expression-as-string | Returns a string representation of the provided expression
-[**getBRERule**](BRERuleEngineRulesApi.md#getBRERule) | **GET** bre/rules/{id} | Get a single rule
-[**getBRERules**](BRERuleEngineRulesApi.md#getBRERules) | **GET** bre/rules | List rules
-[**setBRERule**](BRERuleEngineRulesApi.md#setBRERule) | **PUT** bre/rules/{id}/enabled | Enable or disable a rule
-[**updateBRERule**](BRERuleEngineRulesApi.md#updateBRERule) | **PUT** bre/rules/{id} | Update a rule
+[**createBRERule**](BRERuleEngineRulesApi.md#createBRERule) | **POST** /bre/rules | Create a rule
+[**deleteBRERule**](BRERuleEngineRulesApi.md#deleteBRERule) | **DELETE** /bre/rules/{id} | Delete a rule
+[**getBREExpressionAsString**](BRERuleEngineRulesApi.md#getBREExpressionAsString) | **POST** /bre/rules/expression-as-string | Returns a string representation of the provided expression
+[**getBRERule**](BRERuleEngineRulesApi.md#getBRERule) | **GET** /bre/rules/{id} | Get a single rule
+[**getBRERules**](BRERuleEngineRulesApi.md#getBRERules) | **GET** /bre/rules | List rules
+[**setBRERule**](BRERuleEngineRulesApi.md#setBRERule) | **PUT** /bre/rules/{id}/enabled | Enable or disable a rule
+[**updateBRERule**](BRERuleEngineRulesApi.md#updateBRERule) | **PUT** /bre/rules/{id} | Update a rule
 
 
 <a name="createBRERule"></a>
@@ -24,17 +24,9 @@ Rules define which actions to run when a given event verifies the specified cond
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineRulesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineRulesApi apiInstance = new BRERuleEngineRulesApi();
 BreRule breRule = new BreRule(); // BreRule | The BRE rule object
@@ -59,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -68,7 +60,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteBRERule"></a>
 # **deleteBRERule**
-> Void deleteBRERule(id)
+> deleteBRERule(id)
 
 Delete a rule
 
@@ -77,23 +69,14 @@ May fail if there are existing rules against it. Cannot delete core rules
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineRulesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineRulesApi apiInstance = new BRERuleEngineRulesApi();
 String id = "id_example"; // String | The id of the rule
 try {
-    Void result = apiInstance.deleteBRERule(id);
-    System.out.println(result);
+    apiInstance.deleteBRERule(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling BRERuleEngineRulesApi#deleteBRERule");
     e.printStackTrace();
@@ -108,11 +91,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -128,17 +111,9 @@ Returns a string representation of the provided expression
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineRulesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineRulesApi apiInstance = new BRERuleEngineRulesApi();
 Expressionobject expression = new Expressionobject(); // Expressionobject | The expression
@@ -163,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -179,17 +154,9 @@ Get a single rule
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineRulesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineRulesApi apiInstance = new BRERuleEngineRulesApi();
 String id = "id_example"; // String | The id of the rule
@@ -214,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -230,17 +197,9 @@ List rules
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineRulesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineRulesApi apiInstance = new BRERuleEngineRulesApi();
 String filterName = "filterName_example"; // String | Filter for rules containing the given name
@@ -279,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -288,7 +247,7 @@ Name | Type | Description  | Notes
 
 <a name="setBRERule"></a>
 # **setBRERule**
-> Void setBRERule(id, enabled)
+> setBRERule(id, enabled)
 
 Enable or disable a rule
 
@@ -297,24 +256,15 @@ This is helpful for turning off systems rules which cannot be deleted or modifie
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineRulesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineRulesApi apiInstance = new BRERuleEngineRulesApi();
 String id = "id_example"; // String | The id of the rule
 BooleanResource enabled = new BooleanResource(); // BooleanResource | The boolean value
 try {
-    Void result = apiInstance.setBRERule(id, enabled);
-    System.out.println(result);
+    apiInstance.setBRERule(id, enabled);
 } catch (ApiException e) {
     System.err.println("Exception when calling BRERuleEngineRulesApi#setBRERule");
     e.printStackTrace();
@@ -330,11 +280,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -352,17 +302,9 @@ Cannot update system rules
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineRulesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineRulesApi apiInstance = new BRERuleEngineRulesApi();
 String id = "id_example"; // String | The id of the rule
@@ -389,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

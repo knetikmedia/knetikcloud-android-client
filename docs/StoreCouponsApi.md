@@ -4,15 +4,15 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCouponItem**](StoreCouponsApi.md#createCouponItem) | **POST** store/coupons | Create a coupon item
-[**createCouponTemplate**](StoreCouponsApi.md#createCouponTemplate) | **POST** store/coupons/templates | Create a coupon template
-[**deleteCouponItem**](StoreCouponsApi.md#deleteCouponItem) | **DELETE** store/coupons/{id} | Delete a coupon item
-[**deleteCouponTemplate**](StoreCouponsApi.md#deleteCouponTemplate) | **DELETE** store/coupons/templates/{id} | Delete a coupon template
-[**getCouponItem**](StoreCouponsApi.md#getCouponItem) | **GET** store/coupons/{id} | Get a single coupon item
-[**getCouponTemplate**](StoreCouponsApi.md#getCouponTemplate) | **GET** store/coupons/templates/{id} | Get a single coupon template
-[**getCouponTemplates**](StoreCouponsApi.md#getCouponTemplates) | **GET** store/coupons/templates | List and search coupon templates
-[**updateCouponItem**](StoreCouponsApi.md#updateCouponItem) | **PUT** store/coupons/{id} | Update a coupon item
-[**updateCouponTemplate**](StoreCouponsApi.md#updateCouponTemplate) | **PUT** store/coupons/templates/{id} | Update a coupon template
+[**createCouponItem**](StoreCouponsApi.md#createCouponItem) | **POST** /store/coupons | Create a coupon item
+[**createCouponTemplate**](StoreCouponsApi.md#createCouponTemplate) | **POST** /store/coupons/templates | Create a coupon template
+[**deleteCouponItem**](StoreCouponsApi.md#deleteCouponItem) | **DELETE** /store/coupons/{id} | Delete a coupon item
+[**deleteCouponTemplate**](StoreCouponsApi.md#deleteCouponTemplate) | **DELETE** /store/coupons/templates/{id} | Delete a coupon template
+[**getCouponItem**](StoreCouponsApi.md#getCouponItem) | **GET** /store/coupons/{id} | Get a single coupon item
+[**getCouponTemplate**](StoreCouponsApi.md#getCouponTemplate) | **GET** /store/coupons/templates/{id} | Get a single coupon template
+[**getCouponTemplates**](StoreCouponsApi.md#getCouponTemplates) | **GET** /store/coupons/templates | List and search coupon templates
+[**updateCouponItem**](StoreCouponsApi.md#updateCouponItem) | **PUT** /store/coupons/{id} | Update a coupon item
+[**updateCouponTemplate**](StoreCouponsApi.md#updateCouponTemplate) | **PUT** /store/coupons/templates/{id} | Update a coupon template
 
 
 <a name="createCouponItem"></a>
@@ -26,17 +26,9 @@ SKUs have to be unique in the entire store.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 Boolean cascade = false; // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -63,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -81,17 +73,9 @@ Coupon Templates define a type of coupon and the properties they have.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 ItemTemplateResource couponTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new coupon template
@@ -116,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -125,30 +109,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteCouponItem"></a>
 # **deleteCouponItem**
-> Void deleteCouponItem(id)
+> deleteCouponItem(id)
 
 Delete a coupon item
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 Integer id = 56; // Integer | The id of the coupon
 try {
-    Void result = apiInstance.deleteCouponItem(id);
-    System.out.println(result);
+    apiInstance.deleteCouponItem(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreCouponsApi#deleteCouponItem");
     e.printStackTrace();
@@ -163,11 +138,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -176,31 +151,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteCouponTemplate"></a>
 # **deleteCouponTemplate**
-> Void deleteCouponTemplate(id, cascade)
+> deleteCouponTemplate(id, cascade)
 
 Delete a coupon template
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | force deleting the template if it's attached to other objects, cascade = detach
 try {
-    Void result = apiInstance.deleteCouponTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteCouponTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreCouponsApi#deleteCouponTemplate");
     e.printStackTrace();
@@ -216,11 +182,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -236,17 +202,9 @@ Get a single coupon item
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 Integer id = 56; // Integer | The id of the coupon
@@ -271,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -289,17 +247,9 @@ Coupon Templates define a type of coupon and the properties they have.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 String id = "id_example"; // String | The id of the template
@@ -324,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -340,17 +290,9 @@ List and search coupon templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -379,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -395,17 +337,9 @@ Update a coupon item
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 Integer id = 56; // Integer | The id of the coupon
@@ -434,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -450,17 +384,9 @@ Update a coupon template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreCouponsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreCouponsApi apiInstance = new StoreCouponsApi();
 String id = "id_example"; // String | The id of the template
@@ -487,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

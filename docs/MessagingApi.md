@@ -4,38 +4,29 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**sendRawEmail**](MessagingApi.md#sendRawEmail) | **POST** messaging/raw-email | Send a raw email to one or more users
-[**sendRawSMS**](MessagingApi.md#sendRawSMS) | **POST** messaging/raw-sms | Send a raw SMS
-[**sendTemplatedEmail**](MessagingApi.md#sendTemplatedEmail) | **POST** messaging/templated-email | Send a templated email to one or more users
-[**sendTemplatedSMS**](MessagingApi.md#sendTemplatedSMS) | **POST** messaging/templated-sms | Send a new templated SMS
+[**sendRawEmail**](MessagingApi.md#sendRawEmail) | **POST** /messaging/raw-email | Send a raw email to one or more users
+[**sendRawSMS**](MessagingApi.md#sendRawSMS) | **POST** /messaging/raw-sms | Send a raw SMS
+[**sendTemplatedEmail**](MessagingApi.md#sendTemplatedEmail) | **POST** /messaging/templated-email | Send a templated email to one or more users
+[**sendTemplatedSMS**](MessagingApi.md#sendTemplatedSMS) | **POST** /messaging/templated-sms | Send a new templated SMS
 
 
 <a name="sendRawEmail"></a>
 # **sendRawEmail**
-> Void sendRawEmail(rawEmailResource)
+> sendRawEmail(rawEmailResource)
 
 Send a raw email to one or more users
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MessagingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagingApi apiInstance = new MessagingApi();
 RawEmailResource rawEmailResource = new RawEmailResource(); // RawEmailResource | The new raw email to be sent
 try {
-    Void result = apiInstance.sendRawEmail(rawEmailResource);
-    System.out.println(result);
+    apiInstance.sendRawEmail(rawEmailResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#sendRawEmail");
     e.printStackTrace();
@@ -50,11 +41,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -63,7 +54,7 @@ Name | Type | Description  | Notes
 
 <a name="sendRawSMS"></a>
 # **sendRawSMS**
-> Void sendRawSMS(rawSMSResource)
+> sendRawSMS(rawSMSResource)
 
 Send a raw SMS
 
@@ -72,23 +63,14 @@ Sends a raw SMS text message to one or more users. User&#39;s without registered
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MessagingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagingApi apiInstance = new MessagingApi();
 RawSMSResource rawSMSResource = new RawSMSResource(); // RawSMSResource | The new raw SMS to be sent
 try {
-    Void result = apiInstance.sendRawSMS(rawSMSResource);
-    System.out.println(result);
+    apiInstance.sendRawSMS(rawSMSResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#sendRawSMS");
     e.printStackTrace();
@@ -103,11 +85,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -116,30 +98,21 @@ Name | Type | Description  | Notes
 
 <a name="sendTemplatedEmail"></a>
 # **sendTemplatedEmail**
-> Void sendTemplatedEmail(messageResource)
+> sendTemplatedEmail(messageResource)
 
 Send a templated email to one or more users
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MessagingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagingApi apiInstance = new MessagingApi();
 TemplateEmailResource messageResource = new TemplateEmailResource(); // TemplateEmailResource | The new template email to be sent
 try {
-    Void result = apiInstance.sendTemplatedEmail(messageResource);
-    System.out.println(result);
+    apiInstance.sendTemplatedEmail(messageResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#sendTemplatedEmail");
     e.printStackTrace();
@@ -154,11 +127,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -167,7 +140,7 @@ Name | Type | Description  | Notes
 
 <a name="sendTemplatedSMS"></a>
 # **sendTemplatedSMS**
-> Void sendTemplatedSMS(templateSMSResource)
+> sendTemplatedSMS(templateSMSResource)
 
 Send a new templated SMS
 
@@ -176,23 +149,14 @@ Sends a templated SMS text message to one or more users. User&#39;s without regi
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MessagingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagingApi apiInstance = new MessagingApi();
 TemplateSMSResource templateSMSResource = new TemplateSMSResource(); // TemplateSMSResource | The new template SMS to be sent
 try {
-    Void result = apiInstance.sendTemplatedSMS(templateSMSResource);
-    System.out.println(result);
+    apiInstance.sendTemplatedSMS(templateSMSResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#sendTemplatedSMS");
     e.printStackTrace();
@@ -207,11 +171,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

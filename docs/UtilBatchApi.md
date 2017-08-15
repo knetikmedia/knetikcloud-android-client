@@ -4,8 +4,8 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getBatch**](UtilBatchApi.md#getBatch) | **GET** batch/{token} | Get batch result with token
-[**sendBatch**](UtilBatchApi.md#sendBatch) | **POST** batch | Request to run API call given the method, content type, path url, and body of request
+[**getBatch**](UtilBatchApi.md#getBatch) | **GET** /batch/{token} | Get batch result with token
+[**sendBatch**](UtilBatchApi.md#sendBatch) | **POST** /batch | Request to run API call given the method, content type, path url, and body of request
 
 
 <a name="getBatch"></a>

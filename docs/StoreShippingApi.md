@@ -4,15 +4,15 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createShippingItem**](StoreShippingApi.md#createShippingItem) | **POST** store/shipping | Create a shipping item
-[**createShippingTemplate**](StoreShippingApi.md#createShippingTemplate) | **POST** store/shipping/templates | Create a shipping template
-[**deleteShippingItem**](StoreShippingApi.md#deleteShippingItem) | **DELETE** store/shipping/{id} | Delete a shipping item
-[**deleteShippingTemplate**](StoreShippingApi.md#deleteShippingTemplate) | **DELETE** store/shipping/templates/{id} | Delete a shipping template
-[**getShippingItem**](StoreShippingApi.md#getShippingItem) | **GET** store/shipping/{id} | Get a single shipping item
-[**getShippingTemplate**](StoreShippingApi.md#getShippingTemplate) | **GET** store/shipping/templates/{id} | Get a single shipping template
-[**getShippingTemplates**](StoreShippingApi.md#getShippingTemplates) | **GET** store/shipping/templates | List and search shipping templates
-[**updateShippingItem**](StoreShippingApi.md#updateShippingItem) | **PUT** store/shipping/{id} | Update a shipping item
-[**updateShippingTemplate**](StoreShippingApi.md#updateShippingTemplate) | **PUT** store/shipping/templates/{id} | Update a shipping template
+[**createShippingItem**](StoreShippingApi.md#createShippingItem) | **POST** /store/shipping | Create a shipping item
+[**createShippingTemplate**](StoreShippingApi.md#createShippingTemplate) | **POST** /store/shipping/templates | Create a shipping template
+[**deleteShippingItem**](StoreShippingApi.md#deleteShippingItem) | **DELETE** /store/shipping/{id} | Delete a shipping item
+[**deleteShippingTemplate**](StoreShippingApi.md#deleteShippingTemplate) | **DELETE** /store/shipping/templates/{id} | Delete a shipping template
+[**getShippingItem**](StoreShippingApi.md#getShippingItem) | **GET** /store/shipping/{id} | Get a single shipping item
+[**getShippingTemplate**](StoreShippingApi.md#getShippingTemplate) | **GET** /store/shipping/templates/{id} | Get a single shipping template
+[**getShippingTemplates**](StoreShippingApi.md#getShippingTemplates) | **GET** /store/shipping/templates | List and search shipping templates
+[**updateShippingItem**](StoreShippingApi.md#updateShippingItem) | **PUT** /store/shipping/{id} | Update a shipping item
+[**updateShippingTemplate**](StoreShippingApi.md#updateShippingTemplate) | **PUT** /store/shipping/templates/{id} | Update a shipping template
 
 
 <a name="createShippingItem"></a>
@@ -26,17 +26,9 @@ A shipping item represents a shipping option and cost. SKUs have to be unique in
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 Boolean cascade = false; // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -63,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -81,17 +73,9 @@ Shipping Templates define a type of shipping and the properties they have.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 ItemTemplateResource shippingTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new shipping template
@@ -116,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -125,30 +109,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteShippingItem"></a>
 # **deleteShippingItem**
-> Void deleteShippingItem(id)
+> deleteShippingItem(id)
 
 Delete a shipping item
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 Integer id = 56; // Integer | The id of the shipping item
 try {
-    Void result = apiInstance.deleteShippingItem(id);
-    System.out.println(result);
+    apiInstance.deleteShippingItem(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShippingApi#deleteShippingItem");
     e.printStackTrace();
@@ -163,11 +138,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -176,31 +151,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteShippingTemplate"></a>
 # **deleteShippingTemplate**
-> Void deleteShippingTemplate(id, cascade)
+> deleteShippingTemplate(id, cascade)
 
 Delete a shipping template
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | force deleting the template if it's attached to other objects, cascade = detach
 try {
-    Void result = apiInstance.deleteShippingTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteShippingTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreShippingApi#deleteShippingTemplate");
     e.printStackTrace();
@@ -216,11 +182,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -281,17 +247,9 @@ Shipping Templates define a type of shipping and the properties they have.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 String id = "id_example"; // String | The id of the template
@@ -316,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -332,17 +290,9 @@ List and search shipping templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -371,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -387,17 +337,9 @@ Update a shipping item
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 Integer id = 56; // Integer | The id of the shipping item
@@ -426,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -442,17 +384,9 @@ Update a shipping template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreShippingApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreShippingApi apiInstance = new StoreShippingApi();
 String id = "id_example"; // String | The id of the template
@@ -479,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

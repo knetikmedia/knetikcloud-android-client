@@ -4,8 +4,8 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createXsollaTokenUrl**](PaymentsXsollaApi.md#createXsollaTokenUrl) | **POST** payment/provider/xsolla/payment | Create a payment token that should be used to forward the user to Xsolla so they can complete payment
-[**receiveXsollaNotification**](PaymentsXsollaApi.md#receiveXsollaNotification) | **POST** payment/provider/xsolla/notifications | Receives payment response from Xsolla
+[**createXsollaTokenUrl**](PaymentsXsollaApi.md#createXsollaTokenUrl) | **POST** /payment/provider/xsolla/payment | Create a payment token that should be used to forward the user to Xsolla so they can complete payment
+[**receiveXsollaNotification**](PaymentsXsollaApi.md#receiveXsollaNotification) | **POST** /payment/provider/xsolla/notifications | Receives payment response from Xsolla
 
 
 <a name="createXsollaTokenUrl"></a>
@@ -17,17 +17,9 @@ Create a payment token that should be used to forward the user to Xsolla so they
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsXsollaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsXsollaApi apiInstance = new PaymentsXsollaApi();
 XsollaPaymentRequest request = new XsollaPaymentRequest(); // XsollaPaymentRequest | The payment request to be sent to XSolla
@@ -52,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -61,7 +53,7 @@ Name | Type | Description  | Notes
 
 <a name="receiveXsollaNotification"></a>
 # **receiveXsollaNotification**
-> Void receiveXsollaNotification()
+> receiveXsollaNotification()
 
 Receives payment response from Xsolla
 
@@ -76,8 +68,7 @@ Only used by Xsolla to call back to JSAPI after processing user payment action
 
 PaymentsXsollaApi apiInstance = new PaymentsXsollaApi();
 try {
-    Void result = apiInstance.receiveXsollaNotification();
-    System.out.println(result);
+    apiInstance.receiveXsollaNotification();
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsXsollaApi#receiveXsollaNotification");
     e.printStackTrace();
@@ -89,7 +80,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 

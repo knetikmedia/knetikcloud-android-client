@@ -4,8 +4,8 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createStripePaymentMethod**](PaymentsStripeApi.md#createStripePaymentMethod) | **POST** payment/provider/stripe/payment-methods | Create a Stripe payment method for a user
-[**payStripeInvoice**](PaymentsStripeApi.md#payStripeInvoice) | **POST** payment/provider/stripe/payments | Pay with a single use token
+[**createStripePaymentMethod**](PaymentsStripeApi.md#createStripePaymentMethod) | **POST** /payment/provider/stripe/payment-methods | Create a Stripe payment method for a user
+[**payStripeInvoice**](PaymentsStripeApi.md#payStripeInvoice) | **POST** /payment/provider/stripe/payments | Pay with a single use token
 
 
 <a name="createStripePaymentMethod"></a>
@@ -19,17 +19,9 @@ Stores customer information and creates a payment method that can be used to pay
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsStripeApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsStripeApi apiInstance = new PaymentsStripeApi();
 StripeCreatePaymentMethod request = new StripeCreatePaymentMethod(); // StripeCreatePaymentMethod | The request to create a Stripe customer with payment info
@@ -54,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -63,7 +55,7 @@ Name | Type | Description  | Notes
 
 <a name="payStripeInvoice"></a>
 # **payStripeInvoice**
-> Void payStripeInvoice(request)
+> payStripeInvoice(request)
 
 Pay with a single use token
 
@@ -77,8 +69,7 @@ Pay with a single use token
 PaymentsStripeApi apiInstance = new PaymentsStripeApi();
 StripePaymentRequest request = new StripePaymentRequest(); // StripePaymentRequest | The request to pay an invoice
 try {
-    Void result = apiInstance.payStripeInvoice(request);
-    System.out.println(result);
+    apiInstance.payStripeInvoice(request);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsStripeApi#payStripeInvoice");
     e.printStackTrace();
@@ -93,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 

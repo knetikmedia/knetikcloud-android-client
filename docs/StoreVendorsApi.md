@@ -4,16 +4,16 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createVendor**](StoreVendorsApi.md#createVendor) | **POST** vendors | Create a vendor
-[**createVendorTemplate**](StoreVendorsApi.md#createVendorTemplate) | **POST** vendors/templates | Create a vendor template
-[**deleteVendor**](StoreVendorsApi.md#deleteVendor) | **DELETE** vendors/{id} | Delete a vendor
-[**deleteVendorTemplate**](StoreVendorsApi.md#deleteVendorTemplate) | **DELETE** vendors/templates/{id} | Delete a vendor template
-[**getVendor**](StoreVendorsApi.md#getVendor) | **GET** vendors/{id} | Get a single vendor
-[**getVendorTemplate**](StoreVendorsApi.md#getVendorTemplate) | **GET** vendors/templates/{id} | Get a single vendor template
-[**getVendorTemplates**](StoreVendorsApi.md#getVendorTemplates) | **GET** vendors/templates | List and search vendor templates
-[**getVendors**](StoreVendorsApi.md#getVendors) | **GET** vendors | List and search vendors
-[**updateVendor**](StoreVendorsApi.md#updateVendor) | **PUT** vendors/{id} | Update a vendor
-[**updateVendorTemplate**](StoreVendorsApi.md#updateVendorTemplate) | **PUT** vendors/templates/{id} | Update a vendor template
+[**createVendor**](StoreVendorsApi.md#createVendor) | **POST** /vendors | Create a vendor
+[**createVendorTemplate**](StoreVendorsApi.md#createVendorTemplate) | **POST** /vendors/templates | Create a vendor template
+[**deleteVendor**](StoreVendorsApi.md#deleteVendor) | **DELETE** /vendors/{id} | Delete a vendor
+[**deleteVendorTemplate**](StoreVendorsApi.md#deleteVendorTemplate) | **DELETE** /vendors/templates/{id} | Delete a vendor template
+[**getVendor**](StoreVendorsApi.md#getVendor) | **GET** /vendors/{id} | Get a single vendor
+[**getVendorTemplate**](StoreVendorsApi.md#getVendorTemplate) | **GET** /vendors/templates/{id} | Get a single vendor template
+[**getVendorTemplates**](StoreVendorsApi.md#getVendorTemplates) | **GET** /vendors/templates | List and search vendor templates
+[**getVendors**](StoreVendorsApi.md#getVendors) | **GET** /vendors | List and search vendors
+[**updateVendor**](StoreVendorsApi.md#updateVendor) | **PUT** /vendors/{id} | Update a vendor
+[**updateVendorTemplate**](StoreVendorsApi.md#updateVendorTemplate) | **PUT** /vendors/templates/{id} | Update a vendor template
 
 
 <a name="createVendor"></a>
@@ -25,17 +25,9 @@ Create a vendor
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 VendorResource vendor = new VendorResource(); // VendorResource | The vendor
@@ -60,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -78,17 +70,9 @@ Vendor Templates define a type of vendor and the properties they have.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 ItemTemplateResource vendorTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new vendor template
@@ -113,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -122,30 +106,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteVendor"></a>
 # **deleteVendor**
-> Void deleteVendor(id)
+> deleteVendor(id)
 
 Delete a vendor
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 Integer id = 56; // Integer | The id of the vendor
 try {
-    Void result = apiInstance.deleteVendor(id);
-    System.out.println(result);
+    apiInstance.deleteVendor(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreVendorsApi#deleteVendor");
     e.printStackTrace();
@@ -160,11 +135,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -173,31 +148,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteVendorTemplate"></a>
 # **deleteVendorTemplate**
-> Void deleteVendorTemplate(id, cascade)
+> deleteVendorTemplate(id, cascade)
 
 Delete a vendor template
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | force deleting the template if it's attached to other objects, cascade = detach
 try {
-    Void result = apiInstance.deleteVendorTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteVendorTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreVendorsApi#deleteVendorTemplate");
     e.printStackTrace();
@@ -213,11 +179,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -278,17 +244,9 @@ Vendor Templates define a type of vendor and the properties they have.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 String id = "id_example"; // String | The id of the template
@@ -313,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -329,17 +287,9 @@ List and search vendor templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -368,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -433,17 +383,9 @@ Update a vendor
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 Integer id = 56; // Integer | The id of the vendor
@@ -470,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -486,17 +428,9 @@ Update a vendor template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreVendorsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 String id = "id_example"; // String | The id of the template
@@ -523,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

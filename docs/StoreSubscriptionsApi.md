@@ -4,17 +4,17 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSubscription**](StoreSubscriptionsApi.md#createSubscription) | **POST** subscriptions | Creates a subscription item and associated plans
-[**createSubscriptionTemplate**](StoreSubscriptionsApi.md#createSubscriptionTemplate) | **POST** subscriptions/templates | Create a subscription template
-[**deleteSubscription**](StoreSubscriptionsApi.md#deleteSubscription) | **DELETE** subscriptions/{id}/plans/{plan_id} | Delete a subscription plan
-[**deleteSubscriptionTemplate**](StoreSubscriptionsApi.md#deleteSubscriptionTemplate) | **DELETE** subscriptions/templates/{id} | Delete a subscription template
-[**getSubscription**](StoreSubscriptionsApi.md#getSubscription) | **GET** subscriptions/{id} | Retrieve a single subscription item and associated plans
-[**getSubscriptionTemplate**](StoreSubscriptionsApi.md#getSubscriptionTemplate) | **GET** subscriptions/templates/{id} | Get a single subscription template
-[**getSubscriptionTemplates**](StoreSubscriptionsApi.md#getSubscriptionTemplates) | **GET** subscriptions/templates | List and search subscription templates
-[**getSubscriptions**](StoreSubscriptionsApi.md#getSubscriptions) | **GET** subscriptions | List available subscription items and associated plans
-[**processSubscriptions**](StoreSubscriptionsApi.md#processSubscriptions) | **POST** subscriptions/process | Processes subscriptions and charge dues
-[**updateSubscription**](StoreSubscriptionsApi.md#updateSubscription) | **PUT** subscriptions/{id} | Updates a subscription item and associated plans
-[**updateSubscriptionTemplate**](StoreSubscriptionsApi.md#updateSubscriptionTemplate) | **PUT** subscriptions/templates/{id} | Update a subscription template
+[**createSubscription**](StoreSubscriptionsApi.md#createSubscription) | **POST** /subscriptions | Creates a subscription item and associated plans
+[**createSubscriptionTemplate**](StoreSubscriptionsApi.md#createSubscriptionTemplate) | **POST** /subscriptions/templates | Create a subscription template
+[**deleteSubscription**](StoreSubscriptionsApi.md#deleteSubscription) | **DELETE** /subscriptions/{id}/plans/{plan_id} | Delete a subscription plan
+[**deleteSubscriptionTemplate**](StoreSubscriptionsApi.md#deleteSubscriptionTemplate) | **DELETE** /subscriptions/templates/{id} | Delete a subscription template
+[**getSubscription**](StoreSubscriptionsApi.md#getSubscription) | **GET** /subscriptions/{id} | Retrieve a single subscription item and associated plans
+[**getSubscriptionTemplate**](StoreSubscriptionsApi.md#getSubscriptionTemplate) | **GET** /subscriptions/templates/{id} | Get a single subscription template
+[**getSubscriptionTemplates**](StoreSubscriptionsApi.md#getSubscriptionTemplates) | **GET** /subscriptions/templates | List and search subscription templates
+[**getSubscriptions**](StoreSubscriptionsApi.md#getSubscriptions) | **GET** /subscriptions | List available subscription items and associated plans
+[**processSubscriptions**](StoreSubscriptionsApi.md#processSubscriptions) | **POST** /subscriptions/process | Processes subscriptions and charge dues
+[**updateSubscription**](StoreSubscriptionsApi.md#updateSubscription) | **PUT** /subscriptions/{id} | Updates a subscription item and associated plans
+[**updateSubscriptionTemplate**](StoreSubscriptionsApi.md#updateSubscriptionTemplate) | **PUT** /subscriptions/templates/{id} | Update a subscription template
 
 
 <a name="createSubscription"></a>
@@ -26,17 +26,9 @@ Creates a subscription item and associated plans
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 SubscriptionResource subscriptionResource = new SubscriptionResource(); // SubscriptionResource | The subscription to be created
@@ -61,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -79,17 +71,9 @@ Subscription Templates define a type of subscription and the properties they hav
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 SubscriptionTemplateResource subscriptionTemplateResource = new SubscriptionTemplateResource(); // SubscriptionTemplateResource | The new subscription template
@@ -114,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -123,7 +107,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteSubscription"></a>
 # **deleteSubscription**
-> Void deleteSubscription(id, planId)
+> deleteSubscription(id, planId)
 
 Delete a subscription plan
 
@@ -132,24 +116,15 @@ Must not be locked or a migration target
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 Integer id = 56; // Integer | The id of the subscription
 String planId = "planId_example"; // String | The id of the plan
 try {
-    Void result = apiInstance.deleteSubscription(id, planId);
-    System.out.println(result);
+    apiInstance.deleteSubscription(id, planId);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreSubscriptionsApi#deleteSubscription");
     e.printStackTrace();
@@ -165,11 +140,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -178,31 +153,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteSubscriptionTemplate"></a>
 # **deleteSubscriptionTemplate**
-> Void deleteSubscriptionTemplate(id, cascade)
+> deleteSubscriptionTemplate(id, cascade)
 
 Delete a subscription template
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | force deleting the template if it's attached to other objects, cascade = detach
 try {
-    Void result = apiInstance.deleteSubscriptionTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteSubscriptionTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreSubscriptionsApi#deleteSubscriptionTemplate");
     e.printStackTrace();
@@ -218,11 +184,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -283,17 +249,9 @@ Subscription Templates define a type of subscription and the properties they hav
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 String id = "id_example"; // String | The id of the template
@@ -318,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -334,17 +292,9 @@ List and search subscription templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -373,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -429,29 +379,20 @@ No authorization required
 
 <a name="processSubscriptions"></a>
 # **processSubscriptions**
-> Void processSubscriptions()
+> processSubscriptions()
 
 Processes subscriptions and charge dues
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 try {
-    Void result = apiInstance.processSubscriptions();
-    System.out.println(result);
+    apiInstance.processSubscriptions();
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreSubscriptionsApi#processSubscriptions");
     e.printStackTrace();
@@ -463,11 +404,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -476,7 +417,7 @@ This endpoint does not need any parameter.
 
 <a name="updateSubscription"></a>
 # **updateSubscription**
-> Void updateSubscription(id, subscriptionResource)
+> updateSubscription(id, subscriptionResource)
 
 Updates a subscription item and associated plans
 
@@ -485,24 +426,15 @@ Will not remove plans left out
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 Integer id = 56; // Integer | The id of the subscription
 SubscriptionResource subscriptionResource = new SubscriptionResource(); // SubscriptionResource | The subscription resource object
 try {
-    Void result = apiInstance.updateSubscription(id, subscriptionResource);
-    System.out.println(result);
+    apiInstance.updateSubscription(id, subscriptionResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreSubscriptionsApi#updateSubscription");
     e.printStackTrace();
@@ -518,11 +450,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -538,17 +470,9 @@ Update a subscription template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreSubscriptionsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreSubscriptionsApi apiInstance = new StoreSubscriptionsApi();
 String id = "id_example"; // String | The id of the template
@@ -575,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

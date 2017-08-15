@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getHealth**](UtilHealthApi.md#getHealth) | **GET** health | Get health info
+[**getHealth**](UtilHealthApi.md#getHealth) | **GET** /health | Get health info
 
 
 <a name="getHealth"></a>

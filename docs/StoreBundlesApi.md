@@ -4,15 +4,15 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBundleItem**](StoreBundlesApi.md#createBundleItem) | **POST** store/bundles | Create a bundle item
-[**createBundleTemplate**](StoreBundlesApi.md#createBundleTemplate) | **POST** store/bundles/templates | Create a bundle template
-[**deleteBundleItem**](StoreBundlesApi.md#deleteBundleItem) | **DELETE** store/bundles/{id} | Delete a bundle item
-[**deleteBundleTemplate**](StoreBundlesApi.md#deleteBundleTemplate) | **DELETE** store/bundles/templates/{id} | Delete a bundle template
-[**getBundleItem**](StoreBundlesApi.md#getBundleItem) | **GET** store/bundles/{id} | Get a single bundle item
-[**getBundleTemplate**](StoreBundlesApi.md#getBundleTemplate) | **GET** store/bundles/templates/{id} | Get a single bundle template
-[**getBundleTemplates**](StoreBundlesApi.md#getBundleTemplates) | **GET** store/bundles/templates | List and search bundle templates
-[**updateBundleItem**](StoreBundlesApi.md#updateBundleItem) | **PUT** store/bundles/{id} | Update a bundle item
-[**updateBundleTemplate**](StoreBundlesApi.md#updateBundleTemplate) | **PUT** store/bundles/templates/{id} | Update a bundle template
+[**createBundleItem**](StoreBundlesApi.md#createBundleItem) | **POST** /store/bundles | Create a bundle item
+[**createBundleTemplate**](StoreBundlesApi.md#createBundleTemplate) | **POST** /store/bundles/templates | Create a bundle template
+[**deleteBundleItem**](StoreBundlesApi.md#deleteBundleItem) | **DELETE** /store/bundles/{id} | Delete a bundle item
+[**deleteBundleTemplate**](StoreBundlesApi.md#deleteBundleTemplate) | **DELETE** /store/bundles/templates/{id} | Delete a bundle template
+[**getBundleItem**](StoreBundlesApi.md#getBundleItem) | **GET** /store/bundles/{id} | Get a single bundle item
+[**getBundleTemplate**](StoreBundlesApi.md#getBundleTemplate) | **GET** /store/bundles/templates/{id} | Get a single bundle template
+[**getBundleTemplates**](StoreBundlesApi.md#getBundleTemplates) | **GET** /store/bundles/templates | List and search bundle templates
+[**updateBundleItem**](StoreBundlesApi.md#updateBundleItem) | **PUT** /store/bundles/{id} | Update a bundle item
+[**updateBundleTemplate**](StoreBundlesApi.md#updateBundleTemplate) | **PUT** /store/bundles/templates/{id} | Update a bundle template
 
 
 <a name="createBundleItem"></a>
@@ -26,17 +26,9 @@ The SKU for the bundle itself must be unique and there can only be one SKU.  Ext
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreBundlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreBundlesApi apiInstance = new StoreBundlesApi();
 Boolean cascade = false; // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -63,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -81,17 +73,9 @@ Bundle Templates define a type of bundle and the properties they have.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreBundlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreBundlesApi apiInstance = new StoreBundlesApi();
 ItemTemplateResource bundleTemplateResource = new ItemTemplateResource(); // ItemTemplateResource | The new bundle template
@@ -116,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -125,30 +109,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteBundleItem"></a>
 # **deleteBundleItem**
-> Void deleteBundleItem(id)
+> deleteBundleItem(id)
 
 Delete a bundle item
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreBundlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreBundlesApi apiInstance = new StoreBundlesApi();
 Integer id = 56; // Integer | The id of the bundle
 try {
-    Void result = apiInstance.deleteBundleItem(id);
-    System.out.println(result);
+    apiInstance.deleteBundleItem(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreBundlesApi#deleteBundleItem");
     e.printStackTrace();
@@ -163,11 +138,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -176,31 +151,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteBundleTemplate"></a>
 # **deleteBundleTemplate**
-> Void deleteBundleTemplate(id, cascade)
+> deleteBundleTemplate(id, cascade)
 
 Delete a bundle template
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreBundlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreBundlesApi apiInstance = new StoreBundlesApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | force deleting the template if it's attached to other objects, cascade = detach
 try {
-    Void result = apiInstance.deleteBundleTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteBundleTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling StoreBundlesApi#deleteBundleTemplate");
     e.printStackTrace();
@@ -216,11 +182,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -371,17 +337,9 @@ Update a bundle item
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreBundlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreBundlesApi apiInstance = new StoreBundlesApi();
 Integer id = 56; // Integer | The id of the bundle
@@ -410,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -426,17 +384,9 @@ Update a bundle template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.StoreBundlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 StoreBundlesApi apiInstance = new StoreBundlesApi();
 String id = "id_example"; // String | The id of the template
@@ -463,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPaymentMethod**](PaymentsApi.md#createPaymentMethod) | **POST** users/{user_id}/payment-methods | Create a new payment method for a user
-[**deletePaymentMethod**](PaymentsApi.md#deletePaymentMethod) | **DELETE** users/{user_id}/payment-methods/{id} | Delete an existing payment method for a user
-[**getPaymentMethod**](PaymentsApi.md#getPaymentMethod) | **GET** users/{user_id}/payment-methods/{id} | Get a single payment method for a user
-[**getPaymentMethods**](PaymentsApi.md#getPaymentMethods) | **GET** users/{user_id}/payment-methods | Get all payment methods for a user
-[**paymentAuthorization**](PaymentsApi.md#paymentAuthorization) | **POST** payment/authorizations | Authorize payment of an invoice for later capture
-[**paymentCapture**](PaymentsApi.md#paymentCapture) | **POST** payment/authorizations/{id}/capture | Capture an existing invoice payment authorization
-[**updatePaymentMethod**](PaymentsApi.md#updatePaymentMethod) | **PUT** users/{user_id}/payment-methods/{id} | Update an existing payment method for a user
+[**createPaymentMethod**](PaymentsApi.md#createPaymentMethod) | **POST** /users/{user_id}/payment-methods | Create a new payment method for a user
+[**deletePaymentMethod**](PaymentsApi.md#deletePaymentMethod) | **DELETE** /users/{user_id}/payment-methods/{id} | Delete an existing payment method for a user
+[**getPaymentMethod**](PaymentsApi.md#getPaymentMethod) | **GET** /users/{user_id}/payment-methods/{id} | Get a single payment method for a user
+[**getPaymentMethods**](PaymentsApi.md#getPaymentMethods) | **GET** /users/{user_id}/payment-methods | Get all payment methods for a user
+[**paymentAuthorization**](PaymentsApi.md#paymentAuthorization) | **POST** /payment/authorizations | Authorize payment of an invoice for later capture
+[**paymentCapture**](PaymentsApi.md#paymentCapture) | **POST** /payment/authorizations/{id}/capture | Capture an existing invoice payment authorization
+[**updatePaymentMethod**](PaymentsApi.md#updatePaymentMethod) | **PUT** /users/{user_id}/payment-methods/{id} | Update an existing payment method for a user
 
 
 <a name="createPaymentMethod"></a>
@@ -22,17 +22,9 @@ Create a new payment method for a user
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsApi apiInstance = new PaymentsApi();
 Integer userId = 56; // Integer | ID of the user for whom the payment method is being created
@@ -59,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -68,31 +60,22 @@ Name | Type | Description  | Notes
 
 <a name="deletePaymentMethod"></a>
 # **deletePaymentMethod**
-> Void deletePaymentMethod(userId, id)
+> deletePaymentMethod(userId, id)
 
 Delete an existing payment method for a user
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsApi apiInstance = new PaymentsApi();
 Integer userId = 56; // Integer | ID of the user for whom the payment method is being updated
 Integer id = 56; // Integer | ID of the payment method being deleted
 try {
-    Void result = apiInstance.deletePaymentMethod(userId, id);
-    System.out.println(result);
+    apiInstance.deletePaymentMethod(userId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsApi#deletePaymentMethod");
     e.printStackTrace();
@@ -108,11 +91,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -128,17 +111,9 @@ Get a single payment method for a user
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsApi apiInstance = new PaymentsApi();
 Integer userId = 56; // Integer | ID of the user for whom the payment method is being retrieved
@@ -165,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -181,17 +156,9 @@ Get all payment methods for a user
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsApi apiInstance = new PaymentsApi();
 Integer userId = 56; // Integer | ID of the user for whom the payment methods are being retrieved
@@ -230,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -246,17 +213,9 @@ Authorize payment of an invoice for later capture
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsApi apiInstance = new PaymentsApi();
 PaymentAuthorizationResource request = new PaymentAuthorizationResource(); // PaymentAuthorizationResource | Payment authorization request
@@ -281,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -290,30 +249,21 @@ Name | Type | Description  | Notes
 
 <a name="paymentCapture"></a>
 # **paymentCapture**
-> Void paymentCapture(id)
+> paymentCapture(id)
 
 Capture an existing invoice payment authorization
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsApi apiInstance = new PaymentsApi();
 Integer id = 56; // Integer | ID of the payment authorization to capture
 try {
-    Void result = apiInstance.paymentCapture(id);
-    System.out.println(result);
+    apiInstance.paymentCapture(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling PaymentsApi#paymentCapture");
     e.printStackTrace();
@@ -328,11 +278,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -348,17 +298,9 @@ Update an existing payment method for a user
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.PaymentsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 PaymentsApi apiInstance = new PaymentsApi();
 Integer userId = 56; // Integer | ID of the user for whom the payment method is being updated
@@ -387,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

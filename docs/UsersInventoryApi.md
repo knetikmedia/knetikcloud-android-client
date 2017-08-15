@@ -4,27 +4,27 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addItemToUserInventory**](UsersInventoryApi.md#addItemToUserInventory) | **POST** users/{id}/inventory | Adds an item to the user inventory
-[**checkUserEntitlementItem**](UsersInventoryApi.md#checkUserEntitlementItem) | **GET** users/{user_id}/entitlements/{item_id}/check | Check for access to an item without consuming
-[**createEntitlementItem**](UsersInventoryApi.md#createEntitlementItem) | **POST** entitlements | Create an entitlement item
-[**createEntitlementTemplate**](UsersInventoryApi.md#createEntitlementTemplate) | **POST** entitlements/templates | Create an entitlement template
-[**deleteEntitlementItem**](UsersInventoryApi.md#deleteEntitlementItem) | **DELETE** entitlements/{entitlement_id} | Delete an entitlement item
-[**deleteEntitlementTemplate**](UsersInventoryApi.md#deleteEntitlementTemplate) | **DELETE** entitlements/templates/{id} | Delete an entitlement template
-[**getEntitlementItem**](UsersInventoryApi.md#getEntitlementItem) | **GET** entitlements/{entitlement_id} | Get a single entitlement item
-[**getEntitlementItems**](UsersInventoryApi.md#getEntitlementItems) | **GET** entitlements | List and search entitlement items
-[**getEntitlementTemplate**](UsersInventoryApi.md#getEntitlementTemplate) | **GET** entitlements/templates/{id} | Get a single entitlement template
-[**getEntitlementTemplates**](UsersInventoryApi.md#getEntitlementTemplates) | **GET** entitlements/templates | List and search entitlement templates
-[**getUserInventories**](UsersInventoryApi.md#getUserInventories) | **GET** users/{id}/inventory | List the user inventory entries for a given user
-[**getUserInventory**](UsersInventoryApi.md#getUserInventory) | **GET** users/{user_id}/inventory/{id} | Get an inventory entry
-[**getUserInventoryLog**](UsersInventoryApi.md#getUserInventoryLog) | **GET** users/{user_id}/inventory/{id}/log | List the log entries for this inventory entry
-[**getUsersInventory**](UsersInventoryApi.md#getUsersInventory) | **GET** inventories | List the user inventory entries for all users
-[**grantUserEntitlement**](UsersInventoryApi.md#grantUserEntitlement) | **POST** users/{user_id}/entitlements | Grant an entitlement
-[**updateEntitlementItem**](UsersInventoryApi.md#updateEntitlementItem) | **PUT** entitlements/{entitlement_id} | Update an entitlement item
-[**updateEntitlementTemplate**](UsersInventoryApi.md#updateEntitlementTemplate) | **PUT** entitlements/templates/{id} | Update an entitlement template
-[**updateUserInventoryBehaviorData**](UsersInventoryApi.md#updateUserInventoryBehaviorData) | **PUT** users/{user_id}/inventory/{id}/behavior-data | Set the behavior data for an inventory entry
-[**updateUserInventoryExpires**](UsersInventoryApi.md#updateUserInventoryExpires) | **PUT** users/{user_id}/inventory/{id}/expires | Set the expiration date
-[**updateUserInventoryStatus**](UsersInventoryApi.md#updateUserInventoryStatus) | **PUT** users/{user_id}/inventory/{id}/status | Set the status for an inventory entry
-[**useUserEntitlementItem**](UsersInventoryApi.md#useUserEntitlementItem) | **POST** users/{user_id}/entitlements/{item_id}/use | Use an item
+[**addItemToUserInventory**](UsersInventoryApi.md#addItemToUserInventory) | **POST** /users/{id}/inventory | Adds an item to the user inventory
+[**checkUserEntitlementItem**](UsersInventoryApi.md#checkUserEntitlementItem) | **GET** /users/{user_id}/entitlements/{item_id}/check | Check for access to an item without consuming
+[**createEntitlementItem**](UsersInventoryApi.md#createEntitlementItem) | **POST** /entitlements | Create an entitlement item
+[**createEntitlementTemplate**](UsersInventoryApi.md#createEntitlementTemplate) | **POST** /entitlements/templates | Create an entitlement template
+[**deleteEntitlementItem**](UsersInventoryApi.md#deleteEntitlementItem) | **DELETE** /entitlements/{entitlement_id} | Delete an entitlement item
+[**deleteEntitlementTemplate**](UsersInventoryApi.md#deleteEntitlementTemplate) | **DELETE** /entitlements/templates/{id} | Delete an entitlement template
+[**getEntitlementItem**](UsersInventoryApi.md#getEntitlementItem) | **GET** /entitlements/{entitlement_id} | Get a single entitlement item
+[**getEntitlementItems**](UsersInventoryApi.md#getEntitlementItems) | **GET** /entitlements | List and search entitlement items
+[**getEntitlementTemplate**](UsersInventoryApi.md#getEntitlementTemplate) | **GET** /entitlements/templates/{id} | Get a single entitlement template
+[**getEntitlementTemplates**](UsersInventoryApi.md#getEntitlementTemplates) | **GET** /entitlements/templates | List and search entitlement templates
+[**getUserInventories**](UsersInventoryApi.md#getUserInventories) | **GET** /users/{id}/inventory | List the user inventory entries for a given user
+[**getUserInventory**](UsersInventoryApi.md#getUserInventory) | **GET** /users/{user_id}/inventory/{id} | Get an inventory entry
+[**getUserInventoryLog**](UsersInventoryApi.md#getUserInventoryLog) | **GET** /users/{user_id}/inventory/{id}/log | List the log entries for this inventory entry
+[**getUsersInventory**](UsersInventoryApi.md#getUsersInventory) | **GET** /inventories | List the user inventory entries for all users
+[**grantUserEntitlement**](UsersInventoryApi.md#grantUserEntitlement) | **POST** /users/{user_id}/entitlements | Grant an entitlement
+[**updateEntitlementItem**](UsersInventoryApi.md#updateEntitlementItem) | **PUT** /entitlements/{entitlement_id} | Update an entitlement item
+[**updateEntitlementTemplate**](UsersInventoryApi.md#updateEntitlementTemplate) | **PUT** /entitlements/templates/{id} | Update an entitlement template
+[**updateUserInventoryBehaviorData**](UsersInventoryApi.md#updateUserInventoryBehaviorData) | **PUT** /users/{user_id}/inventory/{id}/behavior-data | Set the behavior data for an inventory entry
+[**updateUserInventoryExpires**](UsersInventoryApi.md#updateUserInventoryExpires) | **PUT** /users/{user_id}/inventory/{id}/expires | Set the expiration date
+[**updateUserInventoryStatus**](UsersInventoryApi.md#updateUserInventoryStatus) | **PUT** /users/{user_id}/inventory/{id}/status | Set the status for an inventory entry
+[**useUserEntitlementItem**](UsersInventoryApi.md#useUserEntitlementItem) | **POST** /users/{user_id}/entitlements/{item_id}/use | Use an item
 
 
 <a name="addItemToUserInventory"></a>
@@ -38,17 +38,9 @@ The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skip
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer id = 56; // Integer | The id of the user
@@ -75,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -84,7 +76,7 @@ Name | Type | Description  | Notes
 
 <a name="checkUserEntitlementItem"></a>
 # **checkUserEntitlementItem**
-> Void checkUserEntitlementItem(userId, itemId, sku)
+> checkUserEntitlementItem(userId, itemId, sku)
 
 Check for access to an item without consuming
 
@@ -93,25 +85,16 @@ Useful for pre-check and accounts for all various buisness rules
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 String userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
 Integer itemId = 56; // Integer | The id of the item
 String sku = "sku_example"; // String | The specific sku of an entitlement list addition to check entitlement for. This is of very limited and specific use and should generally be left out
 try {
-    Void result = apiInstance.checkUserEntitlementItem(userId, itemId, sku);
-    System.out.println(result);
+    apiInstance.checkUserEntitlementItem(userId, itemId, sku);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#checkUserEntitlementItem");
     e.printStackTrace();
@@ -128,11 +111,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -148,17 +131,9 @@ Create an entitlement item
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Boolean cascade = false; // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
@@ -185,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -203,17 +178,9 @@ Entitlement templates define a type of entitlement and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 ItemTemplateResource template = new ItemTemplateResource(); // ItemTemplateResource | The entitlement template to be created
@@ -238,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -247,30 +214,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteEntitlementItem"></a>
 # **deleteEntitlementItem**
-> Void deleteEntitlementItem(entitlementId)
+> deleteEntitlementItem(entitlementId)
 
 Delete an entitlement item
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer entitlementId = 56; // Integer | The id of the entitlement
 try {
-    Void result = apiInstance.deleteEntitlementItem(entitlementId);
-    System.out.println(result);
+    apiInstance.deleteEntitlementItem(entitlementId);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#deleteEntitlementItem");
     e.printStackTrace();
@@ -285,11 +243,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -298,7 +256,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteEntitlementTemplate"></a>
 # **deleteEntitlementTemplate**
-> Void deleteEntitlementTemplate(id, cascade)
+> deleteEntitlementTemplate(id, cascade)
 
 Delete an entitlement template
 
@@ -307,24 +265,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteEntitlementTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteEntitlementTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#deleteEntitlementTemplate");
     e.printStackTrace();
@@ -340,11 +289,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -450,17 +399,9 @@ Get a single entitlement template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 String id = "id_example"; // String | The id of the template
@@ -485,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -501,17 +442,9 @@ List and search entitlement templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -540,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -556,17 +489,9 @@ List the user inventory entries for a given user
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer id = 56; // Integer | The id of the user
@@ -607,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -623,17 +548,9 @@ Get an inventory entry
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer userId = 56; // Integer | The id of the inventory owner or 'me' for the logged in user
@@ -660,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -676,17 +593,9 @@ List the log entries for this inventory entry
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 String userId = "userId_example"; // String | The id of the inventory owner or 'me' for the logged in user
@@ -717,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -733,17 +642,9 @@ List the user inventory entries for all users
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Boolean inactive = false; // Boolean | If true, accepts inactive user inventories
@@ -782,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -791,31 +692,22 @@ Name | Type | Description  | Notes
 
 <a name="grantUserEntitlement"></a>
 # **grantUserEntitlement**
-> Void grantUserEntitlement(userId, grantRequest)
+> grantUserEntitlement(userId, grantRequest)
 
 Grant an entitlement
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer userId = 56; // Integer | The id of the user to grant the entitlement to
 EntitlementGrantRequest grantRequest = new EntitlementGrantRequest(); // EntitlementGrantRequest | grantRequest
 try {
-    Void result = apiInstance.grantUserEntitlement(userId, grantRequest);
-    System.out.println(result);
+    apiInstance.grantUserEntitlement(userId, grantRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#grantUserEntitlement");
     e.printStackTrace();
@@ -831,11 +723,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -844,32 +736,23 @@ Name | Type | Description  | Notes
 
 <a name="updateEntitlementItem"></a>
 # **updateEntitlementItem**
-> Void updateEntitlementItem(entitlementId, cascade, entitlementItem)
+> updateEntitlementItem(entitlementId, cascade, entitlementItem)
 
 Update an entitlement item
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer entitlementId = 56; // Integer | The id of the entitlement
 Boolean cascade = false; // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
 EntitlementItem entitlementItem = new EntitlementItem(); // EntitlementItem | The entitlement item object
 try {
-    Void result = apiInstance.updateEntitlementItem(entitlementId, cascade, entitlementItem);
-    System.out.println(result);
+    apiInstance.updateEntitlementItem(entitlementId, cascade, entitlementItem);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#updateEntitlementItem");
     e.printStackTrace();
@@ -886,11 +769,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -906,17 +789,9 @@ Update an entitlement template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 String id = "id_example"; // String | The id of the template
@@ -943,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -952,32 +827,23 @@ Name | Type | Description  | Notes
 
 <a name="updateUserInventoryBehaviorData"></a>
 # **updateUserInventoryBehaviorData**
-> Void updateUserInventoryBehaviorData(userId, id, data)
+> updateUserInventoryBehaviorData(userId, id, data)
 
 Set the behavior data for an inventory entry
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer userId = 56; // Integer | The id of the user
 Integer id = 56; // Integer | The id of the user inventory
 Object data = null; // Object | The data map
 try {
-    Void result = apiInstance.updateUserInventoryBehaviorData(userId, id, data);
-    System.out.println(result);
+    apiInstance.updateUserInventoryBehaviorData(userId, id, data);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#updateUserInventoryBehaviorData");
     e.printStackTrace();
@@ -994,11 +860,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1007,7 +873,7 @@ Name | Type | Description  | Notes
 
 <a name="updateUserInventoryExpires"></a>
 # **updateUserInventoryExpires**
-> Void updateUserInventoryExpires(userId, id, timestamp)
+> updateUserInventoryExpires(userId, id, timestamp)
 
 Set the expiration date
 
@@ -1016,25 +882,16 @@ Will change the current grace period for a subscription but not the bill date (p
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer userId = 56; // Integer | user_id
 Integer id = 56; // Integer | The id of the user inventory
 Long timestamp = 789L; // Long | The new expiration date as a unix timestamp in seconds. May be null (no body).
 try {
-    Void result = apiInstance.updateUserInventoryExpires(userId, id, timestamp);
-    System.out.println(result);
+    apiInstance.updateUserInventoryExpires(userId, id, timestamp);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#updateUserInventoryExpires");
     e.printStackTrace();
@@ -1051,11 +908,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1064,32 +921,23 @@ Name | Type | Description  | Notes
 
 <a name="updateUserInventoryStatus"></a>
 # **updateUserInventoryStatus**
-> Void updateUserInventoryStatus(userId, id, inventoryStatus)
+> updateUserInventoryStatus(userId, id, inventoryStatus)
 
 Set the status for an inventory entry
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer userId = 56; // Integer | The id of the user
 Integer id = 56; // Integer | The id of the user inventory
 String inventoryStatus = "inventoryStatus_example"; // String | The inventory status object
 try {
-    Void result = apiInstance.updateUserInventoryStatus(userId, id, inventoryStatus);
-    System.out.println(result);
+    apiInstance.updateUserInventoryStatus(userId, id, inventoryStatus);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#updateUserInventoryStatus");
     e.printStackTrace();
@@ -1106,11 +954,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1119,24 +967,16 @@ Name | Type | Description  | Notes
 
 <a name="useUserEntitlementItem"></a>
 # **useUserEntitlementItem**
-> Void useUserEntitlementItem(userId, itemId, sku, info)
+> useUserEntitlementItem(userId, itemId, sku, info)
 
 Use an item
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersInventoryApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 String userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
@@ -1144,8 +984,7 @@ Integer itemId = 56; // Integer | The id of the item
 String sku = "sku_example"; // String | The specific sku of an entitlement_list addition to check entitlement for. This is of very limited and specific use and should generally be left out
 String info = "info_example"; // String | Any additional info to add to the log about this use
 try {
-    Void result = apiInstance.useUserEntitlementItem(userId, itemId, sku, info);
-    System.out.println(result);
+    apiInstance.useUserEntitlementItem(userId, itemId, sku, info);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersInventoryApi#useUserEntitlementItem");
     e.printStackTrace();
@@ -1163,11 +1002,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

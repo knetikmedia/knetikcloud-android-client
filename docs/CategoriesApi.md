@@ -4,17 +4,17 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createCategory**](CategoriesApi.md#createCategory) | **POST** categories | Create a new category
-[**createCategoryTemplate**](CategoriesApi.md#createCategoryTemplate) | **POST** categories/templates | Create a category template
-[**deleteCategory**](CategoriesApi.md#deleteCategory) | **DELETE** categories/{id} | Delete an existing category
-[**deleteCategoryTemplate**](CategoriesApi.md#deleteCategoryTemplate) | **DELETE** categories/templates/{id} | Delete a category template
-[**getCategories**](CategoriesApi.md#getCategories) | **GET** categories | List and search categories with optional filters
-[**getCategory**](CategoriesApi.md#getCategory) | **GET** categories/{id} | Get a single category
-[**getCategoryTemplate**](CategoriesApi.md#getCategoryTemplate) | **GET** categories/templates/{id} | Get a single category template
-[**getCategoryTemplates**](CategoriesApi.md#getCategoryTemplates) | **GET** categories/templates | List and search category templates
-[**getTags**](CategoriesApi.md#getTags) | **GET** tags | List all trivia tags in the system
-[**updateCategory**](CategoriesApi.md#updateCategory) | **PUT** categories/{id} | Update an existing category
-[**updateCategoryTemplate**](CategoriesApi.md#updateCategoryTemplate) | **PUT** categories/templates/{id} | Update a category template
+[**createCategory**](CategoriesApi.md#createCategory) | **POST** /categories | Create a new category
+[**createCategoryTemplate**](CategoriesApi.md#createCategoryTemplate) | **POST** /categories/templates | Create a category template
+[**deleteCategory**](CategoriesApi.md#deleteCategory) | **DELETE** /categories/{id} | Delete an existing category
+[**deleteCategoryTemplate**](CategoriesApi.md#deleteCategoryTemplate) | **DELETE** /categories/templates/{id} | Delete a category template
+[**getCategories**](CategoriesApi.md#getCategories) | **GET** /categories | List and search categories with optional filters
+[**getCategory**](CategoriesApi.md#getCategory) | **GET** /categories/{id} | Get a single category
+[**getCategoryTemplate**](CategoriesApi.md#getCategoryTemplate) | **GET** /categories/templates/{id} | Get a single category template
+[**getCategoryTemplates**](CategoriesApi.md#getCategoryTemplates) | **GET** /categories/templates | List and search category templates
+[**getTags**](CategoriesApi.md#getTags) | **GET** /tags | List all trivia tags in the system
+[**updateCategory**](CategoriesApi.md#updateCategory) | **PUT** /categories/{id} | Update an existing category
+[**updateCategoryTemplate**](CategoriesApi.md#updateCategoryTemplate) | **PUT** /categories/templates/{id} | Update a category template
 
 
 <a name="createCategory"></a>
@@ -26,17 +26,9 @@ Create a new category
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 CategoryResource category = new CategoryResource(); // CategoryResource | The category to create
@@ -61,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -79,17 +71,9 @@ Templates define a type of category and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 TemplateResource template = new TemplateResource(); // TemplateResource | The template to create
@@ -114,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -123,30 +107,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteCategory"></a>
 # **deleteCategory**
-> Void deleteCategory(id)
+> deleteCategory(id)
 
 Delete an existing category
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 String id = "id_example"; // String | The id of the category to be deleted
 try {
-    Void result = apiInstance.deleteCategory(id);
-    System.out.println(result);
+    apiInstance.deleteCategory(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling CategoriesApi#deleteCategory");
     e.printStackTrace();
@@ -161,11 +136,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -174,7 +149,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCategoryTemplate"></a>
 # **deleteCategoryTemplate**
-> Void deleteCategoryTemplate(id, cascade)
+> deleteCategoryTemplate(id, cascade)
 
 Delete a category template
 
@@ -183,24 +158,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteCategoryTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteCategoryTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling CategoriesApi#deleteCategoryTemplate");
     e.printStackTrace();
@@ -216,11 +182,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -330,17 +296,9 @@ Get a single category template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 String id = "id_example"; // String | The id of the template
@@ -365,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -381,17 +339,9 @@ List and search category templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -420,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -481,17 +431,9 @@ Update an existing category
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 String id = "id_example"; // String | The id of the category
@@ -518,7 +460,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -534,17 +476,9 @@ Update a category template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CategoriesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CategoriesApi apiInstance = new CategoriesApi();
 String id = "id_example"; // String | The id of the template
@@ -571,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

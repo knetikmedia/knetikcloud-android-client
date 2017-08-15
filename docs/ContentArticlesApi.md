@@ -4,16 +4,16 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createArticle**](ContentArticlesApi.md#createArticle) | **POST** content/articles | Create a new article
-[**createArticleTemplate**](ContentArticlesApi.md#createArticleTemplate) | **POST** content/articles/templates | Create an article template
-[**deleteArticle**](ContentArticlesApi.md#deleteArticle) | **DELETE** content/articles/{id} | Delete an existing article
-[**deleteArticleTemplate**](ContentArticlesApi.md#deleteArticleTemplate) | **DELETE** content/articles/templates/{id} | Delete an article template
-[**getArticle**](ContentArticlesApi.md#getArticle) | **GET** content/articles/{id} | Get a single article
-[**getArticleTemplate**](ContentArticlesApi.md#getArticleTemplate) | **GET** content/articles/templates/{id} | Get a single article template
-[**getArticleTemplates**](ContentArticlesApi.md#getArticleTemplates) | **GET** content/articles/templates | List and search article templates
-[**getArticles**](ContentArticlesApi.md#getArticles) | **GET** content/articles | List and search articles
-[**updateArticle**](ContentArticlesApi.md#updateArticle) | **PUT** content/articles/{id} | Update an existing article
-[**updateArticleTemplate**](ContentArticlesApi.md#updateArticleTemplate) | **PUT** content/articles/templates/{id} | Update an article template
+[**createArticle**](ContentArticlesApi.md#createArticle) | **POST** /content/articles | Create a new article
+[**createArticleTemplate**](ContentArticlesApi.md#createArticleTemplate) | **POST** /content/articles/templates | Create an article template
+[**deleteArticle**](ContentArticlesApi.md#deleteArticle) | **DELETE** /content/articles/{id} | Delete an existing article
+[**deleteArticleTemplate**](ContentArticlesApi.md#deleteArticleTemplate) | **DELETE** /content/articles/templates/{id} | Delete an article template
+[**getArticle**](ContentArticlesApi.md#getArticle) | **GET** /content/articles/{id} | Get a single article
+[**getArticleTemplate**](ContentArticlesApi.md#getArticleTemplate) | **GET** /content/articles/templates/{id} | Get a single article template
+[**getArticleTemplates**](ContentArticlesApi.md#getArticleTemplates) | **GET** /content/articles/templates | List and search article templates
+[**getArticles**](ContentArticlesApi.md#getArticles) | **GET** /content/articles | List and search articles
+[**updateArticle**](ContentArticlesApi.md#updateArticle) | **PUT** /content/articles/{id} | Update an existing article
+[**updateArticleTemplate**](ContentArticlesApi.md#updateArticleTemplate) | **PUT** /content/articles/templates/{id} | Update an article template
 
 
 <a name="createArticle"></a>
@@ -27,17 +27,9 @@ Articles are blobs of text with titles, a category and assets. Formatting and di
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 ArticleResource articleResource = new ArticleResource(); // ArticleResource | The new article
@@ -62,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -80,17 +72,9 @@ Article Templates define a type of article and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 TemplateResource articleTemplateResource = new TemplateResource(); // TemplateResource | The article template resource object
@@ -115,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -124,30 +108,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteArticle"></a>
 # **deleteArticle**
-> Void deleteArticle(id)
+> deleteArticle(id)
 
 Delete an existing article
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 String id = "id_example"; // String | The article id
 try {
-    Void result = apiInstance.deleteArticle(id);
-    System.out.println(result);
+    apiInstance.deleteArticle(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling ContentArticlesApi#deleteArticle");
     e.printStackTrace();
@@ -162,11 +137,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -175,7 +150,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteArticleTemplate"></a>
 # **deleteArticleTemplate**
-> Void deleteArticleTemplate(id, cascade)
+> deleteArticleTemplate(id, cascade)
 
 Delete an article template
 
@@ -184,24 +159,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteArticleTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteArticleTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling ContentArticlesApi#deleteArticleTemplate");
     e.printStackTrace();
@@ -217,11 +183,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -280,17 +246,9 @@ Get a single article template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 String id = "id_example"; // String | The id of the template
@@ -315,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -331,17 +289,9 @@ List and search article templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -370,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -447,17 +397,9 @@ Update an existing article
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 String id = "id_example"; // String | The article id
@@ -484,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -500,17 +442,9 @@ Update an article template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.ContentArticlesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 ContentArticlesApi apiInstance = new ContentArticlesApi();
 String id = "id_example"; // String | The id of the template
@@ -537,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

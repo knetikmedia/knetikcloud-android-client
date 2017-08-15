@@ -4,7 +4,7 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVersion**](UtilVersionApi.md#getVersion) | **GET** version | Get current version info
+[**getVersion**](UtilVersionApi.md#getVersion) | **GET** /version | Get current version info
 
 
 <a name="getVersion"></a>

@@ -4,51 +4,42 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addUserTag**](UsersApi.md#addUserTag) | **POST** users/{user_id}/tags | Add a tag to a user
-[**createUserTemplate**](UsersApi.md#createUserTemplate) | **POST** users/templates | Create a user template
-[**deleteUserTemplate**](UsersApi.md#deleteUserTemplate) | **DELETE** users/templates/{id} | Delete a user template
-[**getUser**](UsersApi.md#getUser) | **GET** users/{id} | Get a single user
-[**getUserTags**](UsersApi.md#getUserTags) | **GET** users/{user_id}/tags | List tags for a user
-[**getUserTemplate**](UsersApi.md#getUserTemplate) | **GET** users/templates/{id} | Get a single user template
-[**getUserTemplates**](UsersApi.md#getUserTemplates) | **GET** users/templates | List and search user templates
-[**getUsers**](UsersApi.md#getUsers) | **GET** users | List and search users
-[**passwordReset**](UsersApi.md#passwordReset) | **PUT** users/{id}/password-reset | Choose a new password after a reset
-[**registerUser**](UsersApi.md#registerUser) | **POST** users | Register a new user
-[**removeUserTag**](UsersApi.md#removeUserTag) | **DELETE** users/{user_id}/tags/{tag} | Remove a tag from a user
-[**setPassword**](UsersApi.md#setPassword) | **PUT** users/{id}/password | Set a user&#39;s password
-[**startPasswordReset**](UsersApi.md#startPasswordReset) | **POST** users/{id}/password-reset | Reset a user&#39;s password
-[**submitPasswordReset**](UsersApi.md#submitPasswordReset) | **POST** users/password-reset | Reset a user&#39;s password without user id
-[**updateUser**](UsersApi.md#updateUser) | **PUT** users/{id} | Update a user
-[**updateUserTemplate**](UsersApi.md#updateUserTemplate) | **PUT** users/templates/{id} | Update a user template
+[**addUserTag**](UsersApi.md#addUserTag) | **POST** /users/{user_id}/tags | Add a tag to a user
+[**createUserTemplate**](UsersApi.md#createUserTemplate) | **POST** /users/templates | Create a user template
+[**deleteUserTemplate**](UsersApi.md#deleteUserTemplate) | **DELETE** /users/templates/{id} | Delete a user template
+[**getUser**](UsersApi.md#getUser) | **GET** /users/{id} | Get a single user
+[**getUserTags**](UsersApi.md#getUserTags) | **GET** /users/{user_id}/tags | List tags for a user
+[**getUserTemplate**](UsersApi.md#getUserTemplate) | **GET** /users/templates/{id} | Get a single user template
+[**getUserTemplates**](UsersApi.md#getUserTemplates) | **GET** /users/templates | List and search user templates
+[**getUsers**](UsersApi.md#getUsers) | **GET** /users | List and search users
+[**passwordReset**](UsersApi.md#passwordReset) | **PUT** /users/{id}/password-reset | Choose a new password after a reset
+[**registerUser**](UsersApi.md#registerUser) | **POST** /users | Register a new user
+[**removeUserTag**](UsersApi.md#removeUserTag) | **DELETE** /users/{user_id}/tags/{tag} | Remove a tag from a user
+[**setPassword**](UsersApi.md#setPassword) | **PUT** /users/{id}/password | Set a user&#39;s password
+[**startPasswordReset**](UsersApi.md#startPasswordReset) | **POST** /users/{id}/password-reset | Reset a user&#39;s password
+[**submitPasswordReset**](UsersApi.md#submitPasswordReset) | **POST** /users/password-reset | Reset a user&#39;s password without user id
+[**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{id} | Update a user
+[**updateUserTemplate**](UsersApi.md#updateUserTemplate) | **PUT** /users/templates/{id} | Update a user template
 
 
 <a name="addUserTag"></a>
 # **addUserTag**
-> Void addUserTag(userId, tag)
+> addUserTag(userId, tag)
 
 Add a tag to a user
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 Integer userId = 56; // Integer | The id of the user
 StringWrapper tag = new StringWrapper(); // StringWrapper | tag
 try {
-    Void result = apiInstance.addUserTag(userId, tag);
-    System.out.println(result);
+    apiInstance.addUserTag(userId, tag);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#addUserTag");
     e.printStackTrace();
@@ -64,11 +55,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -86,17 +77,9 @@ User Templates define a type of user and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 TemplateResource userTemplateResource = new TemplateResource(); // TemplateResource | The user template resource object
@@ -121,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -130,7 +113,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteUserTemplate"></a>
 # **deleteUserTemplate**
-> Void deleteUserTemplate(id, cascade)
+> deleteUserTemplate(id, cascade)
 
 Delete a user template
 
@@ -139,24 +122,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteUserTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteUserTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#deleteUserTemplate");
     e.printStackTrace();
@@ -172,11 +146,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -194,17 +168,9 @@ Additional private info is included as USERS_ADMIN
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String id = "id_example"; // String | The id of the user or 'me'
@@ -229,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -245,17 +211,9 @@ List tags for a user
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 Integer userId = 56; // Integer | The id of the user
@@ -280,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -296,17 +254,9 @@ Get a single user template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String id = "id_example"; // String | The id of the template
@@ -331,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -347,17 +297,9 @@ List and search user templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -386,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -404,17 +346,9 @@ Additional private info is included as USERS_ADMIN
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String filterDisplayname = "filterDisplayname_example"; // String | Filter for users whose display name starts with provided string.
@@ -463,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -472,7 +406,7 @@ Name | Type | Description  | Notes
 
 <a name="passwordReset"></a>
 # **passwordReset**
-> Void passwordReset(id, newPasswordRequest)
+> passwordReset(id, newPasswordRequest)
 
 Choose a new password after a reset
 
@@ -489,8 +423,7 @@ UsersApi apiInstance = new UsersApi();
 Integer id = 56; // Integer | The id of the user
 NewPasswordRequest newPasswordRequest = new NewPasswordRequest(); // NewPasswordRequest | The new password request object
 try {
-    Void result = apiInstance.passwordReset(id, newPasswordRequest);
-    System.out.println(result);
+    apiInstance.passwordReset(id, newPasswordRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#passwordReset");
     e.printStackTrace();
@@ -506,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
@@ -564,31 +497,22 @@ No authorization required
 
 <a name="removeUserTag"></a>
 # **removeUserTag**
-> Void removeUserTag(userId, tag)
+> removeUserTag(userId, tag)
 
 Remove a tag from a user
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 Integer userId = 56; // Integer | The id of the user
 String tag = "tag_example"; // String | The tag to remove
 try {
-    Void result = apiInstance.removeUserTag(userId, tag);
-    System.out.println(result);
+    apiInstance.removeUserTag(userId, tag);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#removeUserTag");
     e.printStackTrace();
@@ -604,11 +528,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -617,7 +541,7 @@ Name | Type | Description  | Notes
 
 <a name="setPassword"></a>
 # **setPassword**
-> Void setPassword(id, password)
+> setPassword(id, password)
 
 Set a user&#39;s password
 
@@ -626,24 +550,15 @@ Password should be in plain text and will be encrypted on receipt. Use SSL for s
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 Integer id = 56; // Integer | The id of the user
 StringWrapper password = new StringWrapper(); // StringWrapper | The new plain text password
 try {
-    Void result = apiInstance.setPassword(id, password);
-    System.out.println(result);
+    apiInstance.setPassword(id, password);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#setPassword");
     e.printStackTrace();
@@ -659,11 +574,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -672,7 +587,7 @@ Name | Type | Description  | Notes
 
 <a name="startPasswordReset"></a>
 # **startPasswordReset**
-> Void startPasswordReset(id)
+> startPasswordReset(id)
 
 Reset a user&#39;s password
 
@@ -688,8 +603,7 @@ A reset code will be generated and a &#39;forgot_password&#39; BRE event will be
 UsersApi apiInstance = new UsersApi();
 Integer id = 56; // Integer | The id of the user
 try {
-    Void result = apiInstance.startPasswordReset(id);
-    System.out.println(result);
+    apiInstance.startPasswordReset(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#startPasswordReset");
     e.printStackTrace();
@@ -704,7 +618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
@@ -717,7 +631,7 @@ No authorization required
 
 <a name="submitPasswordReset"></a>
 # **submitPasswordReset**
-> Void submitPasswordReset(passwordReset)
+> submitPasswordReset(passwordReset)
 
 Reset a user&#39;s password without user id
 
@@ -733,8 +647,7 @@ A reset code will be generated and a &#39;forgot_password&#39; BRE event will be
 UsersApi apiInstance = new UsersApi();
 PasswordResetRequest passwordReset = new PasswordResetRequest(); // PasswordResetRequest | An object containing one of three methods to look up a user
 try {
-    Void result = apiInstance.submitPasswordReset(passwordReset);
-    System.out.println(result);
+    apiInstance.submitPasswordReset(passwordReset);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#submitPasswordReset");
     e.printStackTrace();
@@ -749,7 +662,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
@@ -762,7 +675,7 @@ No authorization required
 
 <a name="updateUser"></a>
 # **updateUser**
-> Void updateUser(id, userResource)
+> updateUser(id, userResource)
 
 Update a user
 
@@ -771,24 +684,15 @@ Password will not be edited on this endpoint, use password specific endpoints.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String id = "id_example"; // String | The id of the user or 'me'
 UserResource userResource = new UserResource(); // UserResource | The user resource object
 try {
-    Void result = apiInstance.updateUser(id, userResource);
-    System.out.println(result);
+    apiInstance.updateUser(id, userResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#updateUser");
     e.printStackTrace();
@@ -804,11 +708,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -824,17 +728,9 @@ Update a user template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String id = "id_example"; // String | The id of the template
@@ -861,7 +757,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

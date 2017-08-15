@@ -4,11 +4,11 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBRETrigger**](BRERuleEngineTriggersApi.md#createBRETrigger) | **POST** bre/triggers | Create a trigger
-[**deleteBRETrigger**](BRERuleEngineTriggersApi.md#deleteBRETrigger) | **DELETE** bre/triggers/{event_name} | Delete a trigger
-[**getBRETrigger**](BRERuleEngineTriggersApi.md#getBRETrigger) | **GET** bre/triggers/{event_name} | Get a single trigger
-[**getBRETriggers**](BRERuleEngineTriggersApi.md#getBRETriggers) | **GET** bre/triggers | List triggers
-[**updateBRETrigger**](BRERuleEngineTriggersApi.md#updateBRETrigger) | **PUT** bre/triggers/{event_name} | Update a trigger
+[**createBRETrigger**](BRERuleEngineTriggersApi.md#createBRETrigger) | **POST** /bre/triggers | Create a trigger
+[**deleteBRETrigger**](BRERuleEngineTriggersApi.md#deleteBRETrigger) | **DELETE** /bre/triggers/{event_name} | Delete a trigger
+[**getBRETrigger**](BRERuleEngineTriggersApi.md#getBRETrigger) | **GET** /bre/triggers/{event_name} | Get a single trigger
+[**getBRETriggers**](BRERuleEngineTriggersApi.md#getBRETriggers) | **GET** /bre/triggers | List triggers
+[**updateBRETrigger**](BRERuleEngineTriggersApi.md#updateBRETrigger) | **PUT** /bre/triggers/{event_name} | Update a trigger
 
 
 <a name="createBRETrigger"></a>
@@ -22,17 +22,9 @@ Customer added triggers will not be fired automatically or have rules associated
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineTriggersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineTriggersApi apiInstance = new BRERuleEngineTriggersApi();
 BreTriggerResource breTriggerResource = new BreTriggerResource(); // BreTriggerResource | The BRE trigger resource object
@@ -57,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -66,7 +58,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteBRETrigger"></a>
 # **deleteBRETrigger**
-> Void deleteBRETrigger(eventName)
+> deleteBRETrigger(eventName)
 
 Delete a trigger
 
@@ -75,23 +67,14 @@ May fail if there are existing rules against it. Cannot delete core triggers
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineTriggersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineTriggersApi apiInstance = new BRERuleEngineTriggersApi();
 String eventName = "eventName_example"; // String | The trigger event name
 try {
-    Void result = apiInstance.deleteBRETrigger(eventName);
-    System.out.println(result);
+    apiInstance.deleteBRETrigger(eventName);
 } catch (ApiException e) {
     System.err.println("Exception when calling BRERuleEngineTriggersApi#deleteBRETrigger");
     e.printStackTrace();
@@ -106,11 +89,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -126,17 +109,9 @@ Get a single trigger
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineTriggersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineTriggersApi apiInstance = new BRERuleEngineTriggersApi();
 String eventName = "eventName_example"; // String | The trigger event name
@@ -161,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -177,17 +152,9 @@ List triggers
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineTriggersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineTriggersApi apiInstance = new BRERuleEngineTriggersApi();
 Boolean filterSystem = true; // Boolean | Filter for triggers that are system triggers when true, or not when false. Leave off for both mixed
@@ -224,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -242,17 +209,9 @@ May fail if new parameters mismatch requirements of existing rules. Cannot updat
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.BRERuleEngineTriggersApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 BRERuleEngineTriggersApi apiInstance = new BRERuleEngineTriggersApi();
 String eventName = "eventName_example"; // String | The trigger event name
@@ -279,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

@@ -4,19 +4,19 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createInvoice**](InvoicesApi.md#createInvoice) | **POST** invoices | Create an invoice
-[**getFulFillmentStatuses**](InvoicesApi.md#getFulFillmentStatuses) | **GET** invoices/fulfillment-statuses | Lists available fulfillment statuses
-[**getInvoice**](InvoicesApi.md#getInvoice) | **GET** invoices/{id} | Retrieve an invoice
-[**getInvoiceLogs**](InvoicesApi.md#getInvoiceLogs) | **GET** invoices/{id}/logs | List invoice logs
-[**getInvoices**](InvoicesApi.md#getInvoices) | **GET** invoices | Retrieve invoices
-[**getPaymentStatuses**](InvoicesApi.md#getPaymentStatuses) | **GET** invoices/payment-statuses | Lists available payment statuses
-[**payInvoice**](InvoicesApi.md#payInvoice) | **POST** invoices/{id}/payments | Pay an invoice using a saved payment method
-[**setBundledInvoiceItemFulfillmentStatus**](InvoicesApi.md#setBundledInvoiceItemFulfillmentStatus) | **PUT** invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
-[**setExternalRef**](InvoicesApi.md#setExternalRef) | **PUT** invoices/{id}/external-ref | Set the external reference of an invoice
-[**setInvoiceItemFulfillmentStatus**](InvoicesApi.md#setInvoiceItemFulfillmentStatus) | **PUT** invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
-[**setOrderNotes**](InvoicesApi.md#setOrderNotes) | **PUT** invoices/{id}/order-notes | Set the order notes of an invoice
-[**setPaymentStatus**](InvoicesApi.md#setPaymentStatus) | **PUT** invoices/{id}/payment-status | Set the payment status of an invoice
-[**updateBillingInfo**](InvoicesApi.md#updateBillingInfo) | **PUT** invoices/{id}/billing-address | Set or update billing info
+[**createInvoice**](InvoicesApi.md#createInvoice) | **POST** /invoices | Create an invoice
+[**getFulFillmentStatuses**](InvoicesApi.md#getFulFillmentStatuses) | **GET** /invoices/fulfillment-statuses | Lists available fulfillment statuses
+[**getInvoice**](InvoicesApi.md#getInvoice) | **GET** /invoices/{id} | Retrieve an invoice
+[**getInvoiceLogs**](InvoicesApi.md#getInvoiceLogs) | **GET** /invoices/{id}/logs | List invoice logs
+[**getInvoices**](InvoicesApi.md#getInvoices) | **GET** /invoices | Retrieve invoices
+[**getPaymentStatuses**](InvoicesApi.md#getPaymentStatuses) | **GET** /invoices/payment-statuses | Lists available payment statuses
+[**payInvoice**](InvoicesApi.md#payInvoice) | **POST** /invoices/{id}/payments | Pay an invoice using a saved payment method
+[**setBundledInvoiceItemFulfillmentStatus**](InvoicesApi.md#setBundledInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status | Set the fulfillment status of a bundled invoice item
+[**setExternalRef**](InvoicesApi.md#setExternalRef) | **PUT** /invoices/{id}/external-ref | Set the external reference of an invoice
+[**setInvoiceItemFulfillmentStatus**](InvoicesApi.md#setInvoiceItemFulfillmentStatus) | **PUT** /invoices/{id}/items/{sku}/fulfillment-status | Set the fulfillment status of an invoice item
+[**setOrderNotes**](InvoicesApi.md#setOrderNotes) | **PUT** /invoices/{id}/order-notes | Set the order notes of an invoice
+[**setPaymentStatus**](InvoicesApi.md#setPaymentStatus) | **PUT** /invoices/{id}/payment-status | Set the payment status of an invoice
+[**updateBillingInfo**](InvoicesApi.md#updateBillingInfo) | **PUT** /invoices/{id}/billing-address | Set or update billing info
 
 
 <a name="createInvoice"></a>
@@ -30,17 +30,9 @@ Create an invoice(s) by providing a cart GUID. Note that there may be multiple i
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 InvoiceCreateRequest req = new InvoiceCreateRequest(); // InvoiceCreateRequest | Invoice to be created
@@ -65,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -120,17 +112,9 @@ Retrieve an invoice
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
@@ -155,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -171,17 +155,9 @@ List invoice logs
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
@@ -210,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -228,17 +204,9 @@ Without INVOICES_ADMIN permission the results are automatically filtered for onl
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer filterUser = 56; // Integer | The id of a user to get invoices for. Automtically added if not being called with admin permissions.
@@ -295,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -343,31 +311,22 @@ No authorization required
 
 <a name="payInvoice"></a>
 # **payInvoice**
-> Void payInvoice(id, request)
+> payInvoice(id, request)
 
 Pay an invoice using a saved payment method
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
 PayBySavedMethodRequest request = new PayBySavedMethodRequest(); // PayBySavedMethodRequest | The payment method details. Will default to the appropriate user's wallet in the invoice currency if ommited.
 try {
-    Void result = apiInstance.payInvoice(id, request);
-    System.out.println(result);
+    apiInstance.payInvoice(id, request);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#payInvoice");
     e.printStackTrace();
@@ -383,11 +342,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -396,7 +355,7 @@ Name | Type | Description  | Notes
 
 <a name="setBundledInvoiceItemFulfillmentStatus"></a>
 # **setBundledInvoiceItemFulfillmentStatus**
-> Void setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status)
+> setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status)
 
 Set the fulfillment status of a bundled invoice item
 
@@ -405,17 +364,9 @@ This allows external fulfillment systems to report success or failure. Fulfillme
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
@@ -423,8 +374,7 @@ String bundleSku = "bundleSku_example"; // String | The sku of the bundle in the
 String sku = "sku_example"; // String | The sku of an item in the bundle in the invoice
 StringWrapper status = new StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 try {
-    Void result = apiInstance.setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status);
-    System.out.println(result);
+    apiInstance.setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#setBundledInvoiceItemFulfillmentStatus");
     e.printStackTrace();
@@ -442,11 +392,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -455,31 +405,22 @@ Name | Type | Description  | Notes
 
 <a name="setExternalRef"></a>
 # **setExternalRef**
-> Void setExternalRef(id, externalRef)
+> setExternalRef(id, externalRef)
 
 Set the external reference of an invoice
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
 StringWrapper externalRef = new StringWrapper(); // StringWrapper | External reference info
 try {
-    Void result = apiInstance.setExternalRef(id, externalRef);
-    System.out.println(result);
+    apiInstance.setExternalRef(id, externalRef);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#setExternalRef");
     e.printStackTrace();
@@ -495,11 +436,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -508,7 +449,7 @@ Name | Type | Description  | Notes
 
 <a name="setInvoiceItemFulfillmentStatus"></a>
 # **setInvoiceItemFulfillmentStatus**
-> Void setInvoiceItemFulfillmentStatus(id, sku, status)
+> setInvoiceItemFulfillmentStatus(id, sku, status)
 
 Set the fulfillment status of an invoice item
 
@@ -517,25 +458,16 @@ This allows external fulfillment systems to report success or failure. Fulfillme
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
 String sku = "sku_example"; // String | The sku of an item in the invoice
 StringWrapper status = new StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 try {
-    Void result = apiInstance.setInvoiceItemFulfillmentStatus(id, sku, status);
-    System.out.println(result);
+    apiInstance.setInvoiceItemFulfillmentStatus(id, sku, status);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#setInvoiceItemFulfillmentStatus");
     e.printStackTrace();
@@ -552,11 +484,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -565,31 +497,22 @@ Name | Type | Description  | Notes
 
 <a name="setOrderNotes"></a>
 # **setOrderNotes**
-> Void setOrderNotes(id, orderNotes)
+> setOrderNotes(id, orderNotes)
 
 Set the order notes of an invoice
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
 StringWrapper orderNotes = new StringWrapper(); // StringWrapper | Payment status info
 try {
-    Void result = apiInstance.setOrderNotes(id, orderNotes);
-    System.out.println(result);
+    apiInstance.setOrderNotes(id, orderNotes);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#setOrderNotes");
     e.printStackTrace();
@@ -605,11 +528,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -618,7 +541,7 @@ Name | Type | Description  | Notes
 
 <a name="setPaymentStatus"></a>
 # **setPaymentStatus**
-> Void setPaymentStatus(id, request)
+> setPaymentStatus(id, request)
 
 Set the payment status of an invoice
 
@@ -627,24 +550,15 @@ This may trigger fulfillment if setting the status to &#39;paid&#39;. This is ma
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
 InvoicePaymentStatusRequest request = new InvoicePaymentStatusRequest(); // InvoicePaymentStatusRequest | Payment status info
 try {
-    Void result = apiInstance.setPaymentStatus(id, request);
-    System.out.println(result);
+    apiInstance.setPaymentStatus(id, request);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#setPaymentStatus");
     e.printStackTrace();
@@ -660,11 +574,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -673,31 +587,22 @@ Name | Type | Description  | Notes
 
 <a name="updateBillingInfo"></a>
 # **updateBillingInfo**
-> Void updateBillingInfo(id, billingInfoRequest)
+> updateBillingInfo(id, billingInfoRequest)
 
 Set or update billing info
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.InvoicesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 InvoicesApi apiInstance = new InvoicesApi();
 Integer id = 56; // Integer | The id of the invoice
 AddressResource billingInfoRequest = new AddressResource(); // AddressResource | Address info
 try {
-    Void result = apiInstance.updateBillingInfo(id, billingInfoRequest);
-    System.out.println(result);
+    apiInstance.updateBillingInfo(id, billingInfoRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoicesApi#updateBillingInfo");
     e.printStackTrace();
@@ -713,11 +618,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

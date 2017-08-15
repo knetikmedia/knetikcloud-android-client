@@ -4,17 +4,17 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addFriend**](UsersFriendshipsApi.md#addFriend) | **POST** users/{user_id}/friends/{id} | Add a friend
-[**getFriends**](UsersFriendshipsApi.md#getFriends) | **GET** users/{user_id}/friends | Get friends list
-[**getInviteToken**](UsersFriendshipsApi.md#getInviteToken) | **GET** users/{user_id}/invite-token | Returns the invite token
-[**getInvites**](UsersFriendshipsApi.md#getInvites) | **GET** users/{user_id}/invites | Get pending invites
-[**redeemFriendshipToken**](UsersFriendshipsApi.md#redeemFriendshipToken) | **POST** users/{user_id}/friends/tokens | Redeem friendship token
-[**removeOrDeclineFriend**](UsersFriendshipsApi.md#removeOrDeclineFriend) | **DELETE** users/{user_id}/friends/{id} | Remove or decline a friend
+[**addFriend**](UsersFriendshipsApi.md#addFriend) | **POST** /users/{user_id}/friends/{id} | Add a friend
+[**getFriends**](UsersFriendshipsApi.md#getFriends) | **GET** /users/{user_id}/friends | Get friends list
+[**getInviteToken**](UsersFriendshipsApi.md#getInviteToken) | **GET** /users/{user_id}/invite-token | Returns the invite token
+[**getInvites**](UsersFriendshipsApi.md#getInvites) | **GET** /users/{user_id}/invites | Get pending invites
+[**redeemFriendshipToken**](UsersFriendshipsApi.md#redeemFriendshipToken) | **POST** /users/{user_id}/friends/tokens | Redeem friendship token
+[**removeOrDeclineFriend**](UsersFriendshipsApi.md#removeOrDeclineFriend) | **DELETE** /users/{user_id}/friends/{id} | Remove or decline a friend
 
 
 <a name="addFriend"></a>
 # **addFriend**
-> Void addFriend(userId, id)
+> addFriend(userId, id)
 
 Add a friend
 
@@ -23,24 +23,15 @@ As a user, either creates or confirm a pending request. As an admin, call this e
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersFriendshipsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersFriendshipsApi apiInstance = new UsersFriendshipsApi();
 String userId = "userId_example"; // String | The id of the user or 'me' if logged in
 Integer id = 56; // Integer | The id of the user to befriend
 try {
-    Void result = apiInstance.addFriend(userId, id);
-    System.out.println(result);
+    apiInstance.addFriend(userId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersFriendshipsApi#addFriend");
     e.printStackTrace();
@@ -56,11 +47,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -76,17 +67,9 @@ Get friends list
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersFriendshipsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersFriendshipsApi apiInstance = new UsersFriendshipsApi();
 String userId = "userId_example"; // String | The id of the user or 'me'
@@ -115,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -133,17 +116,9 @@ This is a unique invite token that allows direct connection to the request user.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersFriendshipsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersFriendshipsApi apiInstance = new UsersFriendshipsApi();
 String userId = "userId_example"; // String | The id of the user or 'me' if logged in
@@ -168,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -186,17 +161,9 @@ Invites that the specified user received
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersFriendshipsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersFriendshipsApi apiInstance = new UsersFriendshipsApi();
 String userId = "userId_example"; // String | The id of the user or 'me'
@@ -225,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -234,7 +201,7 @@ Name | Type | Description  | Notes
 
 <a name="redeemFriendshipToken"></a>
 # **redeemFriendshipToken**
-> Void redeemFriendshipToken(userId, token)
+> redeemFriendshipToken(userId, token)
 
 Redeem friendship token
 
@@ -243,24 +210,15 @@ Immediately connects the requested user with the user mapped by the provided inv
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersFriendshipsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersFriendshipsApi apiInstance = new UsersFriendshipsApi();
 String userId = "userId_example"; // String | The id of the user or 'me' if logged in
 StringWrapper token = new StringWrapper(); // StringWrapper | The invite token
 try {
-    Void result = apiInstance.redeemFriendshipToken(userId, token);
-    System.out.println(result);
+    apiInstance.redeemFriendshipToken(userId, token);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersFriendshipsApi#redeemFriendshipToken");
     e.printStackTrace();
@@ -276,11 +234,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -289,31 +247,22 @@ Name | Type | Description  | Notes
 
 <a name="removeOrDeclineFriend"></a>
 # **removeOrDeclineFriend**
-> Void removeOrDeclineFriend(userId, id)
+> removeOrDeclineFriend(userId, id)
 
 Remove or decline a friend
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.UsersFriendshipsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersFriendshipsApi apiInstance = new UsersFriendshipsApi();
 String userId = "userId_example"; // String | The id of the user or 'me' if logged in
 Integer id = 56; // Integer | The id of the user to befriend
 try {
-    Void result = apiInstance.removeOrDeclineFriend(userId, id);
-    System.out.println(result);
+    apiInstance.removeOrDeclineFriend(userId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersFriendshipsApi#removeOrDeclineFriend");
     e.printStackTrace();
@@ -329,11 +278,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

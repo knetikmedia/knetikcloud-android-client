@@ -4,36 +4,36 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addQuestionAnswers**](GamificationTriviaApi.md#addQuestionAnswers) | **POST** trivia/questions/{question_id}/answers | Add an answer to a question
-[**addQuestionTag**](GamificationTriviaApi.md#addQuestionTag) | **POST** trivia/questions/{id}/tags | Add a tag to a question
-[**addTagToQuestionsBatch**](GamificationTriviaApi.md#addTagToQuestionsBatch) | **POST** trivia/questions/tags | Add a tag to a batch of questions
-[**createImportJob**](GamificationTriviaApi.md#createImportJob) | **POST** trivia/import | Create an import job
-[**createQuestion**](GamificationTriviaApi.md#createQuestion) | **POST** trivia/questions | Create a question
-[**createQuestionTemplate**](GamificationTriviaApi.md#createQuestionTemplate) | **POST** trivia/questions/templates | Create a question template
-[**deleteImportJob**](GamificationTriviaApi.md#deleteImportJob) | **DELETE** trivia/import/{id} | Delete an import job
-[**deleteQuestion**](GamificationTriviaApi.md#deleteQuestion) | **DELETE** trivia/questions/{id} | Delete a question
-[**deleteQuestionAnswers**](GamificationTriviaApi.md#deleteQuestionAnswers) | **DELETE** trivia/questions/{question_id}/answers/{id} | Remove an answer from a question
-[**deleteQuestionTemplate**](GamificationTriviaApi.md#deleteQuestionTemplate) | **DELETE** trivia/questions/templates/{id} | Delete a question template
-[**getImportJob**](GamificationTriviaApi.md#getImportJob) | **GET** trivia/import/{id} | Get an import job
-[**getImportJobs**](GamificationTriviaApi.md#getImportJobs) | **GET** trivia/import | Get a list of import job
-[**getQuestion**](GamificationTriviaApi.md#getQuestion) | **GET** trivia/questions/{id} | Get a single question
-[**getQuestionAnswer**](GamificationTriviaApi.md#getQuestionAnswer) | **GET** trivia/questions/{question_id}/answers/{id} | Get an answer for a question
-[**getQuestionAnswers**](GamificationTriviaApi.md#getQuestionAnswers) | **GET** trivia/questions/{question_id}/answers | List the answers available for a question
-[**getQuestionDeltas**](GamificationTriviaApi.md#getQuestionDeltas) | **GET** trivia/questions/delta | List question deltas in ascending order of updated date
-[**getQuestionTags**](GamificationTriviaApi.md#getQuestionTags) | **GET** trivia/questions/{id}/tags | List the tags for a question
-[**getQuestionTemplate**](GamificationTriviaApi.md#getQuestionTemplate) | **GET** trivia/questions/templates/{id} | Get a single question template
-[**getQuestionTemplates**](GamificationTriviaApi.md#getQuestionTemplates) | **GET** trivia/questions/templates | List and search question templates
-[**getQuestions**](GamificationTriviaApi.md#getQuestions) | **GET** trivia/questions | List and search questions
-[**getQuestionsCount**](GamificationTriviaApi.md#getQuestionsCount) | **GET** trivia/questions/count | Count questions based on filters
-[**processImportJob**](GamificationTriviaApi.md#processImportJob) | **POST** trivia/import/{id}/process | Start processing an import job
-[**removeQuestionTag**](GamificationTriviaApi.md#removeQuestionTag) | **DELETE** trivia/questions/{id}/tags/{tag} | Remove a tag from a question
-[**removeTagToQuestionsBatch**](GamificationTriviaApi.md#removeTagToQuestionsBatch) | **DELETE** trivia/questions/tags/{tag} | Remove a tag from a batch of questions
-[**searchQuestionTags**](GamificationTriviaApi.md#searchQuestionTags) | **GET** trivia/tags | List and search tags by the beginning of the string
-[**updateImportJob**](GamificationTriviaApi.md#updateImportJob) | **PUT** trivia/import/{id} | Update an import job
-[**updateQuestion**](GamificationTriviaApi.md#updateQuestion) | **PUT** trivia/questions/{id} | Update a question
-[**updateQuestionAnswer**](GamificationTriviaApi.md#updateQuestionAnswer) | **PUT** trivia/questions/{question_id}/answers/{id} | Update an answer for a question
-[**updateQuestionTemplate**](GamificationTriviaApi.md#updateQuestionTemplate) | **PUT** trivia/questions/templates/{id} | Update a question template
-[**updateQuestionsInBulk**](GamificationTriviaApi.md#updateQuestionsInBulk) | **PUT** trivia/questions | Bulk update questions
+[**addQuestionAnswers**](GamificationTriviaApi.md#addQuestionAnswers) | **POST** /trivia/questions/{question_id}/answers | Add an answer to a question
+[**addQuestionTag**](GamificationTriviaApi.md#addQuestionTag) | **POST** /trivia/questions/{id}/tags | Add a tag to a question
+[**addTagToQuestionsBatch**](GamificationTriviaApi.md#addTagToQuestionsBatch) | **POST** /trivia/questions/tags | Add a tag to a batch of questions
+[**createImportJob**](GamificationTriviaApi.md#createImportJob) | **POST** /trivia/import | Create an import job
+[**createQuestion**](GamificationTriviaApi.md#createQuestion) | **POST** /trivia/questions | Create a question
+[**createQuestionTemplate**](GamificationTriviaApi.md#createQuestionTemplate) | **POST** /trivia/questions/templates | Create a question template
+[**deleteImportJob**](GamificationTriviaApi.md#deleteImportJob) | **DELETE** /trivia/import/{id} | Delete an import job
+[**deleteQuestion**](GamificationTriviaApi.md#deleteQuestion) | **DELETE** /trivia/questions/{id} | Delete a question
+[**deleteQuestionAnswers**](GamificationTriviaApi.md#deleteQuestionAnswers) | **DELETE** /trivia/questions/{question_id}/answers/{id} | Remove an answer from a question
+[**deleteQuestionTemplate**](GamificationTriviaApi.md#deleteQuestionTemplate) | **DELETE** /trivia/questions/templates/{id} | Delete a question template
+[**getImportJob**](GamificationTriviaApi.md#getImportJob) | **GET** /trivia/import/{id} | Get an import job
+[**getImportJobs**](GamificationTriviaApi.md#getImportJobs) | **GET** /trivia/import | Get a list of import job
+[**getQuestion**](GamificationTriviaApi.md#getQuestion) | **GET** /trivia/questions/{id} | Get a single question
+[**getQuestionAnswer**](GamificationTriviaApi.md#getQuestionAnswer) | **GET** /trivia/questions/{question_id}/answers/{id} | Get an answer for a question
+[**getQuestionAnswers**](GamificationTriviaApi.md#getQuestionAnswers) | **GET** /trivia/questions/{question_id}/answers | List the answers available for a question
+[**getQuestionDeltas**](GamificationTriviaApi.md#getQuestionDeltas) | **GET** /trivia/questions/delta | List question deltas in ascending order of updated date
+[**getQuestionTags**](GamificationTriviaApi.md#getQuestionTags) | **GET** /trivia/questions/{id}/tags | List the tags for a question
+[**getQuestionTemplate**](GamificationTriviaApi.md#getQuestionTemplate) | **GET** /trivia/questions/templates/{id} | Get a single question template
+[**getQuestionTemplates**](GamificationTriviaApi.md#getQuestionTemplates) | **GET** /trivia/questions/templates | List and search question templates
+[**getQuestions**](GamificationTriviaApi.md#getQuestions) | **GET** /trivia/questions | List and search questions
+[**getQuestionsCount**](GamificationTriviaApi.md#getQuestionsCount) | **GET** /trivia/questions/count | Count questions based on filters
+[**processImportJob**](GamificationTriviaApi.md#processImportJob) | **POST** /trivia/import/{id}/process | Start processing an import job
+[**removeQuestionTag**](GamificationTriviaApi.md#removeQuestionTag) | **DELETE** /trivia/questions/{id}/tags/{tag} | Remove a tag from a question
+[**removeTagToQuestionsBatch**](GamificationTriviaApi.md#removeTagToQuestionsBatch) | **DELETE** /trivia/questions/tags/{tag} | Remove a tag from a batch of questions
+[**searchQuestionTags**](GamificationTriviaApi.md#searchQuestionTags) | **GET** /trivia/tags | List and search tags by the beginning of the string
+[**updateImportJob**](GamificationTriviaApi.md#updateImportJob) | **PUT** /trivia/import/{id} | Update an import job
+[**updateQuestion**](GamificationTriviaApi.md#updateQuestion) | **PUT** /trivia/questions/{id} | Update a question
+[**updateQuestionAnswer**](GamificationTriviaApi.md#updateQuestionAnswer) | **PUT** /trivia/questions/{question_id}/answers/{id} | Update an answer for a question
+[**updateQuestionTemplate**](GamificationTriviaApi.md#updateQuestionTemplate) | **PUT** /trivia/questions/templates/{id} | Update a question template
+[**updateQuestionsInBulk**](GamificationTriviaApi.md#updateQuestionsInBulk) | **PUT** /trivia/questions | Bulk update questions
 
 
 <a name="addQuestionAnswers"></a>
@@ -45,17 +45,9 @@ Add an answer to a question
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String questionId = "questionId_example"; // String | The id of the question
@@ -82,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -91,31 +83,22 @@ Name | Type | Description  | Notes
 
 <a name="addQuestionTag"></a>
 # **addQuestionTag**
-> Void addQuestionTag(id, tag)
+> addQuestionTag(id, tag)
 
 Add a tag to a question
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the question
 StringWrapper tag = new StringWrapper(); // StringWrapper | The new tag
 try {
-    Void result = apiInstance.addQuestionTag(id, tag);
-    System.out.println(result);
+    apiInstance.addQuestionTag(id, tag);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationTriviaApi#addQuestionTag");
     e.printStackTrace();
@@ -131,11 +114,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -153,17 +136,9 @@ All questions that dont&#39;t have the tag and match filters will have it added.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 StringWrapper tag = new StringWrapper(); // StringWrapper | The tag to add
@@ -204,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -222,17 +197,9 @@ Set up a job to import a set of trivia questions from a cvs file at a remote url
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 ImportJobResource request = new ImportJobResource(); // ImportJobResource | The new import job
@@ -257,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -273,17 +240,9 @@ Create a question
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 QuestionResource question = new QuestionResource(); // QuestionResource | The new question
@@ -308,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -326,17 +285,9 @@ Question templates define a type of question and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 QuestionTemplateResource questionTemplateResource = new QuestionTemplateResource(); // QuestionTemplateResource | The question template resource object
@@ -361,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -370,7 +321,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteImportJob"></a>
 # **deleteImportJob**
-> Void deleteImportJob(id)
+> deleteImportJob(id)
 
 Delete an import job
 
@@ -379,23 +330,14 @@ Also deletes all questions that were imported by it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 Long id = 789L; // Long | The id of the job
 try {
-    Void result = apiInstance.deleteImportJob(id);
-    System.out.println(result);
+    apiInstance.deleteImportJob(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationTriviaApi#deleteImportJob");
     e.printStackTrace();
@@ -410,11 +352,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -423,30 +365,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteQuestion"></a>
 # **deleteQuestion**
-> Void deleteQuestion(id)
+> deleteQuestion(id)
 
 Delete a question
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the question
 try {
-    Void result = apiInstance.deleteQuestion(id);
-    System.out.println(result);
+    apiInstance.deleteQuestion(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationTriviaApi#deleteQuestion");
     e.printStackTrace();
@@ -461,11 +394,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -474,31 +407,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteQuestionAnswers"></a>
 # **deleteQuestionAnswers**
-> Void deleteQuestionAnswers(questionId, id)
+> deleteQuestionAnswers(questionId, id)
 
 Remove an answer from a question
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String questionId = "questionId_example"; // String | The id of the question
 String id = "id_example"; // String | The id of the answer
 try {
-    Void result = apiInstance.deleteQuestionAnswers(questionId, id);
-    System.out.println(result);
+    apiInstance.deleteQuestionAnswers(questionId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationTriviaApi#deleteQuestionAnswers");
     e.printStackTrace();
@@ -514,11 +438,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -527,7 +451,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteQuestionTemplate"></a>
 # **deleteQuestionTemplate**
-> Void deleteQuestionTemplate(id, cascade)
+> deleteQuestionTemplate(id, cascade)
 
 Delete a question template
 
@@ -536,24 +460,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteQuestionTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteQuestionTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationTriviaApi#deleteQuestionTemplate");
     e.printStackTrace();
@@ -569,11 +484,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -589,17 +504,9 @@ Get an import job
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 Long id = 789L; // Long | The id of the job
@@ -624,7 +531,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -640,17 +547,9 @@ Get a list of import job
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String filterVendor = "filterVendor_example"; // String | Filter for jobs by vendor id
@@ -687,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -703,17 +602,9 @@ Get a single question
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the question
@@ -738,7 +629,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -754,17 +645,9 @@ Get an answer for a question
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String questionId = "questionId_example"; // String | The id of the question
@@ -791,7 +674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -807,17 +690,9 @@ List the answers available for a question
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String questionId = "questionId_example"; // String | The id of the question
@@ -842,7 +717,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -860,17 +735,9 @@ The &#39;since&#39; parameter is important to avoid getting a full list of all q
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 Long since = 789L; // Long | Timestamp in seconds
@@ -895,7 +762,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -911,17 +778,9 @@ List the tags for a question
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the question
@@ -946,7 +805,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -962,17 +821,9 @@ Get a single question template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the template
@@ -997,7 +848,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1013,17 +864,9 @@ List and search question templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -1052,7 +895,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1068,17 +911,9 @@ List and search questions
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -1123,7 +958,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1141,17 +976,9 @@ This is also provided by the list endpoint so you don&#39;t need to call this fo
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String filterSearch = "filterSearch_example"; // String | Filter for documents whose question, answers or tags contains provided string
@@ -1188,7 +1015,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1206,17 +1033,9 @@ Will process the CSV file and add new questions asynchronously. The status of th
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 Long id = 789L; // Long | The id of the job
@@ -1243,7 +1062,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1252,31 +1071,22 @@ Name | Type | Description  | Notes
 
 <a name="removeQuestionTag"></a>
 # **removeQuestionTag**
-> Void removeQuestionTag(id, tag)
+> removeQuestionTag(id, tag)
 
 Remove a tag from a question
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the question
 String tag = "tag_example"; // String | The tag to remove
 try {
-    Void result = apiInstance.removeQuestionTag(id, tag);
-    System.out.println(result);
+    apiInstance.removeQuestionTag(id, tag);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationTriviaApi#removeQuestionTag");
     e.printStackTrace();
@@ -1292,11 +1102,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1314,17 +1124,9 @@ ll questions that have the tag and match filters will have it removed. The retur
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String tag = "tag_example"; // String | The tag to remove
@@ -1365,7 +1167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1383,17 +1185,9 @@ For performance reasons, search &amp; category filters are mutually exclusive. I
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String filterSearch = "filterSearch_example"; // String | Filter for tags starting with the given text
@@ -1422,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1440,17 +1234,9 @@ Changes should be made before process is started for there to be any effect.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 Long id = 789L; // Long | The id of the job
@@ -1477,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1493,17 +1279,9 @@ Update a question
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the question
@@ -1530,7 +1308,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1539,32 +1317,23 @@ Name | Type | Description  | Notes
 
 <a name="updateQuestionAnswer"></a>
 # **updateQuestionAnswer**
-> Void updateQuestionAnswer(questionId, id, answer)
+> updateQuestionAnswer(questionId, id, answer)
 
 Update an answer for a question
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String questionId = "questionId_example"; // String | The id of the question
 String id = "id_example"; // String | The id of the answer
 AnswerResource answer = new AnswerResource(); // AnswerResource | The updated answer
 try {
-    Void result = apiInstance.updateQuestionAnswer(questionId, id, answer);
-    System.out.println(result);
+    apiInstance.updateQuestionAnswer(questionId, id, answer);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationTriviaApi#updateQuestionAnswer");
     e.printStackTrace();
@@ -1581,11 +1350,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1601,17 +1370,9 @@ Update a question template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 String id = "id_example"; // String | The id of the template
@@ -1638,7 +1399,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1656,17 +1417,9 @@ Will update all questions that match filters used (or all questions in system if
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationTriviaApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationTriviaApi apiInstance = new GamificationTriviaApi();
 QuestionResource question = new QuestionResource(); // QuestionResource | New values for a set of question fields
@@ -1705,7 +1458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

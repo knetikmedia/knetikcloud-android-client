@@ -4,8 +4,8 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDownloadURL**](AmazonWebServicesS3Api.md#getDownloadURL) | **GET** amazon/s3/downloadurl | Get a temporary signed S3 URL for download
-[**getSignedS3URL**](AmazonWebServicesS3Api.md#getSignedS3URL) | **GET** amazon/s3/signedposturl | Get a signed S3 URL for upload
+[**getDownloadURL**](AmazonWebServicesS3Api.md#getDownloadURL) | **GET** /amazon/s3/downloadurl | Get a temporary signed S3 URL for download
+[**getSignedS3URL**](AmazonWebServicesS3Api.md#getSignedS3URL) | **GET** /amazon/s3/signedposturl | Get a signed S3 URL for upload
 
 
 <a name="getDownloadURL"></a>
@@ -19,17 +19,9 @@ To give access to files in your own S3 account, you will need to grant KnetikcCl
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AmazonWebServicesS3Api;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AmazonWebServicesS3Api apiInstance = new AmazonWebServicesS3Api();
 String bucket = "bucket_example"; // String | S3 bucket name
@@ -58,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -76,17 +68,9 @@ Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.AmazonWebServicesS3Api;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 AmazonWebServicesS3Api apiInstance = new AmazonWebServicesS3Api();
 String filename = "filename_example"; // String | The file name
@@ -113,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

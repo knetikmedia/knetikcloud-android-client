@@ -4,10 +4,10 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCountries**](LocationsApi.md#getCountries) | **GET** location/countries | Get a list of countries
-[**getCountryByGeoLocation**](LocationsApi.md#getCountryByGeoLocation) | **GET** location/geolocation/country | Get the iso3 code of your country
-[**getCountryStates**](LocationsApi.md#getCountryStates) | **GET** location/countries/{country_code_iso3}/states | Get a list of a country&#39;s states
-[**getCurrencyByGeoLocation**](LocationsApi.md#getCurrencyByGeoLocation) | **GET** location/geolocation/currency | Get the currency information of your country
+[**getCountries**](LocationsApi.md#getCountries) | **GET** /location/countries | Get a list of countries
+[**getCountryByGeoLocation**](LocationsApi.md#getCountryByGeoLocation) | **GET** /location/geolocation/country | Get the iso3 code of your country
+[**getCountryStates**](LocationsApi.md#getCountryStates) | **GET** /location/countries/{country_code_iso3}/states | Get a list of a country&#39;s states
+[**getCurrencyByGeoLocation**](LocationsApi.md#getCurrencyByGeoLocation) | **GET** /location/geolocation/currency | Get the currency information of your country
 
 
 <a name="getCountries"></a>

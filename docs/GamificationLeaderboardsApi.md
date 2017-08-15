@@ -4,9 +4,9 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLeaderboard**](GamificationLeaderboardsApi.md#getLeaderboard) | **GET** leaderboards/{context_type}/{context_id} | Retrieves leaderboard details and paginated entries
-[**getLeaderboardRank**](GamificationLeaderboardsApi.md#getLeaderboardRank) | **GET** leaderboards/{context_type}/{context_id}/users/{id}/rank | Retrieves a specific user entry with rank
-[**getLeaderboardStrategies**](GamificationLeaderboardsApi.md#getLeaderboardStrategies) | **GET** leaderboards/strategies | Get a list of available leaderboard strategy names
+[**getLeaderboard**](GamificationLeaderboardsApi.md#getLeaderboard) | **GET** /leaderboards/{context_type}/{context_id} | Retrieves leaderboard details and paginated entries
+[**getLeaderboardRank**](GamificationLeaderboardsApi.md#getLeaderboardRank) | **GET** /leaderboards/{context_type}/{context_id}/users/{id}/rank | Retrieves a specific user entry with rank
+[**getLeaderboardStrategies**](GamificationLeaderboardsApi.md#getLeaderboardStrategies) | **GET** /leaderboards/strategies | Get a list of available leaderboard strategy names
 
 
 <a name="getLeaderboard"></a>
@@ -73,17 +73,9 @@ The context type identifies the type of entity (i.e., &#39;activity&#39;) being 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.GamificationLeaderboardsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GamificationLeaderboardsApi apiInstance = new GamificationLeaderboardsApi();
 String contextType = "contextType_example"; // String | The context type for the leaderboard
@@ -112,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

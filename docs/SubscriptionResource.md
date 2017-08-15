@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalProperties** | [**Map&lt;String, Property&gt;**](Property.md) | A map of item additional properties, keyed on the property name. Must match the names and types defined in the template for this item type. |  [optional]
 **availability** | [**AvailabilityEnum**](#AvailabilityEnum) | Who can purchase this subscription |  [optional]
+**behaviors** | [**List&lt;Behavior&gt;**](Behavior.md) | The behaviors linked to the item, describing various options and interactions. May not be included in item lists |  [optional]
 **category** | **String** | A category for filtering items |  [optional]
 **consolidationDayOfMonth** | **Integer** | The day of the month 1..31 this subscription will renew |  [optional]
 **createdDate** | **Long** | The date the item was created, unix timestamp in seconds |  [optional]

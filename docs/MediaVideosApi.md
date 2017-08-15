@@ -4,35 +4,35 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addUserToVideoWhitelist**](MediaVideosApi.md#addUserToVideoWhitelist) | **POST** media/videos/{id}/whitelist | Adds a user to a video&#39;s whitelist
-[**addVideo**](MediaVideosApi.md#addVideo) | **POST** media/videos | Adds a new video in the system
-[**addVideoComment**](MediaVideosApi.md#addVideoComment) | **POST** media/videos/{video_id}/comments | Add a new video comment
-[**addVideoContributor**](MediaVideosApi.md#addVideoContributor) | **POST** media/videos/{video_id}/contributors | Adds a contributor to a video
-[**addVideoFlag**](MediaVideosApi.md#addVideoFlag) | **POST** media/videos/{video_id}/moderation | Add a new flag
-[**addVideoRelationships**](MediaVideosApi.md#addVideoRelationships) | **POST** media/videos/{video_id}/related | Adds one or more existing videos as related to this one
-[**createVideoDisposition**](MediaVideosApi.md#createVideoDisposition) | **POST** media/videos/{video_id}/dispositions | Create a video disposition
-[**deleteVideo**](MediaVideosApi.md#deleteVideo) | **DELETE** media/videos/{id} | Deletes a video from the system if no resources are attached to it
-[**deleteVideoComment**](MediaVideosApi.md#deleteVideoComment) | **DELETE** media/videos/{video_id}/comments/{id} | Delete a video comment
-[**deleteVideoDisposition**](MediaVideosApi.md#deleteVideoDisposition) | **DELETE** media/videos/{video_id}/dispositions/{disposition_id} | Delete a video disposition
-[**deleteVideoFlag**](MediaVideosApi.md#deleteVideoFlag) | **DELETE** media/videos/{video_id}/moderation | Delete a flag
-[**deleteVideoRelationship**](MediaVideosApi.md#deleteVideoRelationship) | **DELETE** media/videos/{video_id}/related/{id} | Delete a video&#39;s relationship
-[**getUserVideos**](MediaVideosApi.md#getUserVideos) | **GET** users/{user_id}/videos | Get user videos
-[**getVideo**](MediaVideosApi.md#getVideo) | **GET** media/videos/{id} | Loads a specific video details
-[**getVideoComments**](MediaVideosApi.md#getVideoComments) | **GET** media/videos/{video_id}/comments | Returns a page of comments for a video
-[**getVideoDispositions**](MediaVideosApi.md#getVideoDispositions) | **GET** media/videos/{video_id}/dispositions | Returns a page of dispositions for a video
-[**getVideoRelationships**](MediaVideosApi.md#getVideoRelationships) | **GET** media/videos/{video_id}/related | Returns a page of video relationships
-[**getVideos**](MediaVideosApi.md#getVideos) | **GET** media/videos | Search videos using the documented filters
-[**removeUserFromVideoWhitelist**](MediaVideosApi.md#removeUserFromVideoWhitelist) | **DELETE** media/videos/{video_id}/whitelist/{id} | Removes a user from a video&#39;s whitelist
-[**removeVideoContributor**](MediaVideosApi.md#removeVideoContributor) | **DELETE** media/videos/{video_id}/contributors/{id} | Removes a contributor from a video
-[**updateVideo**](MediaVideosApi.md#updateVideo) | **PUT** media/videos/{id} | Modifies a video&#39;s details
-[**updateVideoComment**](MediaVideosApi.md#updateVideoComment) | **PUT** media/videos/{video_id}/comments/{id}/content | Update a video comment
-[**updateVideoRelationship**](MediaVideosApi.md#updateVideoRelationship) | **PUT** media/videos/{video_id}/related/{id}/relationship_details | Update a video&#39;s relationship details
-[**viewVideo**](MediaVideosApi.md#viewVideo) | **POST** media/videos/{id}/views | Increment a video&#39;s view count
+[**addUserToVideoWhitelist**](MediaVideosApi.md#addUserToVideoWhitelist) | **POST** /media/videos/{id}/whitelist | Adds a user to a video&#39;s whitelist
+[**addVideo**](MediaVideosApi.md#addVideo) | **POST** /media/videos | Adds a new video in the system
+[**addVideoComment**](MediaVideosApi.md#addVideoComment) | **POST** /media/videos/{video_id}/comments | Add a new video comment
+[**addVideoContributor**](MediaVideosApi.md#addVideoContributor) | **POST** /media/videos/{video_id}/contributors | Adds a contributor to a video
+[**addVideoFlag**](MediaVideosApi.md#addVideoFlag) | **POST** /media/videos/{video_id}/moderation | Add a new flag
+[**addVideoRelationships**](MediaVideosApi.md#addVideoRelationships) | **POST** /media/videos/{video_id}/related | Adds one or more existing videos as related to this one
+[**createVideoDisposition**](MediaVideosApi.md#createVideoDisposition) | **POST** /media/videos/{video_id}/dispositions | Create a video disposition
+[**deleteVideo**](MediaVideosApi.md#deleteVideo) | **DELETE** /media/videos/{id} | Deletes a video from the system if no resources are attached to it
+[**deleteVideoComment**](MediaVideosApi.md#deleteVideoComment) | **DELETE** /media/videos/{video_id}/comments/{id} | Delete a video comment
+[**deleteVideoDisposition**](MediaVideosApi.md#deleteVideoDisposition) | **DELETE** /media/videos/{video_id}/dispositions/{disposition_id} | Delete a video disposition
+[**deleteVideoFlag**](MediaVideosApi.md#deleteVideoFlag) | **DELETE** /media/videos/{video_id}/moderation | Delete a flag
+[**deleteVideoRelationship**](MediaVideosApi.md#deleteVideoRelationship) | **DELETE** /media/videos/{video_id}/related/{id} | Delete a video&#39;s relationship
+[**getUserVideos**](MediaVideosApi.md#getUserVideos) | **GET** /users/{user_id}/videos | Get user videos
+[**getVideo**](MediaVideosApi.md#getVideo) | **GET** /media/videos/{id} | Loads a specific video details
+[**getVideoComments**](MediaVideosApi.md#getVideoComments) | **GET** /media/videos/{video_id}/comments | Returns a page of comments for a video
+[**getVideoDispositions**](MediaVideosApi.md#getVideoDispositions) | **GET** /media/videos/{video_id}/dispositions | Returns a page of dispositions for a video
+[**getVideoRelationships**](MediaVideosApi.md#getVideoRelationships) | **GET** /media/videos/{video_id}/related | Returns a page of video relationships
+[**getVideos**](MediaVideosApi.md#getVideos) | **GET** /media/videos | Search videos using the documented filters
+[**removeUserFromVideoWhitelist**](MediaVideosApi.md#removeUserFromVideoWhitelist) | **DELETE** /media/videos/{video_id}/whitelist/{id} | Removes a user from a video&#39;s whitelist
+[**removeVideoContributor**](MediaVideosApi.md#removeVideoContributor) | **DELETE** /media/videos/{video_id}/contributors/{id} | Removes a contributor from a video
+[**updateVideo**](MediaVideosApi.md#updateVideo) | **PUT** /media/videos/{id} | Modifies a video&#39;s details
+[**updateVideoComment**](MediaVideosApi.md#updateVideoComment) | **PUT** /media/videos/{video_id}/comments/{id}/content | Update a video comment
+[**updateVideoRelationship**](MediaVideosApi.md#updateVideoRelationship) | **PUT** /media/videos/{video_id}/related/{id}/relationship_details | Update a video&#39;s relationship details
+[**viewVideo**](MediaVideosApi.md#viewVideo) | **POST** /media/videos/{id}/views | Increment a video&#39;s view count
 
 
 <a name="addUserToVideoWhitelist"></a>
 # **addUserToVideoWhitelist**
-> Void addUserToVideoWhitelist(id, userId)
+> addUserToVideoWhitelist(id, userId)
 
 Adds a user to a video&#39;s whitelist
 
@@ -41,24 +41,15 @@ Whitelisted users can view video regardless of privacy setting.
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long id = 789L; // Long | The video id
 IntWrapper userId = new IntWrapper(); // IntWrapper | The user id
 try {
-    Void result = apiInstance.addUserToVideoWhitelist(id, userId);
-    System.out.println(result);
+    apiInstance.addUserToVideoWhitelist(id, userId);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#addUserToVideoWhitelist");
     e.printStackTrace();
@@ -74,11 +65,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -94,17 +85,9 @@ Adds a new video in the system
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 VideoResource videoResource = new VideoResource(); // VideoResource | The video object
@@ -129,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -145,17 +128,9 @@ Add a new video comment
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Integer videoId = 56; // Integer | The video id 
@@ -182,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -191,31 +166,22 @@ Name | Type | Description  | Notes
 
 <a name="addVideoContributor"></a>
 # **addVideoContributor**
-> Void addVideoContributor(videoId, contributionResource)
+> addVideoContributor(videoId, contributionResource)
 
 Adds a contributor to a video
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 ContributionResource contributionResource = new ContributionResource(); // ContributionResource | The contribution object
 try {
-    Void result = apiInstance.addVideoContributor(videoId, contributionResource);
-    System.out.println(result);
+    apiInstance.addVideoContributor(videoId, contributionResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#addVideoContributor");
     e.printStackTrace();
@@ -231,11 +197,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -251,17 +217,9 @@ Add a new flag
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
@@ -288,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -304,17 +262,9 @@ Adds one or more existing videos as related to this one
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
@@ -341,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -357,17 +307,9 @@ Create a video disposition
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Integer videoId = 56; // Integer | The video id
@@ -394,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -403,30 +345,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteVideo"></a>
 # **deleteVideo**
-> Void deleteVideo(id)
+> deleteVideo(id)
 
 Deletes a video from the system if no resources are attached to it
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long id = 789L; // Long | The video id
 try {
-    Void result = apiInstance.deleteVideo(id);
-    System.out.println(result);
+    apiInstance.deleteVideo(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#deleteVideo");
     e.printStackTrace();
@@ -441,11 +374,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -454,31 +387,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteVideoComment"></a>
 # **deleteVideoComment**
-> Void deleteVideoComment(videoId, id)
+> deleteVideoComment(videoId, id)
 
 Delete a video comment
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 Long id = 789L; // Long | The comment id
 try {
-    Void result = apiInstance.deleteVideoComment(videoId, id);
-    System.out.println(result);
+    apiInstance.deleteVideoComment(videoId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#deleteVideoComment");
     e.printStackTrace();
@@ -494,11 +418,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -507,30 +431,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteVideoDisposition"></a>
 # **deleteVideoDisposition**
-> Void deleteVideoDisposition(dispositionId)
+> deleteVideoDisposition(dispositionId)
 
 Delete a video disposition
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long dispositionId = 789L; // Long | The disposition id
 try {
-    Void result = apiInstance.deleteVideoDisposition(dispositionId);
-    System.out.println(result);
+    apiInstance.deleteVideoDisposition(dispositionId);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#deleteVideoDisposition");
     e.printStackTrace();
@@ -545,11 +460,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -558,30 +473,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteVideoFlag"></a>
 # **deleteVideoFlag**
-> Void deleteVideoFlag(videoId)
+> deleteVideoFlag(videoId)
 
 Delete a flag
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 try {
-    Void result = apiInstance.deleteVideoFlag(videoId);
-    System.out.println(result);
+    apiInstance.deleteVideoFlag(videoId);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#deleteVideoFlag");
     e.printStackTrace();
@@ -596,11 +502,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -609,31 +515,22 @@ Name | Type | Description  | Notes
 
 <a name="deleteVideoRelationship"></a>
 # **deleteVideoRelationship**
-> Void deleteVideoRelationship(videoId, id)
+> deleteVideoRelationship(videoId, id)
 
 Delete a video&#39;s relationship
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 Long id = 789L; // Long | The relationship id
 try {
-    Void result = apiInstance.deleteVideoRelationship(videoId, id);
-    System.out.println(result);
+    apiInstance.deleteVideoRelationship(videoId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#deleteVideoRelationship");
     e.printStackTrace();
@@ -649,11 +546,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -669,17 +566,9 @@ Get user videos
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Integer userId = 56; // Integer | The user id
@@ -710,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -726,17 +615,9 @@ Loads a specific video details
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long id = 789L; // Long | The video id
@@ -761,7 +642,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -982,7 +863,7 @@ No authorization required
 
 <a name="removeUserFromVideoWhitelist"></a>
 # **removeUserFromVideoWhitelist**
-> Void removeUserFromVideoWhitelist(videoId, id)
+> removeUserFromVideoWhitelist(videoId, id)
 
 Removes a user from a video&#39;s whitelist
 
@@ -991,24 +872,15 @@ Remove the user with the id given in the path from the whitelist of users that c
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 Integer id = 56; // Integer | The user id
 try {
-    Void result = apiInstance.removeUserFromVideoWhitelist(videoId, id);
-    System.out.println(result);
+    apiInstance.removeUserFromVideoWhitelist(videoId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#removeUserFromVideoWhitelist");
     e.printStackTrace();
@@ -1024,11 +896,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1037,31 +909,22 @@ Name | Type | Description  | Notes
 
 <a name="removeVideoContributor"></a>
 # **removeVideoContributor**
-> Void removeVideoContributor(videoId, id)
+> removeVideoContributor(videoId, id)
 
 Removes a contributor from a video
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 Integer id = 56; // Integer | The contributor id
 try {
-    Void result = apiInstance.removeVideoContributor(videoId, id);
-    System.out.println(result);
+    apiInstance.removeVideoContributor(videoId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#removeVideoContributor");
     e.printStackTrace();
@@ -1077,11 +940,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1090,31 +953,22 @@ Name | Type | Description  | Notes
 
 <a name="updateVideo"></a>
 # **updateVideo**
-> Void updateVideo(id, videoResource)
+> updateVideo(id, videoResource)
 
 Modifies a video&#39;s details
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long id = 789L; // Long | The video id
 VideoResource videoResource = new VideoResource(); // VideoResource | The video object
 try {
-    Void result = apiInstance.updateVideo(id, videoResource);
-    System.out.println(result);
+    apiInstance.updateVideo(id, videoResource);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#updateVideo");
     e.printStackTrace();
@@ -1130,11 +984,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1143,32 +997,23 @@ Name | Type | Description  | Notes
 
 <a name="updateVideoComment"></a>
 # **updateVideoComment**
-> Void updateVideoComment(videoId, id, content)
+> updateVideoComment(videoId, id, content)
 
 Update a video comment
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 Long id = 789L; // Long | The comment id
 StringWrapper content = new StringWrapper(); // StringWrapper | The comment content
 try {
-    Void result = apiInstance.updateVideoComment(videoId, id, content);
-    System.out.println(result);
+    apiInstance.updateVideoComment(videoId, id, content);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#updateVideoComment");
     e.printStackTrace();
@@ -1185,11 +1030,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1198,32 +1043,23 @@ Name | Type | Description  | Notes
 
 <a name="updateVideoRelationship"></a>
 # **updateVideoRelationship**
-> Void updateVideoRelationship(videoId, relationshipId, details)
+> updateVideoRelationship(videoId, relationshipId, details)
 
 Update a video&#39;s relationship details
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.MediaVideosApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long videoId = 789L; // Long | The video id
 Long relationshipId = 789L; // Long | The relationship id
 StringWrapper details = new StringWrapper(); // StringWrapper | The video relationship details
 try {
-    Void result = apiInstance.updateVideoRelationship(videoId, relationshipId, details);
-    System.out.println(result);
+    apiInstance.updateVideoRelationship(videoId, relationshipId, details);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#updateVideoRelationship");
     e.printStackTrace();
@@ -1240,11 +1076,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1253,7 +1089,7 @@ Name | Type | Description  | Notes
 
 <a name="viewVideo"></a>
 # **viewVideo**
-> Void viewVideo(id)
+> viewVideo(id)
 
 Increment a video&#39;s view count
 
@@ -1267,8 +1103,7 @@ Increment a video&#39;s view count
 MediaVideosApi apiInstance = new MediaVideosApi();
 Long id = 789L; // Long | The video id
 try {
-    Void result = apiInstance.viewVideo(id);
-    System.out.println(result);
+    apiInstance.viewVideo(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaVideosApi#viewVideo");
     e.printStackTrace();
@@ -1283,7 +1118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 

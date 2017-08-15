@@ -4,48 +4,39 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addChallengeToCampaign**](CampaignsApi.md#addChallengeToCampaign) | **POST** campaigns/{id}/challenges | Add a challenge to a campaign
-[**createCampaign**](CampaignsApi.md#createCampaign) | **POST** campaigns | Create a campaign
-[**createCampaignTemplate**](CampaignsApi.md#createCampaignTemplate) | **POST** campaigns/templates | Create a campaign template
-[**deleteCampaign**](CampaignsApi.md#deleteCampaign) | **DELETE** campaigns/{id} | Delete a campaign
-[**deleteCampaignTemplate**](CampaignsApi.md#deleteCampaignTemplate) | **DELETE** campaigns/templates/{id} | Delete a campaign template
-[**getCampaign**](CampaignsApi.md#getCampaign) | **GET** campaigns/{id} | Returns a single campaign
-[**getCampaignChallenges**](CampaignsApi.md#getCampaignChallenges) | **GET** campaigns/{id}/challenges | List the challenges associated with a campaign
-[**getCampaignTemplate**](CampaignsApi.md#getCampaignTemplate) | **GET** campaigns/templates/{id} | Get a single campaign template
-[**getCampaignTemplates**](CampaignsApi.md#getCampaignTemplates) | **GET** campaigns/templates | List and search campaign templates
-[**getCampaigns**](CampaignsApi.md#getCampaigns) | **GET** campaigns | List and search campaigns
-[**removeChallengeFromCampaign**](CampaignsApi.md#removeChallengeFromCampaign) | **DELETE** campaigns/{campaign_id}/challenges/{id} | Remove a challenge from a campaign
-[**updateCampaign**](CampaignsApi.md#updateCampaign) | **PUT** campaigns/{id} | Update a campaign
-[**updateCampaignTemplate**](CampaignsApi.md#updateCampaignTemplate) | **PUT** campaigns/templates/{id} | Update an campaign template
+[**addChallengeToCampaign**](CampaignsApi.md#addChallengeToCampaign) | **POST** /campaigns/{id}/challenges | Add a challenge to a campaign
+[**createCampaign**](CampaignsApi.md#createCampaign) | **POST** /campaigns | Create a campaign
+[**createCampaignTemplate**](CampaignsApi.md#createCampaignTemplate) | **POST** /campaigns/templates | Create a campaign template
+[**deleteCampaign**](CampaignsApi.md#deleteCampaign) | **DELETE** /campaigns/{id} | Delete a campaign
+[**deleteCampaignTemplate**](CampaignsApi.md#deleteCampaignTemplate) | **DELETE** /campaigns/templates/{id} | Delete a campaign template
+[**getCampaign**](CampaignsApi.md#getCampaign) | **GET** /campaigns/{id} | Returns a single campaign
+[**getCampaignChallenges**](CampaignsApi.md#getCampaignChallenges) | **GET** /campaigns/{id}/challenges | List the challenges associated with a campaign
+[**getCampaignTemplate**](CampaignsApi.md#getCampaignTemplate) | **GET** /campaigns/templates/{id} | Get a single campaign template
+[**getCampaignTemplates**](CampaignsApi.md#getCampaignTemplates) | **GET** /campaigns/templates | List and search campaign templates
+[**getCampaigns**](CampaignsApi.md#getCampaigns) | **GET** /campaigns | List and search campaigns
+[**removeChallengeFromCampaign**](CampaignsApi.md#removeChallengeFromCampaign) | **DELETE** /campaigns/{campaign_id}/challenges/{id} | Remove a challenge from a campaign
+[**updateCampaign**](CampaignsApi.md#updateCampaign) | **PUT** /campaigns/{id} | Update a campaign
+[**updateCampaignTemplate**](CampaignsApi.md#updateCampaignTemplate) | **PUT** /campaigns/templates/{id} | Update an campaign template
 
 
 <a name="addChallengeToCampaign"></a>
 # **addChallengeToCampaign**
-> Void addChallengeToCampaign(id, challengeId)
+> addChallengeToCampaign(id, challengeId)
 
 Add a challenge to a campaign
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 Long id = 789L; // Long | The id of the campaign
 Long challengeId = 789L; // Long | The id of the challenge
 try {
-    Void result = apiInstance.addChallengeToCampaign(id, challengeId);
-    System.out.println(result);
+    apiInstance.addChallengeToCampaign(id, challengeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsApi#addChallengeToCampaign");
     e.printStackTrace();
@@ -61,11 +52,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -81,17 +72,9 @@ Create a campaign
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 CampaignResource campaignResource = new CampaignResource(); // CampaignResource | The campaign resource object
@@ -116,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -134,17 +117,9 @@ Campaign Templates define a type of campaign and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 TemplateResource campaignTemplateResource = new TemplateResource(); // TemplateResource | The campaign template resource object
@@ -169,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -178,30 +153,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteCampaign"></a>
 # **deleteCampaign**
-> Void deleteCampaign(id)
+> deleteCampaign(id)
 
 Delete a campaign
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 Long id = 789L; // Long | The campaign id
 try {
-    Void result = apiInstance.deleteCampaign(id);
-    System.out.println(result);
+    apiInstance.deleteCampaign(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsApi#deleteCampaign");
     e.printStackTrace();
@@ -216,11 +182,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -229,7 +195,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCampaignTemplate"></a>
 # **deleteCampaignTemplate**
-> Void deleteCampaignTemplate(id, cascade)
+> deleteCampaignTemplate(id, cascade)
 
 Delete a campaign template
 
@@ -238,24 +204,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteCampaignTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteCampaignTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsApi#deleteCampaignTemplate");
     e.printStackTrace();
@@ -271,11 +228,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -387,17 +344,9 @@ Get a single campaign template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 String id = "id_example"; // String | The id of the template
@@ -422,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -438,17 +387,9 @@ List and search campaign templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -477,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -535,31 +476,22 @@ No authorization required
 
 <a name="removeChallengeFromCampaign"></a>
 # **removeChallengeFromCampaign**
-> Void removeChallengeFromCampaign(campaignId, id)
+> removeChallengeFromCampaign(campaignId, id)
 
 Remove a challenge from a campaign
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 Long campaignId = 789L; // Long | The campaign id
 Long id = 789L; // Long | The challenge id
 try {
-    Void result = apiInstance.removeChallengeFromCampaign(campaignId, id);
-    System.out.println(result);
+    apiInstance.removeChallengeFromCampaign(campaignId, id);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsApi#removeChallengeFromCampaign");
     e.printStackTrace();
@@ -575,11 +507,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -595,17 +527,9 @@ Update a campaign
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 Long id = 789L; // Long | The campaign id
@@ -632,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -648,17 +572,9 @@ Update an campaign template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsApi apiInstance = new CampaignsApi();
 String id = "id_example"; // String | The id of the template
@@ -685,7 +601,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

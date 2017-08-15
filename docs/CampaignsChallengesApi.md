@@ -4,29 +4,29 @@ All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createChallenge**](CampaignsChallengesApi.md#createChallenge) | **POST** challenges | Create a challenge
-[**createChallengeActivity**](CampaignsChallengesApi.md#createChallengeActivity) | **POST** challenges/{challenge_id}/activities | Create a challenge activity
-[**createChallengeActivityTemplate**](CampaignsChallengesApi.md#createChallengeActivityTemplate) | **POST** challenge-activities/templates | Create a challenge activity template
-[**createChallengeTemplate**](CampaignsChallengesApi.md#createChallengeTemplate) | **POST** challenges/templates | Create a challenge template
-[**deleteChallenge**](CampaignsChallengesApi.md#deleteChallenge) | **DELETE** challenges/{id} | Delete a challenge
-[**deleteChallengeActivity**](CampaignsChallengesApi.md#deleteChallengeActivity) | **DELETE** challenges/{challenge_id}/activities/{id} | Delete a challenge activity
-[**deleteChallengeActivityTemplate**](CampaignsChallengesApi.md#deleteChallengeActivityTemplate) | **DELETE** challenge-activities/templates/{id} | Delete a challenge activity template
-[**deleteChallengeEvent**](CampaignsChallengesApi.md#deleteChallengeEvent) | **DELETE** challenges/events/{id} | Delete a challenge event
-[**deleteChallengeTemplate**](CampaignsChallengesApi.md#deleteChallengeTemplate) | **DELETE** challenges/templates/{id} | Delete a challenge template
-[**getChallenge**](CampaignsChallengesApi.md#getChallenge) | **GET** challenges/{id} | Retrieve a challenge
-[**getChallengeActivities**](CampaignsChallengesApi.md#getChallengeActivities) | **GET** challenges/{challenge_id}/activities | List and search challenge activities
-[**getChallengeActivity**](CampaignsChallengesApi.md#getChallengeActivity) | **GET** challenges/{challenge_id}/activities/{id} | Get a single challenge activity
-[**getChallengeActivityTemplate**](CampaignsChallengesApi.md#getChallengeActivityTemplate) | **GET** challenge-activities/templates/{id} | Get a single challenge activity template
-[**getChallengeActivityTemplates**](CampaignsChallengesApi.md#getChallengeActivityTemplates) | **GET** challenge-activities/templates | List and search challenge activity templates
-[**getChallengeEvent**](CampaignsChallengesApi.md#getChallengeEvent) | **GET** challenges/events/{id} | Retrieve a single challenge event details
-[**getChallengeEvents**](CampaignsChallengesApi.md#getChallengeEvents) | **GET** challenges/events | Retrieve a list of challenge events
-[**getChallengeTemplate**](CampaignsChallengesApi.md#getChallengeTemplate) | **GET** challenges/templates/{id} | Get a single challenge template
-[**getChallengeTemplates**](CampaignsChallengesApi.md#getChallengeTemplates) | **GET** challenges/templates | List and search challenge templates
-[**getChallenges**](CampaignsChallengesApi.md#getChallenges) | **GET** challenges | Retrieve a list of challenges
-[**updateChallenge**](CampaignsChallengesApi.md#updateChallenge) | **PUT** challenges/{id} | Update a challenge
-[**updateChallengeActivity**](CampaignsChallengesApi.md#updateChallengeActivity) | **PUT** challenges/{challenge_id}/activities/{id} | Update a challenge activity
-[**updateChallengeActivityTemplate**](CampaignsChallengesApi.md#updateChallengeActivityTemplate) | **PUT** challenge-activities/templates/{id} | Update an challenge activity template
-[**updateChallengeTemplate**](CampaignsChallengesApi.md#updateChallengeTemplate) | **PUT** challenges/templates/{id} | Update a challenge template
+[**createChallenge**](CampaignsChallengesApi.md#createChallenge) | **POST** /challenges | Create a challenge
+[**createChallengeActivity**](CampaignsChallengesApi.md#createChallengeActivity) | **POST** /challenges/{challenge_id}/activities | Create a challenge activity
+[**createChallengeActivityTemplate**](CampaignsChallengesApi.md#createChallengeActivityTemplate) | **POST** /challenge-activities/templates | Create a challenge activity template
+[**createChallengeTemplate**](CampaignsChallengesApi.md#createChallengeTemplate) | **POST** /challenges/templates | Create a challenge template
+[**deleteChallenge**](CampaignsChallengesApi.md#deleteChallenge) | **DELETE** /challenges/{id} | Delete a challenge
+[**deleteChallengeActivity**](CampaignsChallengesApi.md#deleteChallengeActivity) | **DELETE** /challenges/{challenge_id}/activities/{id} | Delete a challenge activity
+[**deleteChallengeActivityTemplate**](CampaignsChallengesApi.md#deleteChallengeActivityTemplate) | **DELETE** /challenge-activities/templates/{id} | Delete a challenge activity template
+[**deleteChallengeEvent**](CampaignsChallengesApi.md#deleteChallengeEvent) | **DELETE** /challenges/events/{id} | Delete a challenge event
+[**deleteChallengeTemplate**](CampaignsChallengesApi.md#deleteChallengeTemplate) | **DELETE** /challenges/templates/{id} | Delete a challenge template
+[**getChallenge**](CampaignsChallengesApi.md#getChallenge) | **GET** /challenges/{id} | Retrieve a challenge
+[**getChallengeActivities**](CampaignsChallengesApi.md#getChallengeActivities) | **GET** /challenges/{challenge_id}/activities | List and search challenge activities
+[**getChallengeActivity**](CampaignsChallengesApi.md#getChallengeActivity) | **GET** /challenges/{challenge_id}/activities/{id} | Get a single challenge activity
+[**getChallengeActivityTemplate**](CampaignsChallengesApi.md#getChallengeActivityTemplate) | **GET** /challenge-activities/templates/{id} | Get a single challenge activity template
+[**getChallengeActivityTemplates**](CampaignsChallengesApi.md#getChallengeActivityTemplates) | **GET** /challenge-activities/templates | List and search challenge activity templates
+[**getChallengeEvent**](CampaignsChallengesApi.md#getChallengeEvent) | **GET** /challenges/events/{id} | Retrieve a single challenge event details
+[**getChallengeEvents**](CampaignsChallengesApi.md#getChallengeEvents) | **GET** /challenges/events | Retrieve a list of challenge events
+[**getChallengeTemplate**](CampaignsChallengesApi.md#getChallengeTemplate) | **GET** /challenges/templates/{id} | Get a single challenge template
+[**getChallengeTemplates**](CampaignsChallengesApi.md#getChallengeTemplates) | **GET** /challenges/templates | List and search challenge templates
+[**getChallenges**](CampaignsChallengesApi.md#getChallenges) | **GET** /challenges | Retrieve a list of challenges
+[**updateChallenge**](CampaignsChallengesApi.md#updateChallenge) | **PUT** /challenges/{id} | Update a challenge
+[**updateChallengeActivity**](CampaignsChallengesApi.md#updateChallengeActivity) | **PUT** /challenges/{challenge_id}/activities/{id} | Update a challenge activity
+[**updateChallengeActivityTemplate**](CampaignsChallengesApi.md#updateChallengeActivityTemplate) | **PUT** /challenge-activities/templates/{id} | Update an challenge activity template
+[**updateChallengeTemplate**](CampaignsChallengesApi.md#updateChallengeTemplate) | **PUT** /challenges/templates/{id} | Update a challenge template
 
 
 <a name="createChallenge"></a>
@@ -40,17 +40,9 @@ Challenges do not run on their own.  They must be added to a campaign before eve
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 ChallengeResource challengeResource = new ChallengeResource(); // ChallengeResource | The challenge resource object
@@ -75,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -91,17 +83,9 @@ Create a challenge activity
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Long challengeId = 789L; // Long | The challenge id
@@ -130,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -148,17 +132,9 @@ Challenge Activity Templates define a type of challenge activity and the propert
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 TemplateResource challengeActivityTemplateResource = new TemplateResource(); // TemplateResource | The challengeActivity template resource object
@@ -183,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -201,17 +177,9 @@ Challenge Templates define a type of challenge and the properties they have
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 TemplateResource challengeTemplateResource = new TemplateResource(); // TemplateResource | The challenge template resource object
@@ -236,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -245,30 +213,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteChallenge"></a>
 # **deleteChallenge**
-> Void deleteChallenge(id)
+> deleteChallenge(id)
 
 Delete a challenge
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Long id = 789L; // Long | The challenge id
 try {
-    Void result = apiInstance.deleteChallenge(id);
-    System.out.println(result);
+    apiInstance.deleteChallenge(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsChallengesApi#deleteChallenge");
     e.printStackTrace();
@@ -283,11 +242,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -296,7 +255,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteChallengeActivity"></a>
 # **deleteChallengeActivity**
-> Void deleteChallengeActivity(id, challengeId)
+> deleteChallengeActivity(id, challengeId)
 
 Delete a challenge activity
 
@@ -305,24 +264,15 @@ A challenge can have multiple instances of the same activity and thus the id use
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Long id = 789L; // Long | The challenge_activity id
 Long challengeId = 789L; // Long | The challenge id
 try {
-    Void result = apiInstance.deleteChallengeActivity(id, challengeId);
-    System.out.println(result);
+    apiInstance.deleteChallengeActivity(id, challengeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsChallengesApi#deleteChallengeActivity");
     e.printStackTrace();
@@ -338,11 +288,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -351,7 +301,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteChallengeActivityTemplate"></a>
 # **deleteChallengeActivityTemplate**
-> Void deleteChallengeActivityTemplate(id, cascade)
+> deleteChallengeActivityTemplate(id, cascade)
 
 Delete a challenge activity template
 
@@ -360,24 +310,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteChallengeActivityTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteChallengeActivityTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsChallengesApi#deleteChallengeActivityTemplate");
     e.printStackTrace();
@@ -393,11 +334,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -406,30 +347,21 @@ Name | Type | Description  | Notes
 
 <a name="deleteChallengeEvent"></a>
 # **deleteChallengeEvent**
-> Void deleteChallengeEvent(id)
+> deleteChallengeEvent(id)
 
 Delete a challenge event
 
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Long id = 789L; // Long | The challenge event id
 try {
-    Void result = apiInstance.deleteChallengeEvent(id);
-    System.out.println(result);
+    apiInstance.deleteChallengeEvent(id);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsChallengesApi#deleteChallengeEvent");
     e.printStackTrace();
@@ -444,11 +376,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -457,7 +389,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteChallengeTemplate"></a>
 # **deleteChallengeTemplate**
-> Void deleteChallengeTemplate(id, cascade)
+> deleteChallengeTemplate(id, cascade)
 
 Delete a challenge template
 
@@ -466,24 +398,15 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 String id = "id_example"; // String | The id of the template
 String cascade = "cascade_example"; // String | The value needed to delete used templates
 try {
-    Void result = apiInstance.deleteChallengeTemplate(id, cascade);
-    System.out.println(result);
+    apiInstance.deleteChallengeTemplate(id, cascade);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsChallengesApi#deleteChallengeTemplate");
     e.printStackTrace();
@@ -499,11 +422,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Void**](.md)
+null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -658,17 +581,9 @@ Get a single challenge activity template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 String id = "id_example"; // String | The id of the template
@@ -693,7 +608,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -709,17 +624,9 @@ List and search challenge activity templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -748,7 +655,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -862,17 +769,9 @@ Get a single challenge template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 String id = "id_example"; // String | The id of the template
@@ -897,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -913,17 +812,9 @@ List and search challenge templates
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Integer size = 25; // Integer | The number of objects returned per page
@@ -952,7 +843,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1025,17 +916,9 @@ If the challenge is a copy, changes will propagate to all the related challenges
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Long id = 789L; // Long | The challenge id
@@ -1062,7 +945,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1080,17 +963,9 @@ A challenge can have multiple instances of the same activity and thus the id use
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 Long id = 789L; // Long | The challenge_activity id
@@ -1119,7 +994,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1135,17 +1010,9 @@ Update an challenge activity template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 String id = "id_example"; // String | The id of the template
@@ -1172,7 +1039,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -1188,17 +1055,9 @@ Update a challenge template
 ### Example
 ```java
 // Import classes:
-//import com.knetikcloud.client.ApiClient;
 //import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
 //import com.knetikcloud.api.CampaignsChallengesApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 CampaignsChallengesApi apiInstance = new CampaignsChallengesApi();
 String id = "id_example"; // String | The id of the template
@@ -1225,7 +1084,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

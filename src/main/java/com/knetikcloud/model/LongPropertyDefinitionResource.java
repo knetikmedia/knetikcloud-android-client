@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * LongPropertyDefinitionResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-11T13:41:51.097-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-15T12:23:32.916-04:00")
 public class LongPropertyDefinitionResource extends PropertyDefinitionResource {
   @SerializedName("max")
   private Long max = null;
