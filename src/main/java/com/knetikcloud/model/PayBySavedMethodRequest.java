@@ -26,10 +26,13 @@ import java.io.IOException;
 /**
  * PayBySavedMethodRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-16T14:20:46.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-17T22:16:04.815-04:00")
 public class PayBySavedMethodRequest {
   @SerializedName("payment_method")
   private Integer paymentMethod = null;
+
+  @SerializedName("user_id")
+  private Integer userId = null;
 
   public PayBySavedMethodRequest paymentMethod(Integer paymentMethod) {
     this.paymentMethod = paymentMethod;
@@ -49,6 +52,24 @@ public class PayBySavedMethodRequest {
     this.paymentMethod = paymentMethod;
   }
 
+  public PayBySavedMethodRequest userId(Integer userId) {
+    this.userId = userId;
+    return this;
+  }
+
+   /**
+   * The id of a user to bill. Must have PAYMENTS_ADMIN permission
+   * @return userId
+  **/
+  @ApiModelProperty(value = "The id of a user to bill. Must have PAYMENTS_ADMIN permission")
+  public Integer getUserId() {
+    return userId;
+  }
+
+  public void setUserId(Integer userId) {
+    this.userId = userId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,12 +80,13 @@ public class PayBySavedMethodRequest {
       return false;
     }
     PayBySavedMethodRequest payBySavedMethodRequest = (PayBySavedMethodRequest) o;
-    return Objects.equals(this.paymentMethod, payBySavedMethodRequest.paymentMethod);
+    return Objects.equals(this.paymentMethod, payBySavedMethodRequest.paymentMethod) &&
+        Objects.equals(this.userId, payBySavedMethodRequest.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paymentMethod);
+    return Objects.hash(paymentMethod, userId);
   }
 
 
@@ -74,6 +96,7 @@ public class PayBySavedMethodRequest {
     sb.append("class PayBySavedMethodRequest {\n");
     
     sb.append("    paymentMethod: ").append(toIndentedString(paymentMethod)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

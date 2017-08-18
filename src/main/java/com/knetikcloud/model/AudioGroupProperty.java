@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * AudioGroupProperty
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-16T14:20:46.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-17T22:16:04.815-04:00")
 public class AudioGroupProperty extends FileGroupProperty {
 
   @Override
