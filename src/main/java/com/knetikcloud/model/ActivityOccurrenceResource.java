@@ -32,7 +32,7 @@ import java.util.List;
  * A occurrence of an activity (the actual game for example). Used to track scores, participants, and provide settings
  */
 @ApiModel(description = "A occurrence of an activity (the actual game for example). Used to track scores, participants, and provide settings")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-18T00:46:46.781-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-18T11:17:24.388-04:00")
 public class ActivityOccurrenceResource {
   @SerializedName("activity_id")
   private Long activityId = null;

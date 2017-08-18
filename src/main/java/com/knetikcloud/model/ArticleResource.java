@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * ArticleResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-18T00:46:46.781-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-18T11:17:24.388-04:00")
 public class ArticleResource {
   @SerializedName("active")
   private Boolean active = null;
