@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * LeaderboardEntryResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-17T22:16:04.815-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-18T00:46:46.781-04:00")
 public class LeaderboardEntryResource {
   @SerializedName("rank")
   private Long rank = null;

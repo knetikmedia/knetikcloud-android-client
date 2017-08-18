@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CartItemRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-17T22:16:04.815-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-08-18T00:46:46.781-04:00")
 public class CartItemRequest {
   @SerializedName("affiliate_key")
   private String affiliateKey = null;
