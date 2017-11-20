@@ -305,7 +305,8 @@ public class CampaignsChallengesApiTest {
         Long id = null;
         Long challengeId = null;
         ChallengeActivityResource challengeActivityResource = null;
-        // ChallengeActivityResource response = api.updateChallengeActivity(id, challengeId, challengeActivityResource);
+        Boolean validateSettings = null;
+        // ChallengeActivityResource response = api.updateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings);
 
         // TODO: test validations
     }

@@ -51,7 +51,7 @@ public interface CampaignsChallengesApi {
   })
   @POST("challenges/{challenge_id}/activities")
   Call<ChallengeActivityResource> createChallengeActivity(
-    @retrofit2.http.Path("challenge_id") Long challengeId, @retrofit2.http.Body ChallengeActivityResource challengeActivityResource, @retrofit2.http.Query("validateSettings") Boolean validateSettings
+    @retrofit2.http.Path("challenge_id") Long challengeId, @retrofit2.http.Body ChallengeActivityResource challengeActivityResource, @retrofit2.http.Query("validate_settings") Boolean validateSettings
   );
 
   /**
@@ -335,6 +335,7 @@ public interface CampaignsChallengesApi {
    * @param id The challenge_activity id (required)
    * @param challengeId The challenge id (required)
    * @param challengeActivityResource The challenge activity resource object (optional)
+   * @param validateSettings Whether to validate the settings being sent against the available settings on the base activity. (optional, default to false)
    * @return Call&lt;ChallengeActivityResource&gt;
    */
   @Headers({
@@ -342,7 +343,7 @@ public interface CampaignsChallengesApi {
   })
   @PUT("challenges/{challenge_id}/activities/{id}")
   Call<ChallengeActivityResource> updateChallengeActivity(
-    @retrofit2.http.Path("id") Long id, @retrofit2.http.Path("challenge_id") Long challengeId, @retrofit2.http.Body ChallengeActivityResource challengeActivityResource
+    @retrofit2.http.Path("id") Long id, @retrofit2.http.Path("challenge_id") Long challengeId, @retrofit2.http.Body ChallengeActivityResource challengeActivityResource, @retrofit2.http.Query("validateSettings") Boolean validateSettings
   );
 
   /**

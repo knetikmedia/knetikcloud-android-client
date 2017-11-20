@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * AddressResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-23T15:21:12.427-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
 public class AddressResource {
   @SerializedName("address1")
   private String address1 = null;

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * PageResourceSubscriptionTemplateResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-10-23T15:21:12.427-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
 public class PageResourceSubscriptionTemplateResource {
   @SerializedName("content")
   private List<SubscriptionTemplateResource> content = null;
