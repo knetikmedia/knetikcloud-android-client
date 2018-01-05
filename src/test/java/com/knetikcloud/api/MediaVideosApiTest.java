@@ -8,10 +8,12 @@ import com.knetikcloud.model.FlagResource;
 import com.knetikcloud.model.IntWrapper;
 import com.knetikcloud.model.PageResourceCommentResource;
 import com.knetikcloud.model.PageResourceDispositionResource;
+import com.knetikcloud.model.PageResourceTemplateResource;
 import com.knetikcloud.model.PageResourceVideoRelationshipResource;
 import com.knetikcloud.model.PageResourceVideoResource;
 import com.knetikcloud.model.Result;
 import com.knetikcloud.model.StringWrapper;
+import com.knetikcloud.model.TemplateResource;
 import com.knetikcloud.model.VideoRelationshipResource;
 import com.knetikcloud.model.VideoResource;
 import org.junit.Before;
@@ -125,6 +127,18 @@ public class MediaVideosApiTest {
         // TODO: test validations
     }
     /**
+     * Create a video template
+     *
+     * Video Templates define a type of video and the properties they have
+     */
+    @Test
+    public void createVideoTemplateTest() {
+        TemplateResource videoTemplateResource = null;
+        // TemplateResource response = api.createVideoTemplate(videoTemplateResource);
+
+        // TODO: test validations
+    }
+    /**
      * Deletes a video from the system if no resources are attached to it
      *
      * 
@@ -183,6 +197,19 @@ public class MediaVideosApiTest {
         Long videoId = null;
         Long id = null;
         // Void response = api.deleteVideoRelationship(videoId, id);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a video template
+     *
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     */
+    @Test
+    public void deleteVideoTemplateTest() {
+        String id = null;
+        String cascade = null;
+        // Void response = api.deleteVideoTemplate(id, cascade);
 
         // TODO: test validations
     }
@@ -252,6 +279,32 @@ public class MediaVideosApiTest {
         Integer size = null;
         Integer page = null;
         // PageResourceVideoRelationshipResource response = api.getVideoRelationships(videoId, size, page);
+
+        // TODO: test validations
+    }
+    /**
+     * Get a single video template
+     *
+     * 
+     */
+    @Test
+    public void getVideoTemplateTest() {
+        String id = null;
+        // TemplateResource response = api.getVideoTemplate(id);
+
+        // TODO: test validations
+    }
+    /**
+     * List and search video templates
+     *
+     * 
+     */
+    @Test
+    public void getVideoTemplatesTest() {
+        Integer size = null;
+        Integer page = null;
+        String order = null;
+        // PageResourceTemplateResource response = api.getVideoTemplates(size, page, order);
 
         // TODO: test validations
     }
@@ -345,6 +398,19 @@ public class MediaVideosApiTest {
         Long relationshipId = null;
         StringWrapper details = null;
         // Void response = api.updateVideoRelationship(videoId, relationshipId, details);
+
+        // TODO: test validations
+    }
+    /**
+     * Update a video template
+     *
+     * 
+     */
+    @Test
+    public void updateVideoTemplateTest() {
+        String id = null;
+        TemplateResource videoTemplateResource = null;
+        // TemplateResource response = api.updateVideoTemplate(id, videoTemplateResource);
 
         // TODO: test validations
     }

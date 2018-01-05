@@ -77,20 +77,6 @@ public class ContentCommentsApiTest {
         // TODO: test validations
     }
     /**
-     * Search the comment index
-     *
-     * The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-     */
-    @Test
-    public void searchCommentsTest() {
-        Object query = null;
-        Integer size = null;
-        Integer page = null;
-        // PageResourceCommentResource response = api.searchComments(query, size, page);
-
-        // TODO: test validations
-    }
-    /**
      * Update a comment
      *
      * 

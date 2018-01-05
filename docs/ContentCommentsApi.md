@@ -1,6 +1,6 @@
 # ContentCommentsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**deleteComment**](ContentCommentsApi.md#deleteComment) | **DELETE** comments/{id} | Delete a comment
 [**getComment**](ContentCommentsApi.md#getComment) | **GET** comments/{id} | Return a comment
 [**getComments**](ContentCommentsApi.md#getComments) | **GET** comments | Returns a page of comments
-[**searchComments**](ContentCommentsApi.md#searchComments) | **POST** comments/search | Search the comment index
 [**updateComment**](ContentCommentsApi.md#updateComment) | **PUT** comments/{id}/content | Update a comment
 
 
@@ -222,67 +221,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **context** | **String**| Get comments by context type |
  **contextId** | **Integer**| Get comments by context id |
- **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
- **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
-
-### Return type
-
-[**PageResourceCommentResource**](PageResourceCommentResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="searchComments"></a>
-# **searchComments**
-> PageResourceCommentResource searchComments(query, size, page)
-
-Search the comment index
-
-The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-
-### Example
-```java
-// Import classes:
-//import com.knetikcloud.client.ApiClient;
-//import com.knetikcloud.client.ApiException;
-//import com.knetikcloud.client.Configuration;
-//import com.knetikcloud.client.auth.*;
-//import com.knetikcloud.api.ContentCommentsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
-oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
-oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
-
-ContentCommentsApi apiInstance = new ContentCommentsApi();
-Object query = null; // Object | The search query
-Integer size = 25; // Integer | The number of objects returned per page
-Integer page = 1; // Integer | The number of the page returned, starting with 1
-try {
-    PageResourceCommentResource result = apiInstance.searchComments(query, size, page);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ContentCommentsApi#searchComments");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **Object**| The search query | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
 

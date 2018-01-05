@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * UserAchievementGroupResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:41:38.777-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:56:09.934-05:00")
 public class UserAchievementGroupResource {
   @SerializedName("achievements")
   private List<UserAchievementResource> achievements = new ArrayList<UserAchievementResource>();

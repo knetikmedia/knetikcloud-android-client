@@ -7,7 +7,6 @@ import retrofit2.http.*;
 
 import okhttp3.RequestBody;
 
-import com.knetikcloud.model.PageResourceMapstringobject;
 import com.knetikcloud.model.Result;
 
 import java.util.ArrayList;
@@ -18,38 +17,319 @@ import java.util.Map;
 
 public interface SearchApi {
   /**
-   * Search an index with no template
-   * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+   * Count matches with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/count/{type}")
+  Call<Object> searchCountGET(
+    @retrofit2.http.Path("type") String type
+  );
+
+  /**
+   * Count matches with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
    * @param type The index type (required)
    * @param query The query to be used for the search (optional)
-   * @param size The number of documents returned per page (optional, default to 25)
-   * @param page The number of the page returned, starting with 1 (optional, default to 1)
-   * @return Call&lt;PageResourceMapstringobject&gt;
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("search/count/{type}")
+  Call<Object> searchCountPOST(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Body Object query
+  );
+
+  /**
+   * Count matches with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param template The index template (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/count/{type}/{template}")
+  Call<Object> searchCountWithTemplateGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template
+  );
+
+  /**
+   * Count matches with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param template The index template (required)
+   * @param query The query to be used for the search (optional)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("search/count/{type}/{template}")
+  Call<Object> searchCountWithTemplatePOST(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template, @retrofit2.http.Body Object query
+  );
+
+  /**
+   * Get document with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param id The index id (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/documents/{type}/{id}")
+  Call<Object> searchDocumentGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("id") String id
+  );
+
+  /**
+   * Get document with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param id The index id (required)
+   * @param template The index template (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/documents/{type}/{template}/{id}")
+  Call<Object> searchDocumentWithTemplateGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("id") String id, @retrofit2.http.Path("template") String template
+  );
+
+  /**
+   * Explain matches with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param id The index id (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/explain/{type}/{id}")
+  Call<Object> searchExplainGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("id") String id
+  );
+
+  /**
+   * Explain matches with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param id The index id (required)
+   * @param query The query to be used for the search (optional)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("search/explain/{type}/{id}")
+  Call<Object> searchExplainPOST(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("id") String id, @retrofit2.http.Body Object query
+  );
+
+  /**
+   * Explain matches with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param id The index id (required)
+   * @param template The index template (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/explain/{type}/{template}/{id}")
+  Call<Object> searchExplainWithTemplateGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("id") String id, @retrofit2.http.Path("template") String template
+  );
+
+  /**
+   * Explain matches with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param id The index id (required)
+   * @param template The index template (required)
+   * @param query The query to be used for the search (optional)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("search/explain/{type}/{template}/{id}")
+  Call<Object> searchExplainWithTemplatePOST(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("id") String id, @retrofit2.http.Path("template") String template, @retrofit2.http.Body Object query
+  );
+
+  /**
+   * Search an index with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param query The query to be used for the search (optional)
+   * @return Call&lt;Object&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("search/index/{type}")
-  Call<PageResourceMapstringobject> searchIndex(
-    @retrofit2.http.Path("type") String type, @retrofit2.http.Body Object query, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
+  Call<Object> searchIndex(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Body Object query
+  );
+
+  /**
+   * Search an index with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/index/{type}")
+  Call<Object> searchIndexGET(
+    @retrofit2.http.Path("type") String type
   );
 
   /**
    * Search an index with a template
-   * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+   * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param template The index template (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/index/{type}/{template}")
+  Call<Object> searchIndexWithTemplateGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template
+  );
+
+  /**
+   * Search an index with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;
    * @param type The index type (required)
    * @param template The index template (required)
    * @param query The query to be used for the search (optional)
-   * @param size The number of documents returned per page (optional, default to 25)
-   * @param page The number of the page returned, starting with 1 (optional, default to 1)
-   * @return Call&lt;PageResourceMapstringobject&gt;
+   * @return Call&lt;Object&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("search/index/{type}/{template}")
-  Call<PageResourceMapstringobject> searchIndexWithTemplate(
-    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template, @retrofit2.http.Body Object query, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
+  Call<Object> searchIndexWithTemplatePOST(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template, @retrofit2.http.Body Object query
+  );
+
+  /**
+   * Get indices
+   * This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/indices")
+  Call<Object> searchIndicesGET();
+    
+
+  /**
+   * Get mapping with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/mappings/{type}")
+  Call<Object> searchMappingsGET(
+    @retrofit2.http.Path("type") String type
+  );
+
+  /**
+   * Get mapping with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param template The index template (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/mappings/{type}/{template}")
+  Call<Object> searchMappingsWithTemplateGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template
+  );
+
+  /**
+   * Validate matches with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/validate/{type}")
+  Call<Object> searchValidateGET(
+    @retrofit2.http.Path("type") String type
+  );
+
+  /**
+   * Validate matches with no template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param query The query to be used for the search (optional)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("search/validate/{type}")
+  Call<Object> searchValidatePOST(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Body Object query
+  );
+
+  /**
+   * Validate matches with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param template The index template (required)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("search/validate/{type}/{template}")
+  Call<Object> searchValidateWithTemplateGET(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template
+  );
+
+  /**
+   * Validate matches with a template
+   * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;
+   * @param type The index type (required)
+   * @param template The index template (required)
+   * @param query The query to be used for the search (optional)
+   * @return Call&lt;Object&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("search/validate/{type}/{template}")
+  Call<Object> searchValidateWithTemplatePOST(
+    @retrofit2.http.Path("type") String type, @retrofit2.http.Path("template") String template, @retrofit2.http.Body Object query
   );
 
 }

@@ -14,10 +14,12 @@ import com.knetikcloud.model.FlagResource;
 import com.knetikcloud.model.IntWrapper;
 import com.knetikcloud.model.PageResourceCommentResource;
 import com.knetikcloud.model.PageResourceDispositionResource;
+import com.knetikcloud.model.PageResourceTemplateResource;
 import com.knetikcloud.model.PageResourceVideoRelationshipResource;
 import com.knetikcloud.model.PageResourceVideoResource;
 import com.knetikcloud.model.Result;
 import com.knetikcloud.model.StringWrapper;
+import com.knetikcloud.model.TemplateResource;
 import com.knetikcloud.model.VideoRelationshipResource;
 import com.knetikcloud.model.VideoResource;
 
@@ -133,6 +135,20 @@ public interface MediaVideosApi {
   );
 
   /**
+   * Create a video template
+   * Video Templates define a type of video and the properties they have
+   * @param videoTemplateResource The video template resource object (optional)
+   * @return Call&lt;TemplateResource&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("media/videos/templates")
+  Call<TemplateResource> createVideoTemplate(
+    @retrofit2.http.Body TemplateResource videoTemplateResource
+  );
+
+  /**
    * Deletes a video from the system if no resources are attached to it
    * 
    * @param id The video id (required)
@@ -202,6 +218,21 @@ public interface MediaVideosApi {
   @DELETE("media/videos/{video_id}/related/{id}")
   Call<Void> deleteVideoRelationship(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Path("id") Long id
+  );
+
+  /**
+   * Delete a video template
+   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+   * @param id The id of the template (required)
+   * @param cascade The value needed to delete used templates (optional)
+   * @return Call&lt;Void&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @DELETE("media/videos/templates/{id}")
+  Call<Void> deleteVideoTemplate(
+    @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
   );
 
   /**
@@ -281,6 +312,36 @@ public interface MediaVideosApi {
   @GET("media/videos/{video_id}/related")
   Call<PageResourceVideoRelationshipResource> getVideoRelationships(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
+  );
+
+  /**
+   * Get a single video template
+   * 
+   * @param id The id of the template (required)
+   * @return Call&lt;TemplateResource&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("media/videos/templates/{id}")
+  Call<TemplateResource> getVideoTemplate(
+    @retrofit2.http.Path("id") String id
+  );
+
+  /**
+   * List and search video templates
+   * 
+   * @param size The number of objects returned per page (optional, default to 25)
+   * @param page The number of the page returned, starting with 1 (optional, default to 1)
+   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
+   * @return Call&lt;PageResourceTemplateResource&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("media/videos/templates")
+  Call<PageResourceTemplateResource> getVideoTemplates(
+    @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
   );
 
   /**
@@ -386,6 +447,21 @@ public interface MediaVideosApi {
   @PUT("media/videos/{video_id}/related/{id}/relationship_details")
   Call<Void> updateVideoRelationship(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Path("relationship_id") Long relationshipId, @retrofit2.http.Body StringWrapper details
+  );
+
+  /**
+   * Update a video template
+   * 
+   * @param id The id of the template (required)
+   * @param videoTemplateResource The video template resource object (optional)
+   * @return Call&lt;TemplateResource&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @PUT("media/videos/templates/{id}")
+  Call<TemplateResource> updateVideoTemplate(
+    @retrofit2.http.Path("id") String id, @retrofit2.http.Body TemplateResource videoTemplateResource
   );
 
   /**

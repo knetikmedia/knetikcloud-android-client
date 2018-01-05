@@ -79,22 +79,6 @@ public interface ContentCommentsApi {
   );
 
   /**
-   * Search the comment index
-   * The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-   * @param query The search query (optional)
-   * @param size The number of objects returned per page (optional, default to 25)
-   * @param page The number of the page returned, starting with 1 (optional, default to 1)
-   * @return Call&lt;PageResourceCommentResource&gt;
-   */
-  @Headers({
-    "Content-Type:application/json"
-  })
-  @POST("comments/search")
-  Call<PageResourceCommentResource> searchComments(
-    @retrofit2.http.Body Object query, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
-  );
-
-  /**
    * Update a comment
    * 
    * @param id The comment id (required)

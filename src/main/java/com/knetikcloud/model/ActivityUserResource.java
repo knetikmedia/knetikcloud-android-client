@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ActivityUserResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:41:38.777-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:56:09.934-05:00")
 public class ActivityUserResource {
   @SerializedName("host")
   private Boolean host = null;

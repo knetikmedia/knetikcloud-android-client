@@ -1,6 +1,6 @@
 # MediaVideosApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,22 +11,27 @@ Method | HTTP request | Description
 [**addVideoFlag**](MediaVideosApi.md#addVideoFlag) | **POST** media/videos/{video_id}/moderation | Add a new flag
 [**addVideoRelationships**](MediaVideosApi.md#addVideoRelationships) | **POST** media/videos/{video_id}/related | Adds one or more existing videos as related to this one
 [**createVideoDisposition**](MediaVideosApi.md#createVideoDisposition) | **POST** media/videos/{video_id}/dispositions | Create a video disposition
+[**createVideoTemplate**](MediaVideosApi.md#createVideoTemplate) | **POST** media/videos/templates | Create a video template
 [**deleteVideo**](MediaVideosApi.md#deleteVideo) | **DELETE** media/videos/{id} | Deletes a video from the system if no resources are attached to it
 [**deleteVideoComment**](MediaVideosApi.md#deleteVideoComment) | **DELETE** media/videos/{video_id}/comments/{id} | Delete a video comment
 [**deleteVideoDisposition**](MediaVideosApi.md#deleteVideoDisposition) | **DELETE** media/videos/{video_id}/dispositions/{disposition_id} | Delete a video disposition
 [**deleteVideoFlag**](MediaVideosApi.md#deleteVideoFlag) | **DELETE** media/videos/{video_id}/moderation | Delete a flag
 [**deleteVideoRelationship**](MediaVideosApi.md#deleteVideoRelationship) | **DELETE** media/videos/{video_id}/related/{id} | Delete a video&#39;s relationship
+[**deleteVideoTemplate**](MediaVideosApi.md#deleteVideoTemplate) | **DELETE** media/videos/templates/{id} | Delete a video template
 [**getUserVideos**](MediaVideosApi.md#getUserVideos) | **GET** users/{user_id}/videos | Get user videos
 [**getVideo**](MediaVideosApi.md#getVideo) | **GET** media/videos/{id} | Loads a specific video details
 [**getVideoComments**](MediaVideosApi.md#getVideoComments) | **GET** media/videos/{video_id}/comments | Returns a page of comments for a video
 [**getVideoDispositions**](MediaVideosApi.md#getVideoDispositions) | **GET** media/videos/{video_id}/dispositions | Returns a page of dispositions for a video
 [**getVideoRelationships**](MediaVideosApi.md#getVideoRelationships) | **GET** media/videos/{video_id}/related | Returns a page of video relationships
+[**getVideoTemplate**](MediaVideosApi.md#getVideoTemplate) | **GET** media/videos/templates/{id} | Get a single video template
+[**getVideoTemplates**](MediaVideosApi.md#getVideoTemplates) | **GET** media/videos/templates | List and search video templates
 [**getVideos**](MediaVideosApi.md#getVideos) | **GET** media/videos | Search videos using the documented filters
 [**removeUserFromVideoWhitelist**](MediaVideosApi.md#removeUserFromVideoWhitelist) | **DELETE** media/videos/{video_id}/whitelist/{id} | Removes a user from a video&#39;s whitelist
 [**removeVideoContributor**](MediaVideosApi.md#removeVideoContributor) | **DELETE** media/videos/{video_id}/contributors/{id} | Removes a contributor from a video
 [**updateVideo**](MediaVideosApi.md#updateVideo) | **PUT** media/videos/{id} | Modifies a video&#39;s details
 [**updateVideoComment**](MediaVideosApi.md#updateVideoComment) | **PUT** media/videos/{video_id}/comments/{id}/content | Update a video comment
 [**updateVideoRelationship**](MediaVideosApi.md#updateVideoRelationship) | **PUT** media/videos/{video_id}/related/{id}/relationship_details | Update a video&#39;s relationship details
+[**updateVideoTemplate**](MediaVideosApi.md#updateVideoTemplate) | **PUT** media/videos/templates/{id} | Update a video template
 [**viewVideo**](MediaVideosApi.md#viewVideo) | **POST** media/videos/{id}/views | Increment a video&#39;s view count
 
 
@@ -429,6 +434,63 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="createVideoTemplate"></a>
+# **createVideoTemplate**
+> TemplateResource createVideoTemplate(videoTemplateResource)
+
+Create a video template
+
+Video Templates define a type of video and the properties they have
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.MediaVideosApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+MediaVideosApi apiInstance = new MediaVideosApi();
+TemplateResource videoTemplateResource = new TemplateResource(); // TemplateResource | The video template resource object
+try {
+    TemplateResource result = apiInstance.createVideoTemplate(videoTemplateResource);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaVideosApi#createVideoTemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **videoTemplateResource** | [**TemplateResource**](TemplateResource.md)| The video template resource object | [optional]
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="deleteVideo"></a>
 # **deleteVideo**
 > Void deleteVideo(id)
@@ -694,6 +756,65 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **Long**| The video id |
  **id** | **Long**| The relationship id |
+
+### Return type
+
+[**Void**](.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deleteVideoTemplate"></a>
+# **deleteVideoTemplate**
+> Void deleteVideoTemplate(id, cascade)
+
+Delete a video template
+
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.MediaVideosApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+MediaVideosApi apiInstance = new MediaVideosApi();
+String id = "id_example"; // String | The id of the template
+String cascade = "cascade_example"; // String | The value needed to delete used templates
+try {
+    Void result = apiInstance.deleteVideoTemplate(id, cascade);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaVideosApi#deleteVideoTemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The id of the template |
+ **cascade** | **String**| The value needed to delete used templates | [optional]
 
 ### Return type
 
@@ -991,6 +1112,120 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageResourceVideoRelationshipResource**](PageResourceVideoRelationshipResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getVideoTemplate"></a>
+# **getVideoTemplate**
+> TemplateResource getVideoTemplate(id)
+
+Get a single video template
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.MediaVideosApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+MediaVideosApi apiInstance = new MediaVideosApi();
+String id = "id_example"; // String | The id of the template
+try {
+    TemplateResource result = apiInstance.getVideoTemplate(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaVideosApi#getVideoTemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The id of the template |
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getVideoTemplates"></a>
+# **getVideoTemplates**
+> PageResourceTemplateResource getVideoTemplates(size, page, order)
+
+List and search video templates
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.MediaVideosApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+MediaVideosApi apiInstance = new MediaVideosApi();
+Integer size = 25; // Integer | The number of objects returned per page
+Integer page = 1; // Integer | The number of the page returned, starting with 1
+String order = "id:ASC"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+try {
+    PageResourceTemplateResource result = apiInstance.getVideoTemplates(size, page, order);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaVideosApi#getVideoTemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
+
+### Return type
+
+[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -1365,6 +1600,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Void**](.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateVideoTemplate"></a>
+# **updateVideoTemplate**
+> TemplateResource updateVideoTemplate(id, videoTemplateResource)
+
+Update a video template
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.MediaVideosApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+MediaVideosApi apiInstance = new MediaVideosApi();
+String id = "id_example"; // String | The id of the template
+TemplateResource videoTemplateResource = new TemplateResource(); // TemplateResource | The video template resource object
+try {
+    TemplateResource result = apiInstance.updateVideoTemplate(id, videoTemplateResource);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaVideosApi#updateVideoTemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The id of the template |
+ **videoTemplateResource** | [**TemplateResource**](TemplateResource.md)| The video template resource object | [optional]
+
+### Return type
+
+[**TemplateResource**](TemplateResource.md)
 
 ### Authorization
 
