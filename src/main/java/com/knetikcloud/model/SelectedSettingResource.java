@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SelectedSettingResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:41:38.777-05:00")
 public class SelectedSettingResource {
   @SerializedName("key")
   private String key = null;
