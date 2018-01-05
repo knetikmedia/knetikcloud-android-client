@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * FacebookToken
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
 public class FacebookToken {
   @SerializedName("access_token")
   private String accessToken = null;

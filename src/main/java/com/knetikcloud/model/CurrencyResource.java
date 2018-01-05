@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * CurrencyResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
 public class CurrencyResource {
   @SerializedName("active")
   private Boolean active = null;
@@ -37,6 +37,9 @@ public class CurrencyResource {
 
   @SerializedName("created_date")
   private Long createdDate = null;
+
+  @SerializedName("default_currency")
+  private Boolean defaultCurrency = null;
 
   @SerializedName("factor")
   private BigDecimal factor = null;
@@ -145,16 +148,34 @@ public class CurrencyResource {
     return createdDate;
   }
 
+  public CurrencyResource defaultCurrency(Boolean defaultCurrency) {
+    this.defaultCurrency = defaultCurrency;
+    return this;
+  }
+
+   /**
+   * Whether this is the default currency. All real money wallets will be in this currency, and the &#39;factor&#39; on each currency is in relation to the default. There must be one default currency and the current will be changed if you set another as the default. Cannot be combined with virtual currency. Take extreme caution when changing
+   * @return defaultCurrency
+  **/
+  @ApiModelProperty(example = "false", value = "Whether this is the default currency. All real money wallets will be in this currency, and the 'factor' on each currency is in relation to the default. There must be one default currency and the current will be changed if you set another as the default. Cannot be combined with virtual currency. Take extreme caution when changing")
+  public Boolean isDefaultCurrency() {
+    return defaultCurrency;
+  }
+
+  public void setDefaultCurrency(Boolean defaultCurrency) {
+    this.defaultCurrency = defaultCurrency;
+  }
+
   public CurrencyResource factor(BigDecimal factor) {
     this.factor = factor;
     return this;
   }
 
    /**
-   * The decimal to multiply the system base currency (from config &#39;currency&#39;) to localize to this one. Should be 1 for the base currency itself.
+   * The decimal to multiply the default currency to localize to this one. Should be 1 for the default currency itself.
    * @return factor
   **/
-  @ApiModelProperty(required = true, value = "The decimal to multiply the system base currency (from config 'currency') to localize to this one. Should be 1 for the base currency itself.")
+  @ApiModelProperty(required = true, value = "The decimal to multiply the default currency to localize to this one. Should be 1 for the default currency itself.")
   public BigDecimal getFactor() {
     return factor;
   }
@@ -239,6 +260,7 @@ public class CurrencyResource {
     return Objects.equals(this.active, currencyResource.active) &&
         Objects.equals(this.code, currencyResource.code) &&
         Objects.equals(this.createdDate, currencyResource.createdDate) &&
+        Objects.equals(this.defaultCurrency, currencyResource.defaultCurrency) &&
         Objects.equals(this.factor, currencyResource.factor) &&
         Objects.equals(this.icon, currencyResource.icon) &&
         Objects.equals(this.name, currencyResource.name) &&
@@ -248,7 +270,7 @@ public class CurrencyResource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, code, createdDate, factor, icon, name, type, updatedDate);
+    return Objects.hash(active, code, createdDate, defaultCurrency, factor, icon, name, type, updatedDate);
   }
 
 
@@ -260,6 +282,7 @@ public class CurrencyResource {
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
+    sb.append("    defaultCurrency: ").append(toIndentedString(defaultCurrency)).append("\n");
     sb.append("    factor: ").append(toIndentedString(factor)).append("\n");
     sb.append("    icon: ").append(toIndentedString(icon)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

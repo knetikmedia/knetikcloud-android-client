@@ -7,7 +7,6 @@ import retrofit2.http.*;
 
 import okhttp3.RequestBody;
 
-import com.knetikcloud.model.EntitlementItem;
 import com.knetikcloud.model.ItemTemplateResource;
 import com.knetikcloud.model.ObjectResource;
 import com.knetikcloud.model.PageResourceItemTemplateResource;
@@ -147,7 +146,7 @@ public interface ObjectsApi {
    * Update an object
    * 
    * @param templateId The id of the template this object is part of (required)
-   * @param entitlementId The id of the entitlement (required)
+   * @param objectId The id of the object (required)
    * @param cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (optional, default to false)
    * @param objectItem The object item object (optional)
    * @return Call&lt;Void&gt;
@@ -157,7 +156,7 @@ public interface ObjectsApi {
   })
   @PUT("objects/{template_id}/{object_id}")
   Call<Void> updateObjectItem(
-    @retrofit2.http.Path("template_id") String templateId, @retrofit2.http.Path("entitlement_id") Integer entitlementId, @retrofit2.http.Query("cascade") Boolean cascade, @retrofit2.http.Body EntitlementItem objectItem
+    @retrofit2.http.Path("template_id") String templateId, @retrofit2.http.Path("object_id") Integer objectId, @retrofit2.http.Query("cascade") Boolean cascade, @retrofit2.http.Body ObjectResource objectItem
   );
 
   /**

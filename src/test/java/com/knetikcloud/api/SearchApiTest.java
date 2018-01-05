@@ -24,7 +24,7 @@ public class SearchApiTest {
     }
 
     /**
-     * Search an index
+     * Search an index with no template
      *
      * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
      */
@@ -35,6 +35,22 @@ public class SearchApiTest {
         Integer size = null;
         Integer page = null;
         // PageResourceMapstringobject response = api.searchIndex(type, query, size, page);
+
+        // TODO: test validations
+    }
+    /**
+     * Search an index with a template
+     *
+     * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+     */
+    @Test
+    public void searchIndexWithTemplateTest() {
+        String type = null;
+        String template = null;
+        Object query = null;
+        Integer size = null;
+        Integer page = null;
+        // PageResourceMapstringobject response = api.searchIndexWithTemplate(type, template, query, size, page);
 
         // TODO: test validations
     }

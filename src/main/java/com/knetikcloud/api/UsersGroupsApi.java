@@ -96,8 +96,8 @@ public interface UsersGroupsApi {
   );
 
   /**
-   * Removes a group from the system IF no resources are attached to it
-   * 
+   * Removes a group from the system
+   * All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
    * @param uniqueName The group unique name (required)
    * @return Call&lt;Void&gt;
    */
@@ -150,6 +150,20 @@ public interface UsersGroupsApi {
   })
   @GET("users/groups/{unique_name}")
   Call<GroupResource> getGroup(
+    @retrofit2.http.Path("unique_name") String uniqueName
+  );
+
+  /**
+   * Get group ancestors
+   * Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+   * @param uniqueName The group unique name (required)
+   * @return Call&lt;List&lt;GroupResource&gt;&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("users/groups/{unique_name}/ancestors")
+  Call<List<GroupResource>> getGroupAncestors(
     @retrofit2.http.Path("unique_name") String uniqueName
   );
 
@@ -299,7 +313,7 @@ public interface UsersGroupsApi {
 
   /**
    * Update a group
-   * 
+   * If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
    * @param uniqueName The group unique name (required)
    * @param groupResource The updated group (optional)
    * @return Call&lt;Void&gt;

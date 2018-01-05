@@ -27,48 +27,27 @@ import java.io.IOException;
 /**
  * CacheClearEvent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
 public class CacheClearEvent extends BroadcastableEvent {
-  @SerializedName("customer_setup")
-  private Boolean customerSetup = null;
+  @SerializedName("teardown")
+  private Boolean teardown = null;
 
-  @SerializedName("customer_teardown")
-  private Boolean customerTeardown = null;
-
-  public CacheClearEvent customerSetup(Boolean customerSetup) {
-    this.customerSetup = customerSetup;
+  public CacheClearEvent teardown(Boolean teardown) {
+    this.teardown = teardown;
     return this;
   }
 
    /**
-   * Get customerSetup
-   * @return customerSetup
+   * Get teardown
+   * @return teardown
   **/
   @ApiModelProperty(value = "")
-  public Boolean isCustomerSetup() {
-    return customerSetup;
+  public Boolean isTeardown() {
+    return teardown;
   }
 
-  public void setCustomerSetup(Boolean customerSetup) {
-    this.customerSetup = customerSetup;
-  }
-
-  public CacheClearEvent customerTeardown(Boolean customerTeardown) {
-    this.customerTeardown = customerTeardown;
-    return this;
-  }
-
-   /**
-   * Get customerTeardown
-   * @return customerTeardown
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isCustomerTeardown() {
-    return customerTeardown;
-  }
-
-  public void setCustomerTeardown(Boolean customerTeardown) {
-    this.customerTeardown = customerTeardown;
+  public void setTeardown(Boolean teardown) {
+    this.teardown = teardown;
   }
 
 
@@ -81,14 +60,13 @@ public class CacheClearEvent extends BroadcastableEvent {
       return false;
     }
     CacheClearEvent cacheClearEvent = (CacheClearEvent) o;
-    return Objects.equals(this.customerSetup, cacheClearEvent.customerSetup) &&
-        Objects.equals(this.customerTeardown, cacheClearEvent.customerTeardown) &&
+    return Objects.equals(this.teardown, cacheClearEvent.teardown) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerSetup, customerTeardown, super.hashCode());
+    return Objects.hash(teardown, super.hashCode());
   }
 
 
@@ -97,8 +75,7 @@ public class CacheClearEvent extends BroadcastableEvent {
     StringBuilder sb = new StringBuilder();
     sb.append("class CacheClearEvent {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    customerSetup: ").append(toIndentedString(customerSetup)).append("\n");
-    sb.append("    customerTeardown: ").append(toIndentedString(customerTeardown)).append("\n");
+    sb.append("    teardown: ").append(toIndentedString(teardown)).append("\n");
     sb.append("}");
     return sb.toString();
   }

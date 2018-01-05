@@ -49,6 +49,7 @@ public interface CurrenciesApi {
   /**
    * List and search currencies
    * 
+   * @param filterDefault Filter for the one currency that is set as default (true), or all that are not (false) (optional)
    * @param filterEnabledCurrencies Filter for alternate currencies setup explicitely in system config (optional)
    * @param filterType Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;) (optional)
    * @param size The number of objects returned per page (optional, default to 25)
@@ -61,7 +62,7 @@ public interface CurrenciesApi {
   })
   @GET("currencies")
   Call<PageResourceCurrencyResource> getCurrencies(
-    @retrofit2.http.Query("filter_enabled_currencies") Boolean filterEnabledCurrencies, @retrofit2.http.Query("filter_type") String filterType, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
+    @retrofit2.http.Query("filter_default") Boolean filterDefault, @retrofit2.http.Query("filter_enabled_currencies") Boolean filterEnabledCurrencies, @retrofit2.http.Query("filter_type") String filterType, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
   );
 
   /**

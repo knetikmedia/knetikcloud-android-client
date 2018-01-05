@@ -20,6 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.knetikcloud.model.Property;
+import com.knetikcloud.model.SimpleGroupResource;
+import com.knetikcloud.model.SimpleUserResource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -30,19 +32,19 @@ import java.util.Map;
 /**
  * GroupMemberResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
 public class GroupMemberResource {
   @SerializedName("additional_properties")
   private Map<String, Property> additionalProperties = null;
 
-  @SerializedName("avatar_url")
-  private String avatarUrl = null;
+  @SerializedName("group")
+  private SimpleGroupResource group = null;
 
-  @SerializedName("display_name")
-  private String displayName = null;
+  @SerializedName("implicit")
+  private Boolean implicit = null;
 
-  @SerializedName("id")
-  private Integer id = null;
+  @SerializedName("membership_id")
+  private Long membershipId = null;
 
   @SerializedName("order")
   private String order = null;
@@ -100,8 +102,8 @@ public class GroupMemberResource {
   @SerializedName("template")
   private String template = null;
 
-  @SerializedName("username")
-  private String username = null;
+  @SerializedName("user")
+  private SimpleUserResource user = null;
 
   public GroupMemberResource additionalProperties(Map<String, Property> additionalProperties) {
     this.additionalProperties = additionalProperties;
@@ -129,40 +131,40 @@ public class GroupMemberResource {
     this.additionalProperties = additionalProperties;
   }
 
-   /**
-   * The url of the user&#39;s avatar image
-   * @return avatarUrl
-  **/
-  @ApiModelProperty(value = "The url of the user's avatar image")
-  public String getAvatarUrl() {
-    return avatarUrl;
-  }
-
-   /**
-   * The public username of the user
-   * @return displayName
-  **/
-  @ApiModelProperty(value = "The public username of the user")
-  public String getDisplayName() {
-    return displayName;
-  }
-
-  public GroupMemberResource id(Integer id) {
-    this.id = id;
+  public GroupMemberResource group(SimpleGroupResource group) {
+    this.group = group;
     return this;
   }
 
    /**
-   * The id of the user
-   * @return id
+   * The group. Id is the unique name
+   * @return group
   **/
-  @ApiModelProperty(required = true, value = "The id of the user")
-  public Integer getId() {
-    return id;
+  @ApiModelProperty(value = "The group. Id is the unique name")
+  public SimpleGroupResource getGroup() {
+    return group;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setGroup(SimpleGroupResource group) {
+    this.group = group;
+  }
+
+   /**
+   * Whether this membership is explicit (the user was added directly to the group) or implicit (the user was added only to one or more child groups)
+   * @return implicit
+  **/
+  @ApiModelProperty(example = "false", value = "Whether this membership is explicit (the user was added directly to the group) or implicit (the user was added only to one or more child groups)")
+  public Boolean isImplicit() {
+    return implicit;
+  }
+
+   /**
+   * The id of the membership entry
+   * @return membershipId
+  **/
+  @ApiModelProperty(value = "The id of the membership entry")
+  public Long getMembershipId() {
+    return membershipId;
   }
 
   public GroupMemberResource order(String order) {
@@ -219,13 +221,22 @@ public class GroupMemberResource {
     this.template = template;
   }
 
+  public GroupMemberResource user(SimpleUserResource user) {
+    this.user = user;
+    return this;
+  }
+
    /**
-   * The username of the user
-   * @return username
+   * The user
+   * @return user
   **/
-  @ApiModelProperty(value = "The username of the user")
-  public String getUsername() {
-    return username;
+  @ApiModelProperty(required = true, value = "The user")
+  public SimpleUserResource getUser() {
+    return user;
+  }
+
+  public void setUser(SimpleUserResource user) {
+    this.user = user;
   }
 
 
@@ -239,18 +250,18 @@ public class GroupMemberResource {
     }
     GroupMemberResource groupMemberResource = (GroupMemberResource) o;
     return Objects.equals(this.additionalProperties, groupMemberResource.additionalProperties) &&
-        Objects.equals(this.avatarUrl, groupMemberResource.avatarUrl) &&
-        Objects.equals(this.displayName, groupMemberResource.displayName) &&
-        Objects.equals(this.id, groupMemberResource.id) &&
+        Objects.equals(this.group, groupMemberResource.group) &&
+        Objects.equals(this.implicit, groupMemberResource.implicit) &&
+        Objects.equals(this.membershipId, groupMemberResource.membershipId) &&
         Objects.equals(this.order, groupMemberResource.order) &&
         Objects.equals(this.status, groupMemberResource.status) &&
         Objects.equals(this.template, groupMemberResource.template) &&
-        Objects.equals(this.username, groupMemberResource.username);
+        Objects.equals(this.user, groupMemberResource.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties, avatarUrl, displayName, id, order, status, template, username);
+    return Objects.hash(additionalProperties, group, implicit, membershipId, order, status, template, user);
   }
 
 
@@ -260,13 +271,13 @@ public class GroupMemberResource {
     sb.append("class GroupMemberResource {\n");
     
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
-    sb.append("    avatarUrl: ").append(toIndentedString(avatarUrl)).append("\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    implicit: ").append(toIndentedString(implicit)).append("\n");
+    sb.append("    membershipId: ").append(toIndentedString(membershipId)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
   }

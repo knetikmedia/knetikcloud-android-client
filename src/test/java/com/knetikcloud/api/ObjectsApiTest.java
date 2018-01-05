@@ -1,7 +1,6 @@
 package com.knetikcloud.api;
 
 import com.knetikcloud.client.ApiClient;
-import com.knetikcloud.model.EntitlementItem;
 import com.knetikcloud.model.ItemTemplateResource;
 import com.knetikcloud.model.ObjectResource;
 import com.knetikcloud.model.PageResourceItemTemplateResource;
@@ -141,10 +140,10 @@ public class ObjectsApiTest {
     @Test
     public void updateObjectItemTest() {
         String templateId = null;
-        Integer entitlementId = null;
+        Integer objectId = null;
         Boolean cascade = null;
-        EntitlementItem objectItem = null;
-        // Void response = api.updateObjectItem(templateId, entitlementId, cascade, objectItem);
+        ObjectResource objectItem = null;
+        // Void response = api.updateObjectItem(templateId, objectId, cascade, objectItem);
 
         // TODO: test validations
     }

@@ -19,57 +19,55 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.knetikcloud.model.PropertyDefinitionResource;
-import com.knetikcloud.model.PropertyFieldListResource;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * DatePropertyDefinitionResource
+ * SimpleGroupResource
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
-public class DatePropertyDefinitionResource extends PropertyDefinitionResource {
-  @SerializedName("max")
-  private Long max = null;
+public class SimpleGroupResource {
+  @SerializedName("name")
+  private String name = null;
 
-  @SerializedName("min")
-  private Long min = null;
+  @SerializedName("unique_name")
+  private String uniqueName = null;
 
-  public DatePropertyDefinitionResource max(Long max) {
-    this.max = max;
+  public SimpleGroupResource name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * If provided, the maximum value
-   * @return max
+   * The name of the group. Max 50 characters
+   * @return name
   **/
-  @ApiModelProperty(value = "If provided, the maximum value")
-  public Long getMax() {
-    return max;
+  @ApiModelProperty(required = true, value = "The name of the group. Max 50 characters")
+  public String getName() {
+    return name;
   }
 
-  public void setMax(Long max) {
-    this.max = max;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public DatePropertyDefinitionResource min(Long min) {
-    this.min = min;
+  public SimpleGroupResource uniqueName(String uniqueName) {
+    this.uniqueName = uniqueName;
     return this;
   }
 
    /**
-   * If provided, the minimum value
-   * @return min
+   * Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID
+   * @return uniqueName
   **/
-  @ApiModelProperty(value = "If provided, the minimum value")
-  public Long getMin() {
-    return min;
+  @ApiModelProperty(value = "Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID")
+  public String getUniqueName() {
+    return uniqueName;
   }
 
-  public void setMin(Long min) {
-    this.min = min;
+  public void setUniqueName(String uniqueName) {
+    this.uniqueName = uniqueName;
   }
 
 
@@ -81,25 +79,24 @@ public class DatePropertyDefinitionResource extends PropertyDefinitionResource {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DatePropertyDefinitionResource datePropertyDefinitionResource = (DatePropertyDefinitionResource) o;
-    return Objects.equals(this.max, datePropertyDefinitionResource.max) &&
-        Objects.equals(this.min, datePropertyDefinitionResource.min) &&
-        super.equals(o);
+    SimpleGroupResource simpleGroupResource = (SimpleGroupResource) o;
+    return Objects.equals(this.name, simpleGroupResource.name) &&
+        Objects.equals(this.uniqueName, simpleGroupResource.uniqueName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(max, min, super.hashCode());
+    return Objects.hash(name, uniqueName);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DatePropertyDefinitionResource {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    max: ").append(toIndentedString(max)).append("\n");
-    sb.append("    min: ").append(toIndentedString(min)).append("\n");
+    sb.append("class SimpleGroupResource {\n");
+    
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    uniqueName: ").append(toIndentedString(uniqueName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

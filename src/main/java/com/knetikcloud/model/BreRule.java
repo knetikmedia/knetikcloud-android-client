@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * BreRule
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
 public class BreRule {
   @SerializedName("actions")
   private List<ActionContextobject> actions = new ArrayList<ActionContextobject>();
@@ -50,6 +50,9 @@ public class BreRule {
   @SerializedName("end_date")
   private Long endDate = null;
 
+  @SerializedName("evaluation_count")
+  private Long evaluationCount = null;
+
   @SerializedName("event_name")
   private String eventName = null;
 
@@ -58,6 +61,9 @@ public class BreRule {
 
   @SerializedName("name")
   private String name = null;
+
+  @SerializedName("run_count")
+  private Long runCount = null;
 
   @SerializedName("sort")
   private Integer sort = null;
@@ -172,6 +178,15 @@ public class BreRule {
     this.endDate = endDate;
   }
 
+   /**
+   * How many times the rule has been evaluated (it&#39;s conditions checked, whether it then runs or not)
+   * @return evaluationCount
+  **/
+  @ApiModelProperty(value = "How many times the rule has been evaluated (it's conditions checked, whether it then runs or not)")
+  public Long getEvaluationCount() {
+    return evaluationCount;
+  }
+
   public BreRule eventName(String eventName) {
     this.eventName = eventName;
     return this;
@@ -224,6 +239,15 @@ public class BreRule {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+   /**
+   * How many times the rule has run
+   * @return runCount
+  **/
+  @ApiModelProperty(value = "How many times the rule has run")
+  public Long getRunCount() {
+    return runCount;
   }
 
   public BreRule sort(Integer sort) {
@@ -287,9 +311,11 @@ public class BreRule {
         Objects.equals(this.description, breRule.description) &&
         Objects.equals(this.enabled, breRule.enabled) &&
         Objects.equals(this.endDate, breRule.endDate) &&
+        Objects.equals(this.evaluationCount, breRule.evaluationCount) &&
         Objects.equals(this.eventName, breRule.eventName) &&
         Objects.equals(this.id, breRule.id) &&
         Objects.equals(this.name, breRule.name) &&
+        Objects.equals(this.runCount, breRule.runCount) &&
         Objects.equals(this.sort, breRule.sort) &&
         Objects.equals(this.startDate, breRule.startDate) &&
         Objects.equals(this.systemRule, breRule.systemRule);
@@ -297,7 +323,7 @@ public class BreRule {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actions, condition, conditionText, description, enabled, endDate, eventName, id, name, sort, startDate, systemRule);
+    return Objects.hash(actions, condition, conditionText, description, enabled, endDate, evaluationCount, eventName, id, name, runCount, sort, startDate, systemRule);
   }
 
 
@@ -312,9 +338,11 @@ public class BreRule {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    evaluationCount: ").append(toIndentedString(evaluationCount)).append("\n");
     sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    runCount: ").append(toIndentedString(runCount)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    systemRule: ").append(toIndentedString(systemRule)).append("\n");

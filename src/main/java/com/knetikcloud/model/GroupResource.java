@@ -23,6 +23,7 @@ import com.knetikcloud.model.Property;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,7 @@ import java.util.Map;
 /**
  * GroupResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-11-20T10:55:30.029-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T09:34:35.981-05:00")
 public class GroupResource {
   @SerializedName("additional_properties")
   private Map<String, Property> additionalProperties = null;
@@ -102,6 +103,9 @@ public class GroupResource {
 
   @SerializedName("sub_member_count")
   private Integer subMemberCount = null;
+
+  @SerializedName("tags")
+  private List<String> tags = null;
 
   @SerializedName("template")
   private String template = null;
@@ -243,6 +247,32 @@ public class GroupResource {
     return subMemberCount;
   }
 
+  public GroupResource tags(List<String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public GroupResource addTagsItem(String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<String>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Tags for search
+   * @return tags
+  **/
+  @ApiModelProperty(value = "Tags for search")
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
   public GroupResource template(String template) {
     this.template = template;
     return this;
@@ -267,10 +297,10 @@ public class GroupResource {
   }
 
    /**
-   * Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created
+   * Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID
    * @return uniqueName
   **/
-  @ApiModelProperty(required = true, value = "Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created")
+  @ApiModelProperty(value = "Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID")
   public String getUniqueName() {
     return uniqueName;
   }
@@ -297,13 +327,14 @@ public class GroupResource {
         Objects.equals(this.parent, groupResource.parent) &&
         Objects.equals(this.status, groupResource.status) &&
         Objects.equals(this.subMemberCount, groupResource.subMemberCount) &&
+        Objects.equals(this.tags, groupResource.tags) &&
         Objects.equals(this.template, groupResource.template) &&
         Objects.equals(this.uniqueName, groupResource.uniqueName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties, description, memberCount, messageOfTheDay, name, parent, status, subMemberCount, template, uniqueName);
+    return Objects.hash(additionalProperties, description, memberCount, messageOfTheDay, name, parent, status, subMemberCount, tags, template, uniqueName);
   }
 
 
@@ -320,6 +351,7 @@ public class GroupResource {
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subMemberCount: ").append(toIndentedString(subMemberCount)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    uniqueName: ").append(toIndentedString(uniqueName)).append("\n");
     sb.append("}");

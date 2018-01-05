@@ -55,12 +55,13 @@ public class CurrenciesApiTest {
      */
     @Test
     public void getCurrenciesTest() {
+        Boolean filterDefault = null;
         Boolean filterEnabledCurrencies = null;
         String filterType = null;
         Integer size = null;
         Integer page = null;
         String order = null;
-        // PageResourceCurrencyResource response = api.getCurrencies(filterEnabledCurrencies, filterType, size, page, order);
+        // PageResourceCurrencyResource response = api.getCurrencies(filterDefault, filterEnabledCurrencies, filterType, size, page, order);
 
         // TODO: test validations
     }
