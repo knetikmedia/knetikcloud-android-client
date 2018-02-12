@@ -27,7 +27,7 @@ public class AuthTokensApiTest {
     /**
      * Delete tokens by username, client id, or both
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      */
     @Test
     public void deleteTokensTest() {
@@ -40,7 +40,7 @@ public class AuthTokensApiTest {
     /**
      * Get a single token by username and client id
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      */
     @Test
     public void getTokenTest() {
@@ -53,7 +53,7 @@ public class AuthTokensApiTest {
     /**
      * List usernames and client ids
      *
-     * Token value not shown
+     * Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      */
     @Test
     public void getTokensTest() {

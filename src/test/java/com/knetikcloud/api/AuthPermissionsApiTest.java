@@ -27,7 +27,7 @@ public class AuthPermissionsApiTest {
     /**
      * Create a new permission
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      */
     @Test
     public void createPermissionTest() {
@@ -39,7 +39,7 @@ public class AuthPermissionsApiTest {
     /**
      * Delete a permission
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      */
     @Test
     public void deletePermissionTest() {
@@ -52,7 +52,7 @@ public class AuthPermissionsApiTest {
     /**
      * Get a single permission
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      */
     @Test
     public void getPermissionTest() {
@@ -64,7 +64,7 @@ public class AuthPermissionsApiTest {
     /**
      * List and search permissions
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      */
     @Test
     public void getPermissionsTest() {
@@ -78,7 +78,7 @@ public class AuthPermissionsApiTest {
     /**
      * Update a permission
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      */
     @Test
     public void updatePermissionTest() {

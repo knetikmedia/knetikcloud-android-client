@@ -1,6 +1,6 @@
 # MediaArtistsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 Adds a new artist in the system
 
-Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 Create an artist template
 
-Artist Templates define a type of artist and the properties they have
+Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -136,6 +136,8 @@ Name | Type | Description  | Notes
 
 Removes an artist from the system IF no resources are attached to it
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -182,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteArtistTemplate"></a>
@@ -191,7 +193,7 @@ Name | Type | Description  | Notes
 
 Delete an artist template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -241,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArtist"></a>
@@ -249,6 +251,8 @@ Name | Type | Description  | Notes
 > ArtistResource getArtist(id, showContributions)
 
 Loads a specific artist details
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -298,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArtistTemplate"></a>
@@ -306,6 +310,8 @@ Name | Type | Description  | Notes
 > TemplateResource getArtistTemplate(id)
 
 Get a single artist template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
 
 ### Example
 ```java
@@ -353,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArtistTemplates"></a>
@@ -361,6 +367,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getArtistTemplates(size, page, order)
 
 List and search artist templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
 
 ### Example
 ```java
@@ -412,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArtists"></a>
@@ -420,6 +428,8 @@ Name | Type | Description  | Notes
 > PageResourceArtistResource getArtists(filterArtistsByName, size, page, order)
 
 Search for artists
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -473,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateArtist"></a>
@@ -481,6 +491,8 @@ Name | Type | Description  | Notes
 > Void updateArtist(id, artistResource)
 
 Modifies an artist details
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
 
 ### Example
 ```java
@@ -538,6 +550,8 @@ Name | Type | Description  | Notes
 > TemplateResource updateArtistTemplate(id, artistTemplateResource)
 
 Update an artist template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

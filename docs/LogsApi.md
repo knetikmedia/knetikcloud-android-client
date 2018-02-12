@@ -1,6 +1,6 @@
 # LogsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > Void addUserLog(logEntry)
 
 Add a user log entry
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; owner
 
 ### Example
 ```java
@@ -74,6 +76,8 @@ Name | Type | Description  | Notes
 
 Get an existing BRE event log entry by id
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -120,14 +124,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBREEventLogs"></a>
 # **getBREEventLogs**
-> PageResourceBreEventLog getBREEventLogs(filterStartDate, filterEventName, filterEventId, size, page, order)
+> PageResourceBreEventLog getBREEventLogs(filterStartDate, filterEventName, filterEventId, size, page, order, filterRuleId)
 
 Returns a list of BRE event log entries
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```java
@@ -155,8 +161,9 @@ String filterEventId = "filterEventId_example"; // String | Filter event logs by
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned, starting with 1
 String order = "id:DESC"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+String filterRuleId = "filterRuleId_example"; // String | Filter event logs by request id
 try {
-    PageResourceBreEventLog result = apiInstance.getBREEventLogs(filterStartDate, filterEventName, filterEventId, size, page, order);
+    PageResourceBreEventLog result = apiInstance.getBREEventLogs(filterStartDate, filterEventName, filterEventId, size, page, order, filterRuleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LogsApi#getBREEventLogs");
@@ -174,6 +181,7 @@ Name | Type | Description  | Notes
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:DESC]
+ **filterRuleId** | **String**| Filter event logs by request id | [optional]
 
 ### Return type
 
@@ -185,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBREForwardLog"></a>
@@ -193,6 +201,8 @@ Name | Type | Description  | Notes
 > ForwardLog getBREForwardLog(id)
 
 Get an existing forward log entry by id
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```java
@@ -240,14 +250,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBREForwardLogs"></a>
 # **getBREForwardLogs**
-> PageResourceForwardLog getBREForwardLogs(filterStartDate, filterEndDate, filterStatusCode, size, page, order)
+> PageResourceForwardLog getBREForwardLogs(filterStartDate, filterEndDate, filterStatusCode, filterUrl, size, page, order)
 
 Returns a list of forward log entries
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```java
@@ -272,11 +284,12 @@ LogsApi apiInstance = new LogsApi();
 String filterStartDate = "filterStartDate_example"; // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
 String filterEndDate = "filterEndDate_example"; // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
 Integer filterStatusCode = 56; // Integer | Filter forward logs by http status code
+Integer filterUrl = 56; // Integer | Filter forward logs by URL starting with...
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned, starting with 1
 String order = "id:DESC"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 try {
-    PageResourceForwardLog result = apiInstance.getBREForwardLogs(filterStartDate, filterEndDate, filterStatusCode, size, page, order);
+    PageResourceForwardLog result = apiInstance.getBREForwardLogs(filterStartDate, filterEndDate, filterStatusCode, filterUrl, size, page, order);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LogsApi#getBREForwardLogs");
@@ -291,6 +304,7 @@ Name | Type | Description  | Notes
  **filterStartDate** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional]
  **filterEndDate** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional]
  **filterStatusCode** | **Integer**| Filter forward logs by http status code | [optional]
+ **filterUrl** | **Integer**| Filter forward logs by URL starting with... | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:DESC]
@@ -305,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserLog"></a>
@@ -313,6 +327,8 @@ Name | Type | Description  | Notes
 > UserActionLog getUserLog(id)
 
 Returns a user log entry by id
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
 
 ### Example
 ```java
@@ -360,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserLogs"></a>
@@ -368,6 +384,8 @@ Name | Type | Description  | Notes
 > PageResourceUserActionLog getUserLogs(filterUser, filterActionName, size, page, order)
 
 Returns a page of user logs entries
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
 
 ### Example
 ```java
@@ -423,6 +441,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

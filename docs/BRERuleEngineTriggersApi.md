@@ -1,6 +1,6 @@
 # BRERuleEngineTriggersApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create a trigger
 
-Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
 
 ### Example
 ```java
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 Delete a trigger
 
-May fail if there are existing rules against it. Cannot delete core triggers
+May fail if there are existing rules against it. Cannot delete core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
 
 ### Example
 ```java
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBRETrigger"></a>
@@ -130,6 +130,8 @@ Name | Type | Description  | Notes
 > BreTriggerResource getBRETrigger(eventName)
 
 Get a single trigger
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
 
 ### Example
 ```java
@@ -177,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBRETriggers"></a>
@@ -185,6 +187,8 @@ Name | Type | Description  | Notes
 > PageResourceBreTriggerResource getBRETriggers(filterSystem, filterCategory, filterTags, filterName, filterSearch, size, page)
 
 List triggers
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
 
 ### Example
 ```java
@@ -244,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateBRETrigger"></a>
@@ -253,7 +257,7 @@ Name | Type | Description  | Notes
 
 Update a trigger
 
-May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
 
 ### Example
 ```java

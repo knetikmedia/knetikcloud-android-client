@@ -1,6 +1,6 @@
 # StoreSubscriptionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,8 @@ Method | HTTP request | Description
 > SubscriptionResource createSubscription(subscriptionResource)
 
 Creates a subscription item and associated plans
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```java
@@ -78,7 +80,7 @@ Name | Type | Description  | Notes
 
 Create a subscription template
 
-Subscription Templates define a type of subscription and the properties they have.
+Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -135,7 +137,7 @@ Name | Type | Description  | Notes
 
 Delete a subscription plan
 
-Must not be locked or a migration target
+Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```java
@@ -185,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteSubscriptionTemplate"></a>
@@ -193,6 +195,8 @@ Name | Type | Description  | Notes
 > Void deleteSubscriptionTemplate(id, cascade)
 
 Delete a subscription template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -242,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSubscription"></a>
@@ -250,6 +254,8 @@ Name | Type | Description  | Notes
 > SubscriptionResource getSubscription(id)
 
 Retrieve a single subscription item and associated plans
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -297,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSubscriptionTemplate"></a>
@@ -306,7 +312,7 @@ Name | Type | Description  | Notes
 
 Get a single subscription template
 
-Subscription Templates define a type of subscription and the properties they have.
+Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -354,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSubscriptionTemplates"></a>
@@ -362,6 +368,8 @@ Name | Type | Description  | Notes
 > PageResourceSubscriptionTemplateResource getSubscriptionTemplates(size, page, order)
 
 List and search subscription templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```java
@@ -413,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getSubscriptions"></a>
@@ -421,6 +429,8 @@ Name | Type | Description  | Notes
 > PageResourceSubscriptionResource getSubscriptions(size, page, order)
 
 List available subscription items and associated plans
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -472,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="processSubscriptions"></a>
@@ -480,6 +490,8 @@ Name | Type | Description  | Notes
 > Void processSubscriptions()
 
 Processes subscriptions and charge dues
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```java
@@ -532,7 +544,7 @@ This endpoint does not need any parameter.
 
 Updates a subscription item and associated plans
 
-Will not remove plans left out
+Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```java
@@ -590,6 +602,8 @@ Name | Type | Description  | Notes
 > SubscriptionTemplateResource updateSubscriptionTemplate(id, subscriptionTemplateResource)
 
 Update a subscription template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BareActivityResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:56:09.934-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
 public class BareActivityResource {
   @SerializedName("created_date")
   private Long createdDate = null;
@@ -175,7 +175,7 @@ public class BareActivityResource {
    * The type of the activity
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "The type of the activity")
+  @ApiModelProperty(value = "The type of the activity")
   public String getType() {
     return type;
   }

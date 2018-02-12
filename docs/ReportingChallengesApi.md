@@ -1,6 +1,6 @@
 # ReportingChallengesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Retrieve a challenge event leaderboard details
 
-Lists all leaderboard entries with additional user details
+Lists all leaderboard entries with additional user details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeEventParticipants"></a>
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 Retrieve a challenge event participant details
 
-Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
+Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -131,6 +131,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

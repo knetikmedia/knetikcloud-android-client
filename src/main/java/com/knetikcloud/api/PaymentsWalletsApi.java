@@ -24,14 +24,11 @@ import java.util.Map;
 public interface PaymentsWalletsApi {
   /**
    * Returns the user&#39;s wallet for the given currency code
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
    * @param userId The ID of the user for whom wallet is being retrieved (required)
    * @param currencyCode Currency code of the user&#39;s wallet (required)
    * @return Call&lt;SimpleWallet&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/wallets/{currency_code}")
   Call<SimpleWallet> getUserWallet(
     @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("currency_code") String currencyCode
@@ -39,7 +36,7 @@ public interface PaymentsWalletsApi {
 
   /**
    * Retrieve a user&#39;s wallet transactions
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
    * @param userId The ID of the user for whom wallet transactions are being retrieved (required)
    * @param currencyCode Currency code of the user&#39;s wallet (required)
    * @param filterType Filter for transactions with specified type (optional)
@@ -51,9 +48,6 @@ public interface PaymentsWalletsApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceWalletTransactionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/wallets/{currency_code}/transactions")
   Call<PageResourceWalletTransactionResource> getUserWalletTransactions(
     @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("currency_code") String currencyCode, @retrofit2.http.Query("filter_type") String filterType, @retrofit2.http.Query("filter_max_date") Long filterMaxDate, @retrofit2.http.Query("filter_min_date") Long filterMinDate, @retrofit2.http.Query("filter_sign") String filterSign, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -61,13 +55,10 @@ public interface PaymentsWalletsApi {
 
   /**
    * List all of a user&#39;s wallets
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
    * @param userId The ID of the user for whom wallets are being retrieved (required)
    * @return Call&lt;List&lt;SimpleWallet&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/wallets")
   Call<List<SimpleWallet>> getUserWallets(
     @retrofit2.http.Path("user_id") Integer userId
@@ -75,19 +66,16 @@ public interface PaymentsWalletsApi {
 
   /**
    * Retrieves a summation of wallet balances by currency code
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
    * @return Call&lt;PageResourceWalletTotalResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("wallets/totals")
   Call<PageResourceWalletTotalResponse> getWalletBalances();
     
 
   /**
    * Retrieve wallet transactions across the system
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
    * @param filterInvoice Filter for transactions from a specific invoice (optional)
    * @param filterType Filter for transactions with specified type (optional)
    * @param filterDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional)
@@ -101,9 +89,6 @@ public interface PaymentsWalletsApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceWalletTransactionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("wallets/transactions")
   Call<PageResourceWalletTransactionResource> getWalletTransactions(
     @retrofit2.http.Query("filter_invoice") Integer filterInvoice, @retrofit2.http.Query("filter_type") String filterType, @retrofit2.http.Query("filter_date") String filterDate, @retrofit2.http.Query("filter_sign") String filterSign, @retrofit2.http.Query("filter_user_id") Integer filterUserId, @retrofit2.http.Query("filter_username") String filterUsername, @retrofit2.http.Query("filter_details") String filterDetails, @retrofit2.http.Query("filter_currency_code") String filterCurrencyCode, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -111,15 +96,12 @@ public interface PaymentsWalletsApi {
 
   /**
    * Retrieve a list of wallets across the system
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceSimpleWallet&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("wallets")
   Call<PageResourceSimpleWallet> getWallets(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -127,7 +109,7 @@ public interface PaymentsWalletsApi {
 
   /**
    * Updates the balance for a user&#39;s wallet
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
    * @param userId The ID of the user for whom wallet is being modified (required)
    * @param currencyCode Currency code of the user&#39;s wallet (required)
    * @param request The requested balance modification to be made to the user&#39;s wallet (optional)

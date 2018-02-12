@@ -21,7 +21,7 @@ import java.util.Map;
 public interface ContentCommentsApi {
   /**
    * Add a new comment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
    * @param commentResource The comment to be added (optional)
    * @return Call&lt;CommentResource&gt;
    */
@@ -35,13 +35,10 @@ public interface ContentCommentsApi {
 
   /**
    * Delete a comment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
    * @param id The comment id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("comments/{id}")
   Call<Void> deleteComment(
     @retrofit2.http.Path("id") Long id
@@ -49,13 +46,10 @@ public interface ContentCommentsApi {
 
   /**
    * Return a comment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The comment id (required)
    * @return Call&lt;CommentResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("comments/{id}")
   Call<CommentResource> getComment(
     @retrofit2.http.Path("id") Long id
@@ -63,16 +57,13 @@ public interface ContentCommentsApi {
 
   /**
    * Returns a page of comments
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param context Get comments by context type (required)
    * @param contextId Get comments by context id (required)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceCommentResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("comments")
   Call<PageResourceCommentResource> getComments(
     @retrofit2.http.Query("context") String context, @retrofit2.http.Query("context_id") Integer contextId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -80,7 +71,7 @@ public interface ContentCommentsApi {
 
   /**
    * Update a comment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
    * @param id The comment id (required)
    * @param content The comment content (optional)
    * @return Call&lt;Void&gt;

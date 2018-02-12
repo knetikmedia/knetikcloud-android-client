@@ -1,6 +1,6 @@
 # PaymentsXsollaApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,6 +12,8 @@ Method | HTTP request | Description
 > String createXsollaTokenUrl(request)
 
 Create a payment token that should be used to forward the user to Xsolla so they can complete payment
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
 
 ### Example
 ```java

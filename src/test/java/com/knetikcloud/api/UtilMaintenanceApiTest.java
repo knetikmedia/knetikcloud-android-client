@@ -26,7 +26,7 @@ public class UtilMaintenanceApiTest {
     /**
      * Delete maintenance info
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      */
     @Test
     public void deleteMaintenanceTest() {
@@ -37,7 +37,7 @@ public class UtilMaintenanceApiTest {
     /**
      * Get current maintenance info
      *
-     * Get current maintenance info. 404 if no maintenance.
+     * Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getMaintenanceTest() {
@@ -48,7 +48,7 @@ public class UtilMaintenanceApiTest {
     /**
      * Set current maintenance info
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      */
     @Test
     public void setMaintenanceTest() {
@@ -60,7 +60,7 @@ public class UtilMaintenanceApiTest {
     /**
      * Update current maintenance info
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      */
     @Test
     public void updateMaintenanceTest() {

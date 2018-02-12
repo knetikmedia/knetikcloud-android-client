@@ -1,6 +1,6 @@
 # UtilMaintenanceApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > Void deleteMaintenance()
 
 Delete maintenance info
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
 
 ### Example
 ```java
@@ -58,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getMaintenance"></a>
@@ -67,7 +69,7 @@ This endpoint does not need any parameter.
 
 Get current maintenance info
 
-Get current maintenance info. 404 if no maintenance.
+Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -111,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setMaintenance"></a>
@@ -119,6 +121,8 @@ This endpoint does not need any parameter.
 > Void setMaintenance(maintenance)
 
 Set current maintenance info
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
 
 ### Example
 ```java
@@ -174,6 +178,8 @@ Name | Type | Description  | Notes
 > Void updateMaintenance(maintenance)
 
 Update current maintenance info
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
 
 ### Example
 ```java

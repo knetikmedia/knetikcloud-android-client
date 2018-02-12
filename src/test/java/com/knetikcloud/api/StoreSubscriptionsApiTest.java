@@ -29,7 +29,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Creates a subscription item and associated plans
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      */
     @Test
     public void createSubscriptionTest() {
@@ -41,7 +41,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Create a subscription template
      *
-     * Subscription Templates define a type of subscription and the properties they have.
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createSubscriptionTemplateTest() {
@@ -53,7 +53,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Delete a subscription plan
      *
-     * Must not be locked or a migration target
+     * Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      */
     @Test
     public void deleteSubscriptionTest() {
@@ -66,7 +66,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Delete a subscription template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteSubscriptionTemplateTest() {
@@ -79,7 +79,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Retrieve a single subscription item and associated plans
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getSubscriptionTest() {
@@ -91,7 +91,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Get a single subscription template
      *
-     * Subscription Templates define a type of subscription and the properties they have.
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void getSubscriptionTemplateTest() {
@@ -103,7 +103,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * List and search subscription templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
      */
     @Test
     public void getSubscriptionTemplatesTest() {
@@ -117,7 +117,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * List available subscription items and associated plans
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getSubscriptionsTest() {
@@ -131,7 +131,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Processes subscriptions and charge dues
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      */
     @Test
     public void processSubscriptionsTest() {
@@ -142,7 +142,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Updates a subscription item and associated plans
      *
-     * Will not remove plans left out
+     * Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      */
     @Test
     public void updateSubscriptionTest() {
@@ -155,7 +155,7 @@ public class StoreSubscriptionsApiTest {
     /**
      * Update a subscription template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateSubscriptionTemplateTest() {

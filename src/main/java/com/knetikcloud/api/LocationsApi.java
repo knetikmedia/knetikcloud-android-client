@@ -21,37 +21,28 @@ import java.util.Map;
 public interface LocationsApi {
   /**
    * Get a list of countries
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @return Call&lt;List&lt;CountryResource&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("location/countries")
   Call<List<CountryResource>> getCountries();
     
 
   /**
    * Get the iso3 code of your country
-   * Determined by geo ip location
+   * Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @return Call&lt;String&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("location/geolocation/country")
   Call<String> getCountryByGeoLocation();
     
 
   /**
    * Get a list of a country&#39;s states
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @return Call&lt;List&lt;StateResource&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("location/countries/{country_code_iso3}/states")
   Call<List<StateResource>> getCountryStates(
     @retrofit2.http.Path("country_code_iso3") String countryCodeIso3
@@ -59,12 +50,9 @@ public interface LocationsApi {
 
   /**
    * Get the currency information of your country
-   * Determined by geo ip location, currency to country mapping and a fallback setting
+   * Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @return Call&lt;CurrencyResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("location/geolocation/currency")
   Call<CurrencyResource> getCurrencyByGeoLocation();
     

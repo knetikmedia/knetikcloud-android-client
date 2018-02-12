@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * DeviceResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:56:09.934-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
 
 public class DeviceResource {
   @SerializedName("additional_properties")
@@ -145,10 +145,10 @@ public class DeviceResource {
   }
 
    /**
-   * The type of device. Use mobile to specifically register mobile devices. This particular type will be used to send and receive notifications
+   * The type of device. Use mobile_device to specifically register mobile devices. This particular type will be used to send and receive notifications
    * @return deviceType
   **/
-  @ApiModelProperty(value = "The type of device. Use mobile to specifically register mobile devices. This particular type will be used to send and receive notifications")
+  @ApiModelProperty(value = "The type of device. Use mobile_device to specifically register mobile devices. This particular type will be used to send and receive notifications")
   public String getDeviceType() {
     return deviceType;
   }
@@ -163,10 +163,10 @@ public class DeviceResource {
   }
 
    /**
-   * The unique ID for this device
+   * The unique ID for this device. Cannot be changed after creation. Default: random
    * @return id
   **/
-  @ApiModelProperty(value = "The unique ID for this device")
+  @ApiModelProperty(value = "The unique ID for this device. Cannot be changed after creation. Default: random")
   public String getId() {
     return id;
   }

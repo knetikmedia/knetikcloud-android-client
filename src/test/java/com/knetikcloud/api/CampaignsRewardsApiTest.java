@@ -27,7 +27,7 @@ public class CampaignsRewardsApiTest {
     /**
      * Create a reward set
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      */
     @Test
     public void createRewardSetTest() {
@@ -39,7 +39,7 @@ public class CampaignsRewardsApiTest {
     /**
      * Delete a reward set
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      */
     @Test
     public void deleteRewardSetTest() {
@@ -51,7 +51,7 @@ public class CampaignsRewardsApiTest {
     /**
      * Get a single reward set
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getRewardSetTest() {
@@ -63,7 +63,7 @@ public class CampaignsRewardsApiTest {
     /**
      * List and search reward sets
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getRewardSetsTest() {
@@ -77,7 +77,7 @@ public class CampaignsRewardsApiTest {
     /**
      * Update a reward set
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      */
     @Test
     public void updateRewardSetTest() {

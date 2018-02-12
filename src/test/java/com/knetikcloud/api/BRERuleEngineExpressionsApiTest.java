@@ -27,7 +27,7 @@ public class BRERuleEngineExpressionsApiTest {
     /**
      * Lookup a specific expression
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      */
     @Test
     public void getBREExpressionTest() {
@@ -37,9 +37,9 @@ public class BRERuleEngineExpressionsApiTest {
         // TODO: test validations
     }
     /**
-     * Get a list of supported expressions to use in conditions or actions.
+     * Get a list of supported expressions to use in conditions or actions
      *
-     * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+     * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      */
     @Test
     public void getBREExpressionsTest() {
@@ -51,7 +51,7 @@ public class BRERuleEngineExpressionsApiTest {
     /**
      * Returns the textual representation of an expression
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      */
     @Test
     public void getExpressionAsTextTest() {

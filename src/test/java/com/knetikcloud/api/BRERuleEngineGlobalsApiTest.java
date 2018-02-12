@@ -27,7 +27,7 @@ public class BRERuleEngineGlobalsApiTest {
     /**
      * Create a global definition
      *
-     * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+     * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      */
     @Test
     public void createBREGlobalTest() {
@@ -39,7 +39,7 @@ public class BRERuleEngineGlobalsApiTest {
     /**
      * Delete a global
      *
-     * May fail if there are existing rules against it. Cannot delete core globals
+     * May fail if there are existing rules against it. Cannot delete core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      */
     @Test
     public void deleteBREGlobalTest() {
@@ -51,7 +51,7 @@ public class BRERuleEngineGlobalsApiTest {
     /**
      * Get a single global definition
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
      */
     @Test
     public void getBREGlobalTest() {
@@ -63,7 +63,7 @@ public class BRERuleEngineGlobalsApiTest {
     /**
      * List global definitions
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
      */
     @Test
     public void getBREGlobalsTest() {
@@ -77,7 +77,7 @@ public class BRERuleEngineGlobalsApiTest {
     /**
      * Update a global definition
      *
-     * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+     * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      */
     @Test
     public void updateBREGlobalTest() {

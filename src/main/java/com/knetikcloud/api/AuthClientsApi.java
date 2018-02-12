@@ -21,7 +21,7 @@ import java.util.Map;
 public interface AuthClientsApi {
   /**
    * Create a new client
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @param clientResource The client resource object (optional)
    * @return Call&lt;ClientResource&gt;
    */
@@ -35,13 +35,10 @@ public interface AuthClientsApi {
 
   /**
    * Delete a client
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @param clientKey The key of the client (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("auth/clients/{client_key}")
   Call<Void> deleteClient(
     @retrofit2.http.Path("client_key") String clientKey
@@ -49,13 +46,10 @@ public interface AuthClientsApi {
 
   /**
    * Get a single client
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @param clientKey The key of the client (required)
    * @return Call&lt;ClientResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("auth/clients/{client_key}")
   Call<ClientResource> getClient(
     @retrofit2.http.Path("client_key") String clientKey
@@ -63,27 +57,21 @@ public interface AuthClientsApi {
 
   /**
    * List available client grant types
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @return Call&lt;List&lt;GrantTypeResource&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("auth/clients/grant-types")
   Call<List<GrantTypeResource>> getClientGrantTypes();
     
 
   /**
    * List and search clients
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceClientResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("auth/clients")
   Call<PageResourceClientResource> getClients(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -91,7 +79,7 @@ public interface AuthClientsApi {
 
   /**
    * Set grant types for a client
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @param clientKey The key of the client (required)
    * @param grantList A list of unique grant types (optional)
    * @return Call&lt;Void&gt;
@@ -106,7 +94,7 @@ public interface AuthClientsApi {
 
   /**
    * Set redirect uris for a client
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @param clientKey The key of the client (required)
    * @param redirectList A list of unique redirect uris (optional)
    * @return Call&lt;Void&gt;
@@ -121,7 +109,7 @@ public interface AuthClientsApi {
 
   /**
    * Update a client
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
    * @param clientKey The key of the client (required)
    * @param clientResource The client resource object (optional)
    * @return Call&lt;ClientResource&gt;

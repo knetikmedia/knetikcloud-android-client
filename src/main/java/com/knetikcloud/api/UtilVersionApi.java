@@ -19,12 +19,9 @@ import java.util.Map;
 public interface UtilVersionApi {
   /**
    * Get current version info
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @return Call&lt;Version&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("version")
   Call<Version> getVersion();
     

@@ -30,7 +30,7 @@ public class DevicesApiTest {
     /**
      * Add device users
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      */
     @Test
     public void addDeviceUsersTest() {
@@ -43,7 +43,7 @@ public class DevicesApiTest {
     /**
      * Create a device
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void createDeviceTest() {
@@ -55,7 +55,7 @@ public class DevicesApiTest {
     /**
      * Create a device template
      *
-     * Device Templates define a type of device and the properties they have
+     * Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createDeviceTemplateTest() {
@@ -67,7 +67,7 @@ public class DevicesApiTest {
     /**
      * Delete a device
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      */
     @Test
     public void deleteDeviceTest() {
@@ -79,7 +79,7 @@ public class DevicesApiTest {
     /**
      * Delete an device template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteDeviceTemplateTest() {
@@ -92,7 +92,7 @@ public class DevicesApiTest {
     /**
      * Delete a device user
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      */
     @Test
     public void deleteDeviceUserTest() {
@@ -105,7 +105,7 @@ public class DevicesApiTest {
     /**
      * Delete all device users
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      */
     @Test
     public void deleteDeviceUsersTest() {
@@ -118,7 +118,7 @@ public class DevicesApiTest {
     /**
      * Get a single device
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      */
     @Test
     public void getDeviceTest() {
@@ -130,7 +130,7 @@ public class DevicesApiTest {
     /**
      * Get a single device template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; description
      */
     @Test
     public void getDeviceTemplateTest() {
@@ -142,7 +142,7 @@ public class DevicesApiTest {
     /**
      * List and search device templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
      */
     @Test
     public void getDeviceTemplatesTest() {
@@ -156,7 +156,7 @@ public class DevicesApiTest {
     /**
      * List and search devices
      *
-     * Get a list of devices with optional filtering
+     * Get a list of devices with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or user
      */
     @Test
     public void getDevicesTest() {
@@ -176,7 +176,7 @@ public class DevicesApiTest {
     /**
      * Update a device
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CUSTOMERS_ADMIN
      */
     @Test
     public void updateDeviceTest() {
@@ -189,7 +189,7 @@ public class DevicesApiTest {
     /**
      * Update an device template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateDeviceTemplateTest() {

@@ -33,7 +33,7 @@ public class ApiClient {
   private Retrofit.Builder adapterBuilder;
   private JSON json;
   
-  public static String baseUrl = "https://devsandbox.knetikcloud.com";
+  public static String baseUrl = "https://sandbox.knetikcloud.com";
 
   public ApiClient() {
     apiAuthorizations = new LinkedHashMap<String, Interceptor>();

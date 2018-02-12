@@ -1,6 +1,6 @@
 # AuthRolesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > RoleResource createRole(roleResource)
 
 Create a new role
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
 
 ### Example
 ```java
@@ -77,6 +79,8 @@ Name | Type | Description  | Notes
 
 Delete a role
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -125,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClientRoles"></a>
@@ -133,6 +137,8 @@ Name | Type | Description  | Notes
 > List&lt;RoleResource&gt; getClientRoles(clientKey)
 
 Get roles for a client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
 
 ### Example
 ```java
@@ -180,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRole"></a>
@@ -188,6 +194,8 @@ Name | Type | Description  | Notes
 > RoleResource getRole(role)
 
 Get a single role
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
 
 ### Example
 ```java
@@ -235,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRoles"></a>
@@ -243,6 +251,8 @@ Name | Type | Description  | Notes
 > PageResourceRoleResource getRoles(filterName, filterRole, size, page, order)
 
 List and search roles
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
 
 ### Example
 ```java
@@ -298,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserRoles"></a>
@@ -306,6 +316,8 @@ Name | Type | Description  | Notes
 > List&lt;RoleResource&gt; getUserRoles(userId)
 
 Get roles for a user
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
 
 ### Example
 ```java
@@ -353,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setClientRoles"></a>
@@ -361,6 +373,8 @@ Name | Type | Description  | Notes
 > ClientResource setClientRoles(clientKey, rolesList)
 
 Set roles for a client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
 
 ### Example
 ```java
@@ -419,6 +433,8 @@ Name | Type | Description  | Notes
 
 Set permissions for a role
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -476,6 +492,8 @@ Name | Type | Description  | Notes
 
 Set roles for a user
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -532,6 +550,8 @@ Name | Type | Description  | Notes
 > RoleResource updateRole(role, roleResource)
 
 Update a role
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
 
 ### Example
 ```java

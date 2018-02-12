@@ -27,7 +27,7 @@ public class StoreSalesApiTest {
     /**
      * Create a sale
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
      */
     @Test
     public void createCatalogSaleTest() {
@@ -39,7 +39,7 @@ public class StoreSalesApiTest {
     /**
      * Delete a sale
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
      */
     @Test
     public void deleteCatalogSaleTest() {
@@ -51,7 +51,7 @@ public class StoreSalesApiTest {
     /**
      * Get a single sale
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
      */
     @Test
     public void getCatalogSaleTest() {
@@ -63,7 +63,7 @@ public class StoreSalesApiTest {
     /**
      * List and search sales
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
      */
     @Test
     public void getCatalogSalesTest() {
@@ -77,7 +77,7 @@ public class StoreSalesApiTest {
     /**
      * Update a sale
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
      */
     @Test
     public void updateCatalogSaleTest() {

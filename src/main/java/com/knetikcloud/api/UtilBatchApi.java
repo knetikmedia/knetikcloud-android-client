@@ -21,13 +21,10 @@ import java.util.Map;
 public interface UtilBatchApi {
   /**
    * Get batch result with token
-   * Tokens expire in 24 hours
+   * Tokens expire in 24 hours. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param token token (required)
    * @return Call&lt;List&lt;BatchReturn&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("batch/{token}")
   Call<List<BatchReturn>> getBatch(
     @retrofit2.http.Path("token") String token
@@ -35,7 +32,7 @@ public interface UtilBatchApi {
 
   /**
    * Request to run API call given the method, content type, path url, and body of request
-   * Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+   * Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param batch The batch object (optional)
    * @return Call&lt;List&lt;BatchReturn&gt;&gt;
    */

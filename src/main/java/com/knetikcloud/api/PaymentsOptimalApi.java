@@ -19,7 +19,7 @@ import java.util.Map;
 public interface PaymentsOptimalApi {
   /**
    * Initiate silent post with Optimal
-   * Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details.
+   * Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; OPTIMAL_ADMIN or owner
    * @param request The payment request to initiate (optional)
    * @return Call&lt;String&gt;
    */

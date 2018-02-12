@@ -1,6 +1,6 @@
 # StoreShoppingCartsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,6 +24,8 @@ Method | HTTP request | Description
 > Void addCustomDiscount(id, customDiscount)
 
 Adds a custom discount to the cart
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN
 
 ### Example
 ```java
@@ -82,6 +84,8 @@ Name | Type | Description  | Notes
 
 Adds a discount coupon to the cart
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
+
 ### Example
 ```java
 // Import classes:
@@ -139,7 +143,7 @@ Name | Type | Description  | Notes
 
 Add an item to the cart
 
-Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
+Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java
@@ -198,7 +202,7 @@ Name | Type | Description  | Notes
 
 Create a cart
 
-You don&#39;t have to have a user to create a cart but the API requires authentication to checkout
+You don&#39;t have to have a user to create a cart but the API requires authentication to checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -257,6 +261,8 @@ Name | Type | Description  | Notes
 
 Returns the cart with the given GUID
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
+
 ### Example
 ```java
 // Import classes:
@@ -303,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCarts"></a>
@@ -311,6 +317,8 @@ Name | Type | Description  | Notes
 > PageResourceCartSummary getCarts(filterOwnerId, size, page, order)
 
 Get a list of carts
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java
@@ -364,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getShippable"></a>
@@ -372,6 +380,8 @@ Name | Type | Description  | Notes
 > CartShippableResponse getShippable(id)
 
 Returns whether a cart requires shipping
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java
@@ -419,7 +429,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getShippingCountries"></a>
@@ -428,7 +438,7 @@ Name | Type | Description  | Notes
 
 Get the list of available shipping countries per vendor
 
-Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
+Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java
@@ -476,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="removeDiscountFromCart"></a>
@@ -484,6 +494,8 @@ Name | Type | Description  | Notes
 > Void removeDiscountFromCart(id, code)
 
 Removes a discount coupon from the cart
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java
@@ -533,7 +545,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setCartCurrency"></a>
@@ -542,7 +554,7 @@ Name | Type | Description  | Notes
 
 Sets the currency to use for the cart
 
-May be disallowed by site settings.
+May be disallowed by site settings. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java
@@ -601,6 +613,8 @@ Name | Type | Description  | Notes
 
 Sets the owner of a cart if none is set already
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
+
 ### Example
 ```java
 // Import classes:
@@ -658,7 +672,7 @@ Name | Type | Description  | Notes
 
 Changes the quantity of an item already in the cart
 
-A quantity of zero will remove the item from the cart altogether.
+A quantity of zero will remove the item from the cart altogether. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java
@@ -716,6 +730,8 @@ Name | Type | Description  | Notes
 > Void updateShippingAddress(id, cartShippingAddressRequest)
 
 Modifies or sets the order shipping address
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
 
 ### Example
 ```java

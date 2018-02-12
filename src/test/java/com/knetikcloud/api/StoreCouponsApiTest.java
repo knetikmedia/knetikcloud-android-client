@@ -28,7 +28,7 @@ public class StoreCouponsApiTest {
     /**
      * Create a coupon item
      *
-     * SKUs have to be unique in the entire store.
+     * SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      */
     @Test
     public void createCouponItemTest() {
@@ -41,7 +41,7 @@ public class StoreCouponsApiTest {
     /**
      * Create a coupon template
      *
-     * Coupon Templates define a type of coupon and the properties they have.
+     * Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createCouponTemplateTest() {
@@ -53,7 +53,7 @@ public class StoreCouponsApiTest {
     /**
      * Delete a coupon item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      */
     @Test
     public void deleteCouponItemTest() {
@@ -65,7 +65,7 @@ public class StoreCouponsApiTest {
     /**
      * Delete a coupon template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteCouponTemplateTest() {
@@ -78,7 +78,7 @@ public class StoreCouponsApiTest {
     /**
      * Get a single coupon item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      */
     @Test
     public void getCouponItemTest() {
@@ -90,7 +90,7 @@ public class StoreCouponsApiTest {
     /**
      * Get a coupon by sku
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getCouponItemBySkuTest() {
@@ -102,7 +102,7 @@ public class StoreCouponsApiTest {
     /**
      * Get a single coupon template
      *
-     * Coupon Templates define a type of coupon and the properties they have.
+     * Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
      */
     @Test
     public void getCouponTemplateTest() {
@@ -114,7 +114,7 @@ public class StoreCouponsApiTest {
     /**
      * List and search coupon templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
      */
     @Test
     public void getCouponTemplatesTest() {
@@ -128,7 +128,7 @@ public class StoreCouponsApiTest {
     /**
      * Update a coupon item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      */
     @Test
     public void updateCouponItemTest() {
@@ -142,7 +142,7 @@ public class StoreCouponsApiTest {
     /**
      * Update a coupon template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateCouponTemplateTest() {

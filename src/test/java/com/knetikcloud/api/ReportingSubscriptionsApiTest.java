@@ -26,7 +26,7 @@ public class ReportingSubscriptionsApiTest {
     /**
      * Get a list of available subscription reports in most recent first order
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      */
     @Test
     public void getSubscriptionReportsTest() {

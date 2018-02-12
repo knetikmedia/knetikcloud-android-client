@@ -22,7 +22,7 @@ import java.util.Map;
 public interface BRERuleEngineRulesApi {
   /**
    * Create a rule
-   * Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+   * Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
    * @param breRule The BRE rule object (optional)
    * @return Call&lt;BreRule&gt;
    */
@@ -36,13 +36,10 @@ public interface BRERuleEngineRulesApi {
 
   /**
    * Delete a rule
-   * May fail if there are existing rules against it. Cannot delete core rules
+   * May fail if there are existing rules against it. Cannot delete core rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
    * @param id The id of the rule (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("bre/rules/{id}")
   Call<Void> deleteBRERule(
     @retrofit2.http.Path("id") String id
@@ -50,7 +47,7 @@ public interface BRERuleEngineRulesApi {
 
   /**
    * Returns a string representation of the provided expression
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
    * @param expression The expression (optional)
    * @return Call&lt;String&gt;
    */
@@ -64,13 +61,10 @@ public interface BRERuleEngineRulesApi {
 
   /**
    * Get a single rule
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
    * @param id The id of the rule (required)
    * @return Call&lt;BreRule&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("bre/rules/{id}")
   Call<BreRule> getBRERule(
     @retrofit2.http.Path("id") String id
@@ -78,7 +72,7 @@ public interface BRERuleEngineRulesApi {
 
   /**
    * List rules
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
    * @param filterName Filter for rules containing the given name (optional)
    * @param filterEnabled Filter for rules by active status, null for both (optional, default to null)
    * @param filterSystem Filter for rules that are system rules when true, or not when false. Leave off for both mixed (optional)
@@ -89,9 +83,6 @@ public interface BRERuleEngineRulesApi {
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceBreRule&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("bre/rules")
   Call<PageResourceBreRule> getBRERules(
     @retrofit2.http.Query("filter_name") String filterName, @retrofit2.http.Query("filter_enabled") Boolean filterEnabled, @retrofit2.http.Query("filter_system") Boolean filterSystem, @retrofit2.http.Query("filter_trigger") String filterTrigger, @retrofit2.http.Query("filter_action") String filterAction, @retrofit2.http.Query("filter_condition") String filterCondition, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -99,7 +90,7 @@ public interface BRERuleEngineRulesApi {
 
   /**
    * Enable or disable a rule
-   * This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+   * This is helpful for turning off systems rules which cannot be deleted or modified otherwise. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
    * @param id The id of the rule (required)
    * @param enabled The boolean value (optional)
    * @return Call&lt;Void&gt;
@@ -114,7 +105,7 @@ public interface BRERuleEngineRulesApi {
 
   /**
    * Update a rule
-   * Cannot update system rules
+   * Cannot update system rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
    * @param id The id of the rule (required)
    * @param breRule The BRE rule object (optional)
    * @return Call&lt;BreRule&gt;

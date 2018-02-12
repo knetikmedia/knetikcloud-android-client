@@ -20,7 +20,7 @@ import java.util.Map;
 public interface FulfillmentApi {
   /**
    * Create a fulfillment type
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
    * @param type The fulfillment type (optional)
    * @return Call&lt;FulfillmentType&gt;
    */
@@ -34,13 +34,10 @@ public interface FulfillmentApi {
 
   /**
    * Delete a fulfillment type
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
    * @param id The id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("store/fulfillment/types/{id}")
   Call<Void> deleteFulfillmentType(
     @retrofit2.http.Path("id") Integer id
@@ -48,13 +45,10 @@ public interface FulfillmentApi {
 
   /**
    * Get a single fulfillment type
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The id (required)
    * @return Call&lt;FulfillmentType&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("store/fulfillment/types/{id}")
   Call<FulfillmentType> getFulfillmentType(
     @retrofit2.http.Path("id") Integer id
@@ -62,15 +56,12 @@ public interface FulfillmentApi {
 
   /**
    * List and search fulfillment types
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceFulfillmentType&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("store/fulfillment/types")
   Call<PageResourceFulfillmentType> getFulfillmentTypes(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -78,7 +69,7 @@ public interface FulfillmentApi {
 
   /**
    * Update a fulfillment type
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
    * @param id The id (required)
    * @param fulfillmentType The fulfillment type (optional)
    * @return Call&lt;Void&gt;

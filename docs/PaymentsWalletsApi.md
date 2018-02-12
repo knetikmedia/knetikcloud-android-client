@@ -1,6 +1,6 @@
 # PaymentsWalletsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > SimpleWallet getUserWallet(userId, currencyCode)
 
 Returns the user&#39;s wallet for the given currency code
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
 
 ### Example
 ```java
@@ -67,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserWalletTransactions"></a>
@@ -75,6 +77,8 @@ Name | Type | Description  | Notes
 > PageResourceWalletTransactionResource getUserWalletTransactions(userId, currencyCode, filterType, filterMaxDate, filterMinDate, filterSign, size, page, order)
 
 Retrieve a user&#39;s wallet transactions
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
 
 ### Example
 ```java
@@ -138,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserWallets"></a>
@@ -146,6 +150,8 @@ Name | Type | Description  | Notes
 > List&lt;SimpleWallet&gt; getUserWallets(userId)
 
 List all of a user&#39;s wallets
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
 
 ### Example
 ```java
@@ -193,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getWalletBalances"></a>
@@ -201,6 +207,8 @@ Name | Type | Description  | Notes
 > PageResourceWalletTotalResponse getWalletBalances()
 
 Retrieves a summation of wallet balances by currency code
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
 
 ### Example
 ```java
@@ -244,7 +252,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getWalletTransactions"></a>
@@ -252,6 +260,8 @@ This endpoint does not need any parameter.
 > PageResourceWalletTransactionResource getWalletTransactions(filterInvoice, filterType, filterDate, filterSign, filterUserId, filterUsername, filterDetails, filterCurrencyCode, size, page, order)
 
 Retrieve wallet transactions across the system
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
 
 ### Example
 ```java
@@ -319,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getWallets"></a>
@@ -327,6 +337,8 @@ Name | Type | Description  | Notes
 > PageResourceSimpleWallet getWallets(size, page, order)
 
 Retrieve a list of wallets across the system
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
 
 ### Example
 ```java
@@ -378,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateWalletBalance"></a>
@@ -386,6 +398,8 @@ Name | Type | Description  | Notes
 > WalletTransactionResource updateWalletBalance(userId, currencyCode, request)
 
 Updates the balance for a user&#39;s wallet
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
 
 ### Example
 ```java

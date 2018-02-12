@@ -26,7 +26,7 @@ import java.util.Map;
 public interface CampaignsChallengesApi {
   /**
    * Create a challenge
-   * Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+   * Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
    * @param challengeResource The challenge resource object (optional)
    * @return Call&lt;ChallengeResource&gt;
    */
@@ -40,7 +40,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Create a challenge activity
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
    * @param challengeId The challenge id (required)
    * @param challengeActivityResource The challenge activity resource object (optional)
    * @param validateSettings Whether to validate the settings being sent against the available settings on the base activity. (optional, default to false)
@@ -56,7 +56,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Create a challenge activity template
-   * Challenge Activity Templates define a type of challenge activity and the properties they have
+   * Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param challengeActivityTemplateResource The challengeActivity template resource object (optional)
    * @return Call&lt;TemplateResource&gt;
    */
@@ -70,7 +70,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Create a challenge template
-   * Challenge Templates define a type of challenge and the properties they have
+   * Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param challengeTemplateResource The challenge template resource object (optional)
    * @return Call&lt;TemplateResource&gt;
    */
@@ -84,13 +84,10 @@ public interface CampaignsChallengesApi {
 
   /**
    * Delete a challenge
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
    * @param id The challenge id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("challenges/{id}")
   Call<Void> deleteChallenge(
     @retrofit2.http.Path("id") Long id
@@ -98,14 +95,11 @@ public interface CampaignsChallengesApi {
 
   /**
    * Delete a challenge activity
-   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
    * @param id The challenge_activity id (required)
    * @param challengeId The challenge id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("challenges/{challenge_id}/activities/{id}")
   Call<Void> deleteChallengeActivity(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Path("challenge_id") Long challengeId
@@ -113,14 +107,11 @@ public interface CampaignsChallengesApi {
 
   /**
    * Delete a challenge activity template
-   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param cascade The value needed to delete used templates (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("challenge-activities/templates/{id}")
   Call<Void> deleteChallengeActivityTemplate(
     @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
@@ -128,13 +119,10 @@ public interface CampaignsChallengesApi {
 
   /**
    * Delete a challenge event
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
    * @param id The challenge event id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("challenges/events/{id}")
   Call<Void> deleteChallengeEvent(
     @retrofit2.http.Path("id") Long id
@@ -142,14 +130,11 @@ public interface CampaignsChallengesApi {
 
   /**
    * Delete a challenge template
-   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param cascade The value needed to delete used templates (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("challenges/templates/{id}")
   Call<Void> deleteChallengeTemplate(
     @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
@@ -157,13 +142,10 @@ public interface CampaignsChallengesApi {
 
   /**
    * Retrieve a challenge
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The challenge id (required)
    * @return Call&lt;ChallengeResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges/{id}")
   Call<ChallengeResource> getChallenge(
     @retrofit2.http.Path("id") Long id
@@ -171,16 +153,13 @@ public interface CampaignsChallengesApi {
 
   /**
    * List and search challenge activities
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param challengeId The challenge id (required)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceBareChallengeActivityResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges/{challenge_id}/activities")
   Call<PageResourceBareChallengeActivityResource> getChallengeActivities(
     @retrofit2.http.Path("challenge_id") Long challengeId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -188,14 +167,11 @@ public interface CampaignsChallengesApi {
 
   /**
    * Get a single challenge activity
-   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The challenge_activity id (required)
    * @param challengeId The challenge id (required)
    * @return Call&lt;ChallengeActivityResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges/{challenge_id}/activities/{id}")
   Call<ChallengeActivityResource> getChallengeActivity(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Path("challenge_id") Long challengeId
@@ -203,13 +179,10 @@ public interface CampaignsChallengesApi {
 
   /**
    * Get a single challenge activity template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
    * @param id The id of the template (required)
    * @return Call&lt;TemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenge-activities/templates/{id}")
   Call<TemplateResource> getChallengeActivityTemplate(
     @retrofit2.http.Path("id") String id
@@ -217,15 +190,12 @@ public interface CampaignsChallengesApi {
 
   /**
    * List and search challenge activity templates
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenge-activities/templates")
   Call<PageResourceTemplateResource> getChallengeActivityTemplates(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -233,13 +203,10 @@ public interface CampaignsChallengesApi {
 
   /**
    * Retrieve a single challenge event details
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The challenge event id (required)
    * @return Call&lt;ChallengeEventResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges/events/{id}")
   Call<ChallengeEventResource> getChallengeEvent(
     @retrofit2.http.Path("id") Long id
@@ -247,7 +214,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Retrieve a list of challenge events
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional)
    * @param filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional)
    * @param filterCampaigns check only for events from currently running campaigns (optional)
@@ -257,9 +224,6 @@ public interface CampaignsChallengesApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceChallengeEventResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges/events")
   Call<PageResourceChallengeEventResource> getChallengeEvents(
     @retrofit2.http.Query("filter_start_date") String filterStartDate, @retrofit2.http.Query("filter_end_date") String filterEndDate, @retrofit2.http.Query("filter_campaigns") Boolean filterCampaigns, @retrofit2.http.Query("filter_challenge") Long filterChallenge, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -267,13 +231,10 @@ public interface CampaignsChallengesApi {
 
   /**
    * Get a single challenge template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
    * @param id The id of the template (required)
    * @return Call&lt;TemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges/templates/{id}")
   Call<TemplateResource> getChallengeTemplate(
     @retrofit2.http.Path("id") String id
@@ -281,15 +242,12 @@ public interface CampaignsChallengesApi {
 
   /**
    * List and search challenge templates
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges/templates")
   Call<PageResourceTemplateResource> getChallengeTemplates(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -297,7 +255,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Retrieve a list of challenges
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param filterActiveCampaign Filter for challenges that are tied to active campaigns (optional)
    * @param filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional)
    * @param filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional)
@@ -306,9 +264,6 @@ public interface CampaignsChallengesApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceChallengeResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("challenges")
   Call<PageResourceChallengeResource> getChallenges(
     @retrofit2.http.Query("filter_active_campaign") Boolean filterActiveCampaign, @retrofit2.http.Query("filter_start_date") String filterStartDate, @retrofit2.http.Query("filter_end_date") String filterEndDate, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -316,7 +271,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Update a challenge
-   * If the challenge is a copy, changes will propagate to all the related challenges
+   * If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
    * @param id The challenge id (required)
    * @param challengeResource The challenge resource object (optional)
    * @return Call&lt;ChallengeResource&gt;
@@ -331,7 +286,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Update a challenge activity
-   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+   * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
    * @param id The challenge_activity id (required)
    * @param challengeId The challenge id (required)
    * @param challengeActivityResource The challenge activity resource object (optional)
@@ -348,7 +303,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Update an challenge activity template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param challengeActivityTemplateResource The challengeActivity template resource object (optional)
    * @return Call&lt;TemplateResource&gt;
@@ -363,7 +318,7 @@ public interface CampaignsChallengesApi {
 
   /**
    * Update a challenge template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param challengeTemplateResource The challenge template resource object (optional)
    * @return Call&lt;TemplateResource&gt;

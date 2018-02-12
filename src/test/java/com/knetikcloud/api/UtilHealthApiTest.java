@@ -25,7 +25,7 @@ public class UtilHealthApiTest {
     /**
      * Get health info
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getHealthTest() {

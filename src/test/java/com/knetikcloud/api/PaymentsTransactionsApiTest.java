@@ -29,7 +29,7 @@ public class PaymentsTransactionsApiTest {
     /**
      * Get the details for a single transaction
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
      */
     @Test
     public void getTransactionTest() {
@@ -41,7 +41,7 @@ public class PaymentsTransactionsApiTest {
     /**
      * List and search transactions
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
      */
     @Test
     public void getTransactionsTest() {
@@ -56,7 +56,7 @@ public class PaymentsTransactionsApiTest {
     /**
      * Refund a payment transaction, in full or in part
      *
-     * Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+     * Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
      */
     @Test
     public void refundTransactionTest() {

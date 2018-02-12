@@ -18,12 +18,9 @@ import java.util.Map;
 public interface UtilHealthApi {
   /**
    * Get health info
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @return Call&lt;Object&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("health")
   Call<Object> getHealth();
     

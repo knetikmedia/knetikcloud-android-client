@@ -33,7 +33,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Create a new achievement definition
      *
-     * If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API.
+     * If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void createAchievementTest() {
@@ -45,7 +45,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Create an achievement template
      *
-     * Achievement templates define a type of achievement and the properties they have
+     * Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createAchievementTemplateTest() {
@@ -57,7 +57,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Delete an achievement definition
      *
-     * Will also disable the associated generated rule, if any.
+     * Will also disable the associated generated rule, if any. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void deleteAchievementTest() {
@@ -69,7 +69,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Delete an achievement template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteAchievementTemplateTest() {
@@ -82,7 +82,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Get a single achievement definition
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
      */
     @Test
     public void getAchievementTest() {
@@ -94,7 +94,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Get a single achievement template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getAchievementTemplateTest() {
@@ -106,7 +106,7 @@ public class GamificationAchievementsApiTest {
     /**
      * List and search achievement templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getAchievementTemplatesTest() {
@@ -120,7 +120,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Get the list of triggers that can be used to trigger an achievement progress update
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getAchievementTriggersTest() {
@@ -131,7 +131,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Get all achievement definitions in the system
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
      */
     @Test
     public void getAchievementsTest() {
@@ -149,7 +149,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Get a list of derived achievements
      *
-     * Used by other services that depend on achievements
+     * Used by other services that depend on achievements.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getDerivedAchievementsTest() {
@@ -161,7 +161,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Retrieve progress on a given achievement for a given user
      *
-     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getUserAchievementProgressTest() {
@@ -174,7 +174,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Retrieve progress on achievements for a given user
      *
-     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getUserAchievementsProgressTest() {
@@ -191,7 +191,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Retrieve progress on a given achievement for all users
      *
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getUsersAchievementProgressTest() {
@@ -208,7 +208,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Retrieve progress on achievements for all users
      *
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getUsersAchievementsProgressTest() {
@@ -224,7 +224,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Increment an achievement progress record for a user
      *
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void incrementAchievementProgressTest() {
@@ -238,7 +238,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Set an achievement progress record for a user
      *
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void setAchievementProgressTest() {
@@ -252,7 +252,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Update an achievement definition
      *
-     * The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
+     * The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      */
     @Test
     public void updateAchievementTest() {
@@ -265,7 +265,7 @@ public class GamificationAchievementsApiTest {
     /**
      * Update an achievement template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateAchievementTemplateTest() {

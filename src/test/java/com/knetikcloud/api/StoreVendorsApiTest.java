@@ -29,7 +29,7 @@ public class StoreVendorsApiTest {
     /**
      * Create a vendor
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      */
     @Test
     public void createVendorTest() {
@@ -41,7 +41,7 @@ public class StoreVendorsApiTest {
     /**
      * Create a vendor template
      *
-     * Vendor Templates define a type of vendor and the properties they have.
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createVendorTemplateTest() {
@@ -53,7 +53,7 @@ public class StoreVendorsApiTest {
     /**
      * Delete a vendor
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      */
     @Test
     public void deleteVendorTest() {
@@ -65,7 +65,7 @@ public class StoreVendorsApiTest {
     /**
      * Delete a vendor template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteVendorTemplateTest() {
@@ -78,7 +78,7 @@ public class StoreVendorsApiTest {
     /**
      * Get a single vendor
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getVendorTest() {
@@ -90,7 +90,7 @@ public class StoreVendorsApiTest {
     /**
      * Get a single vendor template
      *
-     * Vendor Templates define a type of vendor and the properties they have.
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void getVendorTemplateTest() {
@@ -102,7 +102,7 @@ public class StoreVendorsApiTest {
     /**
      * List and search vendor templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void getVendorTemplatesTest() {
@@ -116,7 +116,7 @@ public class StoreVendorsApiTest {
     /**
      * List and search vendors
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getVendorsTest() {
@@ -131,7 +131,7 @@ public class StoreVendorsApiTest {
     /**
      * Update a vendor
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      */
     @Test
     public void updateVendorTest() {
@@ -144,7 +144,7 @@ public class StoreVendorsApiTest {
     /**
      * Update a vendor template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateVendorTemplateTest() {

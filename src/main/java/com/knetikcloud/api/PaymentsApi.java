@@ -22,7 +22,7 @@ import java.util.Map;
 public interface PaymentsApi {
   /**
    * Create a new payment method for a user
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
    * @param userId ID of the user for whom the payment method is being created (required)
    * @param paymentMethod Payment method being created (optional)
    * @return Call&lt;PaymentMethodResource&gt;
@@ -37,14 +37,11 @@ public interface PaymentsApi {
 
   /**
    * Delete an existing payment method for a user
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
    * @param userId ID of the user for whom the payment method is being updated (required)
    * @param id ID of the payment method being deleted (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("users/{user_id}/payment-methods/{id}")
   Call<Void> deletePaymentMethod(
     @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("id") Integer id
@@ -52,14 +49,11 @@ public interface PaymentsApi {
 
   /**
    * Get a single payment method for a user
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
    * @param userId ID of the user for whom the payment method is being retrieved (required)
    * @param id ID of the payment method being retrieved (required)
    * @return Call&lt;PaymentMethodResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/payment-methods/{id}")
   Call<PaymentMethodResource> getPaymentMethod(
     @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("id") Integer id
@@ -67,13 +61,10 @@ public interface PaymentsApi {
 
   /**
    * Get a single payment method type
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id ID of the payment method type being retrieved (required)
    * @return Call&lt;PaymentMethodTypeResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("payment/types/{id}")
   Call<PaymentMethodTypeResource> getPaymentMethodType(
     @retrofit2.http.Path("id") Integer id
@@ -81,16 +72,13 @@ public interface PaymentsApi {
 
   /**
    * Get all payment method types
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param filterName Filter for payment method types whose name matches a given string (optional)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourcePaymentMethodTypeResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("payment/types")
   Call<PageResourcePaymentMethodTypeResource> getPaymentMethodTypes(
     @retrofit2.http.Query("filter_name") String filterName, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -98,7 +86,7 @@ public interface PaymentsApi {
 
   /**
    * Get all payment methods for a user
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
    * @param userId ID of the user for whom the payment methods are being retrieved (required)
    * @param filterName Filter for payment methods whose name starts with a given string (optional)
    * @param filterPaymentType Filter for payment methods with a specific payment type (optional)
@@ -109,9 +97,6 @@ public interface PaymentsApi {
    * @param order a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;List&lt;PaymentMethodResource&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/payment-methods")
   Call<List<PaymentMethodResource>> getPaymentMethods(
     @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Query("filter_name") String filterName, @retrofit2.http.Query("filter_payment_type") String filterPaymentType, @retrofit2.http.Query("filter_payment_method_type_id") Integer filterPaymentMethodTypeId, @retrofit2.http.Query("filter_payment_method_type_name") String filterPaymentMethodTypeName, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -119,7 +104,7 @@ public interface PaymentsApi {
 
   /**
    * Authorize payment of an invoice for later capture
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
    * @param request Payment authorization request (optional)
    * @return Call&lt;PaymentAuthorizationResource&gt;
    */
@@ -133,7 +118,7 @@ public interface PaymentsApi {
 
   /**
    * Capture an existing invoice payment authorization
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
    * @param id ID of the payment authorization to capture (required)
    * @return Call&lt;Void&gt;
    */
@@ -147,7 +132,7 @@ public interface PaymentsApi {
 
   /**
    * Update an existing payment method for a user
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
    * @param userId ID of the user for whom the payment method is being updated (required)
    * @param id ID of the payment method being updated (required)
    * @param paymentMethod The updated payment method data (optional)

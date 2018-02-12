@@ -19,7 +19,7 @@ import java.util.Map;
 public interface ReportingOrdersApi {
   /**
    * Retrieve invoice counts aggregated by time ranges
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
    * @param currencyCode The code for a currency to get sales data for (required)
    * @param granularity The time duration to aggregate by (optional, default to day)
    * @param filterPaymentStatus A payment status to filter results by, can be a comma separated list (optional)
@@ -30,9 +30,6 @@ public interface ReportingOrdersApi {
    * @param page The number of the page returned (optional, default to 1)
    * @return Call&lt;PageResourceAggregateInvoiceReportResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("reporting/orders/count/{currency_code}")
   Call<PageResourceAggregateInvoiceReportResource> getInvoiceReports(
     @retrofit2.http.Path("currency_code") String currencyCode, @retrofit2.http.Query("granularity") String granularity, @retrofit2.http.Query("filter_payment_status") String filterPaymentStatus, @retrofit2.http.Query("filter_fulfillment_status") String filterFulfillmentStatus, @retrofit2.http.Query("start_date") Long startDate, @retrofit2.http.Query("end_date") Long endDate, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page

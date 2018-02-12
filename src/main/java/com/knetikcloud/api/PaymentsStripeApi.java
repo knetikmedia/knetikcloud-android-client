@@ -21,7 +21,7 @@ import java.util.Map;
 public interface PaymentsStripeApi {
   /**
    * Create a Stripe payment method for a user
-   * Obtain a token from Stripe, following their examples and documentation. Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid.
+   * Obtain a token from Stripe, following their examples and documentation. Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STRIPE_ADMIN or owner
    * @param request The request to create a Stripe customer with payment info (optional)
    * @return Call&lt;PaymentMethodResource&gt;
    */
@@ -35,7 +35,7 @@ public interface PaymentsStripeApi {
 
   /**
    * Pay with a single use token
-   * Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid.
+   * Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param request The request to pay an invoice (optional)
    * @return Call&lt;Void&gt;
    */

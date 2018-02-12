@@ -30,7 +30,7 @@ public class CampaignsApiTest {
     /**
      * Add a challenge to a campaign
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      */
     @Test
     public void addChallengeToCampaignTest() {
@@ -43,7 +43,7 @@ public class CampaignsApiTest {
     /**
      * Create a campaign
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      */
     @Test
     public void createCampaignTest() {
@@ -55,7 +55,7 @@ public class CampaignsApiTest {
     /**
      * Create a campaign template
      *
-     * Campaign Templates define a type of campaign and the properties they have
+     * Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createCampaignTemplateTest() {
@@ -67,7 +67,7 @@ public class CampaignsApiTest {
     /**
      * Delete a campaign
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      */
     @Test
     public void deleteCampaignTest() {
@@ -79,7 +79,7 @@ public class CampaignsApiTest {
     /**
      * Delete a campaign template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteCampaignTemplateTest() {
@@ -92,7 +92,7 @@ public class CampaignsApiTest {
     /**
      * Returns a single campaign
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getCampaignTest() {
@@ -104,7 +104,7 @@ public class CampaignsApiTest {
     /**
      * List the challenges associated with a campaign
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getCampaignChallengesTest() {
@@ -121,7 +121,7 @@ public class CampaignsApiTest {
     /**
      * Get a single campaign template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
      */
     @Test
     public void getCampaignTemplateTest() {
@@ -133,7 +133,7 @@ public class CampaignsApiTest {
     /**
      * List and search campaign templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
      */
     @Test
     public void getCampaignTemplatesTest() {
@@ -147,7 +147,7 @@ public class CampaignsApiTest {
     /**
      * List and search campaigns
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getCampaignsTest() {
@@ -162,7 +162,7 @@ public class CampaignsApiTest {
     /**
      * Remove a challenge from a campaign
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      */
     @Test
     public void removeChallengeFromCampaignTest() {
@@ -175,7 +175,7 @@ public class CampaignsApiTest {
     /**
      * Update a campaign
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      */
     @Test
     public void updateCampaignTest() {
@@ -188,7 +188,7 @@ public class CampaignsApiTest {
     /**
      * Update an campaign template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateCampaignTemplateTest() {

@@ -26,7 +26,7 @@ public class UtilVersionApiTest {
     /**
      * Get current version info
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getVersionTest() {

@@ -19,7 +19,7 @@ import java.util.Map;
 public interface SocialGoogleApi {
   /**
    * Link google account
-   * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+   * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-google user token
    * @param googleToken The token from google (optional)
    * @return Call&lt;Void&gt;
    */

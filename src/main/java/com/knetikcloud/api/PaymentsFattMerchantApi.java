@@ -20,7 +20,7 @@ import java.util.Map;
 public interface PaymentsFattMerchantApi {
   /**
    * Create or update a FattMerchant payment method for a user
-   * Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
+   * Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FATTMERCHANT_ADMIN or owner
    * @param request Request containing payment method information for user (optional)
    * @return Call&lt;PaymentMethodResource&gt;
    */

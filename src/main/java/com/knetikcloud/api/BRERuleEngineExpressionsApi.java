@@ -20,27 +20,21 @@ import java.util.Map;
 public interface BRERuleEngineExpressionsApi {
   /**
    * Lookup a specific expression
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
    * @param type Specifiy the type of expression as returned by the listing endpoint (required)
    * @return Call&lt;ExpressionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("bre/expressions/{type}")
   Call<ExpressionResource> getBREExpression(
     @retrofit2.http.Path("type") String type
   );
 
   /**
-   * Get a list of supported expressions to use in conditions or actions.
-   * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+   * Get a list of supported expressions to use in conditions or actions
+   * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
    * @param filterTypeGroup Filter for expressions by type group (optional)
    * @return Call&lt;List&lt;ExpressionResource&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("bre/expressions")
   Call<List<ExpressionResource>> getBREExpressions(
     @retrofit2.http.Query("filter_type_group") String filterTypeGroup
@@ -48,7 +42,7 @@ public interface BRERuleEngineExpressionsApi {
 
   /**
    * Returns the textual representation of an expression
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
    * @param expression The expression resource to be converted (optional)
    * @return Call&lt;StringWrapper&gt;
    */

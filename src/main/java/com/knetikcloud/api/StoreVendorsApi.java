@@ -22,7 +22,7 @@ import java.util.Map;
 public interface StoreVendorsApi {
   /**
    * Create a vendor
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
    * @param vendor The vendor (optional)
    * @return Call&lt;VendorResource&gt;
    */
@@ -36,7 +36,7 @@ public interface StoreVendorsApi {
 
   /**
    * Create a vendor template
-   * Vendor Templates define a type of vendor and the properties they have.
+   * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param vendorTemplateResource The new vendor template (optional)
    * @return Call&lt;ItemTemplateResource&gt;
    */
@@ -50,13 +50,10 @@ public interface StoreVendorsApi {
 
   /**
    * Delete a vendor
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
    * @param id The id of the vendor (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("vendors/{id}")
   Call<Void> deleteVendor(
     @retrofit2.http.Path("id") Integer id
@@ -64,14 +61,11 @@ public interface StoreVendorsApi {
 
   /**
    * Delete a vendor template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("vendors/templates/{id}")
   Call<Void> deleteVendorTemplate(
     @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
@@ -79,13 +73,10 @@ public interface StoreVendorsApi {
 
   /**
    * Get a single vendor
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The id of the vendor (required)
    * @return Call&lt;VendorResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("vendors/{id}")
   Call<VendorResource> getVendor(
     @retrofit2.http.Path("id") Integer id
@@ -93,13 +84,10 @@ public interface StoreVendorsApi {
 
   /**
    * Get a single vendor template
-   * Vendor Templates define a type of vendor and the properties they have.
+   * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @return Call&lt;ItemTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("vendors/templates/{id}")
   Call<ItemTemplateResource> getVendorTemplate(
     @retrofit2.http.Path("id") String id
@@ -107,15 +95,12 @@ public interface StoreVendorsApi {
 
   /**
    * List and search vendor templates
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
-   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to 1)
+   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)
    * @return Call&lt;PageResourceItemTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("vendors/templates")
   Call<PageResourceItemTemplateResource> getVendorTemplates(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -123,16 +108,13 @@ public interface StoreVendorsApi {
 
   /**
    * List and search vendors
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param filterName Filters vendors by name starting with the text provided in the filter (optional)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceVendorResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("vendors")
   Call<PageResourceVendorResource> getVendors(
     @retrofit2.http.Query("filter_name") String filterName, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -140,7 +122,7 @@ public interface StoreVendorsApi {
 
   /**
    * Update a vendor
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
    * @param id The id of the vendor (required)
    * @param vendor The vendor (optional)
    * @return Call&lt;VendorResource&gt;
@@ -155,7 +137,7 @@ public interface StoreVendorsApi {
 
   /**
    * Update a vendor template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param vendorTemplateResource The vendor template resource object (optional)
    * @return Call&lt;ItemTemplateResource&gt;

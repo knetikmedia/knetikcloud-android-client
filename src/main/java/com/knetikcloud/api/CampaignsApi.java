@@ -23,7 +23,7 @@ import java.util.Map;
 public interface CampaignsApi {
   /**
    * Add a challenge to a campaign
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
    * @param id The id of the campaign (required)
    * @param challengeId The id of the challenge (optional)
    * @return Call&lt;Void&gt;
@@ -38,7 +38,7 @@ public interface CampaignsApi {
 
   /**
    * Create a campaign
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
    * @param campaignResource The campaign resource object (optional)
    * @return Call&lt;CampaignResource&gt;
    */
@@ -52,7 +52,7 @@ public interface CampaignsApi {
 
   /**
    * Create a campaign template
-   * Campaign Templates define a type of campaign and the properties they have
+   * Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param campaignTemplateResource The campaign template resource object (optional)
    * @return Call&lt;TemplateResource&gt;
    */
@@ -66,13 +66,10 @@ public interface CampaignsApi {
 
   /**
    * Delete a campaign
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
    * @param id The campaign id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("campaigns/{id}")
   Call<Void> deleteCampaign(
     @retrofit2.http.Path("id") Long id
@@ -80,14 +77,11 @@ public interface CampaignsApi {
 
   /**
    * Delete a campaign template
-   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param cascade The value needed to delete used templates (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("campaigns/templates/{id}")
   Call<Void> deleteCampaignTemplate(
     @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
@@ -95,13 +89,10 @@ public interface CampaignsApi {
 
   /**
    * Returns a single campaign
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The campaign id (required)
    * @return Call&lt;CampaignResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("campaigns/{id}")
   Call<CampaignResource> getCampaign(
     @retrofit2.http.Path("id") Long id
@@ -109,7 +100,7 @@ public interface CampaignsApi {
 
   /**
    * List the challenges associated with a campaign
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The campaign id (required)
    * @param filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional)
    * @param filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). (optional)
@@ -118,9 +109,6 @@ public interface CampaignsApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceChallengeResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("campaigns/{id}/challenges")
   Call<PageResourceChallengeResource> getCampaignChallenges(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Query("filter_start_date") String filterStartDate, @retrofit2.http.Query("filter_end_date") String filterEndDate, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -128,13 +116,10 @@ public interface CampaignsApi {
 
   /**
    * Get a single campaign template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
    * @param id The id of the template (required)
    * @return Call&lt;TemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("campaigns/templates/{id}")
   Call<TemplateResource> getCampaignTemplate(
     @retrofit2.http.Path("id") String id
@@ -142,15 +127,12 @@ public interface CampaignsApi {
 
   /**
    * List and search campaign templates
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("campaigns/templates")
   Call<PageResourceTemplateResource> getCampaignTemplates(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -158,16 +140,13 @@ public interface CampaignsApi {
 
   /**
    * List and search campaigns
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param filterActive Filter for campaigns that are active (optional)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceCampaignResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("campaigns")
   Call<PageResourceCampaignResource> getCampaigns(
     @retrofit2.http.Query("filter_active") Boolean filterActive, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -175,14 +154,11 @@ public interface CampaignsApi {
 
   /**
    * Remove a challenge from a campaign
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
    * @param campaignId The campaign id (required)
    * @param id The challenge id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("campaigns/{campaign_id}/challenges/{id}")
   Call<Void> removeChallengeFromCampaign(
     @retrofit2.http.Path("campaign_id") Long campaignId, @retrofit2.http.Path("id") Long id
@@ -190,7 +166,7 @@ public interface CampaignsApi {
 
   /**
    * Update a campaign
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
    * @param id The campaign id (required)
    * @param campaignResource The campaign resource object (optional)
    * @return Call&lt;CampaignResource&gt;
@@ -205,7 +181,7 @@ public interface CampaignsApi {
 
   /**
    * Update an campaign template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param campaignTemplateResource The campaign template resource object (optional)
    * @return Call&lt;TemplateResource&gt;

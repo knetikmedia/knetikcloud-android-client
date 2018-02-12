@@ -22,7 +22,7 @@ import java.util.Map;
 public interface TaxesApi {
   /**
    * Create a country tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
    * @param taxResource The tax object (optional)
    * @return Call&lt;CountryTaxResource&gt;
    */
@@ -36,7 +36,7 @@ public interface TaxesApi {
 
   /**
    * Create a state tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @param taxResource The tax object (optional)
    * @return Call&lt;StateTaxResource&gt;
@@ -51,13 +51,10 @@ public interface TaxesApi {
 
   /**
    * Delete an existing tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("tax/countries/{country_code_iso3}")
   Call<Void> deleteCountryTax(
     @retrofit2.http.Path("country_code_iso3") String countryCodeIso3
@@ -65,14 +62,11 @@ public interface TaxesApi {
 
   /**
    * Delete an existing state tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @param stateCode The code of the state (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("tax/countries/{country_code_iso3}/states/{state_code}")
   Call<Void> deleteStateTax(
     @retrofit2.http.Path("country_code_iso3") String countryCodeIso3, @retrofit2.http.Path("state_code") String stateCode
@@ -80,13 +74,10 @@ public interface TaxesApi {
 
   /**
    * Get a single tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @return Call&lt;CountryTaxResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("tax/countries/{country_code_iso3}")
   Call<CountryTaxResource> getCountryTax(
     @retrofit2.http.Path("country_code_iso3") String countryCodeIso3
@@ -94,15 +85,12 @@ public interface TaxesApi {
 
   /**
    * List and search taxes
-   * Get a list of taxes
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to name:ASC)
    * @return Call&lt;PageResourceCountryTaxResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("tax/countries")
   Call<PageResourceCountryTaxResource> getCountryTaxes(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -110,14 +98,11 @@ public interface TaxesApi {
 
   /**
    * Get a single state tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @param stateCode The code of the state (required)
    * @return Call&lt;StateTaxResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("tax/countries/{country_code_iso3}/states/{state_code}")
   Call<StateTaxResource> getStateTax(
     @retrofit2.http.Path("country_code_iso3") String countryCodeIso3, @retrofit2.http.Path("state_code") String stateCode
@@ -125,15 +110,12 @@ public interface TaxesApi {
 
   /**
    * List and search taxes across all countries
-   * Get a list of taxes
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)
    * @return Call&lt;PageResourceStateTaxResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("tax/states")
   Call<PageResourceStateTaxResource> getStateTaxesForCountries(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -141,16 +123,13 @@ public interface TaxesApi {
 
   /**
    * List and search taxes within a country
-   * Get a list of taxes
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)
    * @return Call&lt;PageResourceStateTaxResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("tax/countries/{country_code_iso3}/states")
   Call<PageResourceStateTaxResource> getStateTaxesForCountry(
     @retrofit2.http.Path("country_code_iso3") String countryCodeIso3, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -158,7 +137,7 @@ public interface TaxesApi {
 
   /**
    * Create or update a tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @param taxResource The tax object (optional)
    * @return Call&lt;CountryTaxResource&gt;
@@ -173,7 +152,7 @@ public interface TaxesApi {
 
   /**
    * Create or update a state tax
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
    * @param countryCodeIso3 The iso3 code of the country (required)
    * @param stateCode The code of the state (required)
    * @param taxResource The tax object (optional)

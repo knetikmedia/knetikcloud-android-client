@@ -27,7 +27,7 @@ public class UtilSecurityApiTest {
     /**
      * Returns the authentication log for a user
      *
-     * A log entry is recorded everytime a user requests a new token. Standard pagination available
+     * A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
      */
     @Test
     public void getUserLocationLogTest() {
@@ -42,7 +42,7 @@ public class UtilSecurityApiTest {
     /**
      * Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
      */
     @Test
     public void getUserTokenDetailsTest() {

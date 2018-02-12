@@ -19,31 +19,25 @@ import java.util.Map;
 public interface UtilMaintenanceApi {
   /**
    * Delete maintenance info
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("maintenance")
   Call<Void> deleteMaintenance();
     
 
   /**
    * Get current maintenance info
-   * Get current maintenance info. 404 if no maintenance.
+   * Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @return Call&lt;Maintenance&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("maintenance")
   Call<Maintenance> getMaintenance();
     
 
   /**
    * Set current maintenance info
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
    * @param maintenance The maintenance object (optional)
    * @return Call&lt;Void&gt;
    */
@@ -57,7 +51,7 @@ public interface UtilMaintenanceApi {
 
   /**
    * Update current maintenance info
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
    * @param maintenance The maintenance object (optional)
    * @return Call&lt;Void&gt;
    */

@@ -1,6 +1,6 @@
 # ConfigsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > Config createConfig(config)
 
 Create a new config
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
 
 ### Example
 ```java
@@ -72,6 +74,8 @@ Name | Type | Description  | Notes
 
 Delete an existing config
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -118,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getConfig"></a>
@@ -127,7 +131,7 @@ Name | Type | Description  | Notes
 
 Get a single config
 
-Only configs that are public readable will be shown without admin access
+Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -175,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getConfigs"></a>
@@ -183,6 +187,8 @@ Name | Type | Description  | Notes
 > PageResourceConfig getConfigs(filterSearch, size, page, order)
 
 List and search configs
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -207,7 +213,7 @@ ConfigsApi apiInstance = new ConfigsApi();
 String filterSearch = "filterSearch_example"; // String | Filter for configs whose name contains the given string
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned
-String order = "1"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+String order = "order_example"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 try {
     PageResourceConfig result = apiInstance.getConfigs(filterSearch, size, page, order);
     System.out.println(result);
@@ -224,7 +230,7 @@ Name | Type | Description  | Notes
  **filterSearch** | **String**| Filter for configs whose name contains the given string | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional]
 
 ### Return type
 
@@ -236,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateConfig"></a>
@@ -244,6 +250,8 @@ Name | Type | Description  | Notes
 > Void updateConfig(name, config)
 
 Update an existing config
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
 
 ### Example
 ```java

@@ -29,7 +29,7 @@ public class ObjectsApiTest {
     /**
      * Create an object
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void createObjectItemTest() {
@@ -43,7 +43,7 @@ public class ObjectsApiTest {
     /**
      * Create an object template
      *
-     * Object templates define a type of entitlement and the properties they have
+     * Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createObjectTemplateTest() {
@@ -55,7 +55,7 @@ public class ObjectsApiTest {
     /**
      * Delete an object
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void deleteObjectItemTest() {
@@ -68,7 +68,7 @@ public class ObjectsApiTest {
     /**
      * Delete an entitlement template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteObjectTemplateTest() {
@@ -81,7 +81,7 @@ public class ObjectsApiTest {
     /**
      * Get a single object
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getObjectItemTest() {
@@ -94,7 +94,7 @@ public class ObjectsApiTest {
     /**
      * List and search objects
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getObjectItemsTest() {
@@ -109,7 +109,7 @@ public class ObjectsApiTest {
     /**
      * Get a single entitlement template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getObjectTemplateTest() {
@@ -121,7 +121,7 @@ public class ObjectsApiTest {
     /**
      * List and search entitlement templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getObjectTemplatesTest() {
@@ -135,7 +135,7 @@ public class ObjectsApiTest {
     /**
      * Update an object
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void updateObjectItemTest() {
@@ -150,7 +150,7 @@ public class ObjectsApiTest {
     /**
      * Update an entitlement template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateObjectTemplateTest() {

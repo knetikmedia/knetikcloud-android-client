@@ -5,10 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activityId** | **Long** | The id of the activity | 
+**bans** | **List&lt;Integer&gt;** | The ids of banned users that cannot join the occurrence. See occurrence-user delete endpoint |  [optional]
 **challengeActivityId** | **Long** | The id of the challenge activity (as part of the event, required if eventId set) |  [optional]
+**coreSettings** | [**CoreActivityOccurrenceSettings**](CoreActivityOccurrenceSettings.md) | Defines core settings about the activity occurrence that affect how it behaves in the system. Validated against core settings in activity/challenge-activity. |  [optional]
 **createdDate** | **Long** | The date this occurrence was created, unix timestamp in seconds |  [optional]
 **entitlement** | [**ActivityEntitlementResource**](ActivityEntitlementResource.md) | The entitlement item required to enter the occurrence. Required if not part of an event. Must come from the set of entitlement items listed in the activity |  [optional]
 **eventId** | **Long** | The id of the event |  [optional]
+**host** | [**SimpleUserResource**](SimpleUserResource.md) | The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of &#39;non_player&#39; if not admin as well |  [optional]
 **id** | **Long** | The id of the activity occurrence |  [optional]
 **rewardStatus** | [**RewardStatusEnum**](#RewardStatusEnum) | Indicate if the rewards have been given out already |  [optional]
 **settings** | [**List&lt;SelectedSettingResource&gt;**](SelectedSettingResource.md) | The values selected from the available settings defined for the activity. Ex: difficulty: hard. Can be left out if the activity is played during an event and the settings are already set at the event level. Ex: every monday, difficulty: hard, number of questions: 10, category: sport. Otherwise, the set must exactly match those of the activity. |  [optional]
@@ -35,6 +38,7 @@ Name | Value
 ---- | -----
 SETUP | &quot;SETUP&quot;
 OPEN | &quot;OPEN&quot;
+LAUNCHING | &quot;LAUNCHING&quot;
 PLAYING | &quot;PLAYING&quot;
 FINISHED | &quot;FINISHED&quot;
 ABANDONED | &quot;ABANDONED&quot;

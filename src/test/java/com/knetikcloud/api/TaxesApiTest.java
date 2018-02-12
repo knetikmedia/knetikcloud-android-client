@@ -29,7 +29,7 @@ public class TaxesApiTest {
     /**
      * Create a country tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      */
     @Test
     public void createCountryTaxTest() {
@@ -41,7 +41,7 @@ public class TaxesApiTest {
     /**
      * Create a state tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      */
     @Test
     public void createStateTaxTest() {
@@ -54,7 +54,7 @@ public class TaxesApiTest {
     /**
      * Delete an existing tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      */
     @Test
     public void deleteCountryTaxTest() {
@@ -66,7 +66,7 @@ public class TaxesApiTest {
     /**
      * Delete an existing state tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      */
     @Test
     public void deleteStateTaxTest() {
@@ -79,7 +79,7 @@ public class TaxesApiTest {
     /**
      * Get a single tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getCountryTaxTest() {
@@ -91,7 +91,7 @@ public class TaxesApiTest {
     /**
      * List and search taxes
      *
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      */
     @Test
     public void getCountryTaxesTest() {
@@ -105,7 +105,7 @@ public class TaxesApiTest {
     /**
      * Get a single state tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getStateTaxTest() {
@@ -118,7 +118,7 @@ public class TaxesApiTest {
     /**
      * List and search taxes across all countries
      *
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getStateTaxesForCountriesTest() {
@@ -132,7 +132,7 @@ public class TaxesApiTest {
     /**
      * List and search taxes within a country
      *
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getStateTaxesForCountryTest() {
@@ -147,7 +147,7 @@ public class TaxesApiTest {
     /**
      * Create or update a tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      */
     @Test
     public void updateCountryTaxTest() {
@@ -160,7 +160,7 @@ public class TaxesApiTest {
     /**
      * Create or update a state tax
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      */
     @Test
     public void updateStateTaxTest() {

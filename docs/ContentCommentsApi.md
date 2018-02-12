@@ -1,6 +1,6 @@
 # ContentCommentsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > CommentResource addComment(commentResource)
 
 Add a new comment
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
 
 ### Example
 ```java
@@ -72,6 +74,8 @@ Name | Type | Description  | Notes
 
 Delete a comment
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -118,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getComment"></a>
@@ -126,6 +130,8 @@ Name | Type | Description  | Notes
 > CommentResource getComment(id)
 
 Return a comment
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -173,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getComments"></a>
@@ -181,6 +187,8 @@ Name | Type | Description  | Notes
 > PageResourceCommentResource getComments(context, contextId, size, page)
 
 Returns a page of comments
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -234,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateComment"></a>
@@ -242,6 +250,8 @@ Name | Type | Description  | Notes
 > Void updateComment(id, content)
 
 Update a comment
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
 
 ### Example
 ```java

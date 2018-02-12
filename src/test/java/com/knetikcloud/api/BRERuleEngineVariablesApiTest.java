@@ -27,7 +27,7 @@ public class BRERuleEngineVariablesApiTest {
     /**
      * Get a list of variable types available
      *
-     * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+     * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
      */
     @Test
     public void getBREVariableTypesTest() {
@@ -38,7 +38,7 @@ public class BRERuleEngineVariablesApiTest {
     /**
      * List valid values for a type
      *
-     * Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+     * Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
      */
     @Test
     public void getBREVariableValuesTest() {

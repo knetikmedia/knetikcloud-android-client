@@ -20,7 +20,7 @@ import java.util.Map;
 public interface BRERuleEngineGlobalsApi {
   /**
    * Create a global definition
-   * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+   * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
    * @param breGlobalResource The BRE global resource object (optional)
    * @return Call&lt;BreGlobalResource&gt;
    */
@@ -34,13 +34,10 @@ public interface BRERuleEngineGlobalsApi {
 
   /**
    * Delete a global
-   * May fail if there are existing rules against it. Cannot delete core globals
+   * May fail if there are existing rules against it. Cannot delete core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
    * @param id The id of the global definition (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("bre/globals/definitions/{id}")
   Call<Void> deleteBREGlobal(
     @retrofit2.http.Path("id") String id
@@ -48,13 +45,10 @@ public interface BRERuleEngineGlobalsApi {
 
   /**
    * Get a single global definition
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
    * @param id The id of the global definition (required)
    * @return Call&lt;BreGlobalResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("bre/globals/definitions/{id}")
   Call<BreGlobalResource> getBREGlobal(
     @retrofit2.http.Path("id") String id
@@ -62,15 +56,12 @@ public interface BRERuleEngineGlobalsApi {
 
   /**
    * List global definitions
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
    * @param filterSystem Filter for globals that are system globals when true, or not when false. Leave off for both mixed (optional)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceBreGlobalResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("bre/globals/definitions")
   Call<PageResourceBreGlobalResource> getBREGlobals(
     @retrofit2.http.Query("filter_system") Boolean filterSystem, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -78,7 +69,7 @@ public interface BRERuleEngineGlobalsApi {
 
   /**
    * Update a global definition
-   * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+   * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
    * @param id The id of the global definition (required)
    * @param breGlobalResource The BRE global resource object (optional)
    * @return Call&lt;BreGlobalResource&gt;

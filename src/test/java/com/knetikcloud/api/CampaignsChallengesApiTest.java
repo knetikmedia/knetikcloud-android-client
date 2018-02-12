@@ -33,7 +33,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Create a challenge
      *
-     * Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+     * Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      */
     @Test
     public void createChallengeTest() {
@@ -45,7 +45,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Create a challenge activity
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      */
     @Test
     public void createChallengeActivityTest() {
@@ -59,7 +59,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Create a challenge activity template
      *
-     * Challenge Activity Templates define a type of challenge activity and the properties they have
+     * Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createChallengeActivityTemplateTest() {
@@ -71,7 +71,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Create a challenge template
      *
-     * Challenge Templates define a type of challenge and the properties they have
+     * Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createChallengeTemplateTest() {
@@ -83,7 +83,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Delete a challenge
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      */
     @Test
     public void deleteChallengeTest() {
@@ -95,7 +95,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Delete a challenge activity
      *
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      */
     @Test
     public void deleteChallengeActivityTest() {
@@ -108,7 +108,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Delete a challenge activity template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteChallengeActivityTemplateTest() {
@@ -121,7 +121,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Delete a challenge event
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      */
     @Test
     public void deleteChallengeEventTest() {
@@ -133,7 +133,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Delete a challenge template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteChallengeTemplateTest() {
@@ -146,7 +146,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Retrieve a challenge
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getChallengeTest() {
@@ -158,7 +158,7 @@ public class CampaignsChallengesApiTest {
     /**
      * List and search challenge activities
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getChallengeActivitiesTest() {
@@ -173,7 +173,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Get a single challenge activity
      *
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getChallengeActivityTest() {
@@ -186,7 +186,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Get a single challenge activity template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      */
     @Test
     public void getChallengeActivityTemplateTest() {
@@ -198,7 +198,7 @@ public class CampaignsChallengesApiTest {
     /**
      * List and search challenge activity templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      */
     @Test
     public void getChallengeActivityTemplatesTest() {
@@ -212,7 +212,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Retrieve a single challenge event details
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getChallengeEventTest() {
@@ -224,7 +224,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Retrieve a list of challenge events
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getChallengeEventsTest() {
@@ -242,7 +242,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Get a single challenge template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      */
     @Test
     public void getChallengeTemplateTest() {
@@ -254,7 +254,7 @@ public class CampaignsChallengesApiTest {
     /**
      * List and search challenge templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      */
     @Test
     public void getChallengeTemplatesTest() {
@@ -268,7 +268,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Retrieve a list of challenges
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getChallengesTest() {
@@ -285,7 +285,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Update a challenge
      *
-     * If the challenge is a copy, changes will propagate to all the related challenges
+     * If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      */
     @Test
     public void updateChallengeTest() {
@@ -298,7 +298,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Update a challenge activity
      *
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      */
     @Test
     public void updateChallengeActivityTest() {
@@ -313,7 +313,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Update an challenge activity template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateChallengeActivityTemplateTest() {
@@ -326,7 +326,7 @@ public class CampaignsChallengesApiTest {
     /**
      * Update a challenge template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateChallengeTemplateTest() {

@@ -1,9 +1,10 @@
 # ActivitiesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUser**](ActivitiesApi.md#addUser) | **POST** activity-occurrences/{activity_occurrence_id}/users | Add a user to an occurrence
 [**createActivity**](ActivitiesApi.md#createActivity) | **POST** activities | Create an activity
 [**createActivityOccurrence**](ActivitiesApi.md#createActivityOccurrence) | **POST** activity-occurrences | Create a new activity occurrence. Ex: start a game
 [**createActivityTemplate**](ActivitiesApi.md#createActivityTemplate) | **POST** activities/templates | Create a activity template
@@ -15,17 +16,85 @@ Method | HTTP request | Description
 [**getActivityTemplate**](ActivitiesApi.md#getActivityTemplate) | **GET** activities/templates/{id} | Get a single activity template
 [**getActivityTemplates**](ActivitiesApi.md#getActivityTemplates) | **GET** activities/templates | List and search activity templates
 [**listActivityOccurrences**](ActivitiesApi.md#listActivityOccurrences) | **GET** activity-occurrences | List activity occurrences
+[**removeUser**](ActivitiesApi.md#removeUser) | **DELETE** activity-occurrences/{activity_occurrence_id}/users/{user_id} | Remove a user from an occurrence
 [**setActivityOccurrenceResults**](ActivitiesApi.md#setActivityOccurrenceResults) | **POST** activity-occurrences/{activity_occurrence_id}/results | Sets the status of an activity occurrence to FINISHED and logs metrics
+[**setActivityOccurrenceSettings**](ActivitiesApi.md#setActivityOccurrenceSettings) | **PUT** activity-occurrences/{activity_occurrence_id}/settings | Sets the settings of an activity occurrence
+[**setUserStatus**](ActivitiesApi.md#setUserStatus) | **PUT** activity-occurrences/{activity_occurrence_id}/users/{user_id}/status | Set a user&#39;s status within an occurrence
 [**updateActivity**](ActivitiesApi.md#updateActivity) | **PUT** activities/{id} | Update an activity
-[**updateActivityOccurrence**](ActivitiesApi.md#updateActivityOccurrence) | **PUT** activity-occurrences/{activity_occurrence_id}/status | Updated the status of an activity occurrence
+[**updateActivityOccurrenceStatus**](ActivitiesApi.md#updateActivityOccurrenceStatus) | **PUT** activity-occurrences/{activity_occurrence_id}/status | Update the status of an activity occurrence
 [**updateActivityTemplate**](ActivitiesApi.md#updateActivityTemplate) | **PUT** activities/templates/{id} | Update an activity template
 
+
+<a name="addUser"></a>
+# **addUser**
+> ActivityOccurrenceResource addUser(activityOccurrenceId, test, bypassRestrictions, userId)
+
+Add a user to an occurrence
+
+If called with no body, defaults to the user making the call.
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.ActivitiesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+ActivitiesApi apiInstance = new ActivitiesApi();
+Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
+Boolean test = false; // Boolean | if true, indicates that the user should NOT be added. This can be used to test for eligibility
+Boolean bypassRestrictions = false; // Boolean | if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN
+IntWrapper userId = new IntWrapper(); // IntWrapper | The id of the user, or null for 'caller'
+try {
+    ActivityOccurrenceResource result = apiInstance.addUser(activityOccurrenceId, test, bypassRestrictions, userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ActivitiesApi#addUser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Long**| The id of the activity occurrence |
+ **test** | **Boolean**| if true, indicates that the user should NOT be added. This can be used to test for eligibility | [optional] [default to false]
+ **bypassRestrictions** | **Boolean**| if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN | [optional] [default to false]
+ **userId** | [**IntWrapper**](IntWrapper.md)| The id of the user, or null for &#39;caller&#39; | [optional]
+
+### Return type
+
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createActivity"></a>
 # **createActivity**
 > ActivityResource createActivity(activityResource)
 
 Create an activity
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -82,7 +151,7 @@ Name | Type | Description  | Notes
 
 Create a new activity occurrence. Ex: start a game
 
-Has to enforce extra rules if not used as an admin
+Has to enforce extra rules if not used as an admin. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -141,7 +210,7 @@ Name | Type | Description  | Notes
 
 Create a activity template
 
-Activity Templates define a type of activity and the properties they have
+Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -198,6 +267,8 @@ Name | Type | Description  | Notes
 
 Delete an activity
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -244,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteActivityTemplate"></a>
@@ -253,7 +324,7 @@ Name | Type | Description  | Notes
 
 Delete a activity template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -303,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivities"></a>
@@ -311,6 +382,8 @@ Name | Type | Description  | Notes
 > PageResourceBareActivityResource getActivities(filterTemplate, filterName, filterId, size, page, order)
 
 List activity definitions
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -368,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivity"></a>
@@ -376,6 +449,8 @@ Name | Type | Description  | Notes
 > ActivityResource getActivity(id)
 
 Get a single activity
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -423,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivityOccurrenceDetails"></a>
@@ -431,6 +506,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResource getActivityOccurrenceDetails(activityOccurrenceId)
 
 Load a single activity occurrence details
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -478,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivityTemplate"></a>
@@ -486,6 +563,8 @@ Name | Type | Description  | Notes
 > TemplateResource getActivityTemplate(id)
 
 Get a single activity template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -533,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivityTemplates"></a>
@@ -541,6 +620,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getActivityTemplates(size, page, order)
 
 List and search activity templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -592,7 +673,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listActivityOccurrences"></a>
@@ -600,6 +681,8 @@ Name | Type | Description  | Notes
 > PageResourceActivityOccurrenceResource listActivityOccurrences(filterActivity, filterStatus, filterEvent, filterChallenge, size, page, order)
 
 List activity occurrences
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -622,7 +705,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 String filterActivity = "filterActivity_example"; // String | Filter for occurrences of the given activity ID
-String filterStatus = "filterStatus_example"; // String | Filter for occurrences of the given activity ID
+String filterStatus = "filterStatus_example"; // String | Filter for occurrences in the given status
 Integer filterEvent = 56; // Integer | Filter for occurrences played during the given event
 Integer filterChallenge = 56; // Integer | Filter for occurrences played within the given challenge
 Integer size = 25; // Integer | The number of objects returned per page
@@ -642,7 +725,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterActivity** | **String**| Filter for occurrences of the given activity ID | [optional]
- **filterStatus** | **String**| Filter for occurrences of the given activity ID | [optional]
+ **filterStatus** | **String**| Filter for occurrences in the given status | [optional]
  **filterEvent** | **Integer**| Filter for occurrences played during the given event | [optional]
  **filterChallenge** | **Integer**| Filter for occurrences played within the given challenge | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
@@ -659,7 +742,68 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="removeUser"></a>
+# **removeUser**
+> Void removeUser(activityOccurrenceId, userId, ban, bypassRestrictions)
+
+Remove a user from an occurrence
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.ActivitiesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+ActivitiesApi apiInstance = new ActivitiesApi();
+Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
+String userId = "userId_example"; // String | The id of the user, or 'me'
+Boolean ban = false; // Boolean | if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin
+Boolean bypassRestrictions = false; // Boolean | if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN
+try {
+    Void result = apiInstance.removeUser(activityOccurrenceId, userId, ban, bypassRestrictions);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ActivitiesApi#removeUser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Long**| The id of the activity occurrence |
+ **userId** | **String**| The id of the user, or &#39;me&#39; |
+ **ban** | **Boolean**| if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin | [optional] [default to false]
+ **bypassRestrictions** | **Boolean**| if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN | [optional] [default to false]
+
+### Return type
+
+[**Void**](.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setActivityOccurrenceResults"></a>
@@ -667,6 +811,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResults setActivityOccurrenceResults(activityOccurrenceId, activityOccurrenceResults)
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
+
+In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
 
 ### Example
 ```java
@@ -719,11 +865,129 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="setActivityOccurrenceSettings"></a>
+# **setActivityOccurrenceSettings**
+> ActivityOccurrenceResource setActivityOccurrenceSettings(activityOccurrenceId, settings)
+
+Sets the settings of an activity occurrence
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.ActivitiesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+ActivitiesApi apiInstance = new ActivitiesApi();
+Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
+ActivityOccurrenceSettingsResource settings = new ActivityOccurrenceSettingsResource(); // ActivityOccurrenceSettingsResource | The new settings
+try {
+    ActivityOccurrenceResource result = apiInstance.setActivityOccurrenceSettings(activityOccurrenceId, settings);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ActivitiesApi#setActivityOccurrenceSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Long**| The id of the activity occurrence |
+ **settings** | [**ActivityOccurrenceSettingsResource**](ActivityOccurrenceSettingsResource.md)| The new settings | [optional]
+
+### Return type
+
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setUserStatus"></a>
+# **setUserStatus**
+> ActivityUserResource setUserStatus(activityOccurrenceId, userId, status)
+
+Set a user&#39;s status within an occurrence
+
+### Example
+```java
+// Import classes:
+//import com.knetikcloud.client.ApiClient;
+//import com.knetikcloud.client.ApiException;
+//import com.knetikcloud.client.Configuration;
+//import com.knetikcloud.client.auth.*;
+//import com.knetikcloud.api.ActivitiesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+OAuth oauth2_client_credentials_grant = (OAuth) defaultClient.getAuthentication("oauth2_client_credentials_grant");
+oauth2_client_credentials_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+OAuth oauth2_password_grant = (OAuth) defaultClient.getAuthentication("oauth2_password_grant");
+oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
+
+ActivitiesApi apiInstance = new ActivitiesApi();
+Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
+String userId = "userId_example"; // String | The id of the user
+String status = "status_example"; // String | The new status
+try {
+    ActivityUserResource result = apiInstance.setUserStatus(activityOccurrenceId, userId, status);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ActivitiesApi#setUserStatus");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Long**| The id of the activity occurrence |
+ **userId** | **String**| The id of the user |
+ **status** | **String**| The new status | [optional]
+
+### Return type
+
+[**ActivityUserResource**](ActivityUserResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateActivity"></a>
 # **updateActivity**
 > ActivityResource updateActivity(id, activityResource)
 
 Update an activity
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -776,13 +1040,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateActivityOccurrence"></a>
-# **updateActivityOccurrence**
-> Void updateActivityOccurrence(activityOccurrenceId, activityOccurrenceStatus)
+<a name="updateActivityOccurrenceStatus"></a>
+# **updateActivityOccurrenceStatus**
+> Void updateActivityOccurrenceStatus(activityOccurrenceId, activityOccurrenceStatus)
 
-Updated the status of an activity occurrence
+Update the status of an activity occurrence
 
-If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Aternatively, see results endpoint to finish and record all metrics at once.
+If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
 
 ### Example
 ```java
@@ -805,12 +1069,12 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
-String activityOccurrenceStatus = "activityOccurrenceStatus_example"; // String | The activity occurrence status object
+ValueWrapperstring activityOccurrenceStatus = new ValueWrapperstring(); // ValueWrapperstring | The activity occurrence status object
 try {
-    Void result = apiInstance.updateActivityOccurrence(activityOccurrenceId, activityOccurrenceStatus);
+    Void result = apiInstance.updateActivityOccurrenceStatus(activityOccurrenceId, activityOccurrenceStatus);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ActivitiesApi#updateActivityOccurrence");
+    System.err.println("Exception when calling ActivitiesApi#updateActivityOccurrenceStatus");
     e.printStackTrace();
 }
 ```
@@ -820,7 +1084,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **Long**| The id of the activity occurrence |
- **activityOccurrenceStatus** | **String**| The activity occurrence status object | [optional]
+ **activityOccurrenceStatus** | [**ValueWrapperstring**](ValueWrapperstring.md)| The activity occurrence status object | [optional]
 
 ### Return type
 
@@ -840,6 +1104,8 @@ Name | Type | Description  | Notes
 > TemplateResource updateActivityTemplate(id, activityTemplateResource)
 
 Update an activity template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

@@ -1,6 +1,6 @@
 # AuthPermissionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > PermissionResource createPermission(permissionResource)
 
 Create a new permission
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```java
@@ -72,6 +74,8 @@ Name | Type | Description  | Notes
 
 Delete a permission
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -120,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPermission"></a>
@@ -128,6 +132,8 @@ Name | Type | Description  | Notes
 > PermissionResource getPermission(permission)
 
 Get a single permission
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```java
@@ -175,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPermissions"></a>
@@ -183,6 +189,8 @@ Name | Type | Description  | Notes
 > PageResourcePermissionResource getPermissions(size, page, order)
 
 List and search permissions
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```java
@@ -234,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updatePermission"></a>
@@ -242,6 +250,8 @@ Name | Type | Description  | Notes
 > PermissionResource updatePermission(permission, permissionResource)
 
 Update a permission
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```java

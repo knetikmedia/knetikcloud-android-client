@@ -1,6 +1,6 @@
 # StoreShippingApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Create a shipping item
 
-A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
 
 ### Example
 ```java
@@ -137,6 +137,8 @@ Name | Type | Description  | Notes
 
 Delete a shipping item
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -183,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteShippingTemplate"></a>
@@ -191,6 +193,8 @@ Name | Type | Description  | Notes
 > Void deleteShippingTemplate(id, cascade)
 
 Delete a shipping template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -240,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getShippingItem"></a>
@@ -248,6 +252,8 @@ Name | Type | Description  | Notes
 > ShippingItem getShippingItem(id)
 
 Get a single shipping item
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -295,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getShippingTemplate"></a>
@@ -304,7 +310,7 @@ Name | Type | Description  | Notes
 
 Get a single shipping template
 
-Shipping Templates define a type of shipping and the properties they have.
+Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
 
 ### Example
 ```java
@@ -352,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getShippingTemplates"></a>
@@ -360,6 +366,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource getShippingTemplates(size, page, order)
 
 List and search shipping templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
 
 ### Example
 ```java
@@ -411,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateShippingItem"></a>
@@ -419,6 +427,8 @@ Name | Type | Description  | Notes
 > ShippingItem updateShippingItem(id, cascade, shippingItem)
 
 Update a shipping item
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
 
 ### Example
 ```java
@@ -478,6 +488,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource updateShippingTemplate(id, shippingTemplateResource)
 
 Update a shipping template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

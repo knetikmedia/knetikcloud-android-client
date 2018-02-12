@@ -22,7 +22,7 @@ import java.util.Map;
 public interface StoreSubscriptionsApi {
   /**
    * Creates a subscription item and associated plans
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
    * @param subscriptionResource The subscription to be created (optional)
    * @return Call&lt;SubscriptionResource&gt;
    */
@@ -36,7 +36,7 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Create a subscription template
-   * Subscription Templates define a type of subscription and the properties they have.
+   * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param subscriptionTemplateResource The new subscription template (optional)
    * @return Call&lt;SubscriptionTemplateResource&gt;
    */
@@ -50,14 +50,11 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Delete a subscription plan
-   * Must not be locked or a migration target
+   * Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
    * @param id The id of the subscription (required)
    * @param planId The id of the plan (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("subscriptions/{id}/plans/{plan_id}")
   Call<Void> deleteSubscription(
     @retrofit2.http.Path("id") Integer id, @retrofit2.http.Path("plan_id") String planId
@@ -65,14 +62,11 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Delete a subscription template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("subscriptions/templates/{id}")
   Call<Void> deleteSubscriptionTemplate(
     @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
@@ -80,13 +74,10 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Retrieve a single subscription item and associated plans
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The id of the subscription (required)
    * @return Call&lt;SubscriptionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("subscriptions/{id}")
   Call<SubscriptionResource> getSubscription(
     @retrofit2.http.Path("id") Integer id
@@ -94,13 +85,10 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Get a single subscription template
-   * Subscription Templates define a type of subscription and the properties they have.
+   * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @return Call&lt;SubscriptionTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("subscriptions/templates/{id}")
   Call<SubscriptionTemplateResource> getSubscriptionTemplate(
     @retrofit2.http.Path("id") String id
@@ -108,15 +96,12 @@ public interface StoreSubscriptionsApi {
 
   /**
    * List and search subscription templates
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceSubscriptionTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("subscriptions/templates")
   Call<PageResourceSubscriptionTemplateResource> getSubscriptionTemplates(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -124,15 +109,12 @@ public interface StoreSubscriptionsApi {
 
   /**
    * List available subscription items and associated plans
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceSubscriptionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("subscriptions")
   Call<PageResourceSubscriptionResource> getSubscriptions(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -140,7 +122,7 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Processes subscriptions and charge dues
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
    * @return Call&lt;Void&gt;
    */
   @Headers({
@@ -152,7 +134,7 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Updates a subscription item and associated plans
-   * Will not remove plans left out
+   * Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
    * @param id The id of the subscription (required)
    * @param subscriptionResource The subscription resource object (optional)
    * @return Call&lt;Void&gt;
@@ -167,7 +149,7 @@ public interface StoreSubscriptionsApi {
 
   /**
    * Update a subscription template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param subscriptionTemplateResource The subscription template resource object (optional)
    * @return Call&lt;SubscriptionTemplateResource&gt;

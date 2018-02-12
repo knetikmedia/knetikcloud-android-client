@@ -22,7 +22,7 @@ import java.util.Map;
 public interface MediaModerationApi {
   /**
    * Add a flag
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param flagResource The flag resource object (optional)
    * @return Call&lt;FlagResource&gt;
    */
@@ -36,15 +36,12 @@ public interface MediaModerationApi {
 
   /**
    * Delete a flag
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
    * @param contextName The name of the context (optional)
    * @param contextId The id of the context (optional)
    * @param userId The id of the user (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("moderation/flags")
   Call<Void> deleteFlag(
     @retrofit2.http.Query("context_name") String contextName, @retrofit2.http.Query("context_id") String contextId, @retrofit2.http.Query("user_id") Integer userId
@@ -52,7 +49,7 @@ public interface MediaModerationApi {
 
   /**
    * Returns a page of flags
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
    * @param filterContext Filter by flag context (optional)
    * @param filterContextId Filter by flag context ID (optional)
    * @param filterUserId Filter by user ID (optional)
@@ -60,9 +57,6 @@ public interface MediaModerationApi {
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceFlagResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("moderation/flags")
   Call<PageResourceFlagResource> getFlags(
     @retrofit2.http.Query("filter_context") String filterContext, @retrofit2.http.Query("filter_context_id") String filterContextId, @retrofit2.http.Query("filter_user_id") Integer filterUserId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -70,13 +64,10 @@ public interface MediaModerationApi {
 
   /**
    * Get a flag report
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
    * @param id The flag report id (required)
    * @return Call&lt;FlagReportResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("moderation/reports/{id}")
   Call<FlagReportResource> getModerationReport(
     @retrofit2.http.Path("id") Long id
@@ -84,7 +75,7 @@ public interface MediaModerationApi {
 
   /**
    * Returns a page of flag reports
-   * Context can be either a free-form string or a pre-defined context name
+   * Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
    * @param excludeResolved Ignore resolved context (optional, default to true)
    * @param filterContext Filter by moderation context (optional)
    * @param filterContextId Filter by moderation context ID (optional)
@@ -92,9 +83,6 @@ public interface MediaModerationApi {
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceFlagReportResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("moderation/reports")
   Call<PageResourceFlagReportResource> getModerationReports(
     @retrofit2.http.Query("exclude_resolved") Boolean excludeResolved, @retrofit2.http.Query("filter_context") String filterContext, @retrofit2.http.Query("filter_context_id") String filterContextId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -102,7 +90,7 @@ public interface MediaModerationApi {
 
   /**
    * Update a flag report
-   * Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+   * Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
    * @param id The flag report id (required)
    * @param flagReportResource The new flag report (optional)
    * @return Call&lt;Void&gt;

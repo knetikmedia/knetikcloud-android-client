@@ -1,6 +1,6 @@
 # UtilSecurityApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Returns the authentication log for a user
 
-A log entry is recorded everytime a user requests a new token. Standard pagination available
+A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
 
 ### Example
 ```java
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserTokenDetails"></a>
@@ -76,6 +76,8 @@ Name | Type | Description  | Notes
 > TokenDetailsResource getUserTokenDetails()
 
 Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
 
 ### Example
 ```java
@@ -119,6 +121,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

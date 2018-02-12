@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BroadcastableEvent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:56:09.934-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
 
 public class BroadcastableEvent {
   @SerializedName("client")

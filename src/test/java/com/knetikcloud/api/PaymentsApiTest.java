@@ -29,7 +29,7 @@ public class PaymentsApiTest {
     /**
      * Create a new payment method for a user
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      */
     @Test
     public void createPaymentMethodTest() {
@@ -42,7 +42,7 @@ public class PaymentsApiTest {
     /**
      * Delete an existing payment method for a user
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      */
     @Test
     public void deletePaymentMethodTest() {
@@ -55,7 +55,7 @@ public class PaymentsApiTest {
     /**
      * Get a single payment method for a user
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      */
     @Test
     public void getPaymentMethodTest() {
@@ -68,7 +68,7 @@ public class PaymentsApiTest {
     /**
      * Get a single payment method type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getPaymentMethodTypeTest() {
@@ -80,7 +80,7 @@ public class PaymentsApiTest {
     /**
      * Get all payment method types
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getPaymentMethodTypesTest() {
@@ -95,7 +95,7 @@ public class PaymentsApiTest {
     /**
      * Get all payment methods for a user
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      */
     @Test
     public void getPaymentMethodsTest() {
@@ -114,7 +114,7 @@ public class PaymentsApiTest {
     /**
      * Authorize payment of an invoice for later capture
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
      */
     @Test
     public void paymentAuthorizationTest() {
@@ -126,7 +126,7 @@ public class PaymentsApiTest {
     /**
      * Capture an existing invoice payment authorization
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
      */
     @Test
     public void paymentCaptureTest() {
@@ -138,7 +138,7 @@ public class PaymentsApiTest {
     /**
      * Update an existing payment method for a user
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      */
     @Test
     public void updatePaymentMethodTest() {

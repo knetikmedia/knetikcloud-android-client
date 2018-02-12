@@ -1,6 +1,6 @@
 # ObjectsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > ObjectResource createObjectItem(templateId, cascade, objectItem)
 
 Create an object
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
 
 ### Example
 ```java
@@ -81,7 +83,7 @@ Name | Type | Description  | Notes
 
 Create an object template
 
-Object templates define a type of entitlement and the properties they have
+Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -138,6 +140,8 @@ Name | Type | Description  | Notes
 
 Delete an object
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -186,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteObjectTemplate"></a>
@@ -195,7 +199,7 @@ Name | Type | Description  | Notes
 
 Delete an entitlement template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -245,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectItem"></a>
@@ -253,6 +257,8 @@ Name | Type | Description  | Notes
 > ObjectResource getObjectItem(templateId, objectId)
 
 Get a single object
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -302,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectItems"></a>
@@ -310,6 +316,8 @@ Name | Type | Description  | Notes
 > PageResourceObjectResource getObjectItems(templateId, size, page, order)
 
 List and search objects
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -363,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectTemplate"></a>
@@ -371,6 +379,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource getObjectTemplate(id)
 
 Get a single entitlement template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```java
@@ -418,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectTemplates"></a>
@@ -426,6 +436,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource getObjectTemplates(size, page, order)
 
 List and search entitlement templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```java
@@ -477,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateObjectItem"></a>
@@ -485,6 +497,8 @@ Name | Type | Description  | Notes
 > Void updateObjectItem(templateId, objectId, cascade, objectItem)
 
 Update an object
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
 
 ### Example
 ```java
@@ -546,6 +560,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource updateObjectTemplate(id, template)
 
 Update an entitlement template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

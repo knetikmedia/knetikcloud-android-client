@@ -26,7 +26,7 @@ public class ReportingUsersApiTest {
     /**
      * Get user registration info
      *
-     * Get user registration counts grouped by time range
+     * Get user registration counts grouped by time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_USER_ADMIN
      */
     @Test
     public void getUserRegistrationsTest() {

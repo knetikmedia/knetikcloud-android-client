@@ -20,7 +20,7 @@ import java.util.Map;
 public interface AuthPermissionsApi {
   /**
    * Create a new permission
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
    * @param permissionResource The permission resource object (optional)
    * @return Call&lt;PermissionResource&gt;
    */
@@ -34,14 +34,11 @@ public interface AuthPermissionsApi {
 
   /**
    * Delete a permission
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
    * @param permission The permission value (required)
    * @param force If true, removes permission assigned to roles (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("auth/permissions/{permission}")
   Call<Void> deletePermission(
     @retrofit2.http.Path("permission") String permission, @retrofit2.http.Query("force") Boolean force
@@ -49,13 +46,10 @@ public interface AuthPermissionsApi {
 
   /**
    * Get a single permission
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
    * @param permission The permission value (required)
    * @return Call&lt;PermissionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("auth/permissions/{permission}")
   Call<PermissionResource> getPermission(
     @retrofit2.http.Path("permission") String permission
@@ -63,15 +57,12 @@ public interface AuthPermissionsApi {
 
   /**
    * List and search permissions
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to permission:ASC)
    * @return Call&lt;PageResourcePermissionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("auth/permissions")
   Call<PageResourcePermissionResource> getPermissions(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -79,7 +70,7 @@ public interface AuthPermissionsApi {
 
   /**
    * Update a permission
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
    * @param permission The permission value (required)
    * @param permissionResource The permission resource object (optional)
    * @return Call&lt;PermissionResource&gt;

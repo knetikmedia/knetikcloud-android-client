@@ -1,6 +1,6 @@
 # ContentPollsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,6 +23,8 @@ Method | HTTP request | Description
 > PollResponseResource answerPoll(id, answerKey)
 
 Add your vote to a poll
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
 
 ### Example
 ```java
@@ -81,7 +83,7 @@ Name | Type | Description  | Notes
 
 Create a new poll
 
-Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
 
 ### Example
 ```java
@@ -138,7 +140,7 @@ Name | Type | Description  | Notes
 
 Create a poll template
 
-Poll templates define a type of poll and the properties they have
+Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -195,6 +197,8 @@ Name | Type | Description  | Notes
 
 Delete an existing poll
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -241,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deletePollTemplate"></a>
@@ -250,7 +254,7 @@ Name | Type | Description  | Notes
 
 Delete a poll template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -300,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPoll"></a>
@@ -308,6 +312,8 @@ Name | Type | Description  | Notes
 > PollResource getPoll(id)
 
 Get a single poll
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -355,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPollAnswer"></a>
@@ -363,6 +369,8 @@ Name | Type | Description  | Notes
 > PollResponseResource getPollAnswer(id)
 
 Get poll answer
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
 
 ### Example
 ```java
@@ -410,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPollTemplate"></a>
@@ -418,6 +426,8 @@ Name | Type | Description  | Notes
 > TemplateResource getPollTemplate(id)
 
 Get a single poll template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
 
 ### Example
 ```java
@@ -465,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPollTemplates"></a>
@@ -473,6 +483,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getPollTemplates(size, page, order)
 
 List and search poll templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
 
 ### Example
 ```java
@@ -524,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPolls"></a>
@@ -533,7 +545,7 @@ Name | Type | Description  | Notes
 
 List and search polls
 
-Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -591,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updatePoll"></a>
@@ -599,6 +611,8 @@ Name | Type | Description  | Notes
 > PollResource updatePoll(id, pollResource)
 
 Update an existing poll
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
 
 ### Example
 ```java
@@ -656,6 +670,8 @@ Name | Type | Description  | Notes
 > TemplateResource updatePollTemplate(id, pollTemplateResource)
 
 Update a poll template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

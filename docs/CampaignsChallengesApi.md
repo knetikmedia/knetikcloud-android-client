@@ -1,6 +1,6 @@
 # CampaignsChallengesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 Create a challenge
 
-Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -91,6 +91,8 @@ Name | Type | Description  | Notes
 > ChallengeActivityResource createChallengeActivity(challengeId, challengeActivityResource, validateSettings)
 
 Create a challenge activity
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -151,7 +153,7 @@ Name | Type | Description  | Notes
 
 Create a challenge activity template
 
-Challenge Activity Templates define a type of challenge activity and the properties they have
+Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -208,7 +210,7 @@ Name | Type | Description  | Notes
 
 Create a challenge template
 
-Challenge Templates define a type of challenge and the properties they have
+Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -265,6 +267,8 @@ Name | Type | Description  | Notes
 
 Delete a challenge
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -311,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteChallengeActivity"></a>
@@ -320,7 +324,7 @@ Name | Type | Description  | Notes
 
 Delete a challenge activity
 
-A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -370,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteChallengeActivityTemplate"></a>
@@ -379,7 +383,7 @@ Name | Type | Description  | Notes
 
 Delete a challenge activity template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -429,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteChallengeEvent"></a>
@@ -437,6 +441,8 @@ Name | Type | Description  | Notes
 > Void deleteChallengeEvent(id)
 
 Delete a challenge event
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -484,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteChallengeTemplate"></a>
@@ -493,7 +499,7 @@ Name | Type | Description  | Notes
 
 Delete a challenge template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -543,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallenge"></a>
@@ -551,6 +557,8 @@ Name | Type | Description  | Notes
 > ChallengeResource getChallenge(id)
 
 Retrieve a challenge
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -598,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeActivities"></a>
@@ -606,6 +614,8 @@ Name | Type | Description  | Notes
 > PageResourceBareChallengeActivityResource getChallengeActivities(challengeId, size, page, order)
 
 List and search challenge activities
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -659,7 +669,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeActivity"></a>
@@ -668,7 +678,7 @@ Name | Type | Description  | Notes
 
 Get a single challenge activity
 
-A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -718,7 +728,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeActivityTemplate"></a>
@@ -726,6 +736,8 @@ Name | Type | Description  | Notes
 > TemplateResource getChallengeActivityTemplate(id)
 
 Get a single challenge activity template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -773,7 +785,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeActivityTemplates"></a>
@@ -781,6 +793,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getChallengeActivityTemplates(size, page, order)
 
 List and search challenge activity templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -832,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeEvent"></a>
@@ -840,6 +854,8 @@ Name | Type | Description  | Notes
 > ChallengeEventResource getChallengeEvent(id)
 
 Retrieve a single challenge event details
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -887,7 +903,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeEvents"></a>
@@ -895,6 +911,8 @@ Name | Type | Description  | Notes
 > PageResourceChallengeEventResource getChallengeEvents(filterStartDate, filterEndDate, filterCampaigns, filterChallenge, size, page, order)
 
 Retrieve a list of challenge events
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -954,7 +972,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeTemplate"></a>
@@ -962,6 +980,8 @@ Name | Type | Description  | Notes
 > TemplateResource getChallengeTemplate(id)
 
 Get a single challenge template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -1009,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallengeTemplates"></a>
@@ -1017,6 +1037,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getChallengeTemplates(size, page, order)
 
 List and search challenge templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -1068,7 +1090,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getChallenges"></a>
@@ -1076,6 +1098,8 @@ Name | Type | Description  | Notes
 > PageResourceChallengeResource getChallenges(filterActiveCampaign, filterStartDate, filterEndDate, size, page, order)
 
 Retrieve a list of challenges
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -1133,7 +1157,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateChallenge"></a>
@@ -1142,7 +1166,7 @@ Name | Type | Description  | Notes
 
 Update a challenge
 
-If the challenge is a copy, changes will propagate to all the related challenges
+If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -1201,7 +1225,7 @@ Name | Type | Description  | Notes
 
 Update a challenge activity
 
-A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
 
 ### Example
 ```java
@@ -1264,6 +1288,8 @@ Name | Type | Description  | Notes
 
 Update an challenge activity template
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -1320,6 +1346,8 @@ Name | Type | Description  | Notes
 > TemplateResource updateChallengeTemplate(id, challengeTemplateResource)
 
 Update a challenge template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

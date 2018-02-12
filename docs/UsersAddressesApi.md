@@ -1,6 +1,6 @@
 # UsersAddressesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > SavedAddressResource createAddress(userId, savedAddressResource)
 
 Create a new address
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```java
@@ -74,6 +76,8 @@ Name | Type | Description  | Notes
 
 Delete an address
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
+
 ### Example
 ```java
 // Import classes:
@@ -122,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAddress"></a>
@@ -130,6 +134,8 @@ Name | Type | Description  | Notes
 > SavedAddressResource getAddress(userId, id)
 
 Get a single address
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```java
@@ -179,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAddresses"></a>
@@ -187,6 +193,8 @@ Name | Type | Description  | Notes
 > PageResourceSavedAddressResource getAddresses(userId, size, page, order)
 
 List and search addresses
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```java
@@ -240,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateAddress"></a>
@@ -248,6 +256,8 @@ Name | Type | Description  | Notes
 > SavedAddressResource updateAddress(userId, id, savedAddressResource)
 
 Update an address
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```java

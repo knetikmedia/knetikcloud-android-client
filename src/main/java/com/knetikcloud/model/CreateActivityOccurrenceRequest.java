@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.knetikcloud.model.CoreActivityOccurrenceSettings;
 import com.knetikcloud.model.ItemIdRequest;
 import com.knetikcloud.model.Participant;
 import com.knetikcloud.model.SelectedSettingRequest;
@@ -32,7 +33,7 @@ import java.util.List;
  * A occurrence of an activity (the actual game for example). Used to track scores, participants, and provide settings
  */
 @ApiModel(description = "A occurrence of an activity (the actual game for example). Used to track scores, participants, and provide settings")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:56:09.934-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
 public class CreateActivityOccurrenceRequest {
   @SerializedName("activity_id")
   private Long activityId = null;
@@ -40,11 +41,17 @@ public class CreateActivityOccurrenceRequest {
   @SerializedName("challenge_activity_id")
   private Long challengeActivityId = null;
 
+  @SerializedName("core_settings")
+  private CoreActivityOccurrenceSettings coreSettings = null;
+
   @SerializedName("entitlement")
   private ItemIdRequest entitlement = null;
 
   @SerializedName("event_id")
   private Long eventId = null;
+
+  @SerializedName("host")
+  private Integer host = null;
 
   @SerializedName("settings")
   private List<SelectedSettingRequest> settings = null;
@@ -60,6 +67,8 @@ public class CreateActivityOccurrenceRequest {
     SETUP("SETUP"),
     
     OPEN("OPEN"),
+    
+    LAUNCHING("LAUNCHING"),
     
     PLAYING("PLAYING"),
     
@@ -147,6 +156,24 @@ public class CreateActivityOccurrenceRequest {
     this.challengeActivityId = challengeActivityId;
   }
 
+  public CreateActivityOccurrenceRequest coreSettings(CoreActivityOccurrenceSettings coreSettings) {
+    this.coreSettings = coreSettings;
+    return this;
+  }
+
+   /**
+   * Defines core settings about the activity that affect how it can be created/played by users.
+   * @return coreSettings
+  **/
+  @ApiModelProperty(value = "Defines core settings about the activity that affect how it can be created/played by users.")
+  public CoreActivityOccurrenceSettings getCoreSettings() {
+    return coreSettings;
+  }
+
+  public void setCoreSettings(CoreActivityOccurrenceSettings coreSettings) {
+    this.coreSettings = coreSettings;
+  }
+
   public CreateActivityOccurrenceRequest entitlement(ItemIdRequest entitlement) {
     this.entitlement = entitlement;
     return this;
@@ -181,6 +208,24 @@ public class CreateActivityOccurrenceRequest {
 
   public void setEventId(Long eventId) {
     this.eventId = eventId;
+  }
+
+  public CreateActivityOccurrenceRequest host(Integer host) {
+    this.host = host;
+    return this;
+  }
+
+   /**
+   * The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of &#39;non_player&#39; if not admin as well
+   * @return host
+  **/
+  @ApiModelProperty(value = "The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well")
+  public Integer getHost() {
+    return host;
+  }
+
+  public void setHost(Integer host) {
+    this.host = host;
   }
 
   public CreateActivityOccurrenceRequest settings(List<SelectedSettingRequest> settings) {
@@ -283,8 +328,10 @@ public class CreateActivityOccurrenceRequest {
     CreateActivityOccurrenceRequest createActivityOccurrenceRequest = (CreateActivityOccurrenceRequest) o;
     return Objects.equals(this.activityId, createActivityOccurrenceRequest.activityId) &&
         Objects.equals(this.challengeActivityId, createActivityOccurrenceRequest.challengeActivityId) &&
+        Objects.equals(this.coreSettings, createActivityOccurrenceRequest.coreSettings) &&
         Objects.equals(this.entitlement, createActivityOccurrenceRequest.entitlement) &&
         Objects.equals(this.eventId, createActivityOccurrenceRequest.eventId) &&
+        Objects.equals(this.host, createActivityOccurrenceRequest.host) &&
         Objects.equals(this.settings, createActivityOccurrenceRequest.settings) &&
         Objects.equals(this.simulated, createActivityOccurrenceRequest.simulated) &&
         Objects.equals(this.status, createActivityOccurrenceRequest.status) &&
@@ -293,7 +340,7 @@ public class CreateActivityOccurrenceRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityId, challengeActivityId, entitlement, eventId, settings, simulated, status, users);
+    return Objects.hash(activityId, challengeActivityId, coreSettings, entitlement, eventId, host, settings, simulated, status, users);
   }
 
 
@@ -304,8 +351,10 @@ public class CreateActivityOccurrenceRequest {
     
     sb.append("    activityId: ").append(toIndentedString(activityId)).append("\n");
     sb.append("    challengeActivityId: ").append(toIndentedString(challengeActivityId)).append("\n");
+    sb.append("    coreSettings: ").append(toIndentedString(coreSettings)).append("\n");
     sb.append("    entitlement: ").append(toIndentedString(entitlement)).append("\n");
     sb.append("    eventId: ").append(toIndentedString(eventId)).append("\n");
+    sb.append("    host: ").append(toIndentedString(host)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

@@ -32,7 +32,7 @@ import java.util.Map;
 public interface MediaVideosApi {
   /**
    * Adds a user to a video&#39;s whitelist
-   * Whitelisted users can view video regardless of privacy setting.
+   * Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param id The video id (required)
    * @param userId The user id (optional)
    * @return Call&lt;Void&gt;
@@ -47,7 +47,7 @@ public interface MediaVideosApi {
 
   /**
    * Adds a new video in the system
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoResource The video object (optional)
    * @return Call&lt;VideoResource&gt;
    */
@@ -61,7 +61,7 @@ public interface MediaVideosApi {
 
   /**
    * Add a new video comment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id  (required)
    * @param commentResource The comment object (optional)
    * @return Call&lt;CommentResource&gt;
@@ -76,7 +76,7 @@ public interface MediaVideosApi {
 
   /**
    * Adds a contributor to a video
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param contributionResource The contribution object (optional)
    * @return Call&lt;Void&gt;
@@ -91,7 +91,7 @@ public interface MediaVideosApi {
 
   /**
    * Add a new flag
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param reason The flag reason (optional)
    * @return Call&lt;FlagResource&gt;
@@ -106,7 +106,7 @@ public interface MediaVideosApi {
 
   /**
    * Adds one or more existing videos as related to this one
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param videoRelationshipResource The video relationship object  (optional)
    * @return Call&lt;VideoRelationshipResource&gt;
@@ -121,7 +121,7 @@ public interface MediaVideosApi {
 
   /**
    * Create a video disposition
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param dispositionResource The disposition object (optional)
    * @return Call&lt;DispositionResource&gt;
@@ -136,7 +136,7 @@ public interface MediaVideosApi {
 
   /**
    * Create a video template
-   * Video Templates define a type of video and the properties they have
+   * Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param videoTemplateResource The video template resource object (optional)
    * @return Call&lt;TemplateResource&gt;
    */
@@ -150,13 +150,10 @@ public interface MediaVideosApi {
 
   /**
    * Deletes a video from the system if no resources are attached to it
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param id The video id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/{id}")
   Call<Void> deleteVideo(
     @retrofit2.http.Path("id") Long id
@@ -164,14 +161,11 @@ public interface MediaVideosApi {
 
   /**
    * Delete a video comment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param id The comment id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/{video_id}/comments/{id}")
   Call<Void> deleteVideoComment(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Path("id") Long id
@@ -179,13 +173,10 @@ public interface MediaVideosApi {
 
   /**
    * Delete a video disposition
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param dispositionId The disposition id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/{video_id}/dispositions/{disposition_id}")
   Call<Void> deleteVideoDisposition(
     @retrofit2.http.Path("disposition_id") Long dispositionId
@@ -193,13 +184,10 @@ public interface MediaVideosApi {
 
   /**
    * Delete a flag
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/{video_id}/moderation")
   Call<Void> deleteVideoFlag(
     @retrofit2.http.Path("video_id") Long videoId
@@ -207,14 +195,11 @@ public interface MediaVideosApi {
 
   /**
    * Delete a video&#39;s relationship
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param id The relationship id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/{video_id}/related/{id}")
   Call<Void> deleteVideoRelationship(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Path("id") Long id
@@ -222,14 +207,11 @@ public interface MediaVideosApi {
 
   /**
    * Delete a video template
-   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param cascade The value needed to delete used templates (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/templates/{id}")
   Call<Void> deleteVideoTemplate(
     @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
@@ -237,16 +219,13 @@ public interface MediaVideosApi {
 
   /**
    * Get user videos
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param userId The user id (required)
    * @param excludeFlagged Skip videos that have been flagged by the current user (optional, default to true)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceVideoResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/videos")
   Call<PageResourceVideoResource> getUserVideos(
     @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Query("exclude_flagged") Boolean excludeFlagged, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -254,13 +233,10 @@ public interface MediaVideosApi {
 
   /**
    * Loads a specific video details
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param id The video id (required)
    * @return Call&lt;VideoResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("media/videos/{id}")
   Call<VideoResource> getVideo(
     @retrofit2.http.Path("id") Long id
@@ -268,15 +244,12 @@ public interface MediaVideosApi {
 
   /**
    * Returns a page of comments for a video
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param videoId The video id (required)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceCommentResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("media/videos/{video_id}/comments")
   Call<PageResourceCommentResource> getVideoComments(
     @retrofit2.http.Path("video_id") Integer videoId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -284,15 +257,12 @@ public interface MediaVideosApi {
 
   /**
    * Returns a page of dispositions for a video
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param videoId The video id (required)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceDispositionResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("media/videos/{video_id}/dispositions")
   Call<PageResourceDispositionResource> getVideoDispositions(
     @retrofit2.http.Path("video_id") Integer videoId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -300,15 +270,12 @@ public interface MediaVideosApi {
 
   /**
    * Returns a page of video relationships
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param videoId The video id (required)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @return Call&lt;PageResourceVideoRelationshipResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("media/videos/{video_id}/related")
   Call<PageResourceVideoRelationshipResource> getVideoRelationships(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
@@ -316,13 +283,10 @@ public interface MediaVideosApi {
 
   /**
    * Get a single video template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
    * @param id The id of the template (required)
    * @return Call&lt;TemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("media/videos/templates/{id}")
   Call<TemplateResource> getVideoTemplate(
     @retrofit2.http.Path("id") String id
@@ -330,15 +294,12 @@ public interface MediaVideosApi {
 
   /**
    * List and search video templates
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("media/videos/templates")
   Call<PageResourceTemplateResource> getVideoTemplates(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -346,7 +307,7 @@ public interface MediaVideosApi {
 
   /**
    * Search videos using the documented filters
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param excludeFlagged Skip videos that have been flagged by the current user (optional, default to true)
    * @param filterVideosByUploader Filter for videos by uploader id (optional)
    * @param filterCategory Filter for videos from a specific category by id (optional)
@@ -364,9 +325,6 @@ public interface MediaVideosApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to author:ASC)
    * @return Call&lt;PageResourceVideoResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("media/videos")
   Call<PageResourceVideoResource> getVideos(
     @retrofit2.http.Query("exclude_flagged") Boolean excludeFlagged, @retrofit2.http.Query("filter_videos_by_uploader") Integer filterVideosByUploader, @retrofit2.http.Query("filter_category") String filterCategory, @retrofit2.http.Query("filter_tagset") String filterTagset, @retrofit2.http.Query("filter_videos_by_name") String filterVideosByName, @retrofit2.http.Query("filter_videos_by_contributor") Integer filterVideosByContributor, @retrofit2.http.Query("filter_videos_by_author") Integer filterVideosByAuthor, @retrofit2.http.Query("filter_has_author") Boolean filterHasAuthor, @retrofit2.http.Query("filter_has_uploader") Boolean filterHasUploader, @retrofit2.http.Query("filter_related_to") String filterRelatedTo, @retrofit2.http.Query("filter_friends") Boolean filterFriends, @retrofit2.http.Query("filter_disposition") String filterDisposition, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -374,14 +332,11 @@ public interface MediaVideosApi {
 
   /**
    * Removes a user from a video&#39;s whitelist
-   * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+   * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param id The user id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/{video_id}/whitelist/{id}")
   Call<Void> removeUserFromVideoWhitelist(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Path("id") Integer id
@@ -389,14 +344,11 @@ public interface MediaVideosApi {
 
   /**
    * Removes a contributor from a video
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param id The contributor id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("media/videos/{video_id}/contributors/{id}")
   Call<Void> removeVideoContributor(
     @retrofit2.http.Path("video_id") Long videoId, @retrofit2.http.Path("id") Integer id
@@ -404,7 +356,7 @@ public interface MediaVideosApi {
 
   /**
    * Modifies a video&#39;s details
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param id The video id (required)
    * @param videoResource The video object (optional)
    * @return Call&lt;Void&gt;
@@ -419,7 +371,7 @@ public interface MediaVideosApi {
 
   /**
    * Update a video comment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param id The comment id (required)
    * @param content The comment content (optional)
@@ -435,7 +387,7 @@ public interface MediaVideosApi {
 
   /**
    * Update a video&#39;s relationship details
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
    * @param videoId The video id (required)
    * @param relationshipId The relationship id (required)
    * @param details The video relationship details (optional)
@@ -451,7 +403,7 @@ public interface MediaVideosApi {
 
   /**
    * Update a video template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param videoTemplateResource The video template resource object (optional)
    * @return Call&lt;TemplateResource&gt;
@@ -466,7 +418,7 @@ public interface MediaVideosApi {
 
   /**
    * Increment a video&#39;s view count
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The video id (required)
    * @return Call&lt;Void&gt;
    */

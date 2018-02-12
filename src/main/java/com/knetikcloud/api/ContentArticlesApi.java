@@ -22,7 +22,7 @@ import java.util.Map;
 public interface ContentArticlesApi {
   /**
    * Create a new article
-   * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+   * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
    * @param articleResource The new article (optional)
    * @return Call&lt;ArticleResource&gt;
    */
@@ -36,7 +36,7 @@ public interface ContentArticlesApi {
 
   /**
    * Create an article template
-   * Article Templates define a type of article and the properties they have
+   * Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param articleTemplateResource The article template resource object (optional)
    * @return Call&lt;TemplateResource&gt;
    */
@@ -50,13 +50,10 @@ public interface ContentArticlesApi {
 
   /**
    * Delete an existing article
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
    * @param id The article id (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("content/articles/{id}")
   Call<Void> deleteArticle(
     @retrofit2.http.Path("id") String id
@@ -64,14 +61,11 @@ public interface ContentArticlesApi {
 
   /**
    * Delete an article template
-   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+   * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param cascade The value needed to delete used templates (optional)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("content/articles/templates/{id}")
   Call<Void> deleteArticleTemplate(
     @retrofit2.http.Path("id") String id, @retrofit2.http.Query("cascade") String cascade
@@ -79,13 +73,10 @@ public interface ContentArticlesApi {
 
   /**
    * Get a single article
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param id The article id (required)
    * @return Call&lt;ArticleResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("content/articles/{id}")
   Call<ArticleResource> getArticle(
     @retrofit2.http.Path("id") String id
@@ -93,13 +84,10 @@ public interface ContentArticlesApi {
 
   /**
    * Get a single article template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
    * @param id The id of the template (required)
    * @return Call&lt;TemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("content/articles/templates/{id}")
   Call<TemplateResource> getArticleTemplate(
     @retrofit2.http.Path("id") String id
@@ -107,15 +95,12 @@ public interface ContentArticlesApi {
 
   /**
    * List and search article templates
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceTemplateResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("content/articles/templates")
   Call<PageResourceTemplateResource> getArticleTemplates(
     @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -123,7 +108,7 @@ public interface ContentArticlesApi {
 
   /**
    * List and search articles
-   * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
+   * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param filterActiveOnly Filter for articles that are active (true) or inactive (false) (optional)
    * @param filterCategory Filter for articles from a specific category by id (optional)
    * @param filterTagset Filter for articles with at least one of a specified set of tags (separated by comma) (optional)
@@ -135,9 +120,6 @@ public interface ContentArticlesApi {
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceArticleResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("content/articles")
   Call<PageResourceArticleResource> getArticles(
     @retrofit2.http.Query("filter_active_only") Boolean filterActiveOnly, @retrofit2.http.Query("filter_category") String filterCategory, @retrofit2.http.Query("filter_tagset") String filterTagset, @retrofit2.http.Query("filter_tag_intersection") String filterTagIntersection, @retrofit2.http.Query("filter_tag_exclusion") String filterTagExclusion, @retrofit2.http.Query("filter_title") String filterTitle, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -145,7 +127,7 @@ public interface ContentArticlesApi {
 
   /**
    * Update an existing article
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
    * @param id The article id (required)
    * @param articleResource The article object (optional)
    * @return Call&lt;ArticleResource&gt;
@@ -160,7 +142,7 @@ public interface ContentArticlesApi {
 
   /**
    * Update an article template
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
    * @param id The id of the template (required)
    * @param articleTemplateResource The article template resource object (optional)
    * @return Call&lt;TemplateResource&gt;

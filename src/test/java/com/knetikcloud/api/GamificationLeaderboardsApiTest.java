@@ -27,7 +27,7 @@ public class GamificationLeaderboardsApiTest {
     /**
      * Retrieves leaderboard details and paginated entries
      *
-     * The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource.
+     * The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. Sorting is based on the fields of LeaderboardEntryResource rather than the returned LeaderboardResource. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getLeaderboardTest() {
@@ -43,7 +43,7 @@ public class GamificationLeaderboardsApiTest {
     /**
      * Retrieves a specific user entry with rank
      *
-     * The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard
+     * The context type identifies the type of entity (i.e., &#39;activity&#39;) being tracked on the leaderboard. The context ID is the unique ID of the actual entity tracked by the leaderboard. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getLeaderboardRankTest() {
@@ -57,7 +57,7 @@ public class GamificationLeaderboardsApiTest {
     /**
      * Get a list of available leaderboard strategy names
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getLeaderboardStrategiesTest() {

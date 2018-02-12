@@ -19,7 +19,7 @@ import java.util.Map;
 public interface PaymentsXsollaApi {
   /**
    * Create a payment token that should be used to forward the user to Xsolla so they can complete payment
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
    * @param request The payment request to be sent to XSolla (optional)
    * @return Call&lt;String&gt;
    */

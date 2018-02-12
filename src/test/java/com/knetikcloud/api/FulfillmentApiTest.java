@@ -27,7 +27,7 @@ public class FulfillmentApiTest {
     /**
      * Create a fulfillment type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
      */
     @Test
     public void createFulfillmentTypeTest() {
@@ -39,7 +39,7 @@ public class FulfillmentApiTest {
     /**
      * Delete a fulfillment type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
      */
     @Test
     public void deleteFulfillmentTypeTest() {
@@ -51,7 +51,7 @@ public class FulfillmentApiTest {
     /**
      * Get a single fulfillment type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getFulfillmentTypeTest() {
@@ -63,7 +63,7 @@ public class FulfillmentApiTest {
     /**
      * List and search fulfillment types
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getFulfillmentTypesTest() {
@@ -77,7 +77,7 @@ public class FulfillmentApiTest {
     /**
      * Update a fulfillment type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
      */
     @Test
     public void updateFulfillmentTypeTest() {

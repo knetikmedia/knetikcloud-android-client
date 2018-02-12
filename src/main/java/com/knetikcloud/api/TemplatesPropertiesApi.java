@@ -19,13 +19,10 @@ import java.util.Map;
 public interface TemplatesPropertiesApi {
   /**
    * Get details for a template property type
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @param type type (required)
    * @return Call&lt;PropertyFieldListResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("templates/properties/{type}")
   Call<PropertyFieldListResource> getTemplatePropertyType(
     @retrofit2.http.Path("type") String type
@@ -33,12 +30,9 @@ public interface TemplatesPropertiesApi {
 
   /**
    * List template property types
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
    * @return Call&lt;List&lt;PropertyFieldListResource&gt;&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("templates/properties")
   Call<List<PropertyFieldListResource>> getTemplatePropertyTypes();
     

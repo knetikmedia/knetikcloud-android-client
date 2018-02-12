@@ -35,7 +35,7 @@ public class UsersInventoryApiTest {
     /**
      * Adds an item to the user inventory
      *
-     * The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time
+     * The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void addItemToUserInventoryTest() {
@@ -48,7 +48,7 @@ public class UsersInventoryApiTest {
     /**
      * Check for access to an item without consuming
      *
-     * Useful for pre-check and accounts for all various buisness rules
+     * Useful for pre-check and accounts for all various buisness rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      */
     @Test
     public void checkUserEntitlementItemTest() {
@@ -62,7 +62,7 @@ public class UsersInventoryApiTest {
     /**
      * Create an entitlement item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void createEntitlementItemTest() {
@@ -75,7 +75,7 @@ public class UsersInventoryApiTest {
     /**
      * Create an entitlement template
      *
-     * Entitlement templates define a type of entitlement and the properties they have
+     * Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createEntitlementTemplateTest() {
@@ -87,7 +87,7 @@ public class UsersInventoryApiTest {
     /**
      * Delete an entitlement item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void deleteEntitlementItemTest() {
@@ -99,7 +99,7 @@ public class UsersInventoryApiTest {
     /**
      * Delete an entitlement template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteEntitlementTemplateTest() {
@@ -112,7 +112,7 @@ public class UsersInventoryApiTest {
     /**
      * Get a single entitlement item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getEntitlementItemTest() {
@@ -124,7 +124,7 @@ public class UsersInventoryApiTest {
     /**
      * List and search entitlement items
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getEntitlementItemsTest() {
@@ -139,7 +139,7 @@ public class UsersInventoryApiTest {
     /**
      * Get a single entitlement template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getEntitlementTemplateTest() {
@@ -151,7 +151,7 @@ public class UsersInventoryApiTest {
     /**
      * List and search entitlement templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      */
     @Test
     public void getEntitlementTemplatesTest() {
@@ -165,7 +165,7 @@ public class UsersInventoryApiTest {
     /**
      * List the user inventory entries for a given user
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      */
     @Test
     public void getUserInventoriesTest() {
@@ -185,11 +185,11 @@ public class UsersInventoryApiTest {
     /**
      * Get an inventory entry
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void getUserInventoryTest() {
-        Integer userId = null;
+        String userId = null;
         Integer id = null;
         // UserInventoryResource response = api.getUserInventory(userId, id);
 
@@ -198,7 +198,7 @@ public class UsersInventoryApiTest {
     /**
      * List the log entries for this inventory entry
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      */
     @Test
     public void getUserInventoryLogTest() {
@@ -213,7 +213,7 @@ public class UsersInventoryApiTest {
     /**
      * List the user inventory entries for all users
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void getUsersInventoryTest() {
@@ -232,7 +232,7 @@ public class UsersInventoryApiTest {
     /**
      * Grant an entitlement
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void grantUserEntitlementTest() {
@@ -245,7 +245,7 @@ public class UsersInventoryApiTest {
     /**
      * Update an entitlement item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void updateEntitlementItemTest() {
@@ -259,7 +259,7 @@ public class UsersInventoryApiTest {
     /**
      * Update an entitlement template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateEntitlementTemplateTest() {
@@ -272,7 +272,7 @@ public class UsersInventoryApiTest {
     /**
      * Set the behavior data for an inventory entry
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void updateUserInventoryBehaviorDataTest() {
@@ -286,7 +286,7 @@ public class UsersInventoryApiTest {
     /**
      * Set the expiration date
      *
-     * Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill)
+     * Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void updateUserInventoryExpiresTest() {
@@ -300,7 +300,7 @@ public class UsersInventoryApiTest {
     /**
      * Set the status for an inventory entry
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      */
     @Test
     public void updateUserInventoryStatusTest() {
@@ -314,7 +314,7 @@ public class UsersInventoryApiTest {
     /**
      * Use an item
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      */
     @Test
     public void useUserEntitlementItemTest() {

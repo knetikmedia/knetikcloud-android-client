@@ -20,7 +20,7 @@ import java.util.Map;
 public interface UsersAddressesApi {
   /**
    * Create a new address
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
    * @param userId The id of the user (required)
    * @param savedAddressResource The new address (optional)
    * @return Call&lt;SavedAddressResource&gt;
@@ -35,14 +35,11 @@ public interface UsersAddressesApi {
 
   /**
    * Delete an address
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
    * @param userId The id of the user (required)
    * @param id The id of the address (required)
    * @return Call&lt;Void&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @DELETE("users/{user_id}/addresses/{id}")
   Call<Void> deleteAddress(
     @retrofit2.http.Path("user_id") String userId, @retrofit2.http.Path("id") Integer id
@@ -50,14 +47,11 @@ public interface UsersAddressesApi {
 
   /**
    * Get a single address
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
    * @param userId The id of the user (required)
    * @param id The id of the address (required)
    * @return Call&lt;SavedAddressResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/addresses/{id}")
   Call<SavedAddressResource> getAddress(
     @retrofit2.http.Path("user_id") String userId, @retrofit2.http.Path("id") Integer id
@@ -65,16 +59,13 @@ public interface UsersAddressesApi {
 
   /**
    * List and search addresses
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
    * @param userId The id of the user (required)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
    * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional, default to id:ASC)
    * @return Call&lt;PageResourceSavedAddressResource&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("users/{user_id}/addresses")
   Call<PageResourceSavedAddressResource> getAddresses(
     @retrofit2.http.Path("user_id") String userId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
@@ -82,7 +73,7 @@ public interface UsersAddressesApi {
 
   /**
    * Update an address
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
    * @param userId The id of the user (required)
    * @param id The id of the address (required)
    * @param savedAddressResource The saved address resource object (optional)

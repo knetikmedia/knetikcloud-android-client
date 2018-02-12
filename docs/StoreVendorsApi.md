@@ -1,6 +1,6 @@
 # StoreVendorsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > VendorResource createVendor(vendor)
 
 Create a vendor
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
 
 ### Example
 ```java
@@ -77,7 +79,7 @@ Name | Type | Description  | Notes
 
 Create a vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -134,6 +136,8 @@ Name | Type | Description  | Notes
 
 Delete a vendor
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -180,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteVendorTemplate"></a>
@@ -188,6 +192,8 @@ Name | Type | Description  | Notes
 > Void deleteVendorTemplate(id, cascade)
 
 Delete a vendor template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -237,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendor"></a>
@@ -245,6 +251,8 @@ Name | Type | Description  | Notes
 > VendorResource getVendor(id)
 
 Get a single vendor
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -292,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendorTemplate"></a>
@@ -301,7 +309,7 @@ Name | Type | Description  | Notes
 
 Get a single vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -349,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendorTemplates"></a>
@@ -357,6 +365,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource getVendorTemplates(size, page, order)
 
 List and search vendor templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java
@@ -380,7 +390,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 StoreVendorsApi apiInstance = new StoreVendorsApi();
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned, starting with 1
-String order = "1"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+String order = "order_example"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 try {
     PageResourceItemTemplateResource result = apiInstance.getVendorTemplates(size, page, order);
     System.out.println(result);
@@ -396,7 +406,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional]
 
 ### Return type
 
@@ -408,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendors"></a>
@@ -416,6 +426,8 @@ Name | Type | Description  | Notes
 > PageResourceVendorResource getVendors(filterName, size, page, order)
 
 List and search vendors
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -469,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateVendor"></a>
@@ -477,6 +489,8 @@ Name | Type | Description  | Notes
 > VendorResource updateVendor(id, vendor)
 
 Update a vendor
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
 
 ### Example
 ```java
@@ -534,6 +548,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource updateVendorTemplate(id, vendorTemplateResource)
 
 Update a vendor template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```java

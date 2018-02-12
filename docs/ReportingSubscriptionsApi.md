@@ -1,6 +1,6 @@
 # ReportingSubscriptionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,6 +12,8 @@ Method | HTTP request | Description
 > PageResourceBillingReport getSubscriptionReports(size, page)
 
 Get a list of available subscription reports in most recent first order
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
 
 ### Example
 ```java
@@ -61,6 +63,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

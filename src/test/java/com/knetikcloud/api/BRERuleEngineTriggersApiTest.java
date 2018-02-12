@@ -27,7 +27,7 @@ public class BRERuleEngineTriggersApiTest {
     /**
      * Create a trigger
      *
-     * Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+     * Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      */
     @Test
     public void createBRETriggerTest() {
@@ -39,7 +39,7 @@ public class BRERuleEngineTriggersApiTest {
     /**
      * Delete a trigger
      *
-     * May fail if there are existing rules against it. Cannot delete core triggers
+     * May fail if there are existing rules against it. Cannot delete core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      */
     @Test
     public void deleteBRETriggerTest() {
@@ -51,7 +51,7 @@ public class BRERuleEngineTriggersApiTest {
     /**
      * Get a single trigger
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
      */
     @Test
     public void getBRETriggerTest() {
@@ -63,7 +63,7 @@ public class BRERuleEngineTriggersApiTest {
     /**
      * List triggers
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
      */
     @Test
     public void getBRETriggersTest() {
@@ -81,7 +81,7 @@ public class BRERuleEngineTriggersApiTest {
     /**
      * Update a trigger
      *
-     * May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+     * May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      */
     @Test
     public void updateBRETriggerTest() {

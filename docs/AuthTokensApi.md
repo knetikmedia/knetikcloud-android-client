@@ -1,6 +1,6 @@
 # AuthTokensApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > Void deleteTokens(username, clientId)
 
 Delete tokens by username, client id, or both
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
 
 ### Example
 ```java
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getToken"></a>
@@ -71,6 +73,8 @@ Name | Type | Description  | Notes
 > OauthAccessTokenResource getToken(username, clientId)
 
 Get a single token by username and client id
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
 
 ### Example
 ```java
@@ -120,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTokens"></a>
@@ -129,7 +133,7 @@ Name | Type | Description  | Notes
 
 List usernames and client ids
 
-Token value not shown
+Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
 
 ### Example
 ```java
@@ -185,6 +189,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

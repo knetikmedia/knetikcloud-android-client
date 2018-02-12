@@ -26,7 +26,7 @@ public class ReportingOrdersApiTest {
     /**
      * Retrieve invoice counts aggregated by time ranges
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
      */
     @Test
     public void getInvoiceReportsTest() {

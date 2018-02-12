@@ -26,7 +26,7 @@ public class TemplatesPropertiesApiTest {
     /**
      * Get details for a template property type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getTemplatePropertyTypeTest() {
@@ -38,7 +38,7 @@ public class TemplatesPropertiesApiTest {
     /**
      * List template property types
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getTemplatePropertyTypesTest() {

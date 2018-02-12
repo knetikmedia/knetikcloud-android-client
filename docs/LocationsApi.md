@@ -1,6 +1,6 @@
 # LocationsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > List&lt;CountryResource&gt; getCountries()
 
 Get a list of countries
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -58,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCountryByGeoLocation"></a>
@@ -67,7 +69,7 @@ This endpoint does not need any parameter.
 
 Get the iso3 code of your country
 
-Determined by geo ip location
+Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -111,7 +113,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCountryStates"></a>
@@ -119,6 +121,8 @@ This endpoint does not need any parameter.
 > List&lt;StateResource&gt; getCountryStates(countryCodeIso3)
 
 Get a list of a country&#39;s states
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -166,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCurrencyByGeoLocation"></a>
@@ -175,7 +179,7 @@ Name | Type | Description  | Notes
 
 Get the currency information of your country
 
-Determined by geo ip location, currency to country mapping and a fallback setting
+Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```java
@@ -219,6 +223,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

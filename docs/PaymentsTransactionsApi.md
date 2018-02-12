@@ -1,6 +1,6 @@
 # PaymentsTransactionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > TransactionResource getTransaction(id)
 
 Get the details for a single transaction
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
 
 ### Example
 ```java
@@ -61,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTransactions"></a>
@@ -69,6 +71,8 @@ Name | Type | Description  | Notes
 > PageResourceTransactionResource getTransactions(filterInvoice, size, page, order)
 
 List and search transactions
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
 
 ### Example
 ```java
@@ -122,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="refundTransaction"></a>
@@ -131,7 +135,7 @@ Name | Type | Description  | Notes
 
 Refund a payment transaction, in full or in part
 
-Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
 
 ### Example
 ```java

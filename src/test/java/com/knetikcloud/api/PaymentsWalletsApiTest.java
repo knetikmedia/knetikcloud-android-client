@@ -31,7 +31,7 @@ public class PaymentsWalletsApiTest {
     /**
      * Returns the user&#39;s wallet for the given currency code
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      */
     @Test
     public void getUserWalletTest() {
@@ -44,7 +44,7 @@ public class PaymentsWalletsApiTest {
     /**
      * Retrieve a user&#39;s wallet transactions
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      */
     @Test
     public void getUserWalletTransactionsTest() {
@@ -64,7 +64,7 @@ public class PaymentsWalletsApiTest {
     /**
      * List all of a user&#39;s wallets
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      */
     @Test
     public void getUserWalletsTest() {
@@ -76,7 +76,7 @@ public class PaymentsWalletsApiTest {
     /**
      * Retrieves a summation of wallet balances by currency code
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      */
     @Test
     public void getWalletBalancesTest() {
@@ -87,7 +87,7 @@ public class PaymentsWalletsApiTest {
     /**
      * Retrieve wallet transactions across the system
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      */
     @Test
     public void getWalletTransactionsTest() {
@@ -109,7 +109,7 @@ public class PaymentsWalletsApiTest {
     /**
      * Retrieve a list of wallets across the system
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      */
     @Test
     public void getWalletsTest() {
@@ -123,7 +123,7 @@ public class PaymentsWalletsApiTest {
     /**
      * Updates the balance for a user&#39;s wallet
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      */
     @Test
     public void updateWalletBalanceTest() {

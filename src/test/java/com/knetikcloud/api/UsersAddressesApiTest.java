@@ -27,7 +27,7 @@ public class UsersAddressesApiTest {
     /**
      * Create a new address
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      */
     @Test
     public void createAddressTest() {
@@ -40,7 +40,7 @@ public class UsersAddressesApiTest {
     /**
      * Delete an address
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      */
     @Test
     public void deleteAddressTest() {
@@ -53,7 +53,7 @@ public class UsersAddressesApiTest {
     /**
      * Get a single address
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      */
     @Test
     public void getAddressTest() {
@@ -66,7 +66,7 @@ public class UsersAddressesApiTest {
     /**
      * List and search addresses
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      */
     @Test
     public void getAddressesTest() {
@@ -81,7 +81,7 @@ public class UsersAddressesApiTest {
     /**
      * Update an address
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      */
     @Test
     public void updateAddressTest() {

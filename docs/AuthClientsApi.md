@@ -1,6 +1,6 @@
 # AuthClientsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,6 +19,8 @@ Method | HTTP request | Description
 > ClientResource createClient(clientResource)
 
 Create a new client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```java
@@ -75,6 +77,8 @@ Name | Type | Description  | Notes
 
 Delete a client
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -121,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClient"></a>
@@ -129,6 +133,8 @@ Name | Type | Description  | Notes
 > ClientResource getClient(clientKey)
 
 Get a single client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```java
@@ -176,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClientGrantTypes"></a>
@@ -184,6 +190,8 @@ Name | Type | Description  | Notes
 > List&lt;GrantTypeResource&gt; getClientGrantTypes()
 
 List available client grant types
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```java
@@ -227,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClients"></a>
@@ -235,6 +243,8 @@ This endpoint does not need any parameter.
 > PageResourceClientResource getClients(size, page, order)
 
 List and search clients
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```java
@@ -286,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setClientGrantTypes"></a>
@@ -294,6 +304,8 @@ Name | Type | Description  | Notes
 > Void setClientGrantTypes(clientKey, grantList)
 
 Set grant types for a client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```java
@@ -352,6 +364,8 @@ Name | Type | Description  | Notes
 
 Set redirect uris for a client
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -408,6 +422,8 @@ Name | Type | Description  | Notes
 > ClientResource updateClient(clientKey, clientResource)
 
 Update a client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```java

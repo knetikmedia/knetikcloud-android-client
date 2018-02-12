@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * GroupResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T16:56:09.934-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
 public class GroupResource {
   @SerializedName("additional_properties")
   private Map<String, Property> additionalProperties = null;
@@ -145,10 +145,10 @@ public class GroupResource {
   }
 
    /**
-   * A description of the group. Max 250 characters
+   * A description of the group
    * @return description
   **/
-  @ApiModelProperty(value = "A description of the group. Max 250 characters")
+  @ApiModelProperty(value = "A description of the group")
   public String getDescription() {
     return description;
   }

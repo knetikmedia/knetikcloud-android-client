@@ -28,7 +28,7 @@ public class DispositionsApiTest {
     /**
      * Add a new disposition
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
      */
     @Test
     public void addDispositionTest() {
@@ -40,7 +40,7 @@ public class DispositionsApiTest {
     /**
      * Delete a disposition
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
      */
     @Test
     public void deleteDispositionTest() {
@@ -52,7 +52,7 @@ public class DispositionsApiTest {
     /**
      * Returns a disposition
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getDispositionTest() {
@@ -64,7 +64,7 @@ public class DispositionsApiTest {
     /**
      * Returns a list of disposition counts
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getDispositionCountsTest() {
@@ -77,7 +77,7 @@ public class DispositionsApiTest {
     /**
      * Returns a page of dispositions
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getDispositionsTest() {

@@ -39,7 +39,7 @@ public class MediaVideosApiTest {
     /**
      * Adds a user to a video&#39;s whitelist
      *
-     * Whitelisted users can view video regardless of privacy setting.
+     * Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void addUserToVideoWhitelistTest() {
@@ -52,7 +52,7 @@ public class MediaVideosApiTest {
     /**
      * Adds a new video in the system
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void addVideoTest() {
@@ -64,7 +64,7 @@ public class MediaVideosApiTest {
     /**
      * Add a new video comment
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void addVideoCommentTest() {
@@ -77,7 +77,7 @@ public class MediaVideosApiTest {
     /**
      * Adds a contributor to a video
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void addVideoContributorTest() {
@@ -90,7 +90,7 @@ public class MediaVideosApiTest {
     /**
      * Add a new flag
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void addVideoFlagTest() {
@@ -103,7 +103,7 @@ public class MediaVideosApiTest {
     /**
      * Adds one or more existing videos as related to this one
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void addVideoRelationshipsTest() {
@@ -116,7 +116,7 @@ public class MediaVideosApiTest {
     /**
      * Create a video disposition
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void createVideoDispositionTest() {
@@ -129,7 +129,7 @@ public class MediaVideosApiTest {
     /**
      * Create a video template
      *
-     * Video Templates define a type of video and the properties they have
+     * Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void createVideoTemplateTest() {
@@ -141,7 +141,7 @@ public class MediaVideosApiTest {
     /**
      * Deletes a video from the system if no resources are attached to it
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void deleteVideoTest() {
@@ -153,7 +153,7 @@ public class MediaVideosApiTest {
     /**
      * Delete a video comment
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void deleteVideoCommentTest() {
@@ -166,7 +166,7 @@ public class MediaVideosApiTest {
     /**
      * Delete a video disposition
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void deleteVideoDispositionTest() {
@@ -178,7 +178,7 @@ public class MediaVideosApiTest {
     /**
      * Delete a flag
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void deleteVideoFlagTest() {
@@ -190,7 +190,7 @@ public class MediaVideosApiTest {
     /**
      * Delete a video&#39;s relationship
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void deleteVideoRelationshipTest() {
@@ -203,7 +203,7 @@ public class MediaVideosApiTest {
     /**
      * Delete a video template
      *
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void deleteVideoTemplateTest() {
@@ -216,7 +216,7 @@ public class MediaVideosApiTest {
     /**
      * Get user videos
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void getUserVideosTest() {
@@ -231,7 +231,7 @@ public class MediaVideosApiTest {
     /**
      * Loads a specific video details
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void getVideoTest() {
@@ -243,7 +243,7 @@ public class MediaVideosApiTest {
     /**
      * Returns a page of comments for a video
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getVideoCommentsTest() {
@@ -257,7 +257,7 @@ public class MediaVideosApiTest {
     /**
      * Returns a page of dispositions for a video
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getVideoDispositionsTest() {
@@ -271,7 +271,7 @@ public class MediaVideosApiTest {
     /**
      * Returns a page of video relationships
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getVideoRelationshipsTest() {
@@ -285,7 +285,7 @@ public class MediaVideosApiTest {
     /**
      * Get a single video template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
      */
     @Test
     public void getVideoTemplateTest() {
@@ -297,7 +297,7 @@ public class MediaVideosApiTest {
     /**
      * List and search video templates
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
      */
     @Test
     public void getVideoTemplatesTest() {
@@ -311,7 +311,7 @@ public class MediaVideosApiTest {
     /**
      * Search videos using the documented filters
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void getVideosTest() {
@@ -337,7 +337,7 @@ public class MediaVideosApiTest {
     /**
      * Removes a user from a video&#39;s whitelist
      *
-     * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+     * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void removeUserFromVideoWhitelistTest() {
@@ -350,7 +350,7 @@ public class MediaVideosApiTest {
     /**
      * Removes a contributor from a video
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void removeVideoContributorTest() {
@@ -363,7 +363,7 @@ public class MediaVideosApiTest {
     /**
      * Modifies a video&#39;s details
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void updateVideoTest() {
@@ -376,7 +376,7 @@ public class MediaVideosApiTest {
     /**
      * Update a video comment
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void updateVideoCommentTest() {
@@ -390,7 +390,7 @@ public class MediaVideosApiTest {
     /**
      * Update a video&#39;s relationship details
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      */
     @Test
     public void updateVideoRelationshipTest() {
@@ -404,7 +404,7 @@ public class MediaVideosApiTest {
     /**
      * Update a video template
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      */
     @Test
     public void updateVideoTemplateTest() {
@@ -417,7 +417,7 @@ public class MediaVideosApiTest {
     /**
      * Increment a video&#39;s view count
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
     public void viewVideoTest() {
