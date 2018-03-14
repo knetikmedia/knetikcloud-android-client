@@ -1,6 +1,6 @@
 # ChatApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**getThreadMessages**](ChatApi.md#getThreadMessages) | **GET** chat/threads/{id}/messages | List messages in a thread
 [**getTopicMessages**](ChatApi.md#getTopicMessages) | **GET** chat/topics/{id}/messages | List messages in a topic
 [**removeChatBlacklist**](ChatApi.md#removeChatBlacklist) | **DELETE** chat/users/{id}/blacklist/{blacklisted_user_id} | Remove a user from a blacklist
-[**sendMessage**](ChatApi.md#sendMessage) | **POST** chat/messages | Send a message
+[**sendChatMessage**](ChatApi.md#sendChatMessage) | **POST** chat/messages | Send a message
 
 
 <a name="acknowledgeChatMessage"></a>
@@ -675,9 +675,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="sendMessage"></a>
-# **sendMessage**
-> ChatMessageResource sendMessage(chatMessageResource)
+<a name="sendChatMessage"></a>
+# **sendChatMessage**
+> ChatMessageResource sendChatMessage(chatMessageResource)
 
 Send a message
 
@@ -705,10 +705,10 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 ChatApi apiInstance = new ChatApi();
 ChatMessageResource chatMessageResource = new ChatMessageResource(); // ChatMessageResource | The chat message resource
 try {
-    ChatMessageResource result = apiInstance.sendMessage(chatMessageResource);
+    ChatMessageResource result = apiInstance.sendChatMessage(chatMessageResource);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ChatApi#sendMessage");
+    System.err.println("Exception when calling ChatApi#sendChatMessage");
     e.printStackTrace();
 }
 ```

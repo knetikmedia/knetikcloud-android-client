@@ -9,6 +9,7 @@ import okhttp3.RequestBody;
 
 import com.knetikcloud.model.EntitlementGrantRequest;
 import com.knetikcloud.model.EntitlementItem;
+import com.knetikcloud.model.InventoryStatusWrapper;
 import com.knetikcloud.model.InvoiceResource;
 import com.knetikcloud.model.ItemTemplateResource;
 import com.knetikcloud.model.PageResourceEntitlementItem;
@@ -309,7 +310,7 @@ public interface UsersInventoryApi {
   })
   @PUT("users/{user_id}/inventory/{id}/status")
   Call<Void> updateUserInventoryStatus(
-    @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body String inventoryStatus
+    @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body InventoryStatusWrapper inventoryStatus
   );
 
   /**

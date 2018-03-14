@@ -1,6 +1,6 @@
 # GamificationLevelingApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 Retrieve a level
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
 
 ### Example
 ```java
@@ -246,7 +246,7 @@ This endpoint does not need any parameter.
 
 List and search levels
 
-Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
 
 ### Example
 ```java
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 Get a user&#39;s progress for a given level schema
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
 
 ### Example
 ```java
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 Get a user&#39;s progress for all level schemas
 
-Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
 
 ### Example
 ```java

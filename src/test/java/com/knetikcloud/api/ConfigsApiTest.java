@@ -27,7 +27,7 @@ public class ConfigsApiTest {
     /**
      * Create a new config
      *
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
      */
     @Test
     public void createConfigTest() {

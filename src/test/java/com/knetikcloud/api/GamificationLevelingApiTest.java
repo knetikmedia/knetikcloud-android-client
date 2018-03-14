@@ -55,7 +55,7 @@ public class GamificationLevelingApiTest {
     /**
      * Retrieve a level
      *
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
      */
     @Test
     public void getLevelTest() {
@@ -78,7 +78,7 @@ public class GamificationLevelingApiTest {
     /**
      * List and search levels
      *
-     * Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+     * Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
      */
     @Test
     public void getLevelsTest() {
@@ -93,7 +93,7 @@ public class GamificationLevelingApiTest {
     /**
      * Get a user&#39;s progress for a given level schema
      *
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
      */
     @Test
     public void getUserLevelTest() {
@@ -106,7 +106,7 @@ public class GamificationLevelingApiTest {
     /**
      * Get a user&#39;s progress for all level schemas
      *
-     * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+     * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
      */
     @Test
     public void getUserLevelsTest() {

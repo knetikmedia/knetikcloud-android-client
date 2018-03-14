@@ -70,7 +70,7 @@ public interface FulfillmentApi {
   /**
    * Update a fulfillment type
    * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
-   * @param id The id (required)
+   * @param id The fulfillment id (required)
    * @param fulfillmentType The fulfillment type (optional)
    * @return Call&lt;Void&gt;
    */

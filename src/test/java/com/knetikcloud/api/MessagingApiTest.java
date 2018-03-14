@@ -60,7 +60,7 @@ public class MessagingApiTest {
     /**
      * Delete an existing message template
      *
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      */
     @Test
     public void deleteMessageTemplateTest() {
@@ -72,7 +72,7 @@ public class MessagingApiTest {
     /**
      * Get a single message template
      *
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      */
     @Test
     public void getMessageTemplateTest() {
@@ -84,7 +84,7 @@ public class MessagingApiTest {
     /**
      * List and search message templates
      *
-     * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      */
     @Test
     public void getMessageTemplatesTest() {
@@ -104,9 +104,9 @@ public class MessagingApiTest {
      * Sends a message with one or more formats to one or more users. Fill in any message formats desired (email, sms, websockets) and each user will recieve all valid formats. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      */
     @Test
-    public void sendMessage1Test() {
+    public void sendMessageTest() {
         MessageResource messageResource = null;
-        // Void response = api.sendMessage1(messageResource);
+        // Void response = api.sendMessage(messageResource);
 
         // TODO: test validations
     }
@@ -197,7 +197,7 @@ public class MessagingApiTest {
     /**
      * Update an existing message template
      *
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      */
     @Test
     public void updateMessageTemplateTest() {

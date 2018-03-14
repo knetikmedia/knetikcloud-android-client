@@ -1,6 +1,6 @@
 # MessagingApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**deleteMessageTemplate**](MessagingApi.md#deleteMessageTemplate) | **DELETE** messaging/templates/{id} | Delete an existing message template
 [**getMessageTemplate**](MessagingApi.md#getMessageTemplate) | **GET** messaging/templates/{id} | Get a single message template
 [**getMessageTemplates**](MessagingApi.md#getMessageTemplates) | **GET** messaging/templates | List and search message templates
-[**sendMessage1**](MessagingApi.md#sendMessage1) | **POST** messaging/message | Send a message
+[**sendMessage**](MessagingApi.md#sendMessage) | **POST** messaging/message | Send a message
 [**sendRawEmail**](MessagingApi.md#sendRawEmail) | **POST** messaging/raw-email | Send a raw email to one or more users
 [**sendRawPush**](MessagingApi.md#sendRawPush) | **POST** messaging/raw-push | Send a raw push notification
 [**sendRawSMS**](MessagingApi.md#sendRawSMS) | **POST** messaging/raw-sms | Send a raw SMS
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 Delete an existing message template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
 
 ### Example
 ```java
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 Get a single message template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
 
 ### Example
 ```java
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 List and search message templates
 
-Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
 
 ### Example
 ```java
@@ -315,9 +315,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="sendMessage1"></a>
-# **sendMessage1**
-> Void sendMessage1(messageResource)
+<a name="sendMessage"></a>
+# **sendMessage**
+> Void sendMessage(messageResource)
 
 Send a message
 
@@ -345,10 +345,10 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 MessagingApi apiInstance = new MessagingApi();
 MessageResource messageResource = new MessageResource(); // MessageResource | The message to be sent
 try {
-    Void result = apiInstance.sendMessage1(messageResource);
+    Void result = apiInstance.sendMessage(messageResource);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MessagingApi#sendMessage1");
+    System.err.println("Exception when calling MessagingApi#sendMessage");
     e.printStackTrace();
 }
 ```
@@ -777,7 +777,7 @@ Name | Type | Description  | Notes
 
 Update an existing message template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
 
 ### Example
 ```java

@@ -1,6 +1,6 @@
 # CampaignsChallengesApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1221,7 +1221,7 @@ Name | Type | Description  | Notes
 
 <a name="updateChallengeActivity"></a>
 # **updateChallengeActivity**
-> ChallengeActivityResource updateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings)
+> Void updateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings)
 
 Update a challenge activity
 
@@ -1252,7 +1252,7 @@ Long challengeId = 789L; // Long | The challenge id
 ChallengeActivityResource challengeActivityResource = new ChallengeActivityResource(); // ChallengeActivityResource | The challenge activity resource object
 Boolean validateSettings = false; // Boolean | Whether to validate the settings being sent against the available settings on the base activity.
 try {
-    ChallengeActivityResource result = apiInstance.updateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings);
+    Void result = apiInstance.updateChallengeActivity(id, challengeId, challengeActivityResource, validateSettings);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CampaignsChallengesApi#updateChallengeActivity");
@@ -1271,7 +1271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ChallengeActivityResource**](ChallengeActivityResource.md)
+[**Void**](.md)
 
 ### Authorization
 

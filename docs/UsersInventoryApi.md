@@ -1,6 +1,6 @@
 # UsersInventoryApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1214,7 +1214,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 UsersInventoryApi apiInstance = new UsersInventoryApi();
 Integer userId = 56; // Integer | The id of the user
 Integer id = 56; // Integer | The id of the user inventory
-String inventoryStatus = "inventoryStatus_example"; // String | The inventory status object
+InventoryStatusWrapper inventoryStatus = new InventoryStatusWrapper(); // InventoryStatusWrapper | The inventory status object
 try {
     Void result = apiInstance.updateUserInventoryStatus(userId, id, inventoryStatus);
     System.out.println(result);
@@ -1230,7 +1230,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Integer**| The id of the user |
  **id** | **Integer**| The id of the user inventory |
- **inventoryStatus** | **String**| The inventory status object | [optional]
+ **inventoryStatus** | [**InventoryStatusWrapper**](InventoryStatusWrapper.md)| The inventory status object | [optional]
 
 ### Return type
 

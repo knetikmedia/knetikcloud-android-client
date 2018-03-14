@@ -92,7 +92,8 @@ public class MediaModerationApiTest {
         String filterContextId = null;
         Integer size = null;
         Integer page = null;
-        // PageResourceFlagReportResource response = api.getModerationReports(excludeResolved, filterContext, filterContextId, size, page);
+        String order = null;
+        // PageResourceFlagReportResource response = api.getModerationReports(excludeResolved, filterContext, filterContextId, size, page, order);
 
         // TODO: test validations
     }

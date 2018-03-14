@@ -20,7 +20,7 @@ import java.util.Map;
 public interface ConfigsApi {
   /**
    * Create a new config
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
    * @param config The config object (optional)
    * @return Call&lt;Config&gt;
    */

@@ -13,8 +13,10 @@ import com.knetikcloud.model.ActivityOccurrenceResource;
 import com.knetikcloud.model.ActivityOccurrenceResults;
 import com.knetikcloud.model.ActivityOccurrenceResultsResource;
 import com.knetikcloud.model.ActivityOccurrenceSettingsResource;
+import com.knetikcloud.model.ActivityOccurrenceStatusWrapper;
 import com.knetikcloud.model.ActivityResource;
 import com.knetikcloud.model.ActivityUserResource;
+import com.knetikcloud.model.ActivityUserStatusWrapper;
 import com.knetikcloud.model.CreateActivityOccurrenceRequest;
 import com.knetikcloud.model.IntWrapper;
 import com.knetikcloud.model.PageResourceActivityOccurrenceResource;
@@ -22,7 +24,6 @@ import com.knetikcloud.model.PageResourceBareActivityResource;
 import com.knetikcloud.model.PageResourceTemplateResource;
 import com.knetikcloud.model.Result;
 import com.knetikcloud.model.TemplateResource;
-import com.knetikcloud.model.ValueWrapperstring;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -143,7 +144,7 @@ public interface ActivitiesApi {
 
   /**
    * Load a single activity occurrence details
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
    * @param activityOccurrenceId The id of the activity occurrence (required)
    * @return Call&lt;ActivityOccurrenceResource&gt;
    */
@@ -178,7 +179,7 @@ public interface ActivitiesApi {
 
   /**
    * List activity occurrences
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
    * @param filterActivity Filter for occurrences of the given activity ID (optional)
    * @param filterStatus Filter for occurrences in the given status (optional)
    * @param filterEvent Filter for occurrences played during the given event (optional)
@@ -209,7 +210,7 @@ public interface ActivitiesApi {
 
   /**
    * Sets the status of an activity occurrence to FINISHED and logs metrics
-   * In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+   * In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
    * @param activityOccurrenceId The id of the activity occurrence (required)
    * @param activityOccurrenceResults The activity occurrence object (optional)
    * @return Call&lt;ActivityOccurrenceResults&gt;
@@ -224,7 +225,7 @@ public interface ActivitiesApi {
 
   /**
    * Sets the settings of an activity occurrence
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
    * @param activityOccurrenceId The id of the activity occurrence (required)
    * @param settings The new settings (optional)
    * @return Call&lt;ActivityOccurrenceResource&gt;
@@ -250,7 +251,7 @@ public interface ActivitiesApi {
   })
   @PUT("activity-occurrences/{activity_occurrence_id}/users/{user_id}/status")
   Call<ActivityUserResource> setUserStatus(
-    @retrofit2.http.Path("activity_occurrence_id") Long activityOccurrenceId, @retrofit2.http.Path("user_id") String userId, @retrofit2.http.Body String status
+    @retrofit2.http.Path("activity_occurrence_id") Long activityOccurrenceId, @retrofit2.http.Path("user_id") String userId, @retrofit2.http.Body ActivityUserStatusWrapper status
   );
 
   /**
@@ -270,7 +271,7 @@ public interface ActivitiesApi {
 
   /**
    * Update the status of an activity occurrence
-   * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+   * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
    * @param activityOccurrenceId The id of the activity occurrence (required)
    * @param activityOccurrenceStatus The activity occurrence status object (optional)
    * @return Call&lt;Void&gt;
@@ -280,7 +281,7 @@ public interface ActivitiesApi {
   })
   @PUT("activity-occurrences/{activity_occurrence_id}/status")
   Call<Void> updateActivityOccurrenceStatus(
-    @retrofit2.http.Path("activity_occurrence_id") Long activityOccurrenceId, @retrofit2.http.Body ValueWrapperstring activityOccurrenceStatus
+    @retrofit2.http.Path("activity_occurrence_id") Long activityOccurrenceId, @retrofit2.http.Body ActivityOccurrenceStatusWrapper activityOccurrenceStatus
   );
 
   /**

@@ -10,6 +10,7 @@ import okhttp3.RequestBody;
 import com.knetikcloud.model.ChatMessageRequest;
 import com.knetikcloud.model.ChatMessageResource;
 import com.knetikcloud.model.GroupMemberResource;
+import com.knetikcloud.model.GroupMemberStatusWrapper;
 import com.knetikcloud.model.GroupResource;
 import com.knetikcloud.model.PageResourceChatMessageResource;
 import com.knetikcloud.model.PageResourceGroupMemberResource;
@@ -136,7 +137,7 @@ public interface UsersGroupsApi {
 
   /**
    * Enable or disable notification of group messages
-   * 
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
    * @param uniqueName The group unique name (required)
    * @param userId The user id of the member or &#39;me&#39; (required)
    * @param disabled disabled (required)
@@ -377,7 +378,7 @@ public interface UsersGroupsApi {
   })
   @PUT("users/groups/{unique_name}/members/{user_id}/status")
   Call<Void> updateGroupMemberStatus(
-    @retrofit2.http.Path("unique_name") String uniqueName, @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Body String status
+    @retrofit2.http.Path("unique_name") String uniqueName, @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Body GroupMemberStatusWrapper status
   );
 
   /**

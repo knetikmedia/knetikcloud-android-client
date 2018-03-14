@@ -2,6 +2,7 @@ package com.knetikcloud.api;
 
 import com.knetikcloud.client.ApiClient;
 import com.knetikcloud.model.ArticleResource;
+import com.knetikcloud.model.BasicTemplatedResource;
 import com.knetikcloud.model.PageResourceArticleResource;
 import com.knetikcloud.model.PageResourceTemplateResource;
 import com.knetikcloud.model.Result;
@@ -51,6 +52,19 @@ public class ContentArticlesApiTest {
         // TODO: test validations
     }
     /**
+     * Create a template
+     *
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+     */
+    @Test
+    public void createTemplateTest() {
+        String typeHint = null;
+        TemplateResource template = null;
+        // TemplateResource response = api.createTemplate(typeHint, template);
+
+        // TODO: test validations
+    }
+    /**
      * Delete an existing article
      *
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
@@ -72,6 +86,20 @@ public class ContentArticlesApiTest {
         String id = null;
         String cascade = null;
         // Void response = api.deleteArticleTemplate(id, cascade);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete a template
+     *
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+     */
+    @Test
+    public void deleteTemplateTest() {
+        String typeHint = null;
+        String id = null;
+        String cascade = null;
+        // Void response = api.deleteTemplate(typeHint, id, cascade);
 
         // TODO: test validations
     }
@@ -134,6 +162,34 @@ public class ContentArticlesApiTest {
         // TODO: test validations
     }
     /**
+     * Get a template
+     *
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+     */
+    @Test
+    public void getTemplateTest() {
+        String typeHint = null;
+        String id = null;
+        // TemplateResource response = api.getTemplate(typeHint, id);
+
+        // TODO: test validations
+    }
+    /**
+     * List and search templates
+     *
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+     */
+    @Test
+    public void getTemplatesTest() {
+        String typeHint = null;
+        Integer size = null;
+        Integer page = null;
+        String order = null;
+        // PageResourceTemplateResource response = api.getTemplates(typeHint, size, page, order);
+
+        // TODO: test validations
+    }
+    /**
      * Update an existing article
      *
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
@@ -156,6 +212,33 @@ public class ContentArticlesApiTest {
         String id = null;
         TemplateResource articleTemplateResource = null;
         // TemplateResource response = api.updateArticleTemplate(id, articleTemplateResource);
+
+        // TODO: test validations
+    }
+    /**
+     * Update a template
+     *
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+     */
+    @Test
+    public void updateTemplateTest() {
+        String typeHint = null;
+        String id = null;
+        TemplateResource template = null;
+        // TemplateResource response = api.updateTemplate(typeHint, id, template);
+
+        // TODO: test validations
+    }
+    /**
+     * Validate a templated resource
+     *
+     * Error code thrown if invalid.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
+     */
+    @Test
+    public void validateTest() {
+        String typeHint = null;
+        BasicTemplatedResource resource = null;
+        // Void response = api.validate(typeHint, resource);
 
         // TODO: test validations
     }

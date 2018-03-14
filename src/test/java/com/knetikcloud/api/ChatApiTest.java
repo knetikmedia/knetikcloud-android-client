@@ -179,9 +179,9 @@ public class ChatApiTest {
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      */
     @Test
-    public void sendMessageTest() {
+    public void sendChatMessageTest() {
         ChatMessageResource chatMessageResource = null;
-        // ChatMessageResource response = api.sendMessage(chatMessageResource);
+        // ChatMessageResource response = api.sendChatMessage(chatMessageResource);
 
         // TODO: test validations
     }

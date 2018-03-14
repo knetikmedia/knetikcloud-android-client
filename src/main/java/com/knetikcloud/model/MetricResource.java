@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * MetricResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-14T12:02:11.431-04:00")
 public class MetricResource {
   @SerializedName("activity_occurence_id")
   private Long activityOccurenceId = null;
@@ -74,10 +74,10 @@ public class MetricResource {
   }
 
    /**
-   * Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each
+   * Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each
    * @return tags
   **/
-  @ApiModelProperty(value = "Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each")
+  @ApiModelProperty(value = "Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each")
   public List<String> getTags() {
     return tags;
   }

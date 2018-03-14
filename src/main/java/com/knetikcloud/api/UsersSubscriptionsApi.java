@@ -14,6 +14,7 @@ import com.knetikcloud.model.ReactivateSubscriptionRequest;
 import com.knetikcloud.model.Result;
 import com.knetikcloud.model.StringWrapper;
 import com.knetikcloud.model.SubscriptionPriceOverrideRequest;
+import com.knetikcloud.model.SubscriptionStatusWrapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -98,7 +99,7 @@ public interface UsersSubscriptionsApi {
    * Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
    * @param userId The id of the user (required)
    * @param inventoryId The id of the user&#39;s inventory (required)
-   * @param status The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;) (required)
+   * @param status The new status for the subscription (required)
    * @return Call&lt;Void&gt;
    */
   @Headers({
@@ -106,7 +107,7 @@ public interface UsersSubscriptionsApi {
   })
   @PUT("users/{user_id}/subscriptions/{inventory_id}/status")
   Call<Void> setSubscriptionStatus(
-    @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("inventory_id") Integer inventoryId, @retrofit2.http.Body StringWrapper status
+    @retrofit2.http.Path("user_id") Integer userId, @retrofit2.http.Path("inventory_id") Integer inventoryId, @retrofit2.http.Body SubscriptionStatusWrapper status
   );
 
   /**

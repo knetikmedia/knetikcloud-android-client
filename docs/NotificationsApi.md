@@ -1,6 +1,6 @@
 # NotificationsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,8 @@ Method | HTTP request | Description
 > NotificationTypeResource createNotificationType(notificationType)
 
 Create a notification type
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```java
@@ -78,6 +80,8 @@ Name | Type | Description  | Notes
 
 Delete a notification type
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -132,6 +136,8 @@ Name | Type | Description  | Notes
 > NotificationTypeResource getNotificationType(id)
 
 Get a single notification type
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```java
@@ -188,7 +194,7 @@ Name | Type | Description  | Notes
 
 List and search notification types
 
-Get a list of notification type with optional filtering
+Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```java
@@ -249,6 +255,8 @@ Name | Type | Description  | Notes
 
 View a user&#39;s notification settings for a type
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
+
 ### Example
 ```java
 // Import classes:
@@ -305,6 +313,8 @@ Name | Type | Description  | Notes
 > PageResourceNotificationUserTypeResource getUserNotificationInfoList(userId, size, page, order)
 
 View a user&#39;s notification settings
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```java
@@ -366,6 +376,8 @@ Name | Type | Description  | Notes
 > PageResourceUserNotificationResource getUserNotifications(id, filterStatus, size, page, order)
 
 Get notifications
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```java
@@ -430,6 +442,8 @@ Name | Type | Description  | Notes
 
 Send a notification
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
+
 ### Example
 ```java
 // Import classes:
@@ -485,6 +499,8 @@ Name | Type | Description  | Notes
 
 Set notification status
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
+
 ### Example
 ```java
 // Import classes:
@@ -507,7 +523,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 NotificationsApi apiInstance = new NotificationsApi();
 String userId = "userId_example"; // String | The id of the user or 'me'
 String notificationId = "notificationId_example"; // String | The id of the notification
-ValueWrapperstring notification = new ValueWrapperstring(); // ValueWrapperstring | status
+UserNotificationStatusWrapper notification = new UserNotificationStatusWrapper(); // UserNotificationStatusWrapper | status
 try {
     Void result = apiInstance.setUserNotificationStatus(userId, notificationId, notification);
     System.out.println(result);
@@ -523,7 +539,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| The id of the user or &#39;me&#39; |
  **notificationId** | **String**| The id of the notification |
- **notification** | [**ValueWrapperstring**](ValueWrapperstring.md)| status | [optional]
+ **notification** | [**UserNotificationStatusWrapper**](UserNotificationStatusWrapper.md)| status | [optional]
 
 ### Return type
 
@@ -544,7 +560,7 @@ Name | Type | Description  | Notes
 
 Enable or disable direct notifications for a user
 
-Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```java
@@ -604,6 +620,8 @@ Name | Type | Description  | Notes
 > NotificationTypeResource updateNotificationType(id, notificationType)
 
 Update a notificationType
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```java

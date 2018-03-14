@@ -8,7 +8,6 @@ import retrofit2.http.*;
 import okhttp3.RequestBody;
 
 import com.knetikcloud.model.PageResourceTopicResource;
-import com.knetikcloud.model.PageResourceTopicSubscriberResource;
 import com.knetikcloud.model.Result;
 import com.knetikcloud.model.TopicSubscriberResource;
 import com.knetikcloud.model.ValueWrapperboolean;
@@ -22,7 +21,7 @@ import java.util.Map;
 public interface MessagingTopicsApi {
   /**
    * Enable or disable messages for a user
-   * Useful for opt-out options on a single topic. Consider multiple topics for multiple opt-out options.
+   * Useful for opt-out options on a single topic. Consider multiple topics for multiple opt-out options. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
    * @param id The id of the topic (required)
    * @param userId The id of the subscriber or &#39;me&#39; (required)
    * @param disabled disabled (required)
@@ -38,7 +37,7 @@ public interface MessagingTopicsApi {
 
   /**
    * Get a subscriber to a topic
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
    * @param id The id of the topic (required)
    * @param userId The id of the subscriber or &#39;me&#39; (required)
    * @return Call&lt;TopicSubscriberResource&gt;
@@ -49,19 +48,8 @@ public interface MessagingTopicsApi {
   );
 
   /**
-   * Get all subscribers to a topic
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
-   * @param id The id of the topic (required)
-   * @return Call&lt;PageResourceTopicSubscriberResource&gt;
-   */
-  @GET("messaging/topics/{id}/subscribers")
-  Call<PageResourceTopicSubscriberResource> getTopicSubscribers(
-    @retrofit2.http.Path("id") String id
-  );
-
-  /**
    * Get all messaging topics for a given user
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
    * @param id The id of the user or &#39;me&#39; (required)
    * @return Call&lt;PageResourceTopicResource&gt;
    */

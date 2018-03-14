@@ -57,7 +57,7 @@ public interface MessagingApi {
 
   /**
    * Delete an existing message template
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
    * @param id The message_template id (required)
    * @return Call&lt;Void&gt;
    */
@@ -68,7 +68,7 @@ public interface MessagingApi {
 
   /**
    * Get a single message template
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
    * @param id The message_template id (required)
    * @return Call&lt;MessageTemplateResource&gt;
    */
@@ -79,7 +79,7 @@ public interface MessagingApi {
 
   /**
    * List and search message templates
-   * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+   * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
    * @param filterTagset Filter for message templates with at least one of a specified set of tags (separated by comma) (optional)
    * @param filterTagIntersection Filter for message templates with all of a specified set of tags (separated by comma) (optional)
    * @param filterTagExclusion Filter for message templates with none of a specified set of tags (separated by comma) (optional)
@@ -103,7 +103,7 @@ public interface MessagingApi {
     "Content-Type:application/json"
   })
   @POST("messaging/message")
-  Call<Void> sendMessage1(
+  Call<Void> sendMessage(
     @retrofit2.http.Body MessageResource messageResource
   );
 
@@ -207,7 +207,7 @@ public interface MessagingApi {
 
   /**
    * Update an existing message template
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
    * @param id The message_template id (required)
    * @param messageTemplateResource The message template (optional)
    * @return Call&lt;MessageTemplateResource&gt;

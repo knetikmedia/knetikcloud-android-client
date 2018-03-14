@@ -34,7 +34,7 @@ import java.util.Map;
 /**
  * BundleItem
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-14T12:02:11.431-04:00")
 public class BundleItem extends StoreItem {
   @SerializedName("bundled_skus")
   private List<BundledSku> bundledSkus = new ArrayList<BundledSku>();

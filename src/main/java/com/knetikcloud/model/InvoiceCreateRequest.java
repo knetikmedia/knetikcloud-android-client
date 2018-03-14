@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * InvoiceCreateRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-14T12:02:11.431-04:00")
 public class InvoiceCreateRequest {
   @SerializedName("cart_guid")
   private String cartGuid = null;

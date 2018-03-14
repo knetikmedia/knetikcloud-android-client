@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * PageResourceUserBaseResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-14T12:02:11.431-04:00")
 public class PageResourceUserBaseResource {
   @SerializedName("content")
   private List<UserBaseResource> content = null;

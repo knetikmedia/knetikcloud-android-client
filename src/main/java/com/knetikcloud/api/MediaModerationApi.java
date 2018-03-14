@@ -81,11 +81,12 @@ public interface MediaModerationApi {
    * @param filterContextId Filter by moderation context ID (optional)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
+   * @param order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (optional)
    * @return Call&lt;PageResourceFlagReportResource&gt;
    */
   @GET("moderation/reports")
   Call<PageResourceFlagReportResource> getModerationReports(
-    @retrofit2.http.Query("exclude_resolved") Boolean excludeResolved, @retrofit2.http.Query("filter_context") String filterContext, @retrofit2.http.Query("filter_context_id") String filterContextId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page
+    @retrofit2.http.Query("exclude_resolved") Boolean excludeResolved, @retrofit2.http.Query("filter_context") String filterContext, @retrofit2.http.Query("filter_context_id") String filterContextId, @retrofit2.http.Query("size") Integer size, @retrofit2.http.Query("page") Integer page, @retrofit2.http.Query("order") String order
   );
 
   /**

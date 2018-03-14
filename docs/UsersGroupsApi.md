@@ -1,6 +1,6 @@
 # UsersGroupsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -503,6 +503,8 @@ Name | Type | Description  | Notes
 > Void disableGroupNotification(uniqueName, userId, disabled)
 
 Enable or disable notification of group messages
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN or self
 
 ### Example
 ```java
@@ -1537,7 +1539,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 UsersGroupsApi apiInstance = new UsersGroupsApi();
 String uniqueName = "uniqueName_example"; // String | The group unique name
 Integer userId = 56; // Integer | The user id of the member to modify
-String status = "status_example"; // String | The new status for the user
+GroupMemberStatusWrapper status = new GroupMemberStatusWrapper(); // GroupMemberStatusWrapper | The new status for the user
 try {
     Void result = apiInstance.updateGroupMemberStatus(uniqueName, userId, status);
     System.out.println(result);
@@ -1553,7 +1555,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uniqueName** | **String**| The group unique name |
  **userId** | **Integer**| The user id of the member to modify |
- **status** | **String**| The new status for the user |
+ **status** | [**GroupMemberStatusWrapper**](GroupMemberStatusWrapper.md)| The new status for the user |
 
 ### Return type
 

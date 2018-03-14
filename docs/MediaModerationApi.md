@@ -1,6 +1,6 @@
 # MediaModerationApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 <a name="getModerationReports"></a>
 # **getModerationReports**
-> PageResourceFlagReportResource getModerationReports(excludeResolved, filterContext, filterContextId, size, page)
+> PageResourceFlagReportResource getModerationReports(excludeResolved, filterContext, filterContextId, size, page, order)
 
 Returns a page of flag reports
 
@@ -285,8 +285,9 @@ String filterContext = "filterContext_example"; // String | Filter by moderation
 String filterContextId = "filterContextId_example"; // String | Filter by moderation context ID
 Integer size = 25; // Integer | The number of objects returned per page
 Integer page = 1; // Integer | The number of the page returned, starting with 1
+String order = "order_example"; // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 try {
-    PageResourceFlagReportResource result = apiInstance.getModerationReports(excludeResolved, filterContext, filterContextId, size, page);
+    PageResourceFlagReportResource result = apiInstance.getModerationReports(excludeResolved, filterContext, filterContextId, size, page, order);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaModerationApi#getModerationReports");
@@ -303,6 +304,7 @@ Name | Type | Description  | Notes
  **filterContextId** | **String**| Filter by moderation context ID | [optional]
  **size** | **Integer**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Integer**| The number of the page returned, starting with 1 | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional]
 
 ### Return type
 

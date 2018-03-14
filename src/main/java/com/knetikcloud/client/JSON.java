@@ -67,7 +67,8 @@ public class JSON {
 			;
         RuntimeTypeAdapterFactory<BroadcastableEvent> BroadcastableEventAdapterFactory = RuntimeTypeAdapterFactory
 			.of(BroadcastableEvent.class, "type")
-			.registerSubtype(LogLevelEvent.class, "log_level")
+			.registerSubtype(ServiceDeployedEvent.class, "service_deployed")
+						.registerSubtype(LogLevelEvent.class, "log_level")
 						.registerSubtype(WebsocketRemoveTopicEvent.class, "websocket_remove_topic")
 						.registerSubtype(NewCustomerEvent.class, "new_customer")
 						.registerSubtype(WebsocketSendTopicMessageEvent.class, "websocket_topic_message")

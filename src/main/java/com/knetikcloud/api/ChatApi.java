@@ -175,7 +175,7 @@ public interface ChatApi {
     "Content-Type:application/json"
   })
   @POST("chat/messages")
-  Call<ChatMessageResource> sendMessage(
+  Call<ChatMessageResource> sendChatMessage(
     @retrofit2.http.Body ChatMessageResource chatMessageResource
   );
 

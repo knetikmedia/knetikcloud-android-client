@@ -1,6 +1,6 @@
 # UsersSubscriptionsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -343,7 +343,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 UsersSubscriptionsApi apiInstance = new UsersSubscriptionsApi();
 Integer userId = 56; // Integer | The id of the user
 Integer inventoryId = 56; // Integer | The id of the user's inventory
-StringWrapper status = new StringWrapper(); // StringWrapper | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
+SubscriptionStatusWrapper status = new SubscriptionStatusWrapper(); // SubscriptionStatusWrapper | The new status for the subscription
 try {
     Void result = apiInstance.setSubscriptionStatus(userId, inventoryId, status);
     System.out.println(result);
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Integer**| The id of the user |
  **inventoryId** | **Integer**| The id of the user&#39;s inventory |
- **status** | [**StringWrapper**](StringWrapper.md)| The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;) |
+ **status** | [**SubscriptionStatusWrapper**](SubscriptionStatusWrapper.md)| The new status for the subscription |
 
 ### Return type
 

@@ -8,8 +8,8 @@ import com.knetikcloud.model.PageResourceNotificationTypeResource;
 import com.knetikcloud.model.PageResourceNotificationUserTypeResource;
 import com.knetikcloud.model.PageResourceUserNotificationResource;
 import com.knetikcloud.model.Result;
+import com.knetikcloud.model.UserNotificationStatusWrapper;
 import com.knetikcloud.model.ValueWrapperboolean;
-import com.knetikcloud.model.ValueWrapperstring;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -33,7 +33,7 @@ public class NotificationsApiTest {
     /**
      * Create a notification type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      */
     @Test
     public void createNotificationTypeTest() {
@@ -45,7 +45,7 @@ public class NotificationsApiTest {
     /**
      * Delete a notification type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      */
     @Test
     public void deleteNotificationTypeTest() {
@@ -57,7 +57,7 @@ public class NotificationsApiTest {
     /**
      * Get a single notification type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      */
     @Test
     public void getNotificationTypeTest() {
@@ -69,7 +69,7 @@ public class NotificationsApiTest {
     /**
      * List and search notification types
      *
-     * Get a list of notification type with optional filtering
+     * Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      */
     @Test
     public void getNotificationTypesTest() {
@@ -83,7 +83,7 @@ public class NotificationsApiTest {
     /**
      * View a user&#39;s notification settings for a type
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      */
     @Test
     public void getUserNotificationInfoTest() {
@@ -96,7 +96,7 @@ public class NotificationsApiTest {
     /**
      * View a user&#39;s notification settings
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      */
     @Test
     public void getUserNotificationInfoListTest() {
@@ -111,7 +111,7 @@ public class NotificationsApiTest {
     /**
      * Get notifications
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      */
     @Test
     public void getUserNotificationsTest() {
@@ -127,7 +127,7 @@ public class NotificationsApiTest {
     /**
      * Send a notification
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      */
     @Test
     public void sendNotificationTest() {
@@ -139,13 +139,13 @@ public class NotificationsApiTest {
     /**
      * Set notification status
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      */
     @Test
     public void setUserNotificationStatusTest() {
         String userId = null;
         String notificationId = null;
-        ValueWrapperstring notification = null;
+        UserNotificationStatusWrapper notification = null;
         // Void response = api.setUserNotificationStatus(userId, notificationId, notification);
 
         // TODO: test validations
@@ -153,7 +153,7 @@ public class NotificationsApiTest {
     /**
      * Enable or disable direct notifications for a user
      *
-     * Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+     * Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      */
     @Test
     public void silenceDirectNotificationsTest() {
@@ -167,7 +167,7 @@ public class NotificationsApiTest {
     /**
      * Update a notificationType
      *
-     * 
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      */
     @Test
     public void updateNotificationTypeTest() {

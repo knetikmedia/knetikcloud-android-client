@@ -1,6 +1,6 @@
 # AmazonWebServicesS3Api
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,7 +37,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 
 AmazonWebServicesS3Api apiInstance = new AmazonWebServicesS3Api();
 String bucket = "bucket_example"; // String | S3 bucket name
-String path = "path_example"; // String | The path to the file relative the bucket (the s3 object key)
+String path = "path_example"; // String | The path to the file relative to the bucket (the s3 object key)
 Integer expiration = 60; // Integer | The number of seconds this URL will be valid. Default to 60
 try {
     String result = apiInstance.getDownloadURL(bucket, path, expiration);
@@ -53,7 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucket** | **String**| S3 bucket name | [optional]
- **path** | **String**| The path to the file relative the bucket (the s3 object key) | [optional]
+ **path** | **String**| The path to the file relative to the bucket (the s3 object key) | [optional]
  **expiration** | **Integer**| The number of seconds this URL will be valid. Default to 60 | [optional] [default to 60]
 
 ### Return type

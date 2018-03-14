@@ -3,6 +3,7 @@ package com.knetikcloud.api;
 import com.knetikcloud.client.ApiClient;
 import com.knetikcloud.model.EntitlementGrantRequest;
 import com.knetikcloud.model.EntitlementItem;
+import com.knetikcloud.model.InventoryStatusWrapper;
 import com.knetikcloud.model.InvoiceResource;
 import com.knetikcloud.model.ItemTemplateResource;
 import com.knetikcloud.model.PageResourceEntitlementItem;
@@ -306,7 +307,7 @@ public class UsersInventoryApiTest {
     public void updateUserInventoryStatusTest() {
         Integer userId = null;
         Integer id = null;
-        String inventoryStatus = null;
+        InventoryStatusWrapper inventoryStatus = null;
         // Void response = api.updateUserInventoryStatus(userId, id, inventoryStatus);
 
         // TODO: test validations

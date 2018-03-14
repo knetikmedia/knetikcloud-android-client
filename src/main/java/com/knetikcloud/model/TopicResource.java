@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * TopicResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T10:36:54.503-05:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-14T12:02:11.431-04:00")
 public class TopicResource {
   @SerializedName("created_date")
   private Long createdDate = null;

@@ -291,13 +291,13 @@ public interface CampaignsChallengesApi {
    * @param challengeId The challenge id (required)
    * @param challengeActivityResource The challenge activity resource object (optional)
    * @param validateSettings Whether to validate the settings being sent against the available settings on the base activity. (optional, default to false)
-   * @return Call&lt;ChallengeActivityResource&gt;
+   * @return Call&lt;Void&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("challenges/{challenge_id}/activities/{id}")
-  Call<ChallengeActivityResource> updateChallengeActivity(
+  Call<Void> updateChallengeActivity(
     @retrofit2.http.Path("id") Long id, @retrofit2.http.Path("challenge_id") Long challengeId, @retrofit2.http.Body ChallengeActivityResource challengeActivityResource, @retrofit2.http.Query("validateSettings") Boolean validateSettings
   );
 

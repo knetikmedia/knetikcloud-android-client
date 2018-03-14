@@ -49,7 +49,7 @@ public interface GamificationLevelingApi {
 
   /**
    * Retrieve a level
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
    * @param name The level schema name (required)
    * @return Call&lt;LevelingResource&gt;
    */
@@ -69,7 +69,7 @@ public interface GamificationLevelingApi {
 
   /**
    * List and search levels
-   * Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+   * Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER
    * @param filterName Filter for level schemas whose name contains a given string (optional)
    * @param size The number of objects returned per page (optional, default to 25)
    * @param page The number of the page returned, starting with 1 (optional, default to 1)
@@ -83,7 +83,7 @@ public interface GamificationLevelingApi {
 
   /**
    * Get a user&#39;s progress for a given level schema
-   * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+   * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
    * @param userId The id of the user or &#39;me&#39; (required)
    * @param name The level schema name (required)
    * @return Call&lt;UserLevelingResource&gt;
@@ -95,7 +95,7 @@ public interface GamificationLevelingApi {
 
   /**
    * Get a user&#39;s progress for all level schemas
-   * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
+   * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_USER or self
    * @param userId The id of the user or &#39;me&#39; (required)
    * @param filterName Filter for level schemas whose name contains a given string (optional)
    * @param size The number of objects returned per page (optional, default to 25)

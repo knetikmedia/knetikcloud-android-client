@@ -1,6 +1,6 @@
 # ActivitiesApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 Load a single activity occurrence details
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -682,7 +682,7 @@ Name | Type | Description  | Notes
 
 List activity occurrences
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -812,7 +812,7 @@ Name | Type | Description  | Notes
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
 
-In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -870,6 +870,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResource setActivityOccurrenceSettings(activityOccurrenceId, settings)
 
 Sets the settings of an activity occurrence
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -950,7 +952,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
 String userId = "userId_example"; // String | The id of the user
-String status = "status_example"; // String | The new status
+ActivityUserStatusWrapper status = new ActivityUserStatusWrapper(); // ActivityUserStatusWrapper | The new status
 try {
     ActivityUserResource result = apiInstance.setUserStatus(activityOccurrenceId, userId, status);
     System.out.println(result);
@@ -966,7 +968,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **Long**| The id of the activity occurrence |
  **userId** | **String**| The id of the user |
- **status** | **String**| The new status | [optional]
+ **status** | [**ActivityUserStatusWrapper**](ActivityUserStatusWrapper.md)| The new status | [optional]
 
 ### Return type
 
@@ -1046,7 +1048,7 @@ Name | Type | Description  | Notes
 
 Update the status of an activity occurrence
 
-If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example
 ```java
@@ -1069,7 +1071,7 @@ oauth2_password_grant.setAccessToken("YOUR ACCESS TOKEN");
 
 ActivitiesApi apiInstance = new ActivitiesApi();
 Long activityOccurrenceId = 789L; // Long | The id of the activity occurrence
-ValueWrapperstring activityOccurrenceStatus = new ValueWrapperstring(); // ValueWrapperstring | The activity occurrence status object
+ActivityOccurrenceStatusWrapper activityOccurrenceStatus = new ActivityOccurrenceStatusWrapper(); // ActivityOccurrenceStatusWrapper | The activity occurrence status object
 try {
     Void result = apiInstance.updateActivityOccurrenceStatus(activityOccurrenceId, activityOccurrenceStatus);
     System.out.println(result);
@@ -1084,7 +1086,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **Long**| The id of the activity occurrence |
- **activityOccurrenceStatus** | [**ValueWrapperstring**](ValueWrapperstring.md)| The activity occurrence status object | [optional]
+ **activityOccurrenceStatus** | [**ActivityOccurrenceStatusWrapper**](ActivityOccurrenceStatusWrapper.md)| The activity occurrence status object | [optional]
 
 ### Return type
 
